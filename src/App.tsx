@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import Header from './components/layout/Header'
 import Navigation from './components/layout/Navigation'
-import ProgressIndicator from './components/layout/ProgressIndicator'
+import Pagination from './components/layout/Pagination'
 import ExecutiveSummary from './components/sections/ExecutiveSummary'
 import CurrentState from './components/sections/CurrentState'
 import TheProblem from './components/sections/TheProblem'
@@ -40,65 +40,121 @@ const sections = [
 ]
 
 export default function App() {
-  const [activeSection, setActiveSection] = useState(0)
+  const [currentPage, setCurrentPage] = useState(0)
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const current = sections.findIndex(section => {
-        const element = document.getElementById(section.id)
-        if (!element) return false
-        const rect = element.getBoundingClientRect()
-        return rect.top <= window.innerHeight / 2
-      })
-      if (current >= 0) setActiveSection(current)
+  const goToPage = useCallback((index: number) => {
+    if (index >= 0 && index < sections.length) {
+      setCurrentPage(index)
+      // Scroll to top of content when changing pages
+      window.scrollTo({ top: 0, behavior: 'smooth' })
     }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const scrollToSection = (index: number) => {
-    const element = document.getElementById(sections[index].id)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-      setActiveSection(index)
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Don't trigger if user is typing in an input
+      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement || e.target instanceof HTMLSelectElement) {
+        return
+      }
+
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+        e.preventDefault()
+        goToPage(currentPage - 1)
+      } else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+        e.preventDefault()
+        goToPage(currentPage + 1)
+      } else if (e.key === 'Home') {
+        e.preventDefault()
+        goToPage(0)
+      } else if (e.key === 'End') {
+        e.preventDefault()
+        goToPage(sections.length - 1)
+      }
     }
-  }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [currentPage, goToPage])
+
+  // Touch swipe navigation
+  useEffect(() => {
+    let touchStartX = 0
+    let touchStartY = 0
+    let touchEndX = 0
+    let touchEndY = 0
+
+    const handleTouchStart = (e: TouchEvent) => {
+      touchStartX = e.changedTouches[0].screenX
+      touchStartY = e.changedTouches[0].screenY
+    }
+
+    const handleTouchEnd = (e: TouchEvent) => {
+      touchEndX = e.changedTouches[0].screenX
+      touchEndY = e.changedTouches[0].screenY
+      handleSwipe()
+    }
+
+    const handleSwipe = () => {
+      const deltaX = touchEndX - touchStartX
+      const deltaY = touchEndY - touchStartY
+      const minSwipeDistance = 50
+
+      // Only trigger horizontal swipe if it's more horizontal than vertical
+      if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > minSwipeDistance) {
+        if (deltaX > 0) {
+          // Swipe right - go to previous
+          goToPage(currentPage - 1)
+        } else {
+          // Swipe left - go to next
+          goToPage(currentPage + 1)
+        }
+      }
+    }
+
+    window.addEventListener('touchstart', handleTouchStart, { passive: true })
+    window.addEventListener('touchend', handleTouchEnd, { passive: true })
+
+    return () => {
+      window.removeEventListener('touchstart', handleTouchStart)
+      window.removeEventListener('touchend', handleTouchEnd)
+    }
+  }, [currentPage, goToPage])
+
+  // Get the current section component
+  const CurrentSection = sections[currentPage].component
 
   return (
-    <div className="min-h-screen bg-bb-white">
+    <div className="min-h-screen bg-bb-white pb-32 md:pb-24">
       <a href="#main-content" className="skip-link">Skip to main content</a>
 
-      <Header />
+      <Header currentPage={currentPage} totalPages={sections.length} />
 
       <div className="flex">
         <Navigation
           sections={sections}
-          activeSection={activeSection}
-          onSectionClick={scrollToSection}
+          activeSection={currentPage}
+          onSectionClick={goToPage}
         />
 
-        <main id="main-content" className="flex-1">
-          <div className="flex">
-            <div className="flex-1">
-              {sections.map((section) => {
-                const Component = section.component
-                return (
-                  <section key={section.id} id={section.id}>
-                    <Component />
-                  </section>
-                )
-              })}
-            </div>
-
-            <ProgressIndicator
-              sections={sections}
-              activeSection={activeSection}
-              onSectionClick={scrollToSection}
-            />
+        <main id="main-content" className="flex-1 min-w-0">
+          <div className="page-content">
+            <section
+              key={sections[currentPage].id}
+              id={sections[currentPage].id}
+              className="animate-fade-in"
+            >
+              <CurrentSection />
+            </section>
           </div>
         </main>
       </div>
+
+      <Pagination
+        sections={sections}
+        currentPage={currentPage}
+        onPageChange={goToPage}
+      />
 
       <Footer />
     </div>

@@ -5,10 +5,13 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
   }
 
   body {
     @apply bg-bb-white text-bb-dark-gray font-sans;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   h1 {
@@ -30,6 +33,11 @@
   button {
     @apply transition-all duration-200;
   }
+
+  /* Prevent pull-to-refresh on mobile */
+  body {
+    overscroll-behavior-y: contain;
+  }
 }
 
 @layer components {
@@ -38,7 +46,7 @@
   }
 
   .section {
-    @apply py-3xl px-sm md:px-lg max-w-6xl mx-auto;
+    @apply py-xl md:py-3xl px-sm md:px-lg max-w-6xl mx-auto;
   }
 
   .focus-ring {
@@ -48,9 +56,35 @@
   .skip-link {
     @apply absolute left-0 top-0 -translate-x-full focus:translate-x-0 bg-bb-black text-bb-white px-sm py-xs z-50 transition-transform;
   }
+
+  /* Page content container */
+  .page-content {
+    @apply min-h-[calc(100vh-200px)] md:min-h-[calc(100vh-160px)];
+  }
+
+  /* Safe area for bottom navigation on iOS */
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
 }
 
-/* Smooth animations */
+/* Page transition animation */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+/* Smooth animations for scroll-triggered elements */
 @supports (animation-timeline: view()) {
   @keyframes fade-in-up {
     from {
@@ -73,4 +107,44 @@
       transform: translateX(0);
     }
   }
+}
+
+/* Touch-friendly tap targets */
+@media (pointer: coarse) {
+  button,
+  a,
+  select {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Custom scrollbar for navigation */
+nav::-webkit-scrollbar {
+  width: 4px;
+}
+
+nav::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+nav::-webkit-scrollbar-thumb {
+  background: theme('colors.bb-border');
+  border-radius: 2px;
+}
+
+nav::-webkit-scrollbar-thumb:hover {
+  background: theme('colors.bb-dark-gray');
 }
