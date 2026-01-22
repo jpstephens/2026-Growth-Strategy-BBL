@@ -1,0 +1,76 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bb-white text-bb-dark-gray font-sans;
+  }
+
+  h1 {
+    @apply text-h1 text-bb-black font-bold;
+  }
+
+  h2 {
+    @apply text-h2 text-bb-black font-bold;
+  }
+
+  h3 {
+    @apply text-h3 text-bb-black font-bold;
+  }
+
+  p {
+    @apply text-base;
+  }
+
+  button {
+    @apply transition-all duration-200;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-bb-white border border-bb-border rounded-md p-md shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200;
+  }
+
+  .section {
+    @apply py-3xl px-sm md:px-lg max-w-6xl mx-auto;
+  }
+
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-bb-cyan focus:ring-offset-2 rounded;
+  }
+
+  .skip-link {
+    @apply absolute left-0 top-0 -translate-x-full focus:translate-x-0 bg-bb-black text-bb-white px-sm py-xs z-50 transition-transform;
+  }
+}
+
+/* Smooth animations */
+@supports (animation-timeline: view()) {
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slide-in {
+    from {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
