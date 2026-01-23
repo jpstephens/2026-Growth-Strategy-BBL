@@ -5,8 +5,8 @@ export default function Slide05_CostOfWaiting() {
   return (
     <Slide>
       <div className="w-full max-w-5xl">
-        <h2 className="text-5xl font-bold text-bb-black mb-xl text-center">Cost of Waiting</h2>
-        <p className="text-2xl text-bb-dark-gray mb-3xl text-center">If we don't move now</p>
+        <h2 className="text-5xl font-bold text-bb-black mb-sm text-center">The Cost of Waiting</h2>
+        <p className="text-2xl text-bb-dark-gray mb-3xl text-center">Early customer acquisition has massive impact. Timing matters.</p>
 
         <div className="space-y-lg">
           <div className="bg-bb-light-gray border-2 border-bb-border p-lg rounded-lg">
