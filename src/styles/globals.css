@@ -4,11 +4,12 @@
 
 @layer base {
   html {
-    scroll-behavior: smooth;
+    overflow: hidden;
+    height: 100%;
   }
 
   body {
-    @apply bg-bb-white text-bb-dark-gray font-sans;
+    @apply bg-bb-white text-bb-dark-gray font-sans overflow-hidden h-screen;
   }
 
   h1 {
@@ -73,4 +74,15 @@
       transform: translateX(0);
     }
   }
+}
+
+/* Presentation mode - no scrolling */
+#root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+main {
+  overflow: hidden;
 }

@@ -1,106 +1,76 @@
 import { useState, useEffect } from 'react'
-import Header from './components/layout/Header'
-import Navigation from './components/layout/Navigation'
-import ProgressIndicator from './components/layout/ProgressIndicator'
-import ExecutiveSummary from './components/sections/ExecutiveSummary'
-import CurrentState from './components/sections/CurrentState'
-import TheProblem from './components/sections/TheProblem'
-import TheTarget from './components/sections/TheTarget'
-import TeamStructure from './components/sections/TeamStructure'
-import SalesSystem from './components/sections/SalesSystem'
-import LeadGeneration from './components/sections/LeadGeneration'
-import Pipeline from './components/sections/Pipeline'
-import Operations from './components/sections/Operations'
-import CarrierDevelopment from './components/sections/CarrierDevelopment'
-import FinancialModel from './components/sections/FinancialModel'
-import KPIs from './components/sections/KPIs'
-import MeetingRhythms from './components/sections/MeetingRhythms'
-import TechnologyStack from './components/sections/TechnologyStack'
-import Roadmap from './components/sections/Roadmap'
-import FirstThirtyDays from './components/sections/FirstThirtyDays'
-import Footer from './components/layout/Footer'
+import SlideCounter from './components/layout/SlideCounter'
 
-const sections = [
-  { id: 'executive-summary', title: 'Executive Summary', component: ExecutiveSummary },
-  { id: 'current-state', title: 'Current State Analysis', component: CurrentState },
-  { id: 'the-problem', title: 'Why Current Approach Won\'t Work', component: TheProblem },
-  { id: 'the-target', title: 'The Target and the Math', component: TheTarget },
-  { id: 'team-structure', title: 'The Team Structure', component: TeamStructure },
-  { id: 'sales-system', title: 'The Sales System', component: SalesSystem },
-  { id: 'lead-generation', title: 'Lead Generation Strategy', component: LeadGeneration },
-  { id: 'pipeline', title: 'HubSpot Pipeline', component: Pipeline },
-  { id: 'operations', title: 'Operations System', component: Operations },
-  { id: 'carrier-development', title: 'Carrier Development', component: CarrierDevelopment },
-  { id: 'financial-model', title: 'Financial Model', component: FinancialModel },
-  { id: 'kpis', title: 'KPIs and Dashboard', component: KPIs },
-  { id: 'meeting-rhythms', title: 'Meeting Rhythms', component: MeetingRhythms },
-  { id: 'technology-stack', title: 'Technology Stack', component: TechnologyStack },
-  { id: 'roadmap', title: '12-Month Roadmap', component: Roadmap },
-  { id: 'first-thirty-days', title: 'First 30 Days Action Plan', component: FirstThirtyDays },
+// Import all slide components
+import Slide01_Title from './components/slides/Slide01_Title'
+import Slide02_CurrentState from './components/slides/Slide02_CurrentState'
+import Slide03_TheProblem from './components/slides/Slide03_TheProblem'
+import Slide04_Opportunity from './components/slides/Slide04_Opportunity'
+import Slide05_CostOfWaiting from './components/slides/Slide05_CostOfWaiting'
+import Slide06_Goal from './components/slides/Slide06_Goal'
+import Slide07_TheMath from './components/slides/Slide07_TheMath'
+import Slide08_CustomerRamp from './components/slides/Slide08_CustomerRamp'
+import Slide09_TeamStructure from './components/slides/Slide09_TeamStructure'
+import Slide10_FourPillars from './components/slides/Slide10_FourPillars'
+import Slide11_SalesSystem from './components/slides/Slide11_SalesSystem'
+import Slide12_Roadmap from './components/slides/Slide12_Roadmap'
+import Slide13_First30Days from './components/slides/Slide13_First30Days'
+import Slide14_FinancialComparison from './components/slides/Slide14_FinancialComparison'
+import Slide15_CustomerProfitability from './components/slides/Slide15_CustomerProfitability'
+import Slide16_LaneStrategy from './components/slides/Slide16_LaneStrategy'
+import Slide17_Commitment from './components/slides/Slide17_Commitment'
+import Slide18_NextSteps from './components/slides/Slide18_NextSteps'
+
+const slides = [
+  Slide01_Title,
+  Slide02_CurrentState,
+  Slide03_TheProblem,
+  Slide04_Opportunity,
+  Slide05_CostOfWaiting,
+  Slide06_Goal,
+  Slide07_TheMath,
+  Slide08_CustomerRamp,
+  Slide09_TeamStructure,
+  Slide10_FourPillars,
+  Slide11_SalesSystem,
+  Slide12_Roadmap,
+  Slide13_First30Days,
+  Slide14_FinancialComparison,
+  Slide15_CustomerProfitability,
+  Slide16_LaneStrategy,
+  Slide17_Commitment,
+  Slide18_NextSteps,
 ]
 
 export default function App() {
-  const [activeSection, setActiveSection] = useState(0)
+  const [currentSlide, setCurrentSlide] = useState(0)
 
   useEffect(() => {
-    const handleScroll = () => {
-      const current = sections.findIndex(section => {
-        const element = document.getElementById(section.id)
-        if (!element) return false
-        const rect = element.getBoundingClientRect()
-        return rect.top <= window.innerHeight / 2
-      })
-      if (current >= 0) setActiveSection(current)
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowRight' || e.key === ' ') {
+        e.preventDefault()
+        setCurrentSlide(prev => (prev < slides.length - 1 ? prev + 1 : prev))
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault()
+        setCurrentSlide(prev => (prev > 0 ? prev - 1 : prev))
+      }
     }
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
   }, [])
 
-  const scrollToSection = (index: number) => {
-    const element = document.getElementById(sections[index].id)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-      setActiveSection(index)
-    }
-  }
+  const CurrentSlide = slides[currentSlide]
 
   return (
-    <div className="min-h-screen bg-bb-white">
+    <div className="w-full h-screen bg-bb-white overflow-hidden">
       <a href="#main-content" className="skip-link">Skip to main content</a>
 
-      <Header />
+      <main id="main-content" className="w-full h-screen">
+        <CurrentSlide />
+      </main>
 
-      <div className="flex">
-        <Navigation
-          sections={sections}
-          activeSection={activeSection}
-          onSectionClick={scrollToSection}
-        />
-
-        <main id="main-content" className="flex-1">
-          <div className="flex">
-            <div className="flex-1">
-              {sections.map((section) => {
-                const Component = section.component
-                return (
-                  <section key={section.id} id={section.id}>
-                    <Component />
-                  </section>
-                )
-              })}
-            </div>
-
-            <ProgressIndicator
-              sections={sections}
-              activeSection={activeSection}
-              onSectionClick={scrollToSection}
-            />
-          </div>
-        </main>
-      </div>
-
-      <Footer />
+      <SlideCounter current={currentSlide} total={slides.length} />
     </div>
   )
 }

@@ -28,12 +28,13 @@ export default {
       },
       fontSize: {
         'display': ['42px', { lineHeight: '1.1', fontWeight: '700' }],
-        'h1': ['36px', { lineHeight: '1.2', fontWeight: '700' }],
-        'h2': ['28px', { lineHeight: '1.3', fontWeight: '600' }],
-        'h3': ['20px', { lineHeight: '1.4', fontWeight: '600' }],
-        'base': ['16px', { lineHeight: '1.6', fontWeight: '400' }],
-        'sm': ['13px', { lineHeight: '1.5', fontWeight: '400' }],
+        'h1': ['48px', { lineHeight: '1.2', fontWeight: '700' }],
+        'h2': ['36px', { lineHeight: '1.3', fontWeight: '600' }],
+        'h3': ['24px', { lineHeight: '1.4', fontWeight: '600' }],
+        'base': ['20px', { lineHeight: '1.6', fontWeight: '400' }],
+        'sm': ['16px', { lineHeight: '1.5', fontWeight: '400' }],
         'caption': ['14px', { lineHeight: '1.5', fontWeight: '500' }],
+        '6xl': ['56px', { lineHeight: '1.1', fontWeight: '700' }],
       },
       spacing: {
         'xs': '8px',
