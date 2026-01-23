@@ -3,84 +3,85 @@ import Callout from '../content/Callout'
 
 export default function Slide41_SuccessCriteria() {
   return (
-    <Slide>
+    <Slide variant="gradient">
       <div className="w-full max-w-5xl">
-        <h2 className="text-5xl font-bold text-bb-black mb-sm text-center">Success Criteria by Quarter</h2>
-        <p className="text-xl text-bb-dark-gray text-center mb-lg">Measurable checkpoints. No guessing.</p>
+        <h2 className="text-5xl font-bold text-bb-navy-900 mb-sm text-center font-display">Success Criteria by Quarter</h2>
+        <div className="w-24 h-1.5 bg-gradient-to-r from-bb-electric-500 to-bb-sunset-500 mx-auto mb-lg"></div>
+        <p className="text-xl text-bb-slate-700 text-center mb-2xl">Measurable checkpoints. No guessing.</p>
 
         <div className="space-y-lg">
           {/* Q1 */}
-          <div className="rounded-lg border-2 border-bb-cyan bg-blue-50 p-lg">
-            <p className="font-bold text-bb-black text-lg mb-md">Q1: Foundation (Jan-Mar)</p>
+          <div className="rounded-2xl border-2 border-bb-electric-500 bg-white shadow-lg p-lg">
+            <p className="font-bold text-bb-navy-900 text-lg mb-md font-display">Q1: Foundation (Jan-Mar)</p>
             <div className="grid grid-cols-3 gap-md text-sm">
               <div>
-                <p className="text-bb-dark-gray font-semibold">New Customers</p>
-                <p className="text-xl font-bold text-bb-cyan">12-15</p>
+                <p className="text-bb-slate-700 font-semibold">New Customers</p>
+                <p className="text-xl font-bold text-bb-electric-700">12-15</p>
               </div>
               <div>
-                <p className="text-bb-dark-gray font-semibold">Total Active</p>
-                <p className="text-xl font-bold text-bb-cyan">22-25</p>
+                <p className="text-bb-slate-700 font-semibold">Total Active</p>
+                <p className="text-xl font-bold text-bb-electric-700">22-25</p>
               </div>
               <div>
-                <p className="text-bb-dark-gray font-semibold">Monthly Profit</p>
-                <p className="text-xl font-bold text-bb-cyan">~$20K</p>
+                <p className="text-bb-slate-700 font-semibold">Monthly Profit</p>
+                <p className="text-xl font-bold text-bb-electric-700">~$20K</p>
               </div>
             </div>
           </div>
 
           {/* Q2 */}
-          <div className="rounded-lg border-2 border-bb-border bg-bb-light-gray p-lg">
-            <p className="font-bold text-bb-black text-lg mb-md">Q2: Validation (Apr-Jun)</p>
+          <div className="rounded-2xl border-2 border-bb-slate-300 bg-white shadow-lg p-lg">
+            <p className="font-bold text-bb-navy-900 text-lg mb-md font-display">Q2: Validation (Apr-Jun)</p>
             <div className="grid grid-cols-3 gap-md text-sm">
               <div>
-                <p className="text-bb-dark-gray font-semibold">New Customers</p>
-                <p className="text-xl font-bold text-bb-black">15-18</p>
+                <p className="text-bb-slate-700 font-semibold">New Customers</p>
+                <p className="text-xl font-bold text-bb-navy-900">15-18</p>
               </div>
               <div>
-                <p className="text-bb-dark-gray font-semibold">Total Active</p>
-                <p className="text-xl font-bold text-bb-black">35-40</p>
+                <p className="text-bb-slate-700 font-semibold">Total Active</p>
+                <p className="text-xl font-bold text-bb-navy-900">35-40</p>
               </div>
               <div>
-                <p className="text-bb-dark-gray font-semibold">Monthly Profit</p>
-                <p className="text-xl font-bold text-bb-black">$30-35K</p>
+                <p className="text-bb-slate-700 font-semibold">Monthly Profit</p>
+                <p className="text-xl font-bold text-bb-navy-900">$30-35K</p>
               </div>
             </div>
           </div>
 
           {/* Q3 */}
-          <div className="rounded-lg border-2 border-bb-border bg-bb-light-gray p-lg">
-            <p className="font-bold text-bb-black text-lg mb-md">Q3: Scale (Jul-Sep)</p>
+          <div className="rounded-2xl border-2 border-bb-slate-300 bg-white shadow-lg p-lg">
+            <p className="font-bold text-bb-navy-900 text-lg mb-md font-display">Q3: Scale (Jul-Sep)</p>
             <div className="grid grid-cols-3 gap-md text-sm">
               <div>
-                <p className="text-bb-dark-gray font-semibold">New Customers</p>
-                <p className="text-xl font-bold text-bb-black">18-20</p>
+                <p className="text-bb-slate-700 font-semibold">New Customers</p>
+                <p className="text-xl font-bold text-bb-navy-900">18-20</p>
               </div>
               <div>
-                <p className="text-bb-dark-gray font-semibold">Total Active</p>
-                <p className="text-xl font-bold text-bb-black">50-55</p>
+                <p className="text-bb-slate-700 font-semibold">Total Active</p>
+                <p className="text-xl font-bold text-bb-navy-900">50-55</p>
               </div>
               <div>
-                <p className="text-bb-dark-gray font-semibold">Monthly Profit</p>
-                <p className="text-xl font-bold text-bb-black">$60-65K</p>
+                <p className="text-bb-slate-700 font-semibold">Monthly Profit</p>
+                <p className="text-xl font-bold text-bb-navy-900">$60-65K</p>
               </div>
             </div>
           </div>
 
           {/* Q4 */}
-          <div className="rounded-lg border-2 border-bb-green bg-green-50 p-lg">
-            <p className="font-bold text-bb-black text-lg mb-md">Q4: Push to Target (Oct-Dec)</p>
+          <div className="rounded-2xl border-2 border-bb-electric-500 bg-white shadow-lg p-lg">
+            <p className="font-bold text-bb-navy-900 text-lg mb-md font-display">Q4: Push to Target (Oct-Dec)</p>
             <div className="grid grid-cols-3 gap-md text-sm">
               <div>
-                <p className="text-bb-dark-gray font-semibold">New Customers</p>
-                <p className="text-xl font-bold text-bb-green">18-20</p>
+                <p className="text-bb-slate-700 font-semibold">New Customers</p>
+                <p className="text-xl font-bold text-bb-electric-700">18-20</p>
               </div>
               <div>
-                <p className="text-bb-dark-gray font-semibold">Total Active</p>
-                <p className="text-xl font-bold text-bb-green">65-70</p>
+                <p className="text-bb-slate-700 font-semibold">Total Active</p>
+                <p className="text-xl font-bold text-bb-electric-700">65-70</p>
               </div>
               <div>
-                <p className="text-bb-dark-gray font-semibold">Monthly Profit</p>
-                <p className="text-xl font-bold text-bb-green">$100K+</p>
+                <p className="text-bb-slate-700 font-semibold">Monthly Profit</p>
+                <p className="text-xl font-bold text-bb-electric-700">$100K+</p>
               </div>
             </div>
           </div>

@@ -5,10 +5,13 @@ import { overallPerformance } from '../../data/currentState'
 
 export default function Slide04_CurrentStateMetrics() {
   return (
-    <Slide>
+    <Slide variant="gradient">
       <div className="w-full max-w-5xl">
-        <h2 className="text-5xl font-bold text-bb-black mb-sm text-center">Current State: Metrics</h2>
-        <p className="text-xl text-bb-dark-gray mb-xl text-center">880 loads analyzed. Real data from real transactions.</p>
+        <div className="text-center mb-lg">
+          <h2 className="text-5xl font-display font-bold text-bb-navy-900 mb-sm">Current State: Metrics</h2>
+          <div className="w-24 h-1.5 bg-gradient-to-r from-bb-electric-500 to-bb-sunset-500 mx-auto rounded-full mb-lg" />
+        </div>
+        <p className="text-xl text-bb-slate-600 mb-2xl text-center">880 loads analyzed. Real data from real transactions.</p>
 
         <MetricGrid
           metrics={[

@@ -4,14 +4,17 @@ import { escalationPaths } from '../../data/operations'
 
 export default function Slide36_EscalationPaths() {
   return (
-    <Slide>
+    <Slide variant="gradient">
       <div className="w-full max-w-6xl">
-        <h2 className="text-5xl font-bold text-bb-black mb-sm text-center">Issue Escalation</h2>
-        <p className="text-xl text-bb-dark-gray text-center mb-lg">Clear decision authority. Fast resolution.</p>
+        <div className="text-center mb-2xl">
+          <h2 className="text-5xl font-display font-bold text-bb-navy-900 mb-md">Issue Escalation</h2>
+          <div className="w-24 h-1.5 bg-gradient-to-r from-bb-electric-500 via-bb-electric-400 to-bb-sunset-400 mx-auto rounded-full mb-lg" />
+        </div>
+        <p className="text-xl text-bb-slate-700 text-center mb-2xl">Clear decision authority. Fast resolution.</p>
 
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto mb-2xl">
           <table className="w-full text-sm">
-            <thead className="bg-bb-dark-gray text-white">
+            <thead className="bg-bb-navy-900 text-white">
               <tr>
                 <th className="px-lg py-sm text-left font-semibold">Issue Type</th>
                 <th className="px-lg py-sm text-left font-semibold">First Response</th>
@@ -23,12 +26,12 @@ export default function Slide36_EscalationPaths() {
               {escalationPaths.map((path, idx) => (
                 <tr
                   key={idx}
-                  className={`border-t ${idx % 2 === 0 ? 'bg-white' : 'bg-bb-light-gray'}`}
+                  className={`border-t ${idx % 2 === 0 ? 'bg-white' : 'bg-white'}`}
                 >
-                  <td className="px-lg py-sm font-semibold text-bb-black">{path.issue}</td>
-                  <td className="px-lg py-sm text-bb-dark-gray">{path.firstResponse}</td>
-                  <td className="px-lg py-sm text-bb-dark-gray">{path.escalateTo}</td>
-                  <td className="px-lg py-sm font-semibold text-bb-cyan">{path.finalAuthority}</td>
+                  <td className="px-lg py-sm font-semibold text-bb-navy-900">{path.issue}</td>
+                  <td className="px-lg py-sm text-bb-slate-700">{path.firstResponse}</td>
+                  <td className="px-lg py-sm text-bb-slate-700">{path.escalateTo}</td>
+                  <td className="px-lg py-sm font-semibold text-bb-electric-700">{path.finalAuthority}</td>
                 </tr>
               ))}
             </tbody>

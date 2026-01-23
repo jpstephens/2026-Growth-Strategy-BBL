@@ -4,22 +4,23 @@ import { currentTeam } from '../../data/teamStructure'
 
 export default function Slide17_CurrentTeam() {
   return (
-    <Slide>
+    <Slide variant="gradient">
       <div className="w-full max-w-5xl">
-        <h2 className="text-5xl font-bold text-bb-black mb-sm text-center">Current Team</h2>
-        <p className="text-xl text-bb-dark-gray text-center mb-lg">5 people. Clear roles. Proven track record.</p>
+        <h2 className="text-5xl font-bold font-display text-bb-navy-900 mb-md text-center">Current Team</h2>
+        <div className="w-24 h-1.5 bg-gradient-to-r from-bb-electric-500 to-bb-sunset-500 mx-auto rounded-full mb-lg" />
+        <p className="text-xl text-bb-slate-700 text-center mb-2xl">5 people. Clear roles. Proven track record.</p>
 
         <div className="space-y-md">
           {currentTeam.map((member, idx) => (
-            <div key={idx} className="rounded-lg border-2 border-bb-border bg-bb-light-gray p-lg">
+            <div key={idx} className="rounded-2xl border-2 border-bb-slate-300 bg-white p-lg shadow-lg">
               <div className="flex items-start justify-between mb-sm">
                 <div>
-                  <p className="font-bold text-bb-black text-lg">{member.name}</p>
-                  <p className="text-sm font-semibold text-bb-cyan">{member.role}</p>
+                  <p className="font-bold text-bb-navy-900 text-lg">{member.name}</p>
+                  <p className="text-sm font-semibold text-bb-electric-700">{member.role}</p>
                 </div>
-                <p className="text-xs text-bb-dark-gray bg-white px-sm py-xs rounded">{member.location}</p>
+                <p className="text-xs text-bb-slate-600 bg-bb-slate-100 px-sm py-xs rounded">{member.location}</p>
               </div>
-              <p className="text-sm text-bb-dark-gray">
+              <p className="text-sm text-bb-slate-700">
                 {member.responsibilities}
               </p>
             </div>

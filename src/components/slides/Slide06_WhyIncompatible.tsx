@@ -2,7 +2,7 @@ import Slide from '../layout/Slide'
 
 export default function Slide06_WhyIncompatible() {
   return (
-    <Slide>
+    <Slide variant="gradient">
       <div className="w-full max-w-6xl space-y-3xl">
         {/* Hero Title */}
         <div className="text-center mb-lg">

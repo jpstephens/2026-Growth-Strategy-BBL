@@ -12,10 +12,11 @@ export default function Slide11_SalesSystem() {
   ]
 
   return (
-    <Slide>
+    <Slide variant="gradient">
       <div className="w-full max-w-6xl h-full flex flex-col justify-center">
-        <h2 className="text-5xl font-bold text-bb-black mb-lg text-center">Sales System</h2>
-        <p className="text-2xl text-bb-dark-gray mb-lg text-center">Disciplined, measurable, repeatable</p>
+        <h2 className="text-5xl font-bold text-bb-navy-900 mb-sm text-center font-display">Sales System</h2>
+        <div className="w-24 h-1.5 bg-gradient-to-r from-bb-electric-500 to-bb-sunset-500 mx-auto mb-lg"></div>
+        <p className="text-2xl text-bb-slate-700 mb-lg text-center">Disciplined, measurable, repeatable</p>
 
         <div className="grid grid-cols-3 gap-lg mb-2xl">
           <StatCard label="Weekly Dials" value="200" highlight size="xl" />
@@ -35,8 +36,8 @@ export default function Slide11_SalesSystem() {
           </ResponsiveContainer>
         </div>
 
-        <div className="bg-bb-light-gray border-2 border-bb-border p-lg rounded-lg text-center">
-          <p className="text-lg text-bb-dark-gray">
+        <div className="bg-white border-2 border-bb-slate-300 p-lg rounded-2xl text-center shadow-lg">
+          <p className="text-lg text-bb-slate-700">
             <strong>Weekly Accountability:</strong> 200 dials/week, tracked in HubSpot. Monthly target: 4-5 new customers.
           </p>
         </div>

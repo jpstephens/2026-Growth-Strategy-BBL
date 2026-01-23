@@ -3,15 +3,15 @@ import StatCard from '../content/StatCard'
 
 export default function Slide24_CanPatrickAlone() {
   return (
-    <Slide variant="dark">
+    <Slide variant="gradient">
       <div className="w-full max-w-6xl space-y-3xl">
         {/* Hero Title */}
         <div className="text-center mb-lg">
-          <h1 className="font-display text-display font-bold text-white mb-md">
+          <h1 className="font-display text-display font-bold text-bb-navy-900 mb-md">
             Can Patrick Alone Hit $100K Monthly Profit?
           </h1>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-bb-sunset-500 to-bb-electric-500 mx-auto rounded-full mb-lg" />
-          <p className="text-xl text-bb-slate-300 max-w-2xl mx-auto">
+          <div className="w-24 h-1.5 bg-gradient-to-r from-bb-electric-500 to-bb-sunset-500 mx-auto rounded-full mb-lg" />
+          <p className="text-xl text-bb-slate-700 max-w-2xl mx-auto">
             Let's do the math
           </p>
         </div>

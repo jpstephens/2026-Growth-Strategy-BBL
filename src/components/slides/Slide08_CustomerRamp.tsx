@@ -4,10 +4,11 @@ import { customerRamp } from '../../data/financialProjections'
 
 export default function Slide08_CustomerRamp() {
   return (
-    <Slide>
+    <Slide variant="gradient">
       <div className="w-full max-w-6xl h-full flex flex-col justify-center">
-        <h2 className="text-5xl font-bold text-bb-black mb-lg text-center">Customer Value Growth</h2>
-        <p className="text-2xl text-bb-dark-gray mb-2xl text-center">How margin accelerates as customers mature</p>
+        <h2 className="text-5xl font-bold text-bb-navy-900 mb-sm text-center font-display">Customer Value Growth</h2>
+        <div className="w-24 h-1.5 bg-gradient-to-r from-bb-electric-500 to-bb-sunset-500 mx-auto mb-lg"></div>
+        <p className="text-2xl text-bb-slate-700 mb-2xl text-center">How margin accelerates as customers mature</p>
 
         <div className="flex-1 flex items-center justify-center">
           <ResponsiveContainer width="100%" height={350}>
@@ -39,7 +40,7 @@ export default function Slide08_CustomerRamp() {
           </ResponsiveContainer>
         </div>
 
-        <p className="text-lg text-bb-dark-gray text-center mt-lg">
+        <p className="text-lg text-bb-slate-700 text-center mt-lg">
           Each new customer starts small but compounds. By month 12, a typical customer contributes $4,160/month.
         </p>
       </div>

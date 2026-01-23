@@ -5,10 +5,11 @@ import { destructiveLanes } from '../../data/currentState'
 
 export default function Slide08_DestructiveLanes() {
   return (
-    <Slide>
+    <Slide variant="gradient">
       <div className="w-full max-w-6xl">
-        <h2 className="text-5xl font-bold text-bb-black mb-sm text-center">Destructive Lanes</h2>
-        <p className="text-xl text-bb-dark-gray text-center mb-lg">Lanes to avoid or reprice</p>
+        <h2 className="text-5xl font-bold text-bb-navy-900 mb-sm text-center font-display">Destructive Lanes</h2>
+        <div className="w-24 h-1.5 bg-gradient-to-r from-bb-electric-500 to-bb-sunset-500 mx-auto mb-lg"></div>
+        <p className="text-xl text-bb-slate-700 text-center mb-lg">Lanes to avoid or reprice</p>
 
         <TableCard
           headers={['Lane', 'Loads', 'Avg Margin', 'Action Required']}

@@ -5,10 +5,11 @@ import { topCustomers } from '../../data/currentState'
 
 export default function Slide06_TopCustomers() {
   return (
-    <Slide>
+    <Slide variant="gradient">
       <div className="w-full max-w-6xl">
-        <h2 className="text-5xl font-bold text-bb-black mb-sm text-center">Top Performing Customers</h2>
-        <p className="text-xl text-bb-dark-gray text-center mb-lg">By margin contribution and consistency</p>
+        <h2 className="text-5xl font-bold text-bb-navy-900 mb-sm text-center font-display">Top Performing Customers</h2>
+        <div className="w-24 h-1.5 bg-gradient-to-r from-bb-electric-500 to-bb-sunset-500 mx-auto mb-lg"></div>
+        <p className="text-xl text-bb-slate-700 text-center mb-2xl">By margin contribution and consistency</p>
 
         <TableCard
           headers={['Customer', 'Loads', 'Total Margin', 'Avg Margin', 'Assessment']}

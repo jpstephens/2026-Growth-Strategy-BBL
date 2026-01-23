@@ -4,13 +4,14 @@ import Callout from '../content/Callout'
 
 export default function Slide03_ExecutiveGoal() {
   return (
-    <Slide>
+    <Slide variant="gradient">
       <div className="w-full max-w-5xl">
-        <h2 className="text-5xl font-bold text-bb-black mb-xl text-center">The Goal</h2>
+        <h2 className="text-5xl font-bold text-bb-navy-900 mb-sm text-center font-display">The Goal</h2>
+        <div className="w-24 h-1.5 bg-gradient-to-r from-bb-electric-500 to-bb-sunset-500 mx-auto mb-lg"></div>
 
-        <div className="space-y-xl">
+        <div className="space-y-2xl">
           <div className="text-center">
-            <p className="text-2xl text-bb-dark-gray mb-lg">By December 31, 2026:</p>
+            <p className="text-2xl text-bb-slate-700 mb-lg">By December 31, 2026:</p>
           </div>
 
           <MetricGrid
@@ -40,8 +41,8 @@ export default function Slide03_ExecutiveGoal() {
             </div>
           </Callout>
 
-          <div className="bg-bb-light-gray rounded-lg p-lg border border-bb-border text-center">
-            <p className="text-sm text-bb-dark-gray">
+          <div className="bg-white rounded-2xl p-lg border-2 border-bb-slate-300 text-center shadow-lg">
+            <p className="text-sm text-bb-slate-700">
               This is NOT aggressive growth. It's disciplined scaling of what already works.
             </p>
           </div>
