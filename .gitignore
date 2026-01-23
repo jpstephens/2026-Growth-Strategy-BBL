@@ -24,3 +24,4 @@ dist/
 # Build output
 *.log
 npm-debug.log*
+.vercel
