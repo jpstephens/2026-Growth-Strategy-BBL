@@ -2,67 +2,163 @@ import Slide from '../layout/Slide'
 
 export default function Slide39_FourPillarsReview() {
   return (
-    <Slide>
-      <div className="w-full max-w-5xl">
-        <h2 className="text-5xl font-bold text-bb-black mb-lg text-center">Four Pillars of Growth</h2>
+    <Slide variant="gradient">
+      <div className="w-full max-w-7xl space-y-3xl">
+        {/* Title */}
+        <div className="text-center mb-lg">
+          <h1 className="font-display text-display font-bold text-bb-navy-900 mb-md">
+            Four Pillars of Growth
+          </h1>
+          <div className="w-32 h-1.5 bg-gradient-to-r from-bb-electric-500 via-bb-sunset-500 to-bb-emerald-500 mx-auto rounded-full" />
+        </div>
 
-        <div className="grid grid-cols-2 gap-lg">
-          {/* Sales */}
-          <div className="rounded-lg border-2 border-bb-cyan bg-blue-50 p-lg">
-            <p className="text-2xl font-bold text-bb-cyan mb-md">💼 Sales</p>
-            <ul className="space-y-xs text-sm text-bb-dark-gray">
-              <li>• 40+ dials/day per rep</li>
-              <li>• 200+ dials/week target</li>
-              <li>• 4-5 new customers/month</li>
-              <li>• Precise funnel tracking</li>
-              <li>• Protected calling blocks</li>
+        {/* Four Pillar Grid */}
+        <div className="grid grid-cols-2 gap-2xl">
+          {/* Sales - Electric */}
+          <div className="rounded-2xl border-2 border-bb-electric-400 bg-gradient-to-br from-bb-electric-50 to-white p-2xl shadow-lg hover:shadow-xl transition-all">
+            <div className="flex items-center gap-md mb-lg">
+              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-bb-electric-500 to-bb-electric-600 flex items-center justify-center text-white text-2xl">
+                💼
+              </div>
+              <h3 className="text-2xl font-bold text-bb-electric-700">Sales</h3>
+            </div>
+            <ul className="space-y-sm mb-lg text-bb-slate-700">
+              <li className="flex items-start">
+                <span className="text-bb-electric-500 font-bold mr-md">•</span>
+                <span>40+ dials/day per rep</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-bb-electric-500 font-bold mr-md">•</span>
+                <span>200+ dials/week target</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-bb-electric-500 font-bold mr-md">•</span>
+                <span>4-5 new customers/month</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-bb-electric-500 font-bold mr-md">•</span>
+                <span>Precise funnel tracking</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-bb-electric-500 font-bold mr-md">•</span>
+                <span>Protected calling blocks</span>
+              </li>
             </ul>
-            <p className="text-xs font-semibold text-bb-cyan mt-md">Goal: 12+ customers/month with 3-4 reps</p>
+            <div className="pt-lg border-t border-bb-electric-200">
+              <p className="text-sm font-bold text-bb-electric-700">Goal: 12+ customers/month with 3-4 reps</p>
+            </div>
           </div>
 
-          {/* Operations */}
-          <div className="rounded-lg border-2 border-bb-dark-gray bg-bb-light-gray p-lg">
-            <p className="text-2xl font-bold text-bb-black mb-md">⚙️ Operations</p>
-            <ul className="space-y-xs text-sm text-bb-dark-gray">
-              <li>• {'>'}95% on-time pickup/delivery</li>
-              <li>• {'<'}2hr critical issue resolution</li>
-              <li>• Direct carrier network {'>'}50%</li>
-              <li>• Carrier tier system</li>
-              <li>• Clear escalation paths</li>
+          {/* Operations - Burgundy */}
+          <div className="rounded-2xl border-2 border-bb-burgundy-400 bg-gradient-to-br from-bb-burgundy-50 to-white p-2xl shadow-lg hover:shadow-xl transition-all">
+            <div className="flex items-center gap-md mb-lg">
+              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-bb-burgundy-500 to-bb-burgundy-600 flex items-center justify-center text-white text-2xl">
+                ⚙️
+              </div>
+              <h3 className="text-2xl font-bold text-bb-burgundy-700">Operations</h3>
+            </div>
+            <ul className="space-y-sm mb-lg text-bb-slate-700">
+              <li className="flex items-start">
+                <span className="text-bb-burgundy-500 font-bold mr-md">•</span>
+                <span>{'>'}95% on-time pickup/delivery</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-bb-burgundy-500 font-bold mr-md">•</span>
+                <span>{'<'}2hr critical issue resolution</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-bb-burgundy-500 font-bold mr-md">•</span>
+                <span>Direct carrier network {'>'}50%</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-bb-burgundy-500 font-bold mr-md">•</span>
+                <span>Carrier tier system</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-bb-burgundy-500 font-bold mr-md">•</span>
+                <span>Clear escalation paths</span>
+              </li>
             </ul>
-            <p className="text-xs font-semibold text-bb-black mt-md">Goal: Handle 600+ monthly loads with David + support</p>
+            <div className="pt-lg border-t border-bb-burgundy-200">
+              <p className="text-sm font-bold text-bb-burgundy-700">Goal: Handle 600+ monthly loads with David + support</p>
+            </div>
           </div>
 
-          {/* Team */}
-          <div className="rounded-lg border-2 border-bb-border bg-bb-white p-lg border-2 border-bb-dark-gray">
-            <p className="text-2xl font-bold text-bb-black mb-md">👥 Team</p>
-            <ul className="space-y-xs text-sm text-bb-dark-gray">
-              <li>• Start: 5 people (current)</li>
-              <li>• Add Rep #2 in Q2</li>
-              <li>• Add Ops Coordinator Q2-Q3</li>
-              <li>• Add Rep #3 in Q3</li>
-              <li>• Performance-triggered hiring</li>
+          {/* Team - Sunset */}
+          <div className="rounded-2xl border-2 border-bb-sunset-400 bg-gradient-to-br from-bb-sunset-50 to-white p-2xl shadow-lg hover:shadow-xl transition-all">
+            <div className="flex items-center gap-md mb-lg">
+              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-bb-sunset-500 to-bb-sunset-600 flex items-center justify-center text-white text-2xl">
+                👥
+              </div>
+              <h3 className="text-2xl font-bold text-bb-sunset-700">Team</h3>
+            </div>
+            <ul className="space-y-sm mb-lg text-bb-slate-700">
+              <li className="flex items-start">
+                <span className="text-bb-sunset-500 font-bold mr-md">•</span>
+                <span>Start: 5 people (current)</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-bb-sunset-500 font-bold mr-md">•</span>
+                <span>Add Rep #2 in Q2</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-bb-sunset-500 font-bold mr-md">•</span>
+                <span>Add Ops Coordinator Q2-Q3</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-bb-sunset-500 font-bold mr-md">•</span>
+                <span>Add Rep #3 in Q3</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-bb-sunset-500 font-bold mr-md">•</span>
+                <span>Performance-triggered hiring</span>
+              </li>
             </ul>
-            <p className="text-xs font-semibold text-bb-black mt-md">Goal: 8-10 people by year end</p>
+            <div className="pt-lg border-t border-bb-sunset-200">
+              <p className="text-sm font-bold text-bb-sunset-700">Goal: 8-10 people by year end</p>
+            </div>
           </div>
 
-          {/* Systems */}
-          <div className="rounded-lg border-2 border-bb-green bg-green-50 p-lg">
-            <p className="text-2xl font-bold text-bb-green mb-md">📊 Systems</p>
-            <ul className="space-y-xs text-sm text-bb-dark-gray">
-              <li>• HubSpot pipeline tracking</li>
-              <li>• Alvys load management</li>
-              <li>• KPI dashboard (monthly)</li>
-              <li>• Carrier tagging system</li>
-              <li>• Weekly + monthly reviews</li>
+          {/* Systems - Emerald */}
+          <div className="rounded-2xl border-2 border-bb-emerald-400 bg-gradient-to-br from-bb-emerald-50 to-white p-2xl shadow-lg hover:shadow-xl transition-all">
+            <div className="flex items-center gap-md mb-lg">
+              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-bb-emerald-500 to-bb-emerald-600 flex items-center justify-center text-white text-2xl">
+                📊
+              </div>
+              <h3 className="text-2xl font-bold text-bb-emerald-700">Systems</h3>
+            </div>
+            <ul className="space-y-sm mb-lg text-bb-slate-700">
+              <li className="flex items-start">
+                <span className="text-bb-emerald-500 font-bold mr-md">•</span>
+                <span>HubSpot pipeline tracking</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-bb-emerald-500 font-bold mr-md">•</span>
+                <span>Alvys load management</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-bb-emerald-500 font-bold mr-md">•</span>
+                <span>KPI dashboard (monthly)</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-bb-emerald-500 font-bold mr-md">•</span>
+                <span>Carrier tagging system</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-bb-emerald-500 font-bold mr-md">•</span>
+                <span>Weekly + monthly reviews</span>
+              </li>
             </ul>
-            <p className="text-xs font-semibold text-bb-green mt-md">Goal: Full visibility into business health</p>
+            <div className="pt-lg border-t border-bb-emerald-200">
+              <p className="text-sm font-bold text-bb-emerald-700">Goal: Full visibility into business health</p>
+            </div>
           </div>
         </div>
 
-        <div className="mt-lg bg-gradient-to-r from-blue-50 via-bb-light-gray to-green-50 rounded-lg p-lg border-2 border-bb-cyan text-center">
-          <p className="text-sm text-bb-dark-gray font-semibold">
-            These four pillars are interconnected. Strong sales needs strong operations. Strong operations needs strong team. Everything needs visibility through systems.
+        {/* Interconnection Message */}
+        <div className="bg-gradient-to-r from-bb-navy-600 to-bb-navy-700 rounded-2xl p-2xl shadow-xl border-2 border-bb-navy-500 text-white text-center">
+          <p className="text-lg leading-relaxed">
+            These four pillars are interconnected. <span className="font-bold">Strong sales needs strong operations.</span> Strong operations needs strong team. <span className="font-bold">Everything needs visibility through systems.</span>
           </p>
         </div>
       </div>

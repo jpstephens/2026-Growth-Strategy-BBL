@@ -2,6 +2,9 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+/* Google Fonts - Import optional display font */
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800;900&display=swap');
+
 @layer base {
   html {
     overflow: hidden;
@@ -9,23 +12,23 @@
   }
 
   body {
-    @apply bg-bb-white text-bb-dark-gray font-sans overflow-hidden h-screen;
+    @apply bg-bb-slate-50 text-bb-slate-700 font-sans overflow-hidden h-screen;
   }
 
   h1 {
-    @apply text-h1 text-bb-black font-bold;
+    @apply text-h1 text-bb-navy-900 font-bold;
   }
 
   h2 {
-    @apply text-h2 text-bb-black font-bold;
+    @apply text-h2 text-bb-navy-900 font-bold;
   }
 
   h3 {
-    @apply text-h3 text-bb-black font-bold;
+    @apply text-h3 text-bb-navy-900 font-bold;
   }
 
   p {
-    @apply text-base;
+    @apply text-base text-bb-slate-700;
   }
 
   button {
@@ -34,20 +37,76 @@
 }
 
 @layer components {
+  /* Card components */
   .card {
-    @apply bg-bb-white border border-bb-border rounded-md p-md shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200;
+    @apply bg-white border border-bb-slate-200 rounded-lg p-md shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200;
   }
 
+  .card-elevated {
+    @apply bg-white rounded-xl p-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-200 border border-bb-slate-200;
+  }
+
+  /* Gradient card with depth */
+  .card-gradient {
+    @apply relative rounded-2xl p-2xl shadow-xl border border-bb-slate-200 bg-gradient-to-br from-white to-bb-slate-50;
+  }
+
+  /* Badge styling */
+  .badge {
+    @apply inline-flex items-center gap-sm px-lg py-sm rounded-full text-sm font-semibold;
+  }
+
+  .badge-primary {
+    @apply badge bg-bb-navy-100 text-bb-navy-900;
+  }
+
+  .badge-success {
+    @apply badge bg-bb-emerald-100 text-bb-emerald-700;
+  }
+
+  .badge-warning {
+    @apply badge bg-bb-sunset-100 text-bb-sunset-700;
+  }
+
+  .badge-critical {
+    @apply badge bg-bb-burgundy-100 text-bb-burgundy-700;
+  }
+
+  /* Section styling */
   .section {
     @apply py-3xl px-sm md:px-lg max-w-6xl mx-auto;
   }
 
+  /* Focus ring utilities */
   .focus-ring {
-    @apply focus:outline-none focus:ring-2 focus:ring-bb-cyan focus:ring-offset-2 rounded;
+    @apply focus:outline-none focus:ring-2 focus:ring-bb-electric-500 focus:ring-offset-2 rounded;
   }
 
+  /* Accessibility link */
   .skip-link {
-    @apply absolute left-0 top-0 -translate-x-full focus:translate-x-0 bg-bb-black text-bb-white px-sm py-xs z-50 transition-transform;
+    @apply absolute left-0 top-0 -translate-x-full focus:translate-x-0 bg-bb-navy-900 text-white px-lg py-sm z-50 transition-transform;
+  }
+
+  /* Text utilities */
+  .text-hero {
+    @apply font-display font-black text-bb-navy-900;
+    font-size: 72px;
+    line-height: 1;
+  }
+
+  .text-display-alt {
+    @apply font-display font-bold text-bb-navy-900;
+    font-size: 56px;
+    line-height: 1.1;
+  }
+
+  /* Divider */
+  .divider {
+    @apply h-px bg-bb-slate-200;
+  }
+
+  .divider-accent {
+    @apply h-1.5 rounded-full bg-gradient-to-r from-bb-electric-500 to-bb-sunset-500;
   }
 }
 

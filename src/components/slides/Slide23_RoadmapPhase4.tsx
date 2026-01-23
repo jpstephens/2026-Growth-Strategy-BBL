@@ -6,47 +6,53 @@ export default function Slide23_RoadmapPhase4() {
   const phase = phases[3]
 
   return (
-    <Slide>
-      <div className="w-full max-w-5xl">
-        <h2 className="text-5xl font-bold text-bb-black mb-sm text-center">Roadmap: Phase 4</h2>
-        <p className="text-xl text-bb-green font-semibold text-center mb-sm">{phase.period}</p>
-        <p className="text-lg text-bb-dark-gray text-center mb-lg italic">"{phase.goal}"</p>
+    <Slide variant="gradient">
+      <div className="w-full max-w-6xl space-y-2xl">
+        {/* Title */}
+        <div className="text-center mb-lg">
+          <h1 className="font-display text-display font-bold text-bb-navy-900 mb-md">
+            Roadmap: Phase 4
+          </h1>
+          <div className="w-24 h-1.5 bg-gradient-to-r from-bb-emerald-500 to-bb-electric-500 mx-auto rounded-full mb-lg" />
+          <p className="text-xl text-bb-slate-600 font-semibold mb-sm">{phase.period}</p>
+          <p className="text-lg text-bb-slate-600 italic max-w-2xl mx-auto">"{phase.goal}"</p>
+        </div>
 
-        <Callout variant="success" title="Final Push to Target">
-          <ul className="space-y-sm">
-            <li className="flex items-start">
-              <span className="text-bb-green font-bold mr-md">1.</span>
-              <span>Rep #4 (if needed)—demand-driven, fully validated sales process</span>
-            </li>
-            <li className="flex items-start">
-              <span className="text-bb-green font-bold mr-md">2.</span>
-              <span>3-4 sales reps combining for 12+ customers/month</span>
-            </li>
-            <li className="flex items-start">
-              <span className="text-bb-green font-bold mr-md">3.</span>
-              <span>Direct carrier % {'>'}50%—network is mature and efficient</span>
-            </li>
-            <li className="flex items-start">
-              <span className="text-bb-green font-bold mr-md">4.</span>
-              <span>Close 18-20 new customers in Q4—full team at velocity</span>
-            </li>
-            <li className="flex items-start">
-              <span className="text-bb-green font-bold mr-md">5.</span>
-              <span>Reach $100K+ monthly profit—GOAL ACHIEVED</span>
-            </li>
-          </ul>
+        {/* Final Push to Target */}
+        <Callout variant="success" title="Final Push to Target" size="lg">
+          <div className="space-y-lg">
+            {[
+              'Rep #4 (if needed)—demand-driven, fully validated sales process',
+              '3-4 sales reps combining for 12+ customers/month',
+              'Direct carrier % >50%—network is mature and efficient',
+              'Close 18-20 new customers in Q4—full team at velocity',
+              'Reach $100K+ monthly profit—GOAL ACHIEVED',
+            ].map((objective, idx) => (
+              <div key={idx} className="flex items-start gap-lg">
+                <div className="w-8 h-8 rounded-full bg-bb-emerald-500 text-white flex items-center justify-center font-bold shrink-0 text-sm">
+                  {idx + 1}
+                </div>
+                <span className={`text-base leading-relaxed pt-1 ${
+                  idx === 4 ? 'font-bold text-bb-emerald-900' : 'text-bb-slate-700'
+                }`}>
+                  {objective}
+                </span>
+              </div>
+            ))}
+          </div>
         </Callout>
 
-        <div className="mt-lg bg-green-50 rounded-lg p-lg border-2 border-bb-green space-y-sm">
-          <p className="font-semibold text-bb-black">Phase 4 End State (December 31):</p>
-          <div className="grid grid-cols-2 gap-md text-sm">
-            <div>
-              <p className="text-bb-dark-gray">Active Customers:</p>
-              <p className="font-bold text-bb-black">65-70</p>
+        {/* Phase End State - GOAL ACHIEVED */}
+        <div className="bg-gradient-to-br from-bb-emerald-600 to-bb-emerald-700 rounded-2xl border-2 border-bb-emerald-500 p-3xl shadow-2xl text-white">
+          <h3 className="text-2xl font-bold mb-xl text-center">Phase 4 End State (December 31) — 🎯 GOAL ACHIEVED</h3>
+          <div className="grid grid-cols-2 gap-2xl">
+            <div className="rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 p-lg">
+              <p className="text-sm font-semibold text-bb-emerald-50 mb-md">Active Customers</p>
+              <p className="text-4xl font-black font-display">65-70</p>
             </div>
-            <div>
-              <p className="text-bb-dark-gray">Monthly Profit:</p>
-              <p className="font-bold text-bb-green text-lg">$100K+</p>
+            <div className="rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 p-lg">
+              <p className="text-sm font-semibold text-bb-emerald-50 mb-md">Monthly Profit</p>
+              <p className="text-4xl font-black font-display">$100K+</p>
             </div>
           </div>
         </div>
