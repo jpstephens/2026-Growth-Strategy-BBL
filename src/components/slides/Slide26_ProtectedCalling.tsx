@@ -31,27 +31,27 @@ export default function Slide26_ProtectedCalling() {
 
   return (
     <Slide variant="gradient">
-      <div className="w-full max-w-6xl space-y-md">
+      <div className="w-full max-w-6xl space-y-4">
         {/* Title */}
         <motion.div variants={itemVariants} className="text-center">
-          <h1 className="font-display text-display font-bold text-bb-charcoal-800 mb-xs">
+          <h1 className="font-display text-display font-bold text-bb-charcoal-800 mb-2">
             Patrick's Protected Schedule
           </h1>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-bb-amber-500 to-bb-steel-500 mx-auto rounded-full mb-sm" />
-          <p className="text-base text-bb-charcoal-600">
+          <div className="w-20 h-1 bg-gradient-to-r from-bb-amber-500 to-bb-steel-500 mx-auto rounded-full mb-2" />
+          <p className="text-sm text-bb-charcoal-600">
             4.25 hours of protected calling = 40+ dials daily
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-3 gap-lg">
+        <div className="grid grid-cols-3 gap-4">
           {/* Left: Schedule Visual */}
-          <motion.div variants={itemVariants} className="col-span-2 bg-white rounded-xl border-2 border-bb-slate-200 p-md shadow-sm">
-            <h3 className="text-sm font-bold text-bb-charcoal-800 mb-sm">Daily Schedule</h3>
-            <div className="grid grid-cols-2 gap-xs">
+          <motion.div variants={itemVariants} className="col-span-2 bg-white rounded-xl border-2 border-bb-slate-200 p-4 shadow-sm">
+            <h3 className="text-sm font-bold text-bb-charcoal-800 mb-3">Daily Schedule</h3>
+            <div className="grid grid-cols-2 gap-2">
               {scheduleBlocks.map((block, idx) => (
                 <div
                   key={idx}
-                  className={`rounded-lg p-sm flex items-center justify-between ${
+                  className={`rounded-lg p-2 flex items-center justify-between ${
                     block.protected
                       ? 'bg-bb-amber-100 border-2 border-bb-amber-300'
                       : 'bg-bb-slate-50 border border-bb-slate-200'
@@ -67,7 +67,7 @@ export default function Slide26_ProtectedCalling() {
                   </div>
                   {block.protected && (
                     <div className="text-right">
-                      <p className="text-lg font-bold text-bb-amber-600">{block.dials}</p>
+                      <p className="text-base font-bold text-bb-amber-600">{block.dials}</p>
                       <p className="text-xs text-bb-charcoal-500">dials</p>
                     </div>
                   )}
@@ -77,32 +77,32 @@ export default function Slide26_ProtectedCalling() {
           </motion.div>
 
           {/* Right: Summary & Rules */}
-          <motion.div variants={itemVariants} className="space-y-md">
+          <motion.div variants={itemVariants} className="space-y-3">
             {/* Daily Summary */}
-            <div className="bg-gradient-to-br from-bb-amber-50 to-white rounded-xl border-2 border-bb-amber-300 p-md">
-              <h3 className="text-sm font-bold text-bb-charcoal-800 mb-sm">Daily Totals</h3>
-              <div className="space-y-sm">
+            <div className="bg-gradient-to-br from-bb-amber-50 to-white rounded-xl border-2 border-bb-amber-300 p-4">
+              <h3 className="text-sm font-bold text-bb-charcoal-800 mb-2">Daily Totals</h3>
+              <div className="space-y-2">
                 <div className="flex justify-between items-center">
                   <span className="text-xs text-bb-charcoal-600">Protected Time</span>
-                  <span className="text-lg font-bold text-bb-amber-600">{totalProtectedHours}hrs</span>
+                  <span className="text-base font-bold text-bb-amber-600">{totalProtectedHours}hrs</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-xs text-bb-charcoal-600">Target Dials</span>
-                  <span className="text-lg font-bold text-bb-amber-600">{totalDials}+</span>
+                  <span className="text-base font-bold text-bb-amber-600">{totalDials}+</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-xs text-bb-charcoal-600">Est. Conversations</span>
-                  <span className="text-lg font-bold text-bb-forest-600">8-10</span>
+                  <span className="text-base font-bold text-bb-forest-600">8-10</span>
                 </div>
               </div>
             </div>
 
             {/* Protected Time Rules */}
-            <div className="bg-white rounded-xl border-2 border-bb-slate-200 p-md">
-              <h3 className="text-sm font-bold text-bb-charcoal-800 mb-sm">Protected Time Rules</h3>
-              <ul className="space-y-xs">
+            <div className="bg-white rounded-xl border-2 border-bb-slate-200 p-4">
+              <h3 className="text-sm font-bold text-bb-charcoal-800 mb-2">Protected Time Rules</h3>
+              <ul className="space-y-1">
                 {protectedRules.map((rule, idx) => (
-                  <li key={idx} className="text-xs text-bb-charcoal-600 flex items-start gap-xs">
+                  <li key={idx} className="text-xs text-bb-charcoal-600 flex items-start gap-1">
                     <span className="text-bb-amber-600 font-bold">•</span>
                     {rule}
                   </li>
@@ -113,18 +113,18 @@ export default function Slide26_ProtectedCalling() {
         </div>
 
         {/* Why This Matters */}
-        <motion.div variants={itemVariants} className="bg-gradient-to-br from-bb-charcoal-700 to-bb-charcoal-800 rounded-xl p-md shadow-lg text-white">
-          <div className="grid grid-cols-3 gap-md text-center">
+        <motion.div variants={itemVariants} className="bg-gradient-to-br from-bb-charcoal-700 to-bb-charcoal-800 rounded-xl p-4 shadow-lg text-white">
+          <div className="grid grid-cols-3 gap-4 text-center">
             <div>
-              <p className="text-2xl font-bold text-bb-amber-300">{totalProtectedHours}hrs</p>
+              <p className="text-xl font-bold text-bb-amber-300">{totalProtectedHours}hrs</p>
               <p className="text-xs text-bb-slate-300">Protected daily</p>
             </div>
             <div>
-              <p className="text-2xl font-bold text-white">{totalDials}+ dials</p>
+              <p className="text-xl font-bold text-white">{totalDials}+ dials</p>
               <p className="text-xs text-bb-slate-300">Minimum daily</p>
             </div>
             <div>
-              <p className="text-2xl font-bold text-bb-forest-300">200+/week</p>
+              <p className="text-xl font-bold text-bb-forest-300">200+/week</p>
               <p className="text-xs text-bb-slate-300">Weekly target</p>
             </div>
           </div>
