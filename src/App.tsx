@@ -50,6 +50,7 @@ import Slide33_HandoffProtocol from './components/slides/Slide33_HandoffProtocol
 // ==========================================
 import Slide_LeadershipCommits from './components/slides/Slide_LeadershipCommits'
 import Slide26_LeadGenerationStrategy from './components/slides/Slide26_LeadGenerationStrategy'
+import Slide_TargetVerticalsIntro from './components/slides/Slide_TargetVerticalsIntro'
 import Slide11_NAICSBuildingProducts from './components/slides/Slide11_NAICSBuildingProducts'
 import Slide12_NAICSMetalFabrication from './components/slides/Slide12_NAICSMetalFabrication'
 import Slide13_NAICSPlasticsPackaging from './components/slides/Slide13_NAICSPlasticsPackaging'
@@ -127,6 +128,7 @@ const slides = [
   // ==========================================
   Slide_LeadershipCommits,
   Slide26_LeadGenerationStrategy,
+  Slide_TargetVerticalsIntro,
   Slide11_NAICSBuildingProducts,
   Slide12_NAICSMetalFabrication,
   Slide13_NAICSPlasticsPackaging,

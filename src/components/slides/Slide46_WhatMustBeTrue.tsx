@@ -35,7 +35,7 @@ const assumptions = [
   {
     id: 4,
     category: 'Operations',
-    statement: 'Patrick executes with discipline',
+    statement: 'Sales activity stays consistent',
     detail: 'Protected calling time is protected. 200+ dials/week happens. Conversion rates hold',
     status: 'dependent',
     confidence: 70,
