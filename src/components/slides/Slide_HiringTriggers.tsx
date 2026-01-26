@@ -69,7 +69,10 @@ export default function Slide_HiringTriggers() {
                       <p className={`text-xs font-semibold ${colors.text}`}>{hire.timeline}</p>
                     </div>
                   </div>
-                  <span className="text-sm font-bold text-bb-charcoal-700 bg-white px-sm py-xs rounded">{hire.cost}</span>
+                  <div className="text-center bg-white px-sm py-xs rounded">
+                    <p className="text-[10px] text-bb-charcoal-500 uppercase">Cost</p>
+                    <p className="text-sm font-bold text-bb-charcoal-700">{hire.cost}</p>
+                  </div>
                 </div>
 
                 <div className="space-y-xs">
