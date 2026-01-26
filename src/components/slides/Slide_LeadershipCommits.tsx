@@ -9,39 +9,39 @@ const itemVariants = {
 // Updated leadership roles per user feedback
 const leadershipRoles = [
   {
-    name: 'Chris',
-    role: 'Sales Coach & Advisor',
-    color: 'bb-steel',
-    focus: 'Build a sales team focused on growth',
+    name: 'Jason',
+    role: 'President',
+    color: 'bb-amber',
+    focus: 'Strategy & Systems',
     commitments: [
-      'Provide guidance and best practices',
-      'Be a sounding board for sales strategy',
-      'Coach Patrick on deals and techniques',
-      'Help build repeatable sales processes',
+      'Strategy & critical thinking',
+      'Accounting & financial oversight',
+      'Technology & systems integration',
+      'KPI management & reporting',
+    ],
+  },
+  {
+    name: 'Chris',
+    role: 'Sales Advisor',
+    color: 'bb-steel',
+    focus: 'Sales Growth & Coaching',
+    commitments: [
+      'Weekly 1:1 coaching with Patrick',
+      'Sales process refinement',
+      'Sales growth strategy',
+      'Social media & brand building',
     ],
   },
   {
     name: 'Vin',
-    role: 'Operations Lead',
+    role: 'Operations Advisor',
     color: 'bb-forest',
-    focus: 'Efficient, systematic operations',
+    focus: 'Ops Oversight & Carrier Growth',
     commitments: [
-      'Ensure operations run efficiently',
-      'Build systems that scale',
-      'Support David in carrier strategy',
-      'Initiate ops hire before David drowns',
-    ],
-  },
-  {
-    name: 'Jason',
-    role: 'President',
-    color: 'bb-amber',
-    focus: 'Strategy, tech, and accounting',
-    commitments: [
-      'Technology guidance and decisions',
-      'Big picture strategy direction',
-      'Accounting and financial support',
-      'Capital available when triggers met',
+      'Weekly call with David on progress',
+      'Carrier network growth strategy',
+      'Margin monitoring & optimization',
+      'Ensuring ops runs efficiently',
     ],
   },
 ]
@@ -123,22 +123,22 @@ export default function Slide_LeadershipCommits() {
           </div>
         </motion.div>
 
-        {/* The Big Promise - No orange background */}
-        <motion.div variants={itemVariants} className="bg-gradient-to-br from-bb-charcoal-700 to-bb-charcoal-800 rounded-xl p-md shadow-lg">
-          <div className="text-center text-white">
-            <h3 className="text-sm font-bold mb-sm">Our Core Promise</h3>
+        {/* The Big Promise */}
+        <motion.div variants={itemVariants} className="bg-gradient-to-br from-bb-forest-600 to-bb-forest-700 rounded-xl p-md shadow-lg">
+          <div className="text-center">
+            <h3 className="text-base font-bold mb-sm text-white">Our Core Promise</h3>
             <div className="grid grid-cols-3 gap-md">
-              <div className="p-sm bg-white/10 rounded-lg">
-                <p className="font-bold text-sm mb-xs">Protected Time</p>
-                <p className="text-xs text-white/90">Patrick stays on sales during protected hours</p>
+              <div className="p-sm bg-white/20 rounded-lg">
+                <p className="font-bold text-sm mb-xs text-white">Protected Time</p>
+                <p className="text-xs text-bb-forest-100">Patrick stays on sales during protected hours</p>
               </div>
-              <div className="p-sm bg-white/10 rounded-lg">
-                <p className="font-bold text-sm mb-xs">Proactive Support</p>
-                <p className="text-xs text-white/90">We hire help BEFORE you're drowning</p>
+              <div className="p-sm bg-white/20 rounded-lg">
+                <p className="font-bold text-sm mb-xs text-white">Proactive Support</p>
+                <p className="text-xs text-bb-forest-100">We hire help BEFORE you're drowning</p>
               </div>
-              <div className="p-sm bg-white/10 rounded-lg">
-                <p className="font-bold text-sm mb-xs">We Adapt Together</p>
-                <p className="text-xs text-white/90">If data says pivot, we pivot</p>
+              <div className="p-sm bg-white/20 rounded-lg">
+                <p className="font-bold text-sm mb-xs text-white">We Adapt Together</p>
+                <p className="text-xs text-bb-forest-100">If data says pivot, we pivot</p>
               </div>
             </div>
           </div>

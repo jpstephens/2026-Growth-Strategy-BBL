@@ -10,36 +10,36 @@ const teamMembers = [
   {
     name: 'Jason',
     role: 'President',
-    focus: 'Strategy & Capital',
+    focus: 'Strategy & Systems',
     responsibilities: [
-      'Technology decisions & tool support',
-      'Capital allocation for hiring',
-      'Strategic decisions within 48 hours',
-      'Major account pricing authority',
+      'Strategy & critical thinking',
+      'Accounting & financial oversight',
+      'Technology & systems integration',
+      'KPI management & reporting',
     ],
     color: 'charcoal',
   },
   {
     name: 'Chris',
-    role: 'Sales Lead',
-    focus: 'Sales Strategy & Coaching',
+    role: 'Sales Advisor',
+    focus: 'Sales Growth & Coaching',
     responsibilities: [
       'Weekly 1:1 coaching with Patrick',
-      'Deal support on any call within 2 hours',
-      'Joint calls on deals over $500/mo margin',
-      'Sales process and script refinement',
+      'Sales process refinement',
+      'Sales growth strategy',
+      'Social media & brand building',
     ],
     color: 'amber',
   },
   {
     name: 'Vin',
-    role: 'Operations Lead',
-    focus: 'Ops Strategy & David Support',
+    role: 'Operations Advisor',
+    focus: 'Ops Oversight & Carrier Growth',
     responsibilities: [
-      'Daily 15-min sync with David',
-      'Escalation response within 1 hour',
-      'Initiate ops hire BEFORE 120 loads/mo',
-      'Carrier strategy and partnerships',
+      'Weekly call with David on progress',
+      'Carrier network growth strategy',
+      'Margin monitoring & optimization',
+      'Ensuring ops runs efficiently',
     ],
     color: 'steel',
   },
@@ -171,10 +171,12 @@ export default function Slide09_TeamStructure() {
         </motion.div>
 
         {/* Key Principle */}
-        <motion.div variants={itemVariants} className="bg-gradient-to-br from-bb-charcoal-700 to-bb-charcoal-800 rounded-xl p-md shadow-lg text-white">
-          <p className="text-sm text-center">
-            <span className="font-bold text-bb-amber-300">The Principle:</span> Patrick sells. David executes. Leadership supports.
-            <span className="text-bb-steel-300"> Everyone knows their lane.</span>
+        <motion.div variants={itemVariants} className="bg-gradient-to-br from-bb-forest-600 to-bb-forest-700 rounded-xl p-md shadow-lg">
+          <p className="text-base text-center text-white">
+            <span className="font-bold text-bb-amber-200">The Principle:</span> Patrick sells. David executes. Leadership supports.
+          </p>
+          <p className="text-sm text-center text-bb-forest-100 mt-xs">
+            Everyone knows their lane.
           </p>
         </motion.div>
       </div>
