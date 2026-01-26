@@ -1,5 +1,5 @@
 import { motion, Variants } from 'framer-motion'
-import { ReactNode } from 'react'
+import { ReactNode, useEffect, useRef, useState } from 'react'
 
 interface SlideProps {
   children: ReactNode
@@ -37,26 +37,67 @@ const itemVariants: Variants = {
 }
 
 export default function Slide({ children, className = '', variant = 'default' }: SlideProps) {
+  const containerRef = useRef<HTMLDivElement>(null)
+  const contentRef = useRef<HTMLDivElement>(null)
+  const [scale, setScale] = useState(1)
+
   const backgroundVariants = {
     default: 'bg-white',
     dark: 'bg-bb-charcoal-800',
     gradient: 'bg-gradient-to-br from-bb-slate-50 to-white',
   }
 
+  // Calculate scale to fit content in viewport
+  useEffect(() => {
+    const calculateScale = () => {
+      if (!containerRef.current || !contentRef.current) return
+
+      const container = containerRef.current
+      const content = contentRef.current
+
+      // Get available space (viewport minus padding)
+      const availableWidth = container.clientWidth
+      const availableHeight = container.clientHeight
+
+      // Get content's natural size (at scale 1)
+      content.style.transform = 'scale(1)'
+      const contentWidth = content.scrollWidth
+      const contentHeight = content.scrollHeight
+
+      // Calculate scale needed to fit
+      const scaleX = availableWidth / contentWidth
+      const scaleY = availableHeight / contentHeight
+      const newScale = Math.min(scaleX, scaleY, 1) // Never scale up, only down
+
+      setScale(newScale * 0.95) // 95% to add some breathing room
+    }
+
+    calculateScale()
+    window.addEventListener('resize', calculateScale)
+
+    // Recalculate after fonts load
+    document.fonts.ready.then(calculateScale)
+
+    return () => window.removeEventListener('resize', calculateScale)
+  }, [children])
+
   return (
-    <div className={`
-      w-full h-screen
-      flex flex-col justify-center items-center
-      px-[3vw] py-[2vh]
-      ${backgroundVariants[variant]}
-      overflow-hidden
-      ${className}
-    `}>
+    <div
+      ref={containerRef}
+      className={`
+        w-full h-screen
+        flex flex-col justify-center items-center
+        p-4
+        ${backgroundVariants[variant]}
+        overflow-hidden
+        ${className}
+      `}
+    >
       <motion.div
-        className="w-full max-w-[94vw] max-h-[94vh] mx-auto flex flex-col justify-center"
+        ref={contentRef}
+        className="w-full max-w-6xl origin-center"
         style={{
-          // Scale content to fit viewport if needed
-          fontSize: 'clamp(10px, 1.1vh + 0.5vw, 16px)'
+          transform: `scale(${scale})`,
         }}
         variants={containerVariants}
         initial="hidden"
