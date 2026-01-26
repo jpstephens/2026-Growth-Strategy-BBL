@@ -1,164 +1,88 @@
 import Slide from '../layout/Slide'
 
 export default function Slide39_FourPillarsReview() {
+  const pillars = [
+    {
+      name: 'Sales',
+      color: 'bb-amber',
+      icon: '💼',
+      items: ['40+ dials/day per rep', '200+ dials/week', '4-5 new customers/month', 'Precise funnel tracking'],
+      goal: '12+ customers/month with 3-4 reps',
+    },
+    {
+      name: 'Operations',
+      color: 'bb-forest',
+      icon: '⚙️',
+      items: ['>95% on-time pickup/delivery', '<2hr critical issue resolution', 'Direct carrier network >50%', 'Carrier tier system'],
+      goal: 'Handle 600+ monthly loads',
+    },
+    {
+      name: 'Team',
+      color: 'bb-steel',
+      icon: '👥',
+      items: ['Start: 5 people (current)', 'Add Rep #2 in Q2', 'Add Ops Coordinator Q2-Q3', 'Add Rep #3 in Q3'],
+      goal: '8-10 people by year end',
+    },
+    {
+      name: 'Systems',
+      color: 'bb-charcoal',
+      icon: '📊',
+      items: ['HubSpot pipeline tracking', 'Alvys load management', 'KPI dashboard (monthly)', 'Weekly + monthly reviews'],
+      goal: 'Full visibility into business health',
+    },
+  ]
+
+  const colorMap: Record<string, { bg: string; border: string; text: string; light: string }> = {
+    'bb-amber': { bg: 'bg-bb-amber-500', border: 'border-bb-amber-300', text: 'text-bb-amber-700', light: 'bg-bb-amber-50' },
+    'bb-forest': { bg: 'bg-bb-forest-500', border: 'border-bb-forest-300', text: 'text-bb-forest-700', light: 'bg-bb-forest-50' },
+    'bb-steel': { bg: 'bg-bb-steel-500', border: 'border-bb-steel-300', text: 'text-bb-steel-700', light: 'bg-bb-steel-50' },
+    'bb-charcoal': { bg: 'bg-bb-charcoal-500', border: 'border-bb-charcoal-300', text: 'text-bb-charcoal-700', light: 'bg-bb-charcoal-50' },
+  }
+
   return (
     <Slide variant="gradient">
-      <div className="w-full max-w-7xl space-y-3xl">
+      <div className="w-full max-w-6xl space-y-md">
         {/* Title */}
-        <div className="text-center mb-lg">
-          <h1 className="font-display text-display font-bold text-bb-navy-900 mb-md">
+        <div className="text-center">
+          <h1 className="font-display text-display font-bold text-bb-charcoal-800 mb-sm">
             Four Pillars of Growth
           </h1>
-          <div className="w-32 h-1.5 bg-gradient-to-r from-bb-electric-500 via-bb-sunset-500 to-bb-emerald-500 mx-auto rounded-full" />
+          <div className="w-32 h-1.5 bg-gradient-to-r from-bb-amber-500 via-bb-steel-500 to-bb-forest-500 mx-auto rounded-full" />
         </div>
 
-        {/* Four Pillar Grid */}
-        <div className="grid grid-cols-2 gap-2xl">
-          {/* Sales - Electric */}
-          <div className="rounded-2xl border-2 border-bb-electric-400 bg-gradient-to-br from-bb-electric-50 to-white p-2xl shadow-lg hover:shadow-xl transition-all">
-            <div className="flex items-center gap-md mb-lg">
-              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-bb-electric-500 to-bb-electric-600 flex items-center justify-center text-white text-2xl">
-                💼
+        {/* Four Pillar Grid - 2x2 compact */}
+        <div className="grid grid-cols-2 gap-md">
+          {pillars.map((pillar, idx) => {
+            const colors = colorMap[pillar.color]
+            return (
+              <div key={idx} className={`rounded-xl border-2 ${colors.border} ${colors.light} p-md shadow-sm`}>
+                <div className="flex items-center gap-sm mb-sm">
+                  <div className={`w-8 h-8 rounded-lg ${colors.bg} flex items-center justify-center text-white text-base`}>
+                    {pillar.icon}
+                  </div>
+                  <h3 className={`text-base font-bold ${colors.text}`}>{pillar.name}</h3>
+                </div>
+                <ul className="space-y-xs mb-sm">
+                  {pillar.items.map((item, i) => (
+                    <li key={i} className="flex items-start gap-xs">
+                      <span className={`${colors.text} font-bold text-xs mt-0.5`}>•</span>
+                      <span className="text-xs text-bb-charcoal-700">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="pt-sm border-t border-bb-slate-200">
+                  <p className={`text-xs font-bold ${colors.text}`}>Goal: {pillar.goal}</p>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold text-bb-electric-700">Sales</h3>
-            </div>
-            <ul className="space-y-sm mb-lg text-bb-slate-700">
-              <li className="flex items-start">
-                <span className="text-bb-electric-500 font-bold mr-md">•</span>
-                <span>40+ dials/day per rep</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-bb-electric-500 font-bold mr-md">•</span>
-                <span>200+ dials/week target</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-bb-electric-500 font-bold mr-md">•</span>
-                <span>4-5 new customers/month</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-bb-electric-500 font-bold mr-md">•</span>
-                <span>Precise funnel tracking</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-bb-electric-500 font-bold mr-md">•</span>
-                <span>Protected calling blocks</span>
-              </li>
-            </ul>
-            <div className="pt-lg border-t border-bb-electric-200">
-              <p className="text-sm font-bold text-bb-electric-700">Goal: 12+ customers/month with 3-4 reps</p>
-            </div>
-          </div>
-
-          {/* Operations - Burgundy */}
-          <div className="rounded-2xl border-2 border-bb-burgundy-400 bg-gradient-to-br from-bb-burgundy-50 to-white p-2xl shadow-lg hover:shadow-xl transition-all">
-            <div className="flex items-center gap-md mb-lg">
-              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-bb-burgundy-500 to-bb-burgundy-600 flex items-center justify-center text-white text-2xl">
-                ⚙️
-              </div>
-              <h3 className="text-2xl font-bold text-bb-burgundy-700">Operations</h3>
-            </div>
-            <ul className="space-y-sm mb-lg text-bb-slate-700">
-              <li className="flex items-start">
-                <span className="text-bb-burgundy-500 font-bold mr-md">•</span>
-                <span>{'>'}95% on-time pickup/delivery</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-bb-burgundy-500 font-bold mr-md">•</span>
-                <span>{'<'}2hr critical issue resolution</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-bb-burgundy-500 font-bold mr-md">•</span>
-                <span>Direct carrier network {'>'}50%</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-bb-burgundy-500 font-bold mr-md">•</span>
-                <span>Carrier tier system</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-bb-burgundy-500 font-bold mr-md">•</span>
-                <span>Clear escalation paths</span>
-              </li>
-            </ul>
-            <div className="pt-lg border-t border-bb-burgundy-200">
-              <p className="text-sm font-bold text-bb-burgundy-700">Goal: Handle 600+ monthly loads with David + support</p>
-            </div>
-          </div>
-
-          {/* Team - Sunset */}
-          <div className="rounded-2xl border-2 border-bb-sunset-400 bg-gradient-to-br from-bb-sunset-50 to-white p-2xl shadow-lg hover:shadow-xl transition-all">
-            <div className="flex items-center gap-md mb-lg">
-              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-bb-sunset-500 to-bb-sunset-600 flex items-center justify-center text-white text-2xl">
-                👥
-              </div>
-              <h3 className="text-2xl font-bold text-bb-sunset-700">Team</h3>
-            </div>
-            <ul className="space-y-sm mb-lg text-bb-slate-700">
-              <li className="flex items-start">
-                <span className="text-bb-sunset-500 font-bold mr-md">•</span>
-                <span>Start: 5 people (current)</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-bb-sunset-500 font-bold mr-md">•</span>
-                <span>Add Rep #2 in Q2</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-bb-sunset-500 font-bold mr-md">•</span>
-                <span>Add Ops Coordinator Q2-Q3</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-bb-sunset-500 font-bold mr-md">•</span>
-                <span>Add Rep #3 in Q3</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-bb-sunset-500 font-bold mr-md">•</span>
-                <span>Performance-triggered hiring</span>
-              </li>
-            </ul>
-            <div className="pt-lg border-t border-bb-sunset-200">
-              <p className="text-sm font-bold text-bb-sunset-700">Goal: 8-10 people by year end</p>
-            </div>
-          </div>
-
-          {/* Systems - Emerald */}
-          <div className="rounded-2xl border-2 border-bb-emerald-400 bg-gradient-to-br from-bb-emerald-50 to-white p-2xl shadow-lg hover:shadow-xl transition-all">
-            <div className="flex items-center gap-md mb-lg">
-              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-bb-emerald-500 to-bb-emerald-600 flex items-center justify-center text-white text-2xl">
-                📊
-              </div>
-              <h3 className="text-2xl font-bold text-bb-emerald-700">Systems</h3>
-            </div>
-            <ul className="space-y-sm mb-lg text-bb-slate-700">
-              <li className="flex items-start">
-                <span className="text-bb-emerald-500 font-bold mr-md">•</span>
-                <span>HubSpot pipeline tracking</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-bb-emerald-500 font-bold mr-md">•</span>
-                <span>Alvys load management</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-bb-emerald-500 font-bold mr-md">•</span>
-                <span>KPI dashboard (monthly)</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-bb-emerald-500 font-bold mr-md">•</span>
-                <span>Carrier tagging system</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-bb-emerald-500 font-bold mr-md">•</span>
-                <span>Weekly + monthly reviews</span>
-              </li>
-            </ul>
-            <div className="pt-lg border-t border-bb-emerald-200">
-              <p className="text-sm font-bold text-bb-emerald-700">Goal: Full visibility into business health</p>
-            </div>
-          </div>
+            )
+          })}
         </div>
 
         {/* Interconnection Message */}
-        <div className="bg-gradient-to-r from-bb-navy-600 to-bb-navy-700 rounded-2xl p-2xl shadow-xl border-2 border-bb-navy-500 text-white text-center">
-          <p className="text-lg leading-relaxed">
-            These four pillars are interconnected. <span className="font-bold">Strong sales needs strong operations.</span> Strong operations needs strong team. <span className="font-bold">Everything needs visibility through systems.</span>
+        <div className="bg-gradient-to-br from-bb-forest-600 to-bb-forest-700 rounded-xl p-md shadow-lg text-center">
+          <p className="text-base text-white">
+            These four pillars are interconnected. <span className="font-bold text-bb-amber-200">Strong sales needs strong operations.</span>{' '}
+            Strong operations needs strong team. <span className="font-bold text-bb-amber-200">Everything needs visibility through systems.</span>
           </p>
         </div>
       </div>

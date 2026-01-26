@@ -11,11 +11,11 @@ const itemVariants = {
 export default function Slide36_EscalationPaths() {
   return (
     <Slide variant="gradient">
-      <div className="w-full max-w-6xl space-y-xl">
+      <div className="w-full max-w-6xl space-y-md">
         <motion.div variants={itemVariants} className="text-center">
-          <h2 className="text-display font-display font-bold text-bb-charcoal-800 mb-md">Issue Escalation</h2>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-bb-steel-500 to-bb-amber-500 mx-auto rounded-full mb-md" />
-          <p className="text-lg text-bb-charcoal-600">Clear decision authority. Fast resolution.</p>
+          <h2 className="text-display font-display font-bold text-bb-charcoal-800 mb-sm">Issue Escalation</h2>
+          <div className="w-24 h-1.5 bg-gradient-to-r from-bb-steel-500 to-bb-amber-500 mx-auto rounded-full mb-sm" />
+          <p className="text-base text-bb-charcoal-600">Clear decision authority. Fast resolution.</p>
         </motion.div>
 
         <motion.div variants={itemVariants} className="overflow-x-auto rounded-xl border border-bb-slate-200">

@@ -1,182 +1,122 @@
 import Slide from '../layout/Slide'
-import MetricCardEnhanced from '../content/MetricCardEnhanced'
-import { businessKPIs } from '../../data/kpis'
 
 export default function Slide32_BusinessKPIs() {
-  // Hero KPIs (Revenue & Profit)
-  const heroKPIs = businessKPIs.filter(k =>
-    k.metric === 'Monthly Gross Margin' || k.metric === 'Monthly Net Profit'
-  )
-  // Growth KPIs
-  const growthKPIs = businessKPIs.filter(k =>
-    k.metric === 'Active Customers' || k.metric === 'Average Loads per Customer' || k.metric === 'Customer Churn Rate'
-  )
-  // Risk KPIs
-  const riskKPIs = businessKPIs.filter(k =>
-    k.metric === 'Customer Concentration'
-  )
-
   return (
     <Slide variant="gradient">
-      <div className="w-full max-w-7xl space-y-2xl">
+      <div className="w-full max-w-6xl space-y-md">
         {/* Title */}
         <div className="text-center">
-          <h2 className="font-display text-display font-bold text-bb-charcoal-900 mb-md">Business KPIs</h2>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-bb-charcoal-500 to-bb-forest-500 mx-auto rounded-full mb-md" />
-          <p className="text-xl text-bb-slate-600">Revenue, profit, growth, and sustainability.</p>
+          <h2 className="font-display text-display font-bold text-bb-charcoal-800 mb-sm">Business KPIs</h2>
+          <div className="w-24 h-1.5 bg-gradient-to-r from-bb-charcoal-500 to-bb-forest-500 mx-auto rounded-full mb-sm" />
+          <p className="text-base text-bb-charcoal-600">Revenue, profit, growth, and sustainability.</p>
         </div>
 
-        {/* Hero KPIs (Revenue & Profit) */}
-        <div>
-          <h3 className="text-sm font-semibold text-bb-forest-600 uppercase tracking-wide mb-lg flex items-center gap-sm">
-            <div className="w-3 h-3 bg-bb-forest-500 rounded-full"></div>
-            Financial Performance
-          </h3>
-          <div className="grid grid-cols-2 gap-2xl">
-            {heroKPIs.map((kpi, idx) => (
-              <MetricCardEnhanced
-                key={idx}
-                label={kpi.metric}
-                value={kpi.target}
-                size="lg"
-                color="emerald"
-                owner={kpi.owner}
-                frequency={kpi.frequency}
-                icon={idx === 0 ? <span>$</span> : <span>%</span>}
-              />
-            ))}
+        {/* KPI Grid - 2 rows */}
+        <div className="grid grid-cols-2 gap-md">
+          {/* Financial Performance */}
+          <div className="bg-gradient-to-br from-bb-forest-50 to-white rounded-xl border-2 border-bb-forest-300 p-md">
+            <div className="flex items-center gap-sm mb-sm">
+              <div className="w-3 h-3 bg-bb-forest-500 rounded-full"></div>
+              <h3 className="text-sm font-bold text-bb-forest-700">Financial Performance</h3>
+            </div>
+            <div className="grid grid-cols-2 gap-sm">
+              <div className="text-center p-sm bg-white rounded-lg border border-bb-forest-200">
+                <p className="text-2xl font-bold text-bb-forest-600">$100K</p>
+                <p className="text-xs text-bb-charcoal-700 font-semibold">Monthly Gross Margin</p>
+                <p className="text-xs text-bb-charcoal-500">By Dec 2026</p>
+              </div>
+              <div className="text-center p-sm bg-white rounded-lg border border-bb-forest-200">
+                <p className="text-2xl font-bold text-bb-forest-600">$75K+</p>
+                <p className="text-xs text-bb-charcoal-700 font-semibold">Monthly Net Profit</p>
+                <p className="text-xs text-bb-charcoal-500">By Dec 2026</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Growth Metrics */}
+          <div className="bg-gradient-to-br from-bb-steel-50 to-white rounded-xl border-2 border-bb-steel-300 p-md">
+            <div className="flex items-center gap-sm mb-sm">
+              <div className="w-3 h-3 bg-bb-steel-500 rounded-full"></div>
+              <h3 className="text-sm font-bold text-bb-steel-700">Growth Metrics</h3>
+            </div>
+            <div className="grid grid-cols-3 gap-sm">
+              <div className="text-center p-sm bg-white rounded-lg border border-bb-steel-200">
+                <p className="text-xl font-bold text-bb-steel-600">65-70</p>
+                <p className="text-xs text-bb-charcoal-700 font-semibold">Customers</p>
+              </div>
+              <div className="text-center p-sm bg-white rounded-lg border border-bb-steel-200">
+                <p className="text-xl font-bold text-bb-steel-600">4+</p>
+                <p className="text-xs text-bb-charcoal-700 font-semibold">Loads/Customer</p>
+              </div>
+              <div className="text-center p-sm bg-white rounded-lg border border-bb-steel-200">
+                <p className="text-xl font-bold text-bb-steel-600">&lt;15%</p>
+                <p className="text-xs text-bb-charcoal-700 font-semibold">Churn Rate</p>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Growth KPIs */}
-        <div>
-          <h3 className="text-sm font-semibold text-bb-steel-600 uppercase tracking-wide mb-lg flex items-center gap-sm">
-            <div className="w-3 h-3 bg-bb-steel-500 rounded-full"></div>
-            Growth Metrics
-          </h3>
-          <div className="grid grid-cols-3 gap-lg">
-            {growthKPIs.map((kpi, idx) => (
-              <MetricCardEnhanced
-                key={idx}
-                label={kpi.metric}
-                value={kpi.target}
-                size="sm"
-                color={idx === 0 ? 'electric' : idx === 1 ? 'sunset' : 'navy'}
-                owner={kpi.owner}
-                frequency={kpi.frequency}
-              />
-            ))}
-          </div>
-        </div>
-
-        {/* Risk KPIs */}
-        <div>
-          <h3 className="text-sm font-semibold text-bb-amber-600 uppercase tracking-wide mb-lg flex items-center gap-sm">
-            <div className="w-3 h-3 bg-bb-amber-500 rounded-full"></div>
-            Risk Management
-          </h3>
-          <div className="grid grid-cols-2 gap-lg">
-            {riskKPIs.map((kpi, idx) => (
-              <MetricCardEnhanced
-                key={idx}
-                label={kpi.metric}
-                value={kpi.target}
-                size="md"
-                color="sunset"
-                owner={kpi.owner}
-                frequency={kpi.frequency}
-              />
-            ))}
-            {/* Add context card for risk */}
-            <div className="bg-gradient-to-br from-bb-amber-50 to-white rounded-2xl p-2xl border-2 border-bb-amber-300 shadow-md">
-              <p className="text-sm font-semibold text-bb-amber-700 mb-sm">Why This Matters</p>
-              <p className="text-sm text-bb-slate-700">
-                Customer concentration above 15% creates vulnerability. If one large customer leaves, it can devastate monthly numbers. Diversification protects the business.
+        {/* Risk & Tracking */}
+        <div className="grid grid-cols-2 gap-md">
+          {/* Risk Management */}
+          <div className="bg-gradient-to-br from-bb-amber-50 to-white rounded-xl border-2 border-bb-amber-300 p-md">
+            <div className="flex items-center gap-sm mb-sm">
+              <div className="w-3 h-3 bg-bb-amber-500 rounded-full"></div>
+              <h3 className="text-sm font-bold text-bb-amber-700">Risk Management</h3>
+            </div>
+            <div className="flex items-center gap-md">
+              <div className="text-center p-sm bg-white rounded-lg border border-bb-amber-200 flex-1">
+                <p className="text-xl font-bold text-bb-amber-600">&lt;12%</p>
+                <p className="text-xs text-bb-charcoal-700 font-semibold">Customer Concentration</p>
+              </div>
+              <p className="text-xs text-bb-charcoal-600 flex-1">
+                No single customer should exceed 12% of revenue. Diversification protects the business.
               </p>
             </div>
           </div>
-        </div>
 
-        {/* Why These Metrics Matter */}
-        <div className="bg-gradient-to-r from-bb-forest-600 to-bb-forest-700 rounded-2xl p-xl shadow-lg">
-          <h4 className="text-lg font-bold text-white mb-lg">Why These Metrics Matter</h4>
-          <div className="grid grid-cols-3 gap-xl">
-            <div>
-              <p className="text-sm font-semibold text-bb-amber-200 mb-xs">Gross Margin</p>
-              <p className="text-sm text-bb-forest-100">The core health metric. Growing margin = growing business value.</p>
-            </div>
-            <div>
-              <p className="text-sm font-semibold text-bb-amber-200 mb-xs">Active Customers</p>
-              <p className="text-sm text-bb-forest-100">The foundation. More customers = more predictable revenue streams.</p>
-            </div>
-            <div>
-              <p className="text-sm font-semibold text-bb-amber-200 mb-xs">Churn Rate</p>
-              <p className="text-sm text-bb-forest-100">Below 15% means we're retaining customers and building loyalty.</p>
+          {/* Tracking */}
+          <div className="bg-white rounded-xl border-2 border-bb-slate-200 p-md shadow-sm">
+            <h3 className="text-sm font-bold text-bb-charcoal-800 mb-sm">Tracking Infrastructure</h3>
+            <div className="grid grid-cols-4 gap-xs">
+              <div className="bg-bb-slate-50 rounded-lg p-xs text-center">
+                <p className="text-xs font-semibold text-bb-charcoal-700">P&L</p>
+                <p className="text-xs text-bb-charcoal-500">Monthly</p>
+              </div>
+              <div className="bg-bb-slate-50 rounded-lg p-xs text-center">
+                <p className="text-xs font-semibold text-bb-charcoal-700">Concentration</p>
+                <p className="text-xs text-bb-charcoal-500">Monthly</p>
+              </div>
+              <div className="bg-bb-slate-50 rounded-lg p-xs text-center">
+                <p className="text-xs font-semibold text-bb-charcoal-700">Churn</p>
+                <p className="text-xs text-bb-charcoal-500">Quarterly</p>
+              </div>
+              <div className="bg-bb-slate-50 rounded-lg p-xs text-center">
+                <p className="text-xs font-semibold text-bb-charcoal-700">Dashboard</p>
+                <p className="text-xs text-bb-charcoal-500">All-hands</p>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Tracking Infrastructure */}
-        <div className="bg-gradient-to-r from-bb-slate-50 to-white rounded-2xl p-xl border-2 border-bb-slate-300 shadow-md">
-          <h4 className="text-lg font-bold text-bb-charcoal-900 mb-lg">Tracking Infrastructure</h4>
-          <div className="grid grid-cols-4 gap-lg">
-            <div className="bg-white rounded-xl p-md border border-bb-slate-200 text-center">
-              <p className="text-xs font-semibold text-bb-slate-600 uppercase mb-xs">P&L</p>
-              <p className="text-sm text-bb-slate-700">Monthly statement</p>
+        {/* Why These Matter */}
+        <div className="bg-gradient-to-br from-bb-forest-600 to-bb-forest-700 rounded-xl p-md shadow-lg">
+          <h4 className="text-sm font-bold text-white mb-sm text-center">Why These Metrics Matter</h4>
+          <div className="grid grid-cols-3 gap-md">
+            <div className="text-center">
+              <p className="text-sm font-semibold text-bb-amber-200">Gross Margin</p>
+              <p className="text-xs text-bb-forest-100">Core health metric</p>
             </div>
-            <div className="bg-white rounded-xl p-md border border-bb-slate-200 text-center">
-              <p className="text-xs font-semibold text-bb-slate-600 uppercase mb-xs">Concentration</p>
-              <p className="text-sm text-bb-slate-700">Monthly report</p>
+            <div className="text-center">
+              <p className="text-sm font-semibold text-bb-amber-200">Active Customers</p>
+              <p className="text-xs text-bb-forest-100">Predictable revenue</p>
             </div>
-            <div className="bg-white rounded-xl p-md border border-bb-slate-200 text-center">
-              <p className="text-xs font-semibold text-bb-slate-600 uppercase mb-xs">Churn</p>
-              <p className="text-sm text-bb-slate-700">Quarterly analysis</p>
-            </div>
-            <div className="bg-white rounded-xl p-md border border-bb-slate-200 text-center">
-              <p className="text-xs font-semibold text-bb-slate-600 uppercase mb-xs">All Metrics</p>
-              <p className="text-sm text-bb-slate-700">All-hands dashboard</p>
+            <div className="text-center">
+              <p className="text-sm font-semibold text-bb-amber-200">Churn Rate</p>
+              <p className="text-xs text-bb-forest-100">Customer loyalty</p>
             </div>
           </div>
         </div>
-
-        {/* Expandable Full Table */}
-        <details className="group">
-          <summary className="cursor-pointer text-bb-steel-600 font-semibold hover:text-bb-steel-700 flex items-center gap-sm">
-            <span className="group-open:rotate-90 transition-transform">&#9654;</span>
-            View Complete KPI Reference Table
-          </summary>
-          <div className="mt-lg overflow-x-auto rounded-xl border border-bb-slate-200">
-            <table className="w-full text-sm">
-              <thead className="bg-gradient-to-r from-bb-charcoal-500 to-bb-forest-500 text-white">
-                <tr>
-                  <th className="px-lg py-md text-left font-bold">Metric</th>
-                  <th className="px-lg py-md text-center font-bold">Target</th>
-                  <th className="px-lg py-md text-center font-bold">Frequency</th>
-                  <th className="px-lg py-md text-left font-bold">Measurement</th>
-                  <th className="px-lg py-md text-left font-bold">Owner</th>
-                </tr>
-              </thead>
-              <tbody>
-                {businessKPIs.map((kpi, idx) => (
-                  <tr
-                    key={idx}
-                    className={`border-t transition-colors ${idx % 2 === 0 ? 'bg-white hover:bg-bb-forest-50' : 'bg-bb-slate-50 hover:bg-bb-forest-50'}`}
-                  >
-                    <td className="px-lg py-md font-semibold text-bb-charcoal-900">{kpi.metric}</td>
-                    <td className="px-lg py-md text-center">
-                      <span className="bg-bb-forest-100 text-bb-forest-700 px-md py-xs rounded-full font-semibold text-xs">
-                        {kpi.target}
-                      </span>
-                    </td>
-                    <td className="px-lg py-md text-center text-bb-slate-700">{kpi.frequency}</td>
-                    <td className="px-lg py-md text-bb-slate-700">{kpi.how}</td>
-                    <td className="px-lg py-md text-bb-slate-700">{kpi.owner}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </details>
       </div>
     </Slide>
   )
