@@ -15,14 +15,14 @@ const goalData = [
 export default function Slide03_ExecutiveGoal() {
   return (
     <Slide variant="gradient">
-      <div className="w-full max-w-6xl space-y-xl">
+      <div className="w-full max-w-6xl space-y-md">
         <motion.div variants={itemVariants} className="text-center">
           <h2 className="text-display font-bold text-bb-charcoal-800 font-display mb-sm">The Goal</h2>
           <div className="w-24 h-1.5 bg-gradient-to-r from-bb-steel-500 to-bb-amber-500 mx-auto rounded-full mb-md" />
           <p className="text-lg text-bb-charcoal-600">By December 31, 2026</p>
         </motion.div>
 
-        <div className="grid grid-cols-2 gap-xl">
+        <div className="grid grid-cols-2 gap-lg">
           {/* Left: Key Metrics */}
           <motion.div variants={itemVariants} className="space-y-md">
             <div className="grid grid-cols-2 gap-md">

@@ -10,9 +10,9 @@ const itemVariants = {
 export default function Slide02_ExecutiveThesis() {
   return (
     <Slide variant="gradient">
-      <div className="w-full max-w-6xl space-y-2xl">
+      <div className="w-full max-w-6xl space-y-md">
         {/* Hero Title */}
-        <motion.div variants={itemVariants} className="text-center mb-lg">
+        <motion.div variants={itemVariants} className="text-center mb-sm">
           <h1 className="font-display text-display font-bold text-bb-charcoal-800 mb-md">
             You've Already Proven This Works
           </h1>
@@ -34,11 +34,11 @@ export default function Slide02_ExecutiveThesis() {
         </motion.div>
 
         {/* What We Know Works - Card Grid */}
-        <motion.div variants={itemVariants} className="bg-white rounded-2xl border-2 border-bb-slate-200 p-xl shadow-lg">
-          <h2 className="text-h2 font-display font-bold text-bb-charcoal-800 mb-lg">
+        <motion.div variants={itemVariants} className="bg-white rounded-2xl border-2 border-bb-slate-200 p-md shadow-lg">
+          <h2 className="text-h2 font-display font-bold text-bb-charcoal-800 mb-sm">
             What They Proved Works
           </h2>
-          <div className="grid grid-cols-3 gap-lg">
+          <div className="grid grid-cols-3 gap-md">
             {/* Item 1 */}
             <div className="flex items-start gap-md">
               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-bb-forest-500 to-bb-forest-600 flex items-center justify-center text-white text-lg font-bold shadow-sm shrink-0">
@@ -73,7 +73,7 @@ export default function Slide02_ExecutiveThesis() {
         </motion.div>
 
         {/* The Gap & Solution */}
-        <motion.div variants={itemVariants} className="grid grid-cols-2 gap-lg">
+        <motion.div variants={itemVariants} className="grid grid-cols-2 gap-md">
           <div className="bg-white rounded-xl p-lg border-2 border-bb-slate-200 shadow-sm">
             <div className="inline-block px-md py-xs bg-bb-slate-100 rounded-full text-bb-charcoal-700 font-bold text-xs mb-md">
               THE GAP

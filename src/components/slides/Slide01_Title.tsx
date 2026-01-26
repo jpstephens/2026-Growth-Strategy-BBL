@@ -10,9 +10,9 @@ export default function Slide01_Title() {
   return (
     <Slide variant="gradient">
       <div className="w-full max-w-6xl">
-        <div className="grid grid-cols-2 gap-2xl items-center">
+        <div className="grid grid-cols-2 gap-lg items-center">
           {/* Left: Title & Message */}
-          <motion.div variants={itemVariants} className="space-y-xl">
+          <motion.div variants={itemVariants} className="space-y-md">
             <div>
               <p className="text-lg font-semibold text-bb-steel-600 mb-sm tracking-wide uppercase">
                 BlackBridge Logistics
@@ -35,9 +35,9 @@ export default function Slide01_Title() {
           </motion.div>
 
           {/* Right: Visual Summary */}
-          <motion.div variants={itemVariants} className="bg-white rounded-2xl border-2 border-bb-slate-200 p-xl shadow-lg">
-            <div className="space-y-lg">
-              <div className="text-center p-lg bg-bb-slate-50 rounded-xl border border-bb-slate-200">
+          <motion.div variants={itemVariants} className="bg-white rounded-2xl border-2 border-bb-slate-200 p-lg shadow-lg">
+            <div className="space-y-md">
+              <div className="text-center p-md bg-bb-slate-50 rounded-xl border border-bb-slate-200">
                 <p className="text-sm text-bb-slate-600 mb-xs">January 2026 Gross Margin</p>
                 <p className="text-4xl font-display font-black text-bb-charcoal-800">$17.8K</p>
               </div>
@@ -48,7 +48,7 @@ export default function Slide01_Title() {
                 </div>
               </div>
 
-              <div className="text-center p-lg bg-gradient-to-br from-bb-forest-50 to-white rounded-xl border-2 border-bb-forest-300">
+              <div className="text-center p-md bg-gradient-to-br from-bb-forest-50 to-white rounded-xl border-2 border-bb-forest-300">
                 <p className="text-sm text-bb-forest-600 mb-xs">December 2026 Target</p>
                 <p className="text-4xl font-display font-black text-bb-forest-600">$100K</p>
               </div>

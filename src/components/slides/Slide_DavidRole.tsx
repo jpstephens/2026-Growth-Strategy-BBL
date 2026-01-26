@@ -12,7 +12,7 @@ export default function Slide_DavidRole() {
     <Slide variant="gradient">
       <div className="w-full max-w-6xl mx-auto">
         {/* Title */}
-        <motion.div variants={itemVariants} className="text-center mb-lg">
+        <motion.div variants={itemVariants} className="text-center mb-md">
           <h1 className="font-display text-display font-bold text-bb-charcoal-800 mb-sm">
             David's Role & Targets
           </h1>
@@ -23,7 +23,7 @@ export default function Slide_DavidRole() {
         </motion.div>
 
         {/* Top Row: Ownership */}
-        <div className="grid grid-cols-2 gap-lg mb-lg">
+        <div className="grid grid-cols-2 gap-lg mb-md">
           {/* What David Owns */}
           <motion.div variants={itemVariants} className="bg-white rounded-xl border-2 border-bb-steel-300 p-lg shadow-sm">
             <div className="flex items-center gap-md mb-md">

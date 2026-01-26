@@ -10,7 +10,7 @@ const itemVariants = {
 export default function Slide19_Accountability() {
   return (
     <Slide variant="gradient">
-      <div className="w-full max-w-6xl space-y-xl">
+      <div className="w-full max-w-6xl space-y-md">
         <motion.div variants={itemVariants} className="text-center">
           <h2 className="text-display font-bold font-display text-bb-charcoal-800 mb-md">Accountability Matrix</h2>
           <div className="w-24 h-1.5 bg-gradient-to-r from-bb-steel-500 to-bb-amber-500 mx-auto rounded-full mb-md" />

@@ -56,7 +56,7 @@ export default function Slide({ children, className = '', variant = 'default' }:
       `}
     >
       <motion.div
-        className="slide-content w-full max-w-[1400px] h-[75vh] flex flex-col"
+        className="slide-content w-full max-w-[1400px] h-[75vh] flex flex-col items-center justify-center"
         variants={containerVariants}
         initial="hidden"
         animate="visible"

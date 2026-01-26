@@ -36,7 +36,7 @@ const questions = [
 export default function Slide_QuestionsYouHave() {
   return (
     <Slide variant="gradient">
-      <div className="w-full max-w-6xl space-y-xl">
+      <div className="w-full max-w-6xl space-y-md">
         {/* Hero Title */}
         <motion.div variants={itemVariants} className="text-center">
           <h1 className="font-display text-display font-bold text-bb-charcoal-900 mb-md">
@@ -77,7 +77,7 @@ export default function Slide_QuestionsYouHave() {
         </div>
 
         {/* Discussion Prompt */}
-        <motion.div variants={itemVariants} className="bg-gradient-to-br from-bb-forest-600 to-bb-forest-700 rounded-2xl p-xl shadow-lg border-2 border-bb-forest-500 text-center">
+        <motion.div variants={itemVariants} className="bg-gradient-to-br from-bb-forest-600 to-bb-forest-700 rounded-2xl p-md shadow-lg border-2 border-bb-forest-500 text-center">
           <h3 className="text-xl font-bold mb-sm text-white">What Else Do You Need to Know?</h3>
           <p className="text-base text-bb-forest-100 max-w-2xl mx-auto leading-relaxed">
             This plan works best when we're all aligned. What concerns haven't we addressed? What would help you feel more confident?

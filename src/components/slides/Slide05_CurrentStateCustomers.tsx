@@ -16,7 +16,7 @@ const customerData = topCustomers.slice(0, 5).map(c => ({
 export default function Slide05_CurrentStateCustomers() {
   return (
     <Slide variant="gradient">
-      <div className="w-full max-w-6xl space-y-xl">
+      <div className="w-full max-w-6xl space-y-md">
         <motion.div variants={itemVariants} className="text-center">
           <h2 className="text-display font-display font-bold text-bb-charcoal-800 mb-sm">
             January 2026 Snapshot
@@ -25,7 +25,7 @@ export default function Slide05_CurrentStateCustomers() {
           <p className="text-lg text-bb-charcoal-600">Our starting point for the year</p>
         </motion.div>
 
-        <div className="grid grid-cols-2 gap-xl">
+        <div className="grid grid-cols-2 gap-lg">
           {/* Left: Key Metrics */}
           <motion.div variants={itemVariants} className="space-y-md">
             <div className="bg-white rounded-xl border-2 border-bb-slate-200 p-lg shadow-sm">

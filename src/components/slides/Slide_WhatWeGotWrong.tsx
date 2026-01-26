@@ -9,7 +9,7 @@ const itemVariants = {
 export default function Slide_WhatWeGotWrong() {
   return (
     <Slide variant="gradient">
-      <div className="w-full max-w-6xl space-y-xl">
+      <div className="w-full max-w-6xl space-y-md">
         {/* Hero Title */}
         <motion.div variants={itemVariants} className="text-center">
           <h1 className="font-display text-display font-bold text-bb-charcoal-800 mb-md">
@@ -22,10 +22,10 @@ export default function Slide_WhatWeGotWrong() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 gap-xl">
+        <div className="grid grid-cols-2 gap-lg">
           {/* Left: What Happened */}
-          <motion.div variants={itemVariants} className="bg-white rounded-xl p-xl border-2 border-bb-slate-200 shadow-sm">
-            <h3 className="text-lg font-bold text-bb-charcoal-800 mb-lg">What Happened</h3>
+          <motion.div variants={itemVariants} className="bg-white rounded-xl p-md border-2 border-bb-slate-200 shadow-sm">
+            <h3 className="text-lg font-bold text-bb-charcoal-800 mb-sm">What Happened</h3>
             <div className="space-y-md">
               <div className="flex items-start gap-md">
                 <div className="w-8 h-8 rounded-full bg-bb-slate-100 border border-bb-slate-300 flex items-center justify-center text-sm font-bold text-bb-charcoal-700 shrink-0">
@@ -69,9 +69,9 @@ export default function Slide_WhatWeGotWrong() {
           </motion.div>
 
           {/* Right: The Reality */}
-          <motion.div variants={itemVariants} className="bg-white rounded-xl p-xl border-2 border-bb-slate-200 shadow-sm">
-            <h3 className="text-lg font-bold text-bb-charcoal-800 mb-lg">The Reality</h3>
-            <div className="space-y-lg">
+          <motion.div variants={itemVariants} className="bg-white rounded-xl p-md border-2 border-bb-slate-200 shadow-sm">
+            <h3 className="text-lg font-bold text-bb-charcoal-800 mb-sm">The Reality</h3>
+            <div className="space-y-sm">
               <div className="bg-bb-amber-50 border-2 border-bb-amber-200 rounded-lg p-md">
                 <p className="font-semibold text-bb-amber-700 mb-xs">Sales Gets Squeezed</p>
                 <p className="text-sm text-bb-charcoal-600">
@@ -100,7 +100,7 @@ export default function Slide_WhatWeGotWrong() {
         </div>
 
         {/* What Changes */}
-        <motion.div variants={itemVariants} className="bg-gradient-to-br from-bb-forest-50 to-white rounded-xl p-xl border-2 border-bb-forest-300">
+        <motion.div variants={itemVariants} className="bg-gradient-to-br from-bb-forest-50 to-white rounded-xl p-md border-2 border-bb-forest-300">
           <h3 className="text-lg font-bold text-bb-forest-700 mb-md">What Changes Now</h3>
           <div className="grid grid-cols-3 gap-lg">
             <div className="flex items-start gap-sm">

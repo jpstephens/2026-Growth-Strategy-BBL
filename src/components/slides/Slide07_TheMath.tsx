@@ -25,7 +25,7 @@ const customerGrowthData = [
 export default function Slide07_TheMath() {
   return (
     <Slide variant="gradient">
-      <div className="w-full max-w-6xl space-y-xl">
+      <div className="w-full max-w-6xl space-y-md">
         <motion.div variants={itemVariants} className="text-center">
           <h2 className="text-display font-display font-bold text-bb-charcoal-800 mb-sm">
             The Growth Trajectory
@@ -36,9 +36,9 @@ export default function Slide07_TheMath() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-3 gap-xl">
+        <div className="grid grid-cols-3 gap-lg">
           {/* Chart */}
-          <motion.div variants={itemVariants} className="col-span-2 bg-white rounded-xl p-xl border-2 border-bb-slate-200 shadow-sm">
+          <motion.div variants={itemVariants} className="col-span-2 bg-white rounded-xl p-md border-2 border-bb-slate-200 shadow-sm">
             <h3 className="text-lg font-bold text-bb-charcoal-800 mb-md">Customer & Load Growth</h3>
             <div className="h-56">
               <ResponsiveContainer width="100%" height="100%">

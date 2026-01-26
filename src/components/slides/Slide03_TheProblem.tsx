@@ -9,9 +9,9 @@ const itemVariants = {
 export default function Slide03_TheProblem() {
   return (
     <Slide variant="gradient">
-      <div className="w-full max-w-6xl space-y-2xl">
+      <div className="w-full max-w-6xl space-y-md">
         {/* Title - Reframed */}
-        <motion.div variants={itemVariants} className="text-center mb-lg">
+        <motion.div variants={itemVariants} className="text-center mb-sm">
           <h1 className="font-display text-display font-bold text-bb-charcoal-800 mb-md">
             Two Jobs, One Person
           </h1>

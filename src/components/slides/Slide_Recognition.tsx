@@ -10,7 +10,7 @@ const itemVariants = {
 export default function Slide_Recognition() {
   return (
     <Slide variant="gradient">
-      <div className="w-full max-w-6xl space-y-xl">
+      <div className="w-full max-w-6xl space-y-md">
         {/* Hero Title */}
         <motion.div variants={itemVariants} className="text-center">
           <h1 className="font-display text-display font-bold text-bb-charcoal-800 mb-md">
@@ -23,22 +23,22 @@ export default function Slide_Recognition() {
         </motion.div>
 
         {/* The Numbers */}
-        <motion.div variants={itemVariants} className="grid grid-cols-3 gap-lg">
-          <div className="bg-white rounded-xl border-2 border-bb-forest-300 p-xl shadow-sm text-center">
+        <motion.div variants={itemVariants} className="grid grid-cols-3 gap-md">
+          <div className="bg-white rounded-xl border-2 border-bb-forest-300 p-md shadow-sm text-center">
             <p className="text-4xl font-display font-black text-bb-forest-600 mb-xs">
               {overallPerformance.loadsAnalyzed.toLocaleString()}
             </p>
             <p className="text-lg font-semibold text-bb-charcoal-800">Loads Delivered</p>
             <p className="text-sm text-bb-charcoal-600">On-time. For real customers.</p>
           </div>
-          <div className="bg-white rounded-xl border-2 border-bb-forest-300 p-xl shadow-sm text-center">
+          <div className="bg-white rounded-xl border-2 border-bb-forest-300 p-md shadow-sm text-center">
             <p className="text-4xl font-display font-black text-bb-forest-600 mb-xs">
               ${Math.round(overallPerformance.totalGrossMargin / 1000)}K
             </p>
             <p className="text-lg font-semibold text-bb-charcoal-800">Gross Margin</p>
             <p className="text-sm text-bb-charcoal-600">Real profit. Real business.</p>
           </div>
-          <div className="bg-white rounded-xl border-2 border-bb-forest-300 p-xl shadow-sm text-center">
+          <div className="bg-white rounded-xl border-2 border-bb-forest-300 p-md shadow-sm text-center">
             <p className="text-4xl font-display font-black text-bb-forest-600 mb-xs">
               ${overallPerformance.avgMarginPerLoad}
             </p>
@@ -48,10 +48,10 @@ export default function Slide_Recognition() {
         </motion.div>
 
         {/* Patrick and David's Contributions */}
-        <motion.div variants={itemVariants} className="grid grid-cols-2 gap-lg">
+        <motion.div variants={itemVariants} className="grid grid-cols-2 gap-md">
           {/* Patrick's Wins */}
-          <div className="bg-gradient-to-br from-bb-amber-50 to-white rounded-xl border-2 border-bb-amber-300 p-xl shadow-sm">
-            <div className="flex items-center gap-md mb-lg">
+          <div className="bg-gradient-to-br from-bb-amber-50 to-white rounded-xl border-2 border-bb-amber-300 p-md shadow-sm">
+            <div className="flex items-center gap-md mb-sm">
               <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-bb-amber-500 to-bb-amber-600 flex items-center justify-center text-white text-lg">
                 📞
               </div>
@@ -77,8 +77,8 @@ export default function Slide_Recognition() {
           </div>
 
           {/* David's Wins */}
-          <div className="bg-gradient-to-br from-bb-steel-50 to-white rounded-xl border-2 border-bb-steel-300 p-xl shadow-sm">
-            <div className="flex items-center gap-md mb-lg">
+          <div className="bg-gradient-to-br from-bb-steel-50 to-white rounded-xl border-2 border-bb-steel-300 p-md shadow-sm">
+            <div className="flex items-center gap-md mb-sm">
               <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-bb-steel-500 to-bb-steel-600 flex items-center justify-center text-white text-lg">
                 🚚
               </div>
@@ -105,7 +105,7 @@ export default function Slide_Recognition() {
         </motion.div>
 
         {/* Acknowledgment */}
-        <motion.div variants={itemVariants} className="bg-white rounded-2xl p-xl shadow-lg border-2 border-bb-amber-300 text-center">
+        <motion.div variants={itemVariants} className="bg-white rounded-2xl p-md shadow-lg border-2 border-bb-amber-300 text-center">
           <p className="text-lg leading-relaxed mb-sm text-bb-charcoal-800">
             <span className="font-bold">You built a real business.</span>
             {' '}$160K in margin isn't luck—it's execution.

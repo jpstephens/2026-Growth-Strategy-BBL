@@ -9,7 +9,7 @@ const itemVariants = {
 export default function Slide06_WhyIncompatible() {
   return (
     <Slide variant="gradient">
-      <div className="w-full max-w-6xl space-y-xl">
+      <div className="w-full max-w-6xl space-y-md">
         {/* Hero Title */}
         <motion.div variants={itemVariants} className="text-center">
           <h1 className="font-display text-display font-bold text-bb-charcoal-800 mb-md">
@@ -23,10 +23,10 @@ export default function Slide06_WhyIncompatible() {
         </motion.div>
 
         {/* Two Column Comparison */}
-        <div className="grid grid-cols-2 gap-xl">
+        <div className="grid grid-cols-2 gap-lg">
           {/* Operations Side */}
-          <motion.div variants={itemVariants} className="bg-white rounded-2xl p-xl shadow-sm border-2 border-bb-steel-300">
-            <div className="flex items-center gap-md mb-lg">
+          <motion.div variants={itemVariants} className="bg-white rounded-2xl p-md shadow-sm border-2 border-bb-steel-300">
+            <div className="flex items-center gap-md mb-sm">
               <div className="w-12 h-12 bg-bb-steel-100 rounded-xl flex items-center justify-center">
                 <span className="text-2xl">🚚</span>
               </div>
@@ -59,8 +59,8 @@ export default function Slide06_WhyIncompatible() {
           </motion.div>
 
           {/* Sales Side */}
-          <motion.div variants={itemVariants} className="bg-white rounded-2xl p-xl shadow-sm border-2 border-bb-amber-300">
-            <div className="flex items-center gap-md mb-lg">
+          <motion.div variants={itemVariants} className="bg-white rounded-2xl p-md shadow-sm border-2 border-bb-amber-300">
+            <div className="flex items-center gap-md mb-sm">
               <div className="w-12 h-12 bg-bb-amber-100 rounded-xl flex items-center justify-center">
                 <span className="text-2xl">📞</span>
               </div>
@@ -94,7 +94,7 @@ export default function Slide06_WhyIncompatible() {
         </div>
 
         {/* Bottom explanation */}
-        <motion.div variants={itemVariants} className="bg-gradient-to-br from-bb-forest-50 to-white rounded-xl p-xl border-2 border-bb-forest-300">
+        <motion.div variants={itemVariants} className="bg-gradient-to-br from-bb-forest-50 to-white rounded-xl p-md border-2 border-bb-forest-300">
           <p className="text-base text-bb-charcoal-700 leading-relaxed">
             <span className="font-bold text-bb-forest-700">The Opportunity:</span>
             {' '}With clear boundaries, Patrick can make 200+ calls/week.

@@ -11,7 +11,7 @@ const itemVariants = {
 export default function Slide14_NAICSAutomotiveJIT() {
   return (
     <Slide variant="gradient">
-      <div className="w-full max-w-6xl space-y-xl">
+      <div className="w-full max-w-6xl space-y-md">
         <motion.div variants={itemVariants} className="text-center">
           <h2 className="text-display font-display font-bold text-bb-charcoal-800 mb-md">Automotive JIT (20%)</h2>
           <div className="w-24 h-1.5 bg-gradient-to-r from-bb-forest-500 to-bb-steel-500 mx-auto rounded-full mb-md" />
