@@ -74,7 +74,7 @@ export default function Slide15_CustomerProfitability() {
                   <LabelList
                     dataKey="margin"
                     position="right"
-                    formatter={(value: number) => `$${value}`}
+                    formatter={(value) => `$${value}`}
                     style={{ fontSize: 12, fontWeight: 'bold', fill: '#2d3748' }}
                   />
                 </Bar>
