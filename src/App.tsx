@@ -19,7 +19,7 @@ import Slide_WhatWeGotWrong from './components/slides/Slide_WhatWeGotWrong'
 import Slide03_TheProblem from './components/slides/Slide03_TheProblem'
 import Slide06_WhyIncompatible from './components/slides/Slide06_WhyIncompatible'
 import Slide07_TheMath from './components/slides/Slide07_TheMath'
-import Slide08_DestructiveLanes from './components/slides/Slide08_DestructiveLanes'
+// Slide08_DestructiveLanes removed
 
 // ==========================================
 // ACT 3: VISION (Slides 11-15)
@@ -97,13 +97,12 @@ const slides = [
   Slide05_CurrentStateCustomers,
 
   // ==========================================
-  // ACT 2: OWNERSHIP (5 slides)
+  // ACT 2: OWNERSHIP (4 slides)
   // ==========================================
   Slide_WhatWeGotWrong,
   Slide03_TheProblem,
   Slide06_WhyIncompatible,
   Slide07_TheMath,
-  Slide08_DestructiveLanes,
 
   // ==========================================
   // ACT 3: VISION (5 slides)

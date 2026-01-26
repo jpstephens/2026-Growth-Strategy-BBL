@@ -40,22 +40,22 @@ export default function Slide({ children, className = '', variant = 'default' }:
   const backgroundVariants = {
     default: 'bg-white',
     dark: 'bg-bb-charcoal-800',
-    gradient: 'bg-gradient-to-br from-bb-slate-50 to-white',
+    gradient: 'bg-gradient-to-br from-white to-bb-slate-100',
   }
 
   return (
     <div
       className={`
-        w-full min-h-screen
-        flex flex-col items-center
-        py-8 px-4
+        slide-container
+        w-full h-screen
+        flex flex-col justify-center items-center
         ${backgroundVariants[variant]}
-        overflow-y-auto
+        overflow-hidden
         ${className}
       `}
     >
       <motion.div
-        className="w-full max-w-5xl"
+        className="slide-content w-full max-w-[96vw] max-h-[96vh] flex flex-col justify-center items-center"
         variants={containerVariants}
         initial="hidden"
         animate="visible"

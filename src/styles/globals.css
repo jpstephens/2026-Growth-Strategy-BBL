@@ -18,12 +18,13 @@
   }
 
   html {
+    overflow: hidden;
     height: 100%;
     font-size: clamp(12px, 1vw + 8px, 16px);
   }
 
   body {
-    @apply bg-bb-slate-50 text-bb-slate-700 font-sans min-h-screen;
+    @apply bg-bb-slate-50 text-bb-slate-700 font-sans overflow-hidden h-screen;
   }
 
   h1 {
@@ -146,14 +147,15 @@
   }
 }
 
-/* Presentation mode - allow scrolling */
+/* Presentation mode - allow scrolling for smaller screens */
 #root {
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 
 main {
-  overflow-y: auto;
+  overflow: hidden;
 }
 
 /* Responsive grid utilities - auto-stack on smaller screens */
