@@ -27,7 +27,9 @@ export default function CustomerRampChart() {
             strokeWidth={2}
             dot={false}
             name="Loads/Month"
-            isAnimationActive={false}
+            isAnimationActive={true}
+            animationDuration={1200}
+            animationBegin={0}
           />
           <Line
             yAxisId="right"
@@ -37,7 +39,9 @@ export default function CustomerRampChart() {
             strokeWidth={2}
             dot={false}
             name="Margin/Month ($)"
-            isAnimationActive={false}
+            isAnimationActive={true}
+            animationDuration={1200}
+            animationBegin={300}
           />
         </LineChart>
       </ResponsiveContainer>

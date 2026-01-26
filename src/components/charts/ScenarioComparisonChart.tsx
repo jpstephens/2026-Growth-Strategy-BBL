@@ -38,7 +38,9 @@ export default function ScenarioComparisonChart() {
             fillOpacity={1}
             fill="url(#colorScenario1)"
             name="Patrick Only"
-            isAnimationActive={false}
+            isAnimationActive={true}
+            animationDuration={1200}
+            animationBegin={0}
           />
           <Area
             type="monotone"
@@ -47,7 +49,9 @@ export default function ScenarioComparisonChart() {
             fillOpacity={1}
             fill="url(#colorScenario2)"
             name="With Hires"
-            isAnimationActive={false}
+            isAnimationActive={true}
+            animationDuration={1200}
+            animationBegin={300}
           />
         </AreaChart>
       </ResponsiveContainer>

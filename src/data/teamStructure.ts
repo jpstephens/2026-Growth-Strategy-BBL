@@ -118,6 +118,96 @@ export const hireCosts = [
   },
 ]
 
+export const leadershipCommitments = [
+  {
+    leader: 'Chris',
+    role: 'Sales Lead',
+    commitments: [
+      'Weekly 1:1 coaching session with Patrick',
+      'Available for deal support on any call within 2 hours',
+      'Joint call with Patrick on any deal over $500/month margin',
+      'Handle pricing strategy so Patrick can focus on relationships',
+    ],
+    measurement: 'Patrick rates coaching value monthly',
+  },
+  {
+    leader: 'Vin',
+    role: 'Operations Lead',
+    commitments: [
+      'Daily 15-min sync with David',
+      'Initiate ops coordinator hire BEFORE David hits 120 loads/month',
+      'Escalation response within 1 hour during business hours',
+      'Shield David from non-essential requests',
+    ],
+    measurement: 'David rates support quality monthly',
+  },
+  {
+    leader: 'Jason',
+    role: 'President',
+    commitments: [
+      'Technology support and tool decisions within 48 hours',
+      'Capital available when hiring triggers are met',
+      'Strategic decisions within 48 hours of escalation',
+      'Will NOT pull Patrick into operations during protected time for ANY reason',
+    ],
+    measurement: 'Hiring speed and decision response time',
+  },
+]
+
+export const patrickGrowthPath = {
+  currentRole: 'Sales Rep',
+  focus: '100% new customer acquisition',
+  protectedTime: '8am-12pm daily (no interruptions)',
+  targets: {
+    weekly: {
+      dials: 200,
+      conversations: 40,
+      quotes: 4,
+    },
+    monthly: {
+      newCustomers: 4,
+    },
+  },
+  careerPath: 'Sales Lead if Rep #2 and Rep #3 are hired and performing',
+  whatHeOwns: [
+    'New customer acquisition',
+    'First load relationship (books and monitors)',
+    'Customer intro handoff to David',
+    'His own call schedule and prioritization',
+  ],
+  whatHeDoesNot: [
+    'Day-to-day operations after handoff',
+    'Carrier issues',
+    'Customer service escalations (unless relationship-critical)',
+    'Quote requests from existing customers',
+  ],
+}
+
+export const davidGrowthPath = {
+  currentRole: 'Operations',
+  focus: 'Load execution excellence and carrier network',
+  domain: 'Complete ownership of day-to-day operations',
+  targets: {
+    onTimeRate: 95,
+    carrierRetention: 80,
+    customerSatisfaction: 90,
+  },
+  careerPath: 'Operations Manager with own team when volume hits 200+ loads/month',
+  whatHeOwns: [
+    'All load execution after handoff',
+    'Carrier relationships and development',
+    'Customer communication (day-to-day)',
+    'Operational process improvements',
+    'His priority framework and schedule',
+  ],
+  whatHeDoesNot: [
+    'New customer acquisition',
+    'Pricing decisions',
+    'Sales calls or prospecting',
+    'Strategic carrier negotiations (Vin supports)',
+  ],
+}
+
 export const handoffProtocol = [
   {
     step: 1,

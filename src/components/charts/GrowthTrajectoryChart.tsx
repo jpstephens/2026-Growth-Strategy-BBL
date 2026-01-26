@@ -28,7 +28,9 @@ export default function GrowthTrajectoryChart() {
             stroke="#ef4444"
             strokeWidth={2}
             dot={false}
-            isAnimationActive={false}
+            isAnimationActive={true}
+            animationDuration={1200}
+            animationBegin={0}
           />
           <Line
             type="monotone"
@@ -36,10 +38,12 @@ export default function GrowthTrajectoryChart() {
             stroke="#00d084"
             strokeWidth={2}
             dot={false}
-            isAnimationActive={false}
+            isAnimationActive={true}
+            animationDuration={1200}
+            animationBegin={300}
           />
           {/* Goal line */}
-          <Line type="linear" dataKey={() => 100000} stroke="#0693e3" strokeDasharray="5 5" name="$100K Target" isAnimationActive={false} />
+          <Line type="linear" dataKey={() => 100000} stroke="#0693e3" strokeDasharray="5 5" name="$100K Target" isAnimationActive={true} animationDuration={800} animationBegin={600} />
         </LineChart>
       </ResponsiveContainer>
       <div className="mt-md space-y-xs text-sm text-bb-dark-gray">
