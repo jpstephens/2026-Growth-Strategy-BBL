@@ -12,108 +12,77 @@ const questions = [
     forWhom: 'Patrick',
     answer: "We coach and adjust. Maybe it's call quality over quantity. Maybe it's better targeting. We figure it out together—not blame.",
     icon: '📞',
-    color: 'charcoal',
   },
   {
     question: "What if operations gets overwhelmed?",
     forWhom: 'David',
     answer: "David escalates to Vin immediately. Patrick stays protected. We've built escalation paths so crises don't derail the plan.",
     icon: '🚨',
-    color: 'steel',
   },
   {
     question: "What if the market shifts?",
     forWhom: 'Everyone',
     answer: "We watch the data weekly. If conversion rates drop or customer quality changes, we pivot the approach—but we don't abandon the structure.",
     icon: '📊',
-    color: 'charcoal',
   },
   {
     question: "What if we miss the numbers?",
     forWhom: 'Everyone',
     answer: "We diagnose why, not who. Is it activity? Conversion? Market? We fix the root cause. Missing 4 customers by hitting 3 is progress, not failure.",
     icon: '📉',
-    color: 'steel',
   },
 ]
 
 export default function Slide_QuestionsYouHave() {
-  const colorMap = {
-    charcoal: {
-      bg: 'bg-white',
-      border: 'border-bb-slate-200',
-      icon: 'bg-bb-charcoal-800',
-      text: 'text-bb-charcoal-800',
-    },
-    steel: {
-      bg: 'bg-white',
-      border: 'border-bb-slate-200',
-      icon: 'bg-bb-steel-600',
-      text: 'text-bb-steel-700',
-    },
-  }
-
   return (
     <Slide variant="gradient">
-      <div className="w-full max-w-6xl space-y-2xl">
+      <div className="w-full max-w-6xl space-y-xl">
         {/* Hero Title */}
-        <motion.div variants={itemVariants} className="text-center mb-lg">
-          <h1 className="font-display text-display font-bold text-bb-charcoal-800 mb-md">
+        <motion.div variants={itemVariants} className="text-center">
+          <h1 className="font-display text-display font-bold text-bb-navy-900 mb-md">
             Questions We Know You Have
           </h1>
-          <div className="w-32 h-1 bg-bb-charcoal-800 mx-auto rounded-full mb-lg" />
-          <p className="text-xl text-bb-slate-600 max-w-3xl mx-auto leading-relaxed">
-            Let's address the concerns directly. <span className="font-semibold text-bb-charcoal-800">These are fair questions.</span>
+          <div className="w-24 h-1.5 bg-gradient-to-r from-bb-electric-500 to-bb-electric-600 mx-auto rounded-full mb-md" />
+          <p className="text-lg text-bb-slate-600 max-w-3xl mx-auto">
+            Let's address the concerns directly. <span className="font-semibold text-bb-navy-900">These are fair questions.</span>
           </p>
         </motion.div>
 
         {/* Q&A Cards */}
-        <div className="grid grid-cols-2 gap-xl">
-          {questions.map((q, idx) => {
-            const colors = colorMap[q.color as keyof typeof colorMap]
-
-            return (
-              <motion.div
-                key={idx}
-                variants={itemVariants}
-                className={`${colors.bg} rounded-xl border ${colors.border} p-xl shadow-sm`}
-              >
-                <div className="flex items-start gap-lg mb-lg">
-                  <div className={`w-12 h-12 rounded-xl ${colors.icon} flex items-center justify-center text-white text-xl shadow-sm shrink-0`}>
-                    {q.icon}
-                  </div>
-                  <div>
-                    <p className="text-xs font-semibold text-bb-slate-500 uppercase tracking-wide mb-xs">
-                      {q.forWhom}
-                    </p>
-                    <h3 className={`text-lg font-bold ${colors.text}`}>
-                      "{q.question}"
-                    </h3>
-                  </div>
+        <div className="grid grid-cols-2 gap-lg">
+          {questions.map((q, idx) => (
+            <motion.div
+              key={idx}
+              variants={itemVariants}
+              className="bg-white rounded-xl border-2 border-bb-slate-200 p-lg shadow-sm"
+            >
+              <div className="flex items-start gap-md mb-md">
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-bb-electric-500 to-bb-electric-600 flex items-center justify-center text-white text-lg shrink-0">
+                  {q.icon}
                 </div>
-                <div className="pl-16">
-                  <p className="text-bb-slate-600 leading-relaxed">
-                    {q.answer}
+                <div>
+                  <p className="text-xs font-semibold text-bb-slate-500 uppercase tracking-wide mb-xs">
+                    {q.forWhom}
                   </p>
+                  <h3 className="text-base font-bold text-bb-navy-900">
+                    "{q.question}"
+                  </h3>
                 </div>
-              </motion.div>
-            )
-          })}
+              </div>
+              <p className="text-sm text-bb-slate-600 leading-relaxed pl-12">
+                {q.answer}
+              </p>
+            </motion.div>
+          ))}
         </div>
 
         {/* Discussion Prompt */}
-        <motion.div variants={itemVariants} className="bg-bb-charcoal-800 rounded-xl p-2xl text-white text-center">
-          <div className="flex items-center justify-center gap-md mb-lg">
-            <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-2xl">
-              💬
-            </div>
-          </div>
-          <h3 className="text-2xl font-bold mb-md">What Else Do You Need to Know?</h3>
-          <p className="text-lg text-bb-slate-300 max-w-2xl mx-auto leading-relaxed">
+        <motion.div variants={itemVariants} className="bg-gradient-to-br from-bb-sunset-500 to-bb-sunset-600 rounded-2xl p-xl shadow-lg border-2 border-bb-sunset-400 text-white text-center">
+          <h3 className="text-xl font-bold mb-sm">What Else Do You Need to Know?</h3>
+          <p className="text-sm text-white/90 max-w-2xl mx-auto leading-relaxed">
             This plan only works if you believe in it. What concerns haven't we addressed? What would make you feel more confident?
           </p>
-          <div className="h-px bg-white/10 my-lg" />
-          <p className="text-sm text-bb-slate-500 italic">
+          <p className="text-xs text-white/70 italic mt-md">
             This is a conversation, not a presentation. Your input shapes the final version.
           </p>
         </motion.div>
