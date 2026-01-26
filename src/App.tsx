@@ -81,7 +81,7 @@ import Slide13_First30Days from './components/slides/Slide13_First30Days'
 import Slide46_WhatMustBeTrue from './components/slides/Slide46_WhatMustBeTrue'
 import Slide40_RisksMitigation from './components/slides/Slide40_RisksMitigation'
 import Slide41_SuccessCriteria from './components/slides/Slide41_SuccessCriteria'
-import Slide_QuestionsYouHave from './components/slides/Slide_QuestionsYouHave'
+// Slide_QuestionsYouHave removed - this isn't a negotiation
 import Slide42_Commitment from './components/slides/Slide42_Commitment'
 
 const slides = [
@@ -157,7 +157,7 @@ const slides = [
   Slide46_WhatMustBeTrue,
   Slide40_RisksMitigation,
   Slide41_SuccessCriteria,
-  Slide_QuestionsYouHave,
+  // Slide_QuestionsYouHave removed - this isn't a negotiation
   Slide42_Commitment,
 ]
 
