@@ -13,12 +13,12 @@ export default function Slide_LeadershipCommits() {
       <div className="w-full max-w-6xl space-y-xl">
         {/* Hero Title */}
         <motion.div variants={itemVariants} className="text-center">
-          <h1 className="font-display text-display font-bold text-bb-navy-900 mb-md">
+          <h1 className="font-display text-display font-bold text-bb-charcoal-800 mb-md">
             What Leadership Commits To
           </h1>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-bb-sunset-500 to-bb-sunset-600 mx-auto rounded-full mb-md" />
+          <div className="w-24 h-1.5 bg-gradient-to-r from-bb-amber-500 to-bb-amber-600 mx-auto rounded-full mb-md" />
           <p className="text-lg text-bb-slate-600 max-w-3xl mx-auto">
-            You're not the only ones with commitments. <span className="font-semibold text-bb-navy-900">Here's what we owe you.</span>
+            You're not the only ones with commitments. <span className="font-semibold text-bb-charcoal-800">Here's what we owe you.</span>
           </p>
         </motion.div>
 
@@ -26,9 +26,9 @@ export default function Slide_LeadershipCommits() {
         <div className="grid grid-cols-3 gap-lg">
           {leadershipCommitments.map((leader, idx) => {
             const colors = [
-              { border: 'border-bb-electric-300', icon: 'bg-gradient-to-br from-bb-electric-500 to-bb-electric-600', text: 'text-bb-electric-700' },
-              { border: 'border-bb-emerald-300', icon: 'bg-gradient-to-br from-bb-emerald-500 to-bb-emerald-600', text: 'text-bb-emerald-700' },
-              { border: 'border-bb-sunset-300', icon: 'bg-gradient-to-br from-bb-sunset-500 to-bb-sunset-600', text: 'text-bb-sunset-700' },
+              { border: 'border-bb-steel-300', icon: 'bg-gradient-to-br from-bb-steel-500 to-bb-steel-600', text: 'text-bb-steel-700' },
+              { border: 'border-bb-forest-300', icon: 'bg-gradient-to-br from-bb-forest-500 to-bb-forest-600', text: 'text-bb-forest-700' },
+              { border: 'border-bb-amber-300', icon: 'bg-gradient-to-br from-bb-amber-500 to-bb-amber-600', text: 'text-bb-amber-700' },
             ]
             const color = colors[idx % colors.length]
 
@@ -65,7 +65,7 @@ export default function Slide_LeadershipCommits() {
         </div>
 
         {/* The Big Promise */}
-        <motion.div variants={itemVariants} className="bg-gradient-to-br from-bb-sunset-500 to-bb-sunset-600 rounded-2xl p-xl shadow-lg border-2 border-bb-sunset-400">
+        <motion.div variants={itemVariants} className="bg-gradient-to-br from-bb-amber-500 to-bb-amber-600 rounded-2xl p-xl shadow-lg border-2 border-bb-amber-400">
           <div className="text-center text-white">
             <h3 className="text-xl font-bold mb-md">Our Core Promise</h3>
             <div className="grid grid-cols-3 gap-lg">

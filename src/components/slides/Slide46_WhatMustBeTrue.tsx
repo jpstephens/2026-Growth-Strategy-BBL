@@ -81,15 +81,15 @@ const assumptions = [
 ]
 
 const categories = [
-  { id: 'Market', color: 'bb-electric', icon: '📊' },
-  { id: 'Operations', color: 'bb-emerald', icon: '⚙️' },
-  { id: 'Financial', color: 'bb-sunset', icon: '💰' },
+  { id: 'Market', color: 'bb-steel', icon: '📊' },
+  { id: 'Operations', color: 'bb-forest', icon: '⚙️' },
+  { id: 'Financial', color: 'bb-amber', icon: '💰' },
 ]
 
 const statusConfig = {
-  verified: { label: 'Verified', icon: '✓', color: 'bb-emerald', bgColor: 'bg-bb-emerald-100', textColor: 'text-bb-emerald-700' },
-  dependent: { label: 'Dependent', icon: '⚡', color: 'bb-sunset', bgColor: 'bg-bb-sunset-100', textColor: 'text-bb-sunset-700' },
-  external: { label: 'External', icon: '⚠', color: 'bb-burgundy', bgColor: 'bg-bb-burgundy-100', textColor: 'text-bb-burgundy-700' },
+  verified: { label: 'Verified', icon: '✓', color: 'bb-forest', bgColor: 'bg-bb-forest-100', textColor: 'text-bb-forest-700' },
+  dependent: { label: 'Dependent', icon: '⚡', color: 'bb-amber', bgColor: 'bg-bb-amber-100', textColor: 'text-bb-amber-700' },
+  external: { label: 'External', icon: '⚠', color: 'bb-charcoal', bgColor: 'bg-bb-charcoal-100', textColor: 'text-bb-charcoal-700' },
 }
 
 export default function Slide46_WhatMustBeTrue() {
@@ -112,37 +112,37 @@ export default function Slide46_WhatMustBeTrue() {
       <div className="w-full max-w-6xl">
         {/* Header */}
         <div className="text-center mb-lg">
-          <h2 className="text-5xl font-bold text-bb-navy-900 mb-md font-display">Assumptions & Dependencies</h2>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-bb-electric-500 to-bb-sunset-500 mx-auto mb-sm"></div>
+          <h2 className="text-5xl font-bold text-bb-charcoal-900 mb-md font-display">Assumptions & Dependencies</h2>
+          <div className="w-24 h-1.5 bg-gradient-to-r from-bb-steel-500 to-bb-amber-500 mx-auto mb-sm"></div>
           <p className="text-lg text-bb-slate-600">The core assumptions behind this plan</p>
         </div>
 
         {/* Summary Stats */}
         <div className="grid grid-cols-4 gap-md mb-lg">
-          <div className="bg-gradient-to-br from-bb-emerald-50 to-white border-2 border-bb-emerald-300 rounded-xl p-md text-center shadow-sm">
+          <div className="bg-gradient-to-br from-bb-forest-50 to-white border-2 border-bb-forest-300 rounded-xl p-md text-center shadow-sm">
             <div className="flex items-center justify-center gap-xs mb-xs">
-              <span className="w-5 h-5 bg-bb-emerald-500 rounded-full flex items-center justify-center text-white text-xs">✓</span>
-              <p className="text-xs font-semibold text-bb-emerald-600 uppercase">Verified</p>
+              <span className="w-5 h-5 bg-bb-forest-500 rounded-full flex items-center justify-center text-white text-xs">✓</span>
+              <p className="text-xs font-semibold text-bb-forest-600 uppercase">Verified</p>
             </div>
-            <p className="text-2xl font-bold text-bb-navy-900">{verifiedCount}</p>
+            <p className="text-2xl font-bold text-bb-charcoal-900">{verifiedCount}</p>
           </div>
-          <div className="bg-gradient-to-br from-bb-sunset-50 to-white border-2 border-bb-sunset-300 rounded-xl p-md text-center shadow-sm">
+          <div className="bg-gradient-to-br from-bb-amber-50 to-white border-2 border-bb-amber-300 rounded-xl p-md text-center shadow-sm">
             <div className="flex items-center justify-center gap-xs mb-xs">
-              <span className="w-5 h-5 bg-bb-sunset-500 rounded-full flex items-center justify-center text-white text-xs">⚡</span>
-              <p className="text-xs font-semibold text-bb-sunset-600 uppercase">Dependent</p>
+              <span className="w-5 h-5 bg-bb-amber-500 rounded-full flex items-center justify-center text-white text-xs">⚡</span>
+              <p className="text-xs font-semibold text-bb-amber-600 uppercase">Dependent</p>
             </div>
-            <p className="text-2xl font-bold text-bb-navy-900">{dependentCount}</p>
+            <p className="text-2xl font-bold text-bb-charcoal-900">{dependentCount}</p>
           </div>
-          <div className="bg-gradient-to-br from-bb-burgundy-50 to-white border-2 border-bb-burgundy-300 rounded-xl p-md text-center shadow-sm">
+          <div className="bg-gradient-to-br from-bb-charcoal-50 to-white border-2 border-bb-charcoal-300 rounded-xl p-md text-center shadow-sm">
             <div className="flex items-center justify-center gap-xs mb-xs">
-              <span className="w-5 h-5 bg-bb-burgundy-500 rounded-full flex items-center justify-center text-white text-xs">⚠</span>
-              <p className="text-xs font-semibold text-bb-burgundy-600 uppercase">External</p>
+              <span className="w-5 h-5 bg-bb-charcoal-500 rounded-full flex items-center justify-center text-white text-xs">⚠</span>
+              <p className="text-xs font-semibold text-bb-charcoal-600 uppercase">External</p>
             </div>
-            <p className="text-2xl font-bold text-bb-navy-900">{externalCount}</p>
+            <p className="text-2xl font-bold text-bb-charcoal-900">{externalCount}</p>
           </div>
           <div className="bg-white border-2 border-bb-slate-200 rounded-xl p-md text-center shadow-sm">
             <p className="text-xs font-semibold text-bb-slate-600 uppercase mb-xs">Avg. Confidence</p>
-            <p className="text-2xl font-bold text-bb-navy-900">{avgConfidence}%</p>
+            <p className="text-2xl font-bold text-bb-charcoal-900">{avgConfidence}%</p>
           </div>
         </div>
 
@@ -155,8 +155,8 @@ export default function Slide46_WhatMustBeTrue() {
             onClick={() => setActiveCategory(null)}
             className={`px-md py-sm rounded-lg text-sm font-semibold transition-all ${
               activeCategory === null
-                ? 'bg-bb-navy-600 text-white shadow-md'
-                : 'bg-white text-bb-navy-900 border-2 border-bb-slate-200 hover:border-bb-slate-300'
+                ? 'bg-bb-charcoal-600 text-white shadow-md'
+                : 'bg-white text-bb-charcoal-900 border-2 border-bb-slate-200 hover:border-bb-slate-300'
             }`}
           >
             All ({assumptions.length})
@@ -173,7 +173,7 @@ export default function Slide46_WhatMustBeTrue() {
                 className={`px-md py-sm rounded-lg text-sm font-semibold transition-all flex items-center gap-xs ${
                   activeCategory === cat.id
                     ? `bg-${cat.color}-500 text-white shadow-md`
-                    : 'bg-white text-bb-navy-900 border-2 border-bb-slate-200 hover:border-bb-slate-300'
+                    : 'bg-white text-bb-charcoal-900 border-2 border-bb-slate-200 hover:border-bb-slate-300'
                 }`}
                 style={activeCategory === cat.id ? {
                   backgroundColor: cat.id === 'Market' ? '#0284c7' : cat.id === 'Operations' ? '#10b981' : '#f97316'
@@ -221,21 +221,21 @@ export default function Slide46_WhatMustBeTrue() {
                           {status.label}
                         </span>
                       </div>
-                      <p className="font-semibold text-bb-navy-900 text-sm">{assumption.statement}</p>
+                      <p className="font-semibold text-bb-charcoal-900 text-sm">{assumption.statement}</p>
                     </div>
 
                     {/* Confidence meter */}
                     <div className="w-20 shrink-0">
                       <div className="flex items-center justify-between text-xs mb-xs">
                         <span className="text-bb-slate-500">Conf.</span>
-                        <span className="font-semibold text-bb-navy-900">{assumption.confidence}%</span>
+                        <span className="font-semibold text-bb-charcoal-900">{assumption.confidence}%</span>
                       </div>
                       <div className="h-1.5 bg-bb-slate-200 rounded-full overflow-hidden">
                         <div
                           className={`h-full rounded-full ${
-                            assumption.confidence >= 80 ? 'bg-bb-emerald-500' :
-                            assumption.confidence >= 60 ? 'bg-bb-sunset-500' :
-                            'bg-bb-burgundy-500'
+                            assumption.confidence >= 80 ? 'bg-bb-forest-500' :
+                            assumption.confidence >= 60 ? 'bg-bb-amber-500' :
+                            'bg-bb-charcoal-500'
                           }`}
                           style={{ width: `${assumption.confidence}%` }}
                         ></div>
@@ -253,15 +253,15 @@ export default function Slide46_WhatMustBeTrue() {
                     <div className="px-md pb-md pt-0 ml-12">
                       <div className="bg-white rounded-lg p-sm border border-bb-slate-200 mb-sm">
                         <p className="text-xs font-semibold text-bb-slate-600 mb-xs">DETAIL</p>
-                        <p className="text-sm text-bb-navy-900">{assumption.detail}</p>
+                        <p className="text-sm text-bb-charcoal-900">{assumption.detail}</p>
                       </div>
                       <div className={`rounded-lg p-sm ${
-                        assumption.impact.startsWith('Critical') ? 'bg-bb-burgundy-50 border-l-4 border-bb-burgundy-500' :
-                        assumption.impact.startsWith('High') ? 'bg-bb-sunset-50 border-l-4 border-bb-sunset-500' :
+                        assumption.impact.startsWith('Critical') ? 'bg-bb-charcoal-50 border-l-4 border-bb-charcoal-500' :
+                        assumption.impact.startsWith('High') ? 'bg-bb-amber-50 border-l-4 border-bb-amber-500' :
                         'bg-bb-slate-50 border-l-4 border-bb-slate-400'
                       }`}>
                         <p className="text-xs font-semibold text-bb-slate-600 mb-xs">IMPACT IF WRONG</p>
-                        <p className="text-sm text-bb-navy-900">{assumption.impact}</p>
+                        <p className="text-sm text-bb-charcoal-900">{assumption.impact}</p>
                       </div>
                     </div>
                   )}
@@ -272,11 +272,11 @@ export default function Slide46_WhatMustBeTrue() {
         </div>
 
         {/* Footer note */}
-        <div className="mt-md bg-gradient-to-r from-bb-electric-50 to-bb-electric-100/50 border-l-6 border-bb-electric-500 rounded-lg p-md shadow-sm">
+        <div className="mt-md bg-gradient-to-r from-bb-steel-50 to-bb-steel-100/50 border-l-6 border-bb-steel-500 rounded-lg p-md shadow-sm">
           <div className="flex items-start gap-md">
-            <div className="w-8 h-8 bg-bb-electric-500 rounded-lg flex items-center justify-center text-white text-lg shrink-0">i</div>
+            <div className="w-8 h-8 bg-bb-steel-500 rounded-lg flex items-center justify-center text-white text-lg shrink-0">i</div>
             <p className="text-sm text-bb-slate-700">
-              <span className="font-semibold text-bb-navy-900">These assumptions are testable.</span> We'll know within 60 days if they hold. If they don't, we pivot.
+              <span className="font-semibold text-bb-charcoal-900">These assumptions are testable.</span> We'll know within 60 days if they hold. If they don't, we pivot.
             </p>
           </div>
         </div>

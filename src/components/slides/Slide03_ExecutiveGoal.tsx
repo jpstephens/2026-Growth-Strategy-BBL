@@ -1,52 +1,111 @@
+import { motion } from 'framer-motion'
 import Slide from '../layout/Slide'
-import MetricGrid from './MetricGrid'
-import Callout from '../content/Callout'
+import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Cell } from 'recharts'
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+}
+
+const goalData = [
+  { label: 'Jan 2026', value: 12, color: '#6b7785' },
+  { label: 'Dec 2026', value: 100, color: '#438f74' },
+]
 
 export default function Slide03_ExecutiveGoal() {
   return (
     <Slide variant="gradient">
-      <div className="w-full max-w-5xl">
-        <h2 className="text-5xl font-bold text-bb-navy-900 mb-sm text-center font-display">The Goal</h2>
-        <div className="w-24 h-1.5 bg-gradient-to-r from-bb-electric-500 to-bb-sunset-500 mx-auto mb-lg"></div>
+      <div className="w-full max-w-6xl space-y-xl">
+        <motion.div variants={itemVariants} className="text-center">
+          <h2 className="text-display font-bold text-bb-charcoal-800 font-display mb-sm">The Goal</h2>
+          <div className="w-24 h-1.5 bg-gradient-to-r from-bb-steel-500 to-bb-amber-500 mx-auto rounded-full mb-md" />
+          <p className="text-lg text-bb-charcoal-600">By December 31, 2026</p>
+        </motion.div>
 
-        <div className="space-y-2xl">
-          <div className="text-center">
-            <p className="text-2xl text-bb-slate-700 mb-lg">By December 31, 2026:</p>
-          </div>
+        <div className="grid grid-cols-2 gap-xl">
+          {/* Left: Key Metrics */}
+          <motion.div variants={itemVariants} className="space-y-md">
+            <div className="grid grid-cols-2 gap-md">
+              <div className="bg-white rounded-xl border-2 border-bb-slate-200 p-lg shadow-sm text-center">
+                <p className="text-3xl font-display font-black text-bb-charcoal-800">65-70</p>
+                <p className="text-sm text-bb-charcoal-600">Customers</p>
+              </div>
+              <div className="bg-white rounded-xl border-2 border-bb-slate-200 p-lg shadow-sm text-center">
+                <p className="text-3xl font-display font-black text-bb-steel-600">481</p>
+                <p className="text-sm text-bb-charcoal-600">Monthly Loads</p>
+              </div>
+              <div className="bg-white rounded-xl border-2 border-bb-slate-200 p-lg shadow-sm text-center">
+                <p className="text-3xl font-display font-black text-bb-amber-600">$100K</p>
+                <p className="text-sm text-bb-charcoal-600">Gross Margin</p>
+              </div>
+              <div className="bg-white rounded-xl border-2 border-bb-slate-200 p-lg shadow-sm text-center">
+                <p className="text-3xl font-display font-black text-bb-forest-600">$80K+</p>
+                <p className="text-sm text-bb-charcoal-600">Net Profit</p>
+              </div>
+            </div>
 
-          <MetricGrid
-            metrics={[
-              { label: 'Active Customers', value: '65-70', highlight: true, icon: '👥' },
-              { label: 'Monthly Loads', value: '420+', highlight: true, icon: '📦' },
-              { label: 'Monthly Gross Margin', value: '$87k+', highlight: true, icon: '💰' },
-              { label: 'Monthly Net Profit', value: '$69k+', highlight: true, icon: '📈' },
-            ]}
-            columns={2}
-          />
-
-          <Callout variant="success" title="Why These Numbers Matter">
-            <div className="space-y-sm">
-              <p>
-                <strong>65-70 customers:</strong> Provides diversification (no single customer {'>'} 15%), reduces concentration risk, creates sustainable growth
-              </p>
-              <p>
-                <strong>420+ monthly loads:</strong> Represents ~13-14 loads per customer on average, demonstrating real stickiness and volume
-              </p>
-              <p>
-                <strong>$87k monthly margin:</strong> 14x current monthly profit, transforming BlackBridge from struggling startup to profitable mid-market player
-              </p>
-              <p>
-                <strong>$69k net profit:</strong> Sustainable without additional capital, enables reinvestment and owner returns
+            <div className="bg-gradient-to-br from-bb-forest-50 to-white rounded-xl border-2 border-bb-forest-300 p-lg">
+              <p className="text-sm text-bb-charcoal-700 leading-relaxed">
+                <span className="font-bold text-bb-forest-700">Not aggressive growth.</span>
+                {' '}Disciplined scaling of what already works—
+                proven unit economics applied to more customers.
               </p>
             </div>
-          </Callout>
+          </motion.div>
 
-          <div className="bg-white rounded-2xl p-lg border-2 border-bb-slate-300 text-center shadow-lg">
-            <p className="text-sm text-bb-slate-700">
-              This is NOT aggressive growth. It's disciplined scaling of what already works.
+          {/* Right: Visual Comparison */}
+          <motion.div variants={itemVariants} className="bg-white rounded-xl border-2 border-bb-slate-200 p-lg shadow-sm">
+            <h3 className="text-lg font-bold text-bb-charcoal-800 mb-md">Monthly Profit Growth</h3>
+            <div className="h-48">
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart data={goalData} margin={{ top: 20, right: 20, left: 20, bottom: 20 }}>
+                  <XAxis
+                    dataKey="label"
+                    tick={{ fontSize: 12, fill: '#545f6b' }}
+                    axisLine={{ stroke: '#dee2e6' }}
+                    tickLine={false}
+                  />
+                  <YAxis
+                    domain={[0, 120]}
+                    tick={{ fontSize: 11, fill: '#6b7785' }}
+                    axisLine={false}
+                    tickLine={false}
+                    tickFormatter={(value) => `$${value}K`}
+                  />
+                  <Bar dataKey="value" radius={[8, 8, 0, 0]} isAnimationActive={true} animationDuration={1000}>
+                    {goalData.map((entry, index) => (
+                      <Cell key={`cell-${index}`} fill={entry.color} />
+                    ))}
+                  </Bar>
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
+            <p className="text-sm text-bb-charcoal-500 text-center mt-md">
+              <span className="font-semibold text-bb-forest-600">8x growth</span> in monthly profit
             </p>
-          </div>
+          </motion.div>
         </div>
+
+        <motion.div variants={itemVariants} className="bg-white rounded-xl border-2 border-bb-slate-200 p-lg shadow-sm">
+          <div className="grid grid-cols-4 gap-md text-center">
+            <div>
+              <p className="text-xs text-bb-charcoal-500 mb-xs">Diversification</p>
+              <p className="text-sm text-bb-charcoal-700">No customer &gt;15%</p>
+            </div>
+            <div>
+              <p className="text-xs text-bb-charcoal-500 mb-xs">Avg Loads/Customer</p>
+              <p className="text-sm text-bb-charcoal-700">7.2 per month</p>
+            </div>
+            <div>
+              <p className="text-xs text-bb-charcoal-500 mb-xs">Margin Rate</p>
+              <p className="text-sm text-bb-charcoal-700">15%+ maintained</p>
+            </div>
+            <div>
+              <p className="text-xs text-bb-charcoal-500 mb-xs">Capital Needed</p>
+              <p className="text-sm text-bb-charcoal-700">Self-sustaining</p>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </Slide>
   )

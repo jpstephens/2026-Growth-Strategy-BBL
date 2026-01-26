@@ -1,149 +1,141 @@
+import { motion } from 'framer-motion'
 import Slide from '../layout/Slide'
-import FunnelChart from '../charts/FunnelChart'
-import MetricCardEnhanced from '../content/MetricCardEnhanced'
-import { conversionFunnel } from '../../data/salesSystem'
+import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Cell } from 'recharts'
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+}
+
+// Monthly funnel data
+const monthlyFunnel = [
+  { stage: 'Dials', value: 800, dropoff: 0, color: '#d6973a' },
+  { stage: 'Conversations', value: 140, dropoff: 660, color: '#4f85a6' },
+  { stage: 'Qualified', value: 36, dropoff: 104, color: '#6b7785' },
+  { stage: 'Closed', value: 18, dropoff: 18, color: '#438f74' },
+]
 
 export default function Slide25_ConversionFunnel() {
-  // Transform data for FunnelChart (use monthly numbers)
-  const funnelData = [
-    { label: 'Dials', value: 800 },
-    { label: 'Conversations', value: 140 }, // 17.5% connect rate (avg of 15-20%)
-    { label: 'Qualified', value: 36 }, // 25% of conversations
-    { label: 'New Customers', value: 18 }, // 50% close rate
-  ]
-
   return (
     <Slide variant="gradient">
-      <div className="w-full max-w-7xl space-y-2xl">
+      <div className="w-full max-w-6xl space-y-md">
         {/* Title */}
-        <div className="text-center">
-          <h1 className="font-display text-display font-bold text-bb-navy-900 mb-md">
-            Sales Conversion Funnel
+        <motion.div variants={itemVariants} className="text-center">
+          <h1 className="font-display text-display font-bold text-bb-charcoal-800 mb-xs">
+            The Sales Funnel: Monthly View
           </h1>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-bb-electric-500 to-bb-emerald-500 mx-auto rounded-full mb-md" />
-          <p className="text-xl text-bb-slate-600">
-            From 800 dials to 4-5 new customers monthly (per rep)
+          <div className="w-24 h-1.5 bg-gradient-to-r from-bb-amber-500 to-bb-forest-500 mx-auto rounded-full mb-sm" />
+          <p className="text-base text-bb-charcoal-600">
+            800 dials → 140 conversations → 36 qualified → <span className="font-bold text-bb-forest-600">18 new customers</span>
           </p>
-        </div>
+        </motion.div>
 
-        {/* Conversion Rate Cards */}
-        <div className="grid grid-cols-4 gap-lg">
-          <MetricCardEnhanced
-            label="Connect Rate"
-            value="15-20%"
-            size="sm"
-            color="electric"
-            owner="Patrick"
-            frequency="Daily tracking"
-          />
-          <MetricCardEnhanced
-            label="Qualify Rate"
-            value="25%"
-            size="sm"
-            color="sunset"
-            owner="Patrick/Chris"
-            frequency="Weekly review"
-          />
-          <MetricCardEnhanced
-            label="Close Rate"
-            value="50%"
-            size="sm"
-            color="emerald"
-            owner="Patrick"
-            frequency="Monthly"
-          />
-          <MetricCardEnhanced
-            label="Overall Conversion"
-            value="2.25%"
-            size="sm"
-            color="navy"
-            owner="Chris"
-            frequency="Monthly"
-          />
-        </div>
+        <div className="grid grid-cols-2 gap-lg">
+          {/* Left: Visual Funnel */}
+          <motion.div variants={itemVariants} className="bg-white rounded-xl border-2 border-bb-slate-200 p-md shadow-sm">
+            <h3 className="text-sm font-bold text-bb-charcoal-800 mb-md">Monthly Funnel (Per Rep)</h3>
+            <ResponsiveContainer width="100%" height={220}>
+              <BarChart data={monthlyFunnel} layout="vertical" margin={{ top: 5, right: 30, left: 80, bottom: 5 }}>
+                <XAxis type="number" hide />
+                <YAxis type="category" dataKey="stage" tick={{ fontSize: 12, fill: '#2d3748', fontWeight: 600 }} axisLine={false} tickLine={false} width={75} />
+                <Bar dataKey="value" radius={[0, 8, 8, 0]} isAnimationActive={true} animationDuration={1200} barSize={35}>
+                  {monthlyFunnel.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={entry.color} />
+                  ))}
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
 
-        {/* Main Funnel Visualization */}
-        <FunnelChart
-          stages={funnelData}
-          title="Monthly Sales Funnel (Per Rep)"
-          height={340}
-          showValues={true}
-          showConversionRates={true}
-        />
-
-        {/* Why These Numbers Work */}
-        <div className="bg-gradient-to-r from-bb-emerald-50 to-bb-electric-50 rounded-2xl p-xl border-2 border-bb-emerald-300 shadow-md">
-          <div className="flex items-start gap-lg">
-            <div className="bg-bb-emerald-500 text-white w-12 h-12 rounded-lg flex items-center justify-center text-xl shrink-0" aria-hidden="true">
-              ?
+            {/* Conversion rates between stages */}
+            <div className="grid grid-cols-3 gap-md mt-md pt-md border-t border-bb-slate-200">
+              <div className="text-center">
+                <p className="text-lg font-bold text-bb-steel-600">17.5%</p>
+                <p className="text-xs text-bb-charcoal-500">Connect Rate</p>
+              </div>
+              <div className="text-center">
+                <p className="text-lg font-bold text-bb-charcoal-600">26%</p>
+                <p className="text-xs text-bb-charcoal-500">Qualify Rate</p>
+              </div>
+              <div className="text-center">
+                <p className="text-lg font-bold text-bb-forest-600">50%</p>
+                <p className="text-xs text-bb-charcoal-500">Close Rate</p>
+              </div>
             </div>
-            <div className="flex-1">
-              <h4 className="text-lg font-bold text-bb-navy-900 mb-md">Why These Numbers Work</h4>
-              <div className="grid grid-cols-3 gap-xl">
-                <div>
-                  <p className="text-sm font-semibold text-bb-emerald-700 mb-xs">Conservative Rates</p>
-                  <p className="text-sm text-bb-slate-700">15-20% connect rate is achievable with targeted lists. Industry averages are 8-12%.</p>
+          </motion.div>
+
+          {/* Right: Drop-off Explanation */}
+          <motion.div variants={itemVariants} className="space-y-sm">
+            <div className="bg-white rounded-xl border-2 border-bb-slate-200 p-md shadow-sm">
+              <h3 className="text-sm font-bold text-bb-charcoal-800 mb-sm">Understanding Drop-off</h3>
+              <div className="space-y-sm">
+                <div className="flex items-center justify-between p-sm bg-bb-amber-50 rounded-lg">
+                  <div>
+                    <p className="text-xs font-semibold text-bb-charcoal-700">Dials → Conversations</p>
+                    <p className="text-xs text-bb-charcoal-500">660 don't connect (voicemail, no answer)</p>
+                  </div>
+                  <p className="text-lg font-bold text-bb-amber-600">82.5%</p>
                 </div>
-                <div>
-                  <p className="text-sm font-semibold text-bb-emerald-700 mb-xs">Qualification Discipline</p>
-                  <p className="text-sm text-bb-slate-700">25% qualify rate ensures we're focusing on real opportunities, not wasting time.</p>
+                <div className="flex items-center justify-between p-sm bg-bb-steel-50 rounded-lg">
+                  <div>
+                    <p className="text-xs font-semibold text-bb-charcoal-700">Conversations → Qualified</p>
+                    <p className="text-xs text-bb-charcoal-500">104 not a fit (wrong timing, no need)</p>
+                  </div>
+                  <p className="text-lg font-bold text-bb-steel-600">74%</p>
                 </div>
-                <div>
-                  <p className="text-sm font-semibold text-bb-emerald-700 mb-xs">Scalable Model</p>
-                  <p className="text-sm text-bb-slate-700">Rep #2 and #3 follow the same funnel. More reps = proportionally more customers.</p>
+                <div className="flex items-center justify-between p-sm bg-bb-charcoal-50 rounded-lg">
+                  <div>
+                    <p className="text-xs font-semibold text-bb-charcoal-700">Qualified → Closed</p>
+                    <p className="text-xs text-bb-charcoal-500">18 choose competitor or delay</p>
+                  </div>
+                  <p className="text-lg font-bold text-bb-charcoal-600">50%</p>
                 </div>
               </div>
             </div>
-          </div>
+
+            <div className="bg-gradient-to-br from-bb-forest-50 to-white rounded-xl border-2 border-bb-forest-300 p-md">
+              <h3 className="text-sm font-bold text-bb-forest-700 mb-xs">Why This Works</h3>
+              <p className="text-xs text-bb-charcoal-700 leading-relaxed">
+                <span className="font-bold">Continuous feeding = consistent growth.</span> Every month we pour 800 dials into the top.
+                Even with 97.75% drop-off, we still get 18 customers. That's the power of volume + system.
+              </p>
+            </div>
+          </motion.div>
         </div>
 
-        {/* Summary Math */}
-        <div className="bg-bb-navy-900 rounded-2xl p-xl shadow-lg">
-          <p className="text-2xl font-bold text-white text-center mb-lg">
-            The Math: <span className="text-bb-electric-400">200 dials/week</span> → <span className="text-bb-sunset-400">30-40 conversations</span> → <span className="text-bb-emerald-400">8-10 qualified</span> → <span className="text-white">4-5 customers</span>
-          </p>
-          <p className="text-bb-slate-400 text-center">
-            This assumes Patrick hits activity targets and stays disciplined with qualification.
-          </p>
-        </div>
-
-        {/* Expandable Detail Table */}
-        <details className="group">
-          <summary className="cursor-pointer text-bb-electric-600 font-semibold hover:text-bb-electric-700 flex items-center gap-sm">
-            <span className="group-open:rotate-90 transition-transform">&#9654;</span>
-            View Detailed Funnel Breakdown
-          </summary>
-          <div className="mt-lg overflow-x-auto rounded-xl border border-bb-slate-200">
-            <table className="w-full text-sm">
-              <thead className="bg-bb-navy-900 text-white">
-                <tr>
-                  <th className="px-lg py-md text-left font-semibold">Stage</th>
-                  <th className="px-lg py-md text-center font-semibold">Conversion Rate</th>
-                  <th className="px-lg py-md text-center font-semibold">Weekly Result</th>
-                  <th className="px-lg py-md text-center font-semibold">Monthly Result</th>
-                </tr>
-              </thead>
-              <tbody>
-                {conversionFunnel.map((stage, idx) => (
-                  <tr key={idx} className={`border-t ${idx % 2 === 0 ? 'bg-white' : 'bg-bb-slate-50'}`}>
-                    <td className="px-lg py-md font-semibold text-bb-navy-900">{stage.metric}</td>
-                    <td className="px-lg py-md text-center">
-                      {stage.rate !== '—' ? (
-                        <span className="bg-bb-electric-100 text-bb-electric-700 px-md py-xs rounded-full font-semibold text-xs">
-                          {stage.rate}
-                        </span>
-                      ) : (
-                        <span className="text-bb-slate-400">—</span>
-                      )}
-                    </td>
-                    <td className="px-lg py-md text-center font-semibold text-bb-slate-700">{stage.weeklyResult}</td>
-                    <td className="px-lg py-md text-center font-bold text-bb-emerald-600">{stage.monthlyResult}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+        {/* Key Insight: The Machine */}
+        <motion.div variants={itemVariants} className="bg-white rounded-xl border-2 border-bb-slate-200 p-md shadow-sm">
+          <h3 className="text-sm font-bold text-bb-charcoal-800 mb-sm text-center">The Funnel is a Machine</h3>
+          <div className="grid grid-cols-4 gap-md text-center">
+            <div className="p-sm">
+              <p className="text-xs text-bb-charcoal-500 mb-xs">Input</p>
+              <p className="text-lg font-bold text-bb-amber-600">800 dials</p>
+              <p className="text-xs text-bb-charcoal-600">Consistent weekly</p>
+            </div>
+            <div className="p-sm">
+              <p className="text-xs text-bb-charcoal-500 mb-xs">Processing</p>
+              <p className="text-lg font-bold text-bb-steel-600">17.5% × 26%</p>
+              <p className="text-xs text-bb-charcoal-600">Conversion rates</p>
+            </div>
+            <div className="p-sm">
+              <p className="text-xs text-bb-charcoal-500 mb-xs">Output</p>
+              <p className="text-lg font-bold text-bb-forest-600">18 customers</p>
+              <p className="text-xs text-bb-charcoal-600">Monthly (per rep)</p>
+            </div>
+            <div className="p-sm">
+              <p className="text-xs text-bb-charcoal-500 mb-xs">Result</p>
+              <p className="text-lg font-bold text-bb-charcoal-800">4-5/month</p>
+              <p className="text-xs text-bb-charcoal-600">Conservative target</p>
+            </div>
           </div>
-        </details>
+        </motion.div>
+
+        {/* Bottom Line */}
+        <motion.div variants={itemVariants} className="bg-gradient-to-br from-bb-charcoal-700 to-bb-charcoal-800 rounded-xl p-md shadow-lg text-white">
+          <p className="text-sm text-center">
+            <span className="font-bold text-bb-amber-300">The Law of the Funnel:</span>
+            {' '}More in the top = more out the bottom. <span className="text-bb-forest-300">Stop feeding the funnel, growth stops.</span>
+          </p>
+        </motion.div>
       </div>
     </Slide>
   )

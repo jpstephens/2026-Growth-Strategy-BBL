@@ -20,7 +20,7 @@ interface MetricCardEnhancedProps {
   owner?: string
   frequency?: string
   size?: 'sm' | 'md' | 'lg'
-  color?: 'electric' | 'emerald' | 'sunset' | 'navy'
+  color?: 'electric' | 'emerald' | 'sunset' | 'navy' | 'amber' | 'steel' | 'forest' | 'charcoal'
 }
 
 export default function MetricCardEnhanced({
@@ -68,6 +68,34 @@ export default function MetricCardEnhanced({
       text: 'text-bb-navy-700',
       bar: 'bg-bb-navy-500',
       icon: 'bg-bb-navy-100 text-bb-navy-600',
+    },
+    amber: {
+      bg: 'bg-gradient-to-br from-bb-amber-50 to-white',
+      border: 'border-bb-amber-300',
+      text: 'text-bb-amber-700',
+      bar: 'bg-bb-amber-500',
+      icon: 'bg-bb-amber-100 text-bb-amber-600',
+    },
+    steel: {
+      bg: 'bg-gradient-to-br from-bb-steel-50 to-white',
+      border: 'border-bb-steel-300',
+      text: 'text-bb-steel-700',
+      bar: 'bg-bb-steel-500',
+      icon: 'bg-bb-steel-100 text-bb-steel-600',
+    },
+    forest: {
+      bg: 'bg-gradient-to-br from-bb-forest-50 to-white',
+      border: 'border-bb-forest-300',
+      text: 'text-bb-forest-700',
+      bar: 'bg-bb-forest-500',
+      icon: 'bg-bb-forest-100 text-bb-forest-600',
+    },
+    charcoal: {
+      bg: 'bg-gradient-to-br from-bb-charcoal-50 to-white',
+      border: 'border-bb-charcoal-300',
+      text: 'text-bb-charcoal-700',
+      bar: 'bg-bb-charcoal-500',
+      icon: 'bg-bb-charcoal-100 text-bb-charcoal-600',
     },
   }
 

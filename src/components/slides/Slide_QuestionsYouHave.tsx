@@ -39,12 +39,12 @@ export default function Slide_QuestionsYouHave() {
       <div className="w-full max-w-6xl space-y-xl">
         {/* Hero Title */}
         <motion.div variants={itemVariants} className="text-center">
-          <h1 className="font-display text-display font-bold text-bb-navy-900 mb-md">
+          <h1 className="font-display text-display font-bold text-bb-charcoal-900 mb-md">
             Questions We Know You Have
           </h1>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-bb-electric-500 to-bb-electric-600 mx-auto rounded-full mb-md" />
+          <div className="w-24 h-1.5 bg-gradient-to-r from-bb-steel-500 to-bb-steel-600 mx-auto rounded-full mb-md" />
           <p className="text-lg text-bb-slate-600 max-w-3xl mx-auto">
-            Let's address the concerns directly. <span className="font-semibold text-bb-navy-900">These are fair questions.</span>
+            Let's address the concerns directly. <span className="font-semibold text-bb-charcoal-900">These are fair questions.</span>
           </p>
         </motion.div>
 
@@ -57,14 +57,14 @@ export default function Slide_QuestionsYouHave() {
               className="bg-white rounded-xl border-2 border-bb-slate-200 p-lg shadow-sm"
             >
               <div className="flex items-start gap-md mb-md">
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-bb-electric-500 to-bb-electric-600 flex items-center justify-center text-white text-lg shrink-0">
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-bb-steel-500 to-bb-steel-600 flex items-center justify-center text-white text-lg shrink-0">
                   {q.icon}
                 </div>
                 <div>
                   <p className="text-xs font-semibold text-bb-slate-500 uppercase tracking-wide mb-xs">
                     {q.forWhom}
                   </p>
-                  <h3 className="text-base font-bold text-bb-navy-900">
+                  <h3 className="text-base font-bold text-bb-charcoal-900">
                     "{q.question}"
                   </h3>
                 </div>
@@ -77,7 +77,7 @@ export default function Slide_QuestionsYouHave() {
         </div>
 
         {/* Discussion Prompt */}
-        <motion.div variants={itemVariants} className="bg-gradient-to-br from-bb-sunset-500 to-bb-sunset-600 rounded-2xl p-xl shadow-lg border-2 border-bb-sunset-400 text-white text-center">
+        <motion.div variants={itemVariants} className="bg-gradient-to-br from-bb-amber-500 to-bb-amber-600 rounded-2xl p-xl shadow-lg border-2 border-bb-amber-400 text-white text-center">
           <h3 className="text-xl font-bold mb-sm">What Else Do You Need to Know?</h3>
           <p className="text-sm text-white/90 max-w-2xl mx-auto leading-relaxed">
             This plan only works if you believe in it. What concerns haven't we addressed? What would make you feel more confident?

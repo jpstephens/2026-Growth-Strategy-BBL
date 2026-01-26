@@ -39,18 +39,18 @@ export default function Slide41_SuccessCriteria() {
   ]
 
   const colorStyles = {
-    electric: 'border-bb-electric-400 bg-bb-electric-50',
-    sunset: 'border-bb-sunset-400 bg-bb-sunset-50',
-    emerald: 'border-bb-emerald-400 bg-bb-emerald-50',
-    navy: 'border-bb-navy-400 bg-bb-navy-50',
+    electric: 'border-bb-amber-400 bg-bb-amber-50',
+    sunset: 'border-bb-steel-400 bg-bb-steel-50',
+    emerald: 'border-bb-forest-400 bg-bb-forest-50',
+    navy: 'border-bb-charcoal-400 bg-bb-charcoal-50',
     slate: 'border-bb-slate-300 bg-bb-slate-50',
   }
 
   return (
     <Slide variant="gradient">
       <div className="w-full max-w-5xl">
-        <h2 className="text-5xl font-bold text-bb-navy-900 mb-sm text-center font-display">Clear Wins We Can Track</h2>
-        <div className="w-24 h-1.5 bg-gradient-to-r from-bb-electric-500 to-bb-sunset-500 mx-auto mb-lg"></div>
+        <h2 className="text-5xl font-bold text-bb-charcoal-900 mb-sm text-center font-display">Clear Wins We Can Track</h2>
+        <div className="w-24 h-1.5 bg-gradient-to-r from-bb-amber-500 to-bb-steel-500 mx-auto mb-lg"></div>
         <p className="text-xl text-bb-slate-700 text-center mb-2xl">Concrete milestones. No ambiguity.</p>
 
         <div className="space-y-md">
@@ -58,16 +58,16 @@ export default function Slide41_SuccessCriteria() {
             <div
               key={idx}
               className={`rounded-2xl border-2 ${colorStyles[milestone.color as keyof typeof colorStyles]} shadow-lg p-lg ${
-                milestone.isKey ? 'ring-2 ring-offset-2 ring-bb-electric-300' : ''
+                milestone.isKey ? 'ring-2 ring-offset-2 ring-bb-amber-300' : ''
               }`}
             >
               <div className="flex items-start justify-between gap-lg">
                 <div className="flex-1">
                   <p className="text-sm font-bold text-bb-slate-600 uppercase tracking-wide mb-xs">{milestone.timeline}</p>
-                  <p className="text-lg font-bold text-bb-navy-900">{milestone.title}</p>
+                  <p className="text-lg font-bold text-bb-charcoal-900">{milestone.title}</p>
                 </div>
                 {milestone.isKey && (
-                  <div className="shrink-0 px-lg py-sm bg-bb-electric-500 text-white text-xs font-bold rounded-full whitespace-nowrap">
+                  <div className="shrink-0 px-lg py-sm bg-bb-amber-500 text-white text-xs font-bold rounded-full whitespace-nowrap">
                     KEY WIN
                   </div>
                 )}

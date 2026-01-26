@@ -23,6 +23,7 @@ export const topCustomers = [
     totalMargin: 9152,
     avgMargin: 416,
     assessment: 'Ideal profile—high margin, consistent',
+    whyIdeal: 'High margin ($416/load), predictable volume, relationship-driven',
   },
   {
     name: 'Radiant Logistics',
@@ -30,6 +31,7 @@ export const topCustomers = [
     totalMargin: 8207,
     avgMargin: 283,
     assessment: 'Strong performer',
+    whyIdeal: 'Good margin ($283/load), steady freight, low-maintenance',
   },
   {
     name: 'Frontier Door',
@@ -37,13 +39,23 @@ export const topCustomers = [
     totalMargin: 18825,
     avgMargin: 251,
     assessment: 'Core customer—volume + margin',
+    whyIdeal: 'High volume (75 loads), solid margin ($251/load), reliable lanes',
   },
   {
     name: 'Clearway',
-    loads: 75, // High volume estimate
+    loads: 75,
     totalMargin: 15000,
     avgMargin: 200,
     assessment: 'Core customer—scale opportunity',
+    whyIdeal: 'High volume (75 loads), $200+ margin, growth potential',
+  },
+  {
+    name: 'AMP',
+    loads: 40,
+    totalMargin: 9600,
+    avgMargin: 240,
+    assessment: 'Steady and reliable',
+    whyIdeal: 'Consistent 40 loads/mo, $240/load margin, predictable schedule',
   },
   {
     name: 'ReWorld',
@@ -51,6 +63,7 @@ export const topCustomers = [
     totalMargin: 7700,
     avgMargin: 220,
     assessment: 'Growing account',
+    whyIdeal: 'Growing volume, $220/load margin, expansion opportunity',
   },
 ]
 

@@ -50,9 +50,9 @@ const getSeverity = (likelihood: number, impact: number) => likelihood * impact
 
 // Get color based on severity
 const getSeverityColor = (severity: number) => {
-  if (severity >= 15) return { bg: 'bg-bb-burgundy-500', text: 'text-bb-burgundy-700', light: 'bg-bb-burgundy-100' }
-  if (severity >= 10) return { bg: 'bg-bb-sunset-500', text: 'text-bb-sunset-700', light: 'bg-bb-sunset-100' }
-  return { bg: 'bg-bb-electric-500', text: 'text-bb-electric-700', light: 'bg-bb-electric-100' }
+  if (severity >= 15) return { bg: 'bg-bb-charcoal-500', text: 'text-bb-charcoal-700', light: 'bg-bb-charcoal-100' }
+  if (severity >= 10) return { bg: 'bg-bb-amber-500', text: 'text-bb-amber-700', light: 'bg-bb-amber-100' }
+  return { bg: 'bg-bb-steel-500', text: 'text-bb-steel-700', light: 'bg-bb-steel-100' }
 }
 
 export default function Slide40_RisksMitigation() {
@@ -68,10 +68,10 @@ export default function Slide40_RisksMitigation() {
       <div className="w-full max-w-6xl">
         {/* Header */}
         <div className="text-center mb-lg">
-          <h1 className="font-display text-5xl font-bold text-bb-navy-900 mb-md">
+          <h1 className="font-display text-5xl font-bold text-bb-charcoal-900 mb-md">
             Risk Assessment & Mitigation
           </h1>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-bb-burgundy-500 to-bb-emerald-500 mx-auto rounded-full mb-sm" />
+          <div className="w-24 h-1.5 bg-gradient-to-r from-bb-charcoal-500 to-bb-forest-500 mx-auto rounded-full mb-sm" />
           <p className="text-lg text-bb-slate-600">
             What could go wrong and how we'll handle it
           </p>
@@ -81,17 +81,17 @@ export default function Slide40_RisksMitigation() {
         <div className="grid grid-cols-3 gap-md mb-lg">
           <div className="bg-white border-2 border-bb-slate-200 rounded-xl p-md text-center shadow-sm">
             <p className="text-xs font-semibold text-bb-slate-600 uppercase tracking-wide mb-xs">Total Risks</p>
-            <p className="text-3xl font-bold text-bb-navy-900">{totalRisks}</p>
+            <p className="text-3xl font-bold text-bb-charcoal-900">{totalRisks}</p>
             <p className="text-xs text-bb-slate-500">Identified & tracked</p>
           </div>
-          <div className="bg-gradient-to-br from-bb-burgundy-50 to-white border-2 border-bb-burgundy-300 rounded-xl p-md text-center shadow-sm">
-            <p className="text-xs font-semibold text-bb-burgundy-600 uppercase tracking-wide mb-xs">High Priority</p>
-            <p className="text-3xl font-bold text-bb-burgundy-700">{highPriorityRisks}</p>
+          <div className="bg-gradient-to-br from-bb-charcoal-50 to-white border-2 border-bb-charcoal-300 rounded-xl p-md text-center shadow-sm">
+            <p className="text-xs font-semibold text-bb-charcoal-600 uppercase tracking-wide mb-xs">High Priority</p>
+            <p className="text-3xl font-bold text-bb-charcoal-700">{highPriorityRisks}</p>
             <p className="text-xs text-bb-slate-500">Require active monitoring</p>
           </div>
-          <div className="bg-gradient-to-br from-bb-emerald-50 to-white border-2 border-bb-emerald-300 rounded-xl p-md text-center shadow-sm">
-            <p className="text-xs font-semibold text-bb-emerald-600 uppercase tracking-wide mb-xs">Avg. Mitigation</p>
-            <p className="text-3xl font-bold text-bb-emerald-700">{avgMitigationStrength}%</p>
+          <div className="bg-gradient-to-br from-bb-forest-50 to-white border-2 border-bb-forest-300 rounded-xl p-md text-center shadow-sm">
+            <p className="text-xs font-semibold text-bb-forest-600 uppercase tracking-wide mb-xs">Avg. Mitigation</p>
+            <p className="text-3xl font-bold text-bb-forest-700">{avgMitigationStrength}%</p>
             <p className="text-xs text-bb-slate-500">Coverage strength</p>
           </div>
         </div>
@@ -99,11 +99,11 @@ export default function Slide40_RisksMitigation() {
         {/* Risk Matrix Visualization */}
         <div className="bg-white rounded-xl border-2 border-bb-slate-200 p-md mb-lg shadow-md">
           <div className="flex items-center justify-between mb-md">
-            <h3 className="text-lg font-bold text-bb-navy-900">Risk Matrix</h3>
+            <h3 className="text-lg font-bold text-bb-charcoal-900">Risk Matrix</h3>
             <div className="flex gap-md text-xs">
-              <span className="flex items-center gap-xs"><span className="w-3 h-3 rounded-full bg-bb-burgundy-500"></span> High</span>
-              <span className="flex items-center gap-xs"><span className="w-3 h-3 rounded-full bg-bb-sunset-500"></span> Medium</span>
-              <span className="flex items-center gap-xs"><span className="w-3 h-3 rounded-full bg-bb-electric-500"></span> Low</span>
+              <span className="flex items-center gap-xs"><span className="w-3 h-3 rounded-full bg-bb-charcoal-500"></span> High</span>
+              <span className="flex items-center gap-xs"><span className="w-3 h-3 rounded-full bg-bb-amber-500"></span> Medium</span>
+              <span className="flex items-center gap-xs"><span className="w-3 h-3 rounded-full bg-bb-steel-500"></span> Low</span>
             </div>
           </div>
 
@@ -128,8 +128,8 @@ export default function Slide40_RisksMitigation() {
                       <div
                         key={`${impactRow}-${likelihoodCol}`}
                         className={`h-12 flex items-center justify-center ${
-                          isHighZone ? 'bg-bb-burgundy-50' :
-                          isMediumZone ? 'bg-bb-sunset-50' :
+                          isHighZone ? 'bg-bb-charcoal-50' :
+                          isMediumZone ? 'bg-bb-amber-50' :
                           'bg-white'
                         }`}
                       >
@@ -186,7 +186,7 @@ export default function Slide40_RisksMitigation() {
                       {item.id}
                     </div>
                     <div>
-                      <p className="font-bold text-bb-navy-900 text-sm">{item.title}</p>
+                      <p className="font-bold text-bb-charcoal-900 text-sm">{item.title}</p>
                       <div className="flex items-center gap-sm mt-xs">
                         <span className={`px-xs py-0.5 rounded text-[10px] font-semibold ${colors.light} ${colors.text}`}>
                           {item.category}
@@ -202,11 +202,11 @@ export default function Slide40_RisksMitigation() {
                     <div className="w-24">
                       <div className="flex items-center justify-between text-xs mb-xs">
                         <span className="text-bb-slate-500">Mitigation</span>
-                        <span className="font-semibold text-bb-emerald-600">{item.mitigationStrength}%</span>
+                        <span className="font-semibold text-bb-forest-600">{item.mitigationStrength}%</span>
                       </div>
                       <div className="h-1.5 bg-bb-slate-200 rounded-full overflow-hidden">
                         <div
-                          className="h-full bg-bb-emerald-500 rounded-full"
+                          className="h-full bg-bb-forest-500 rounded-full"
                           style={{ width: `${item.mitigationStrength}%` }}
                         ></div>
                       </div>
@@ -222,14 +222,14 @@ export default function Slide40_RisksMitigation() {
                   <div className="px-md pb-md border-t border-bb-slate-200">
                     <div className="grid grid-cols-2 gap-md mt-md">
                       {/* Risk Description */}
-                      <div className="bg-bb-burgundy-50 rounded-lg p-sm border-l-4 border-bb-burgundy-500">
-                        <p className="text-xs font-semibold text-bb-burgundy-600 mb-xs">RISK</p>
-                        <p className="text-sm text-bb-navy-900">{item.risk}</p>
+                      <div className="bg-bb-charcoal-50 rounded-lg p-sm border-l-4 border-bb-charcoal-500">
+                        <p className="text-xs font-semibold text-bb-charcoal-600 mb-xs">RISK</p>
+                        <p className="text-sm text-bb-charcoal-900">{item.risk}</p>
                       </div>
                       {/* Mitigation Plan */}
-                      <div className="bg-bb-emerald-50 rounded-lg p-sm border-l-4 border-bb-emerald-500">
-                        <p className="text-xs font-semibold text-bb-emerald-600 mb-xs">MITIGATION PLAN</p>
-                        <p className="text-sm text-bb-navy-900">{item.mitigation}</p>
+                      <div className="bg-bb-forest-50 rounded-lg p-sm border-l-4 border-bb-forest-500">
+                        <p className="text-xs font-semibold text-bb-forest-600 mb-xs">MITIGATION PLAN</p>
+                        <p className="text-sm text-bb-charcoal-900">{item.mitigation}</p>
                       </div>
                     </div>
 
@@ -239,7 +239,7 @@ export default function Slide40_RisksMitigation() {
                         <span className="text-xs text-bb-slate-500">Likelihood:</span>
                         <div className="flex gap-px">
                           {[1,2,3,4,5].map(n => (
-                            <div key={n} className={`w-3 h-3 rounded-sm ${n <= item.likelihood ? 'bg-bb-sunset-500' : 'bg-bb-slate-200'}`}></div>
+                            <div key={n} className={`w-3 h-3 rounded-sm ${n <= item.likelihood ? 'bg-bb-amber-500' : 'bg-bb-slate-200'}`}></div>
                           ))}
                         </div>
                       </div>
@@ -247,7 +247,7 @@ export default function Slide40_RisksMitigation() {
                         <span className="text-xs text-bb-slate-500">Impact:</span>
                         <div className="flex gap-px">
                           {[1,2,3,4,5].map(n => (
-                            <div key={n} className={`w-3 h-3 rounded-sm ${n <= item.impact ? 'bg-bb-burgundy-500' : 'bg-bb-slate-200'}`}></div>
+                            <div key={n} className={`w-3 h-3 rounded-sm ${n <= item.impact ? 'bg-bb-charcoal-500' : 'bg-bb-slate-200'}`}></div>
                           ))}
                         </div>
                       </div>

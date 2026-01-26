@@ -33,8 +33,8 @@ export default function Slide16_FinancialProjection_Scenario2() {
       <div className="w-full max-w-7xl space-y-2xl">
         {/* Title */}
         <div className="text-center">
-          <h2 className="text-5xl font-display font-bold text-bb-navy-900 mb-md">Financial Projections: Aggressive</h2>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-bb-electric-500 to-bb-emerald-500 mx-auto rounded-full mb-md" />
+          <h2 className="text-5xl font-display font-bold text-bb-charcoal-800 mb-md">Financial Projections: Aggressive</h2>
+          <div className="w-24 h-1.5 bg-gradient-to-r from-bb-steel-500 to-bb-forest-500 mx-auto rounded-full mb-md" />
           <p className="text-xl text-bb-slate-700">With planned hires: Rep #2 (May), Rep #3 (Aug), Ops support (June-Aug)</p>
         </div>
 
@@ -90,24 +90,24 @@ export default function Slide16_FinancialProjection_Scenario2() {
         />
 
         {/* What This Requires Section */}
-        <div className="bg-gradient-to-r from-bb-electric-50 to-bb-emerald-50 rounded-2xl p-xl border-2 border-bb-electric-300 shadow-md">
-          <h4 className="text-lg font-bold text-bb-navy-900 mb-lg">What This Scenario Requires</h4>
+        <div className="bg-gradient-to-r from-bb-steel-50 to-bb-forest-50 rounded-2xl p-xl border-2 border-bb-steel-300 shadow-md">
+          <h4 className="text-lg font-bold text-bb-charcoal-800 mb-lg">What This Scenario Requires</h4>
           <div className="grid grid-cols-3 gap-xl">
-            <div className="bg-white rounded-xl p-lg border border-bb-sunset-300">
+            <div className="bg-white rounded-xl p-lg border border-bb-amber-300">
               <div className="flex items-center gap-sm mb-md">
-                <div className="w-8 h-8 rounded-lg bg-bb-sunset-500 text-white flex items-center justify-center text-sm font-bold">1</div>
-                <p className="font-semibold text-bb-navy-900">Hiring Timeline</p>
+                <div className="w-8 h-8 rounded-lg bg-bb-amber-500 text-white flex items-center justify-center text-sm font-bold">1</div>
+                <p className="font-semibold text-bb-charcoal-800">Hiring Timeline</p>
               </div>
               <ul className="text-sm text-bb-slate-700 space-y-xs">
-                <li>• <span className="font-semibold text-bb-sunset-600">May:</span> Rep #2 starts</li>
-                <li>• <span className="font-semibold text-bb-electric-600">Jun-Aug:</span> Ops support added</li>
-                <li>• <span className="font-semibold text-bb-emerald-600">Aug:</span> Rep #3 starts</li>
+                <li>• <span className="font-semibold text-bb-amber-600">May:</span> Rep #2 starts</li>
+                <li>• <span className="font-semibold text-bb-steel-600">Jun-Aug:</span> Ops support added</li>
+                <li>• <span className="font-semibold text-bb-forest-600">Aug:</span> Rep #3 starts</li>
               </ul>
             </div>
-            <div className="bg-white rounded-xl p-lg border border-bb-electric-300">
+            <div className="bg-white rounded-xl p-lg border border-bb-steel-300">
               <div className="flex items-center gap-sm mb-md">
-                <div className="w-8 h-8 rounded-lg bg-bb-electric-500 text-white flex items-center justify-center text-sm font-bold">2</div>
-                <p className="font-semibold text-bb-navy-900">Sales Execution</p>
+                <div className="w-8 h-8 rounded-lg bg-bb-steel-500 text-white flex items-center justify-center text-sm font-bold">2</div>
+                <p className="font-semibold text-bb-charcoal-800">Sales Execution</p>
               </div>
               <ul className="text-sm text-bb-slate-700 space-y-xs">
                 <li>• Rep #2 ramps to 3+ customers/month by Aug</li>
@@ -115,10 +115,10 @@ export default function Slide16_FinancialProjection_Scenario2() {
                 <li>• 12-15 new customers/month by Q4</li>
               </ul>
             </div>
-            <div className="bg-white rounded-xl p-lg border border-bb-emerald-300">
+            <div className="bg-white rounded-xl p-lg border border-bb-forest-300">
               <div className="flex items-center gap-sm mb-md">
-                <div className="w-8 h-8 rounded-lg bg-bb-emerald-500 text-white flex items-center justify-center text-sm font-bold">3</div>
-                <p className="font-semibold text-bb-navy-900">Operations Scale</p>
+                <div className="w-8 h-8 rounded-lg bg-bb-forest-500 text-white flex items-center justify-center text-sm font-bold">3</div>
+                <p className="font-semibold text-bb-charcoal-800">Operations Scale</p>
               </div>
               <ul className="text-sm text-bb-slate-700 space-y-xs">
                 <li>• Ops support unblocks David</li>
@@ -130,13 +130,13 @@ export default function Slide16_FinancialProjection_Scenario2() {
         </div>
 
         {/* Scenario Context */}
-        <div className="bg-white rounded-2xl p-lg border-2 border-bb-electric-400 shadow-md">
+        <div className="bg-white rounded-2xl p-lg border-2 border-bb-steel-400 shadow-md">
           <div className="flex items-start gap-lg">
-            <div className="bg-bb-electric-500 text-white w-12 h-12 rounded-lg flex items-center justify-center text-xl shrink-0 font-bold">
+            <div className="bg-bb-steel-500 text-white w-12 h-12 rounded-lg flex items-center justify-center text-xl shrink-0 font-bold">
               S2
             </div>
             <div>
-              <h4 className="text-lg font-bold text-bb-navy-900 mb-sm">Scenario 2: Aggressive Growth</h4>
+              <h4 className="text-lg font-bold text-bb-charcoal-800 mb-sm">Scenario 2: Aggressive Growth</h4>
               <p className="text-sm text-bb-slate-700">
                 This scenario requires disciplined hiring and strong sales execution. Higher upside but requires commitment to growth investments. Reaches 88 active customers and $102K monthly profit by December.
               </p>
@@ -146,13 +146,13 @@ export default function Slide16_FinancialProjection_Scenario2() {
 
         {/* Expandable Full Table */}
         <details className="group">
-          <summary className="cursor-pointer text-bb-electric-600 font-semibold hover:text-bb-electric-700 flex items-center gap-sm">
+          <summary className="cursor-pointer text-bb-steel-600 font-semibold hover:text-bb-steel-700 flex items-center gap-sm">
             <span className="group-open:rotate-90 transition-transform">&#9654;</span>
             View Complete Monthly Projection Table (12 months)
           </summary>
           <div className="mt-lg overflow-x-auto rounded-xl border border-bb-slate-200">
             <table className="w-full text-sm">
-              <thead className="bg-bb-electric-600 text-white">
+              <thead className="bg-bb-steel-600 text-white">
                 <tr>
                   <th className="px-lg py-md text-left font-semibold">Month</th>
                   <th className="px-lg py-md text-center font-semibold">New Customers</th>
@@ -173,26 +173,26 @@ export default function Slide16_FinancialProjection_Scenario2() {
                   return (
                     <tr
                       key={idx}
-                      className={`border-t transition-colors ${idx % 2 === 0 ? 'bg-white' : 'bg-bb-slate-50'} hover:bg-bb-electric-50`}
+                      className={`border-t transition-colors ${idx % 2 === 0 ? 'bg-white' : 'bg-bb-slate-50'} hover:bg-bb-steel-50`}
                     >
-                      <td className="px-lg py-md font-semibold text-bb-navy-900">{row.month}</td>
+                      <td className="px-lg py-md font-semibold text-bb-charcoal-800">{row.month}</td>
                       <td className="px-lg py-md text-center text-bb-slate-700">{row.newCustomers}</td>
                       <td className="px-lg py-md text-center font-semibold text-bb-slate-700">{row.totalActive}</td>
                       <td className="px-lg py-md text-center font-semibold text-bb-slate-700">{row.estLoads}</td>
-                      <td className="px-lg py-md text-center font-bold text-bb-electric-700">${row.grossMargin.toLocaleString()}</td>
-                      <td className="px-lg py-md text-center font-bold text-bb-emerald-600">${row.estNetProfit.toLocaleString()}</td>
-                      <td className="px-lg py-md text-bb-sunset-600 text-xs font-semibold">{note}</td>
+                      <td className="px-lg py-md text-center font-bold text-bb-steel-700">${row.grossMargin.toLocaleString()}</td>
+                      <td className="px-lg py-md text-center font-bold text-bb-forest-600">${row.estNetProfit.toLocaleString()}</td>
+                      <td className="px-lg py-md text-bb-amber-600 text-xs font-semibold">{note}</td>
                     </tr>
                   )
                 })}
                 {/* Totals Row */}
-                <tr className="border-t-2 border-bb-electric-300 bg-bb-electric-50 font-bold">
-                  <td className="px-lg py-md text-bb-navy-900">TOTAL</td>
-                  <td className="px-lg py-md text-center text-bb-navy-900">{totalNewCustomers}</td>
+                <tr className="border-t-2 border-bb-steel-300 bg-bb-steel-50 font-bold">
+                  <td className="px-lg py-md text-bb-charcoal-800">TOTAL</td>
+                  <td className="px-lg py-md text-center text-bb-charcoal-800">{totalNewCustomers}</td>
                   <td className="px-lg py-md text-center text-bb-slate-600">—</td>
                   <td className="px-lg py-md text-center text-bb-slate-600">—</td>
-                  <td className="px-lg py-md text-center text-bb-electric-700">${annualMargin.toLocaleString()}</td>
-                  <td className="px-lg py-md text-center text-bb-emerald-600">${annualProfit.toLocaleString()}</td>
+                  <td className="px-lg py-md text-center text-bb-steel-700">${annualMargin.toLocaleString()}</td>
+                  <td className="px-lg py-md text-center text-bb-forest-600">${annualProfit.toLocaleString()}</td>
                   <td className="px-lg py-md"></td>
                 </tr>
               </tbody>

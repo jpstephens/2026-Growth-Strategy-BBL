@@ -17,10 +17,10 @@ export default function Slide30_SalesKPIs() {
       <div className="w-full max-w-7xl space-y-2xl">
         {/* Title */}
         <div className="text-center">
-          <h1 className="font-display text-display font-bold text-bb-navy-900 mb-md">
+          <h1 className="font-display text-display font-bold text-bb-charcoal-800 mb-md">
             Sales KPIs
           </h1>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-bb-electric-500 to-bb-sunset-500 mx-auto rounded-full mb-md" />
+          <div className="w-24 h-1.5 bg-gradient-to-r from-bb-steel-500 to-bb-amber-500 mx-auto rounded-full mb-md" />
           <p className="text-xl text-bb-slate-600">
             Tracked daily. Reviewed weekly. Essential to execution.
           </p>
@@ -85,8 +85,8 @@ export default function Slide30_SalesKPIs() {
         </div>
 
         {/* Tracking Infrastructure */}
-        <div className="bg-gradient-to-r from-bb-electric-50 to-white rounded-2xl p-xl border-2 border-bb-electric-300 shadow-md">
-          <h4 className="text-lg font-bold text-bb-navy-900 mb-lg">Tracking Infrastructure</h4>
+        <div className="bg-gradient-to-r from-bb-steel-50 to-white rounded-2xl p-xl border-2 border-bb-steel-300 shadow-md">
+          <h4 className="text-lg font-bold text-bb-charcoal-800 mb-lg">Tracking Infrastructure</h4>
           <div className="grid grid-cols-4 gap-lg">
             <div className="bg-white rounded-xl p-lg border border-bb-slate-200">
               <p className="text-xs font-semibold text-bb-slate-600 uppercase mb-xs">Daily</p>
@@ -112,13 +112,13 @@ export default function Slide30_SalesKPIs() {
 
         {/* Expandable Full Table */}
         <details className="group">
-          <summary className="cursor-pointer text-bb-electric-600 font-semibold hover:text-bb-electric-700 flex items-center gap-sm">
+          <summary className="cursor-pointer text-bb-steel-600 font-semibold hover:text-bb-steel-700 flex items-center gap-sm">
             <span className="group-open:rotate-90 transition-transform">&#9654;</span>
             View Complete KPI Reference Table
           </summary>
           <div className="mt-lg overflow-x-auto rounded-xl border border-bb-slate-200">
             <table className="w-full text-sm">
-              <thead className="bg-gradient-to-r from-bb-electric-500 to-bb-electric-600 text-white">
+              <thead className="bg-gradient-to-r from-bb-steel-500 to-bb-steel-600 text-white">
                 <tr>
                   <th className="px-lg py-md text-left font-bold">Metric</th>
                   <th className="px-lg py-md text-center font-bold">Target</th>
@@ -132,12 +132,12 @@ export default function Slide30_SalesKPIs() {
                   <tr
                     key={idx}
                     className={`border-t transition-colors ${
-                      idx % 2 === 0 ? 'bg-white hover:bg-bb-electric-50' : 'bg-bb-slate-50 hover:bg-bb-electric-50'
+                      idx % 2 === 0 ? 'bg-white hover:bg-bb-steel-50' : 'bg-bb-slate-50 hover:bg-bb-steel-50'
                     }`}
                   >
-                    <td className="px-lg py-md font-semibold text-bb-navy-900">{kpi.metric}</td>
+                    <td className="px-lg py-md font-semibold text-bb-charcoal-800">{kpi.metric}</td>
                     <td className="px-lg py-md text-center">
-                      <span className="bg-bb-electric-100 text-bb-electric-700 px-md py-xs rounded-full font-semibold text-xs">
+                      <span className="bg-bb-steel-100 text-bb-steel-700 px-md py-xs rounded-full font-semibold text-xs">
                         {kpi.target}
                       </span>
                     </td>
