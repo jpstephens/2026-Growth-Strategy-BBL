@@ -46,25 +46,23 @@ export default function Slide({ children, className = '', variant = 'default' }:
   return (
     <div
       className={`
-        w-full h-screen
-        flex items-center justify-center
+        w-full min-h-screen
+        flex flex-col items-center
+        py-8 px-4
         ${backgroundVariants[variant]}
-        overflow-hidden
+        overflow-y-auto
         ${className}
       `}
     >
-      {/* Scaling container - fixed design size, CSS scales to fit */}
-      <div className="slide-scaler">
-        <motion.div
-          className="w-full h-full p-8 flex flex-col justify-center"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          key={Math.random()}
-        >
-          {children}
-        </motion.div>
-      </div>
+      <motion.div
+        className="w-full max-w-5xl"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        key={Math.random()}
+      >
+        {children}
+      </motion.div>
     </div>
   )
 }
