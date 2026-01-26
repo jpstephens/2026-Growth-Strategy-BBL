@@ -7,11 +7,11 @@ export default function Slide06_WhyIncompatible() {
         {/* Hero Title */}
         <div className="text-center mb-lg">
           <h1 className="font-display text-display font-bold text-bb-navy-900 mb-md">
-            Why This Is Structurally Incompatible
+            You Can't Be Great at Both
           </h1>
           <div className="w-24 h-1.5 bg-gradient-to-r from-bb-burgundy-500 to-bb-electric-500 mx-auto rounded-full mb-lg" />
           <p className="text-xl text-bb-slate-600 max-w-2xl mx-auto">
-            Operations and sales require opposite mindsets
+            Operations and sales need different people. Here's why.
           </p>
         </div>
 
@@ -30,16 +30,16 @@ export default function Slide06_WhyIncompatible() {
 
               <div className="space-y-lg text-white">
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-lg border border-white/20">
-                  <p className="font-semibold mb-sm text-lg">Mindset: Reactive</p>
-                  <p className="text-sm text-bb-burgundy-50 leading-relaxed">Puts out fires, solves problems as they happen, handles exceptions</p>
+                  <p className="font-semibold mb-sm text-lg">When Things Go Wrong</p>
+                  <p className="text-sm text-bb-burgundy-50 leading-relaxed">When urgent things happen (loads, carrier issues), they have to jump. They stop selling.</p>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-lg border border-white/20">
-                  <p className="font-semibold mb-sm text-lg">Focus: Current customers</p>
-                  <p className="text-sm text-bb-burgundy-50 leading-relaxed">Ensure loads run on time, carriers are happy, customers are served</p>
+                  <p className="font-semibold mb-sm text-lg">The Reality</p>
+                  <p className="text-sm text-bb-burgundy-50 leading-relaxed">Crises are predictable. The ringing phone and the email will always be there.</p>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-lg border border-white/20">
-                  <p className="font-semibold mb-sm text-lg">Interruptions: Constant</p>
-                  <p className="text-sm text-bb-burgundy-50 leading-relaxed">The phone rings, the email pings—urgent always wins</p>
+                  <p className="font-semibold mb-sm text-lg">The Cost</p>
+                  <p className="text-sm text-bb-burgundy-50 leading-relaxed">Sales momentum dies. Prospect calls don't get made. Pipeline dries up.</p>
                 </div>
               </div>
             </div>
@@ -58,16 +58,16 @@ export default function Slide06_WhyIncompatible() {
 
               <div className="space-y-lg text-white">
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-lg border border-white/20">
-                  <p className="font-semibold mb-sm text-lg">Mindset: Proactive</p>
-                  <p className="text-sm text-bb-emerald-50 leading-relaxed">Builds funnels, plans outreach, creates momentum, thinks ahead</p>
+                  <p className="font-semibold mb-sm text-lg">What They Need</p>
+                  <p className="text-sm text-bb-emerald-50 leading-relaxed">Hours of focus to build relationships and call prospects.</p>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-lg border border-white/20">
-                  <p className="font-semibold mb-sm text-lg">Focus: New customers</p>
-                  <p className="text-sm text-bb-emerald-50 leading-relaxed">Prospect lists, cold calls, qualification, closing deals</p>
+                  <p className="font-semibold mb-sm text-lg">What Kills It</p>
+                  <p className="text-sm text-bb-emerald-50 leading-relaxed">Interruptions. Context switching destroys momentum.</p>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-lg border border-white/20">
-                  <p className="font-semibold mb-sm text-lg">Interruptions: Death</p>
-                  <p className="text-sm text-bb-emerald-50 leading-relaxed">Context switching destroys momentum and pipeline</p>
+                  <p className="font-semibold mb-sm text-lg">The Result</p>
+                  <p className="text-sm text-bb-emerald-50 leading-relaxed">No consistent outreach. Deals don't close. Growth stalls.</p>
                 </div>
               </div>
             </div>
@@ -77,7 +77,7 @@ export default function Slide06_WhyIncompatible() {
         {/* Bottom explanation */}
         <div className="bg-white rounded-2xl p-2xl shadow-lg border-2 border-bb-slate-200">
           <p className="text-lg text-bb-slate-700 leading-relaxed">
-            <span className="font-bold text-bb-navy-900">The Problem:</span> When one person does both, the ringing phone always beats the prospect list. Urgent operations work interrupts proactive sales work. Result: Patrick becomes a firefighter who occasionally sells, not a salesman who occasionally handles ops.
+            <span className="font-bold text-bb-navy-900">The Bottom Line:</span> You can't be great at both. Pick one. Right now, we're trying to do both with one person. That's the problem.
           </p>
         </div>
       </div>

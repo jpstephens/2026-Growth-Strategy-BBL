@@ -8,11 +8,11 @@ export default function Slide05_CostOfWaiting() {
         {/* Title */}
         <div className="text-center mb-lg">
           <h1 className="font-display text-display font-bold text-bb-navy-900 mb-md">
-            The Cost of Waiting
+            The Choice Is Clear
           </h1>
           <div className="w-24 h-1.5 bg-gradient-to-r from-bb-burgundy-500 to-bb-emerald-500 mx-auto rounded-full mb-lg" />
           <p className="text-xl text-bb-slate-600 max-w-3xl mx-auto">
-            Early customer acquisition has massive impact. Timing matters.
+            Do nothing, or do this now. The difference is massive.
           </p>
         </div>
 
@@ -52,10 +52,13 @@ export default function Slide05_CostOfWaiting() {
         {/* Impact Summary */}
         <div className="bg-gradient-to-r from-bb-burgundy-500 to-bb-sunset-500 rounded-2xl p-3xl shadow-2xl border-2 border-bb-sunset-400 text-white text-center">
           <p className="text-3xl font-bold mb-lg">
-            Delta: $900K in annual profit
+            If we don't fix this now: $12K/month forever.
+          </p>
+          <p className="text-2xl font-bold mb-lg text-bb-emerald-200">
+            If we do it this quarter: $87K/month by December.
           </p>
           <p className="text-xl opacity-95 leading-relaxed">
-            Every month we wait, we miss <span className="font-bold text-bb-sunset-200">$75K</span> in unrealized profit.
+            That's a <span className="font-bold text-bb-sunset-200">$900K</span> difference in annual profit we leave on the table.
           </p>
         </div>
       </div>

@@ -8,18 +8,18 @@ export default function Slide02_ExecutiveThesis() {
         {/* Hero Title */}
         <div className="text-center mb-lg">
           <h1 className="font-display text-display font-bold text-bb-navy-900 mb-md">
-            We Have Proven Product-Market Fit
+            We've Already Proven This Works
           </h1>
           <div className="w-32 h-1.5 bg-gradient-to-r from-bb-electric-500 via-bb-electric-400 to-bb-sunset-400 mx-auto rounded-full mb-lg" />
           <p className="text-xl text-bb-slate-600 max-w-3xl mx-auto leading-relaxed">
-            The business model works. The constraint isn't the market—it's sales capacity.
+            We have customers ready to buy. We just need more people selling.
           </p>
         </div>
 
         {/* Foundation Callout */}
-        <Callout variant="success" title="The Foundation We've Built" size="lg">
+        <Callout variant="success" title="What We've Proven" size="lg">
           <p className="text-lg leading-relaxed">
-            BlackBridge has shipped 774 loads with $160K in gross margin. We have real customers, real revenue, and real margins. The unit economics work: $200+ profit per load. We're not experimenting. We're scaling what already works.
+            BlackBridge has shipped 774 loads with $160K in gross margin. We have real customers, real revenue, and real margins. The unit economics work: $200+ profit per load. This is proven. We're ready to scale.
           </p>
         </Callout>
 

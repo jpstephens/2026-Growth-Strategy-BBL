@@ -4,52 +4,52 @@ export default function Slide12_Roadmap() {
   const quarters = [
     {
       quarter: 'Q1',
+      title: 'Prove It Works',
       months: 'Jan - Mar',
       color: 'electric',
       bgFrom: 'from-bb-electric-50',
       border: 'border-bb-electric-400',
       items: [
-        'Establish sales system (HubSpot pipeline, CRM discipline)',
-        'Hire/empower first dedicated sales rep',
-        'Add 12-15 new customers',
-        'Reach 17-20 active customers total',
+        'Patrick runs the new system',
+        'Do we hit 4-5 new customers?',
       ],
     },
     {
       quarter: 'Q2',
+      title: 'Hire The Second Rep',
       months: 'Apr - Jun',
       color: 'sunset',
       bgFrom: 'from-bb-sunset-50',
       border: 'border-bb-sunset-400',
       items: [
-        'Build carrier network in high-margin lanes',
-        'Refine pricing model (margin target: $210+/load)',
-        'Add 15-18 new customers',
-        'Reach 32-35 active customers total',
+        'If Patrick hits his targets, we hire Rep #2',
+        'Two people selling = double the results',
       ],
     },
     {
       quarter: 'Q3',
+      title: 'Scale It',
       months: 'Jul - Sep',
       color: 'emerald',
       bgFrom: 'from-bb-emerald-50',
       border: 'border-bb-emerald-400',
       items: [
-        'Scale sales (consider 2nd rep)',
-        'Add 18-20 new customers',
-        'Reach 50-55 total',
+        'Two reps are crushing it',
+        'Hire Rep #3. Ops team grows to handle volume',
       ],
     },
     {
       quarter: 'Q4',
+      title: 'Win',
       months: 'Oct - Dec',
       color: 'navy',
       bgFrom: 'from-bb-navy-50',
       border: 'border-bb-navy-400',
       items: [
-        'Push to $100K monthly profit',
-        'Add 18-20 new customers',
-        'Reach 65-70 total customers',
+        'Four sales reps',
+        '65-70 customers',
+        '$100K monthly profit',
+        'GOAL ACHIEVED',
       ],
     },
   ]
@@ -79,9 +79,10 @@ export default function Slide12_Roadmap() {
             return (
               <div key={idx} className={`rounded-2xl border-2 ${q.border} ${q.bgFrom} to-white p-2xl shadow-lg hover:shadow-xl transition-all`}>
                 <div className="flex items-baseline gap-md mb-xl">
-                  <h3 className={`text-4xl font-black font-display ${colors.text}`}>{q.quarter}</h3>
-                  <p className="text-lg text-bb-slate-600">({q.months})</p>
+                  <h3 className={`text-4xl font-black font-display ${colors.text}`}>{q.quarter}:</h3>
+                  <h4 className="text-2xl font-bold text-bb-navy-900">{(q as any).title}</h4>
                 </div>
+                <p className="text-lg text-bb-slate-600 mb-xl">({q.months})</p>
                 <ul className="space-y-lg">
                   {q.items.map((item, i) => (
                     <li key={i} className="flex items-start gap-md">
@@ -108,10 +109,11 @@ export default function Slide12_Roadmap() {
                 }`}
               >
                 <div className="flex items-baseline gap-md mb-xl">
-                  <h3 className={`text-4xl font-black font-display ${colors.text}`}>{q.quarter}</h3>
-                  <p className="text-lg text-bb-slate-600">({q.months})</p>
+                  <h3 className={`text-4xl font-black font-display ${colors.text}`}>{q.quarter}:</h3>
+                  <h4 className="text-2xl font-bold text-bb-navy-900">{(q as any).title}</h4>
                   {isQ4 && <div className="ml-auto badge badge-success">🎯 GOAL</div>}
                 </div>
+                <p className="text-lg text-bb-slate-600 mb-xl">({q.months})</p>
                 <ul className="space-y-lg">
                   {q.items.map((item, i) => (
                     <li key={i} className="flex items-start gap-md">

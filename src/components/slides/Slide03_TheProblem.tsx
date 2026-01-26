@@ -7,11 +7,11 @@ export default function Slide03_TheProblem() {
         {/* Title */}
         <div className="text-center mb-lg">
           <h1 className="font-display text-display font-bold text-bb-navy-900 mb-md">
-            The Core Problem
+            One Problem Is Holding Us Back
           </h1>
           <div className="w-24 h-1.5 bg-gradient-to-r from-bb-burgundy-500 to-bb-sunset-500 mx-auto rounded-full mb-lg" />
           <p className="text-xl text-bb-slate-600 max-w-3xl mx-auto">
-            Patrick does both sales AND operations—an impossible role combination
+            Right now, Patrick is doing two jobs at once. He can't sell AND run operations. Something has to give.
           </p>
         </div>
 
@@ -49,15 +49,15 @@ export default function Slide03_TheProblem() {
             <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-bb-sunset-500 to-bb-sunset-600 flex items-center justify-center text-white text-xl font-bold">
               📊
             </div>
-            <h3 className="text-2xl font-bold text-bb-sunset-700">Why This Matters</h3>
+            <h3 className="text-2xl font-bold text-bb-sunset-700">The Fix Is Simple</h3>
           </div>
           <div className="space-y-lg">
             <p className="text-lg text-bb-slate-700 leading-relaxed">
-              At 1 customer/month, we'll reach 65-70 customers sometime in 2031. We don't have that much time. Meanwhile, the business stays dependent on 2 accounts (Clearway + Frontier) that together represent too much risk.
+              We need to fix this one structural problem. Everything else will follow.
             </p>
             <div className="h-px bg-bb-sunset-200" />
             <p className="text-xl font-bold text-bb-sunset-900 leading-relaxed">
-              We need to fix this structural problem now. The fix: <span className="text-bb-electric-600">Separate roles completely.</span> David owns operations. Patrick owns sales.
+              <span className="text-bb-electric-600">Separate the roles.</span> David owns operations. Patrick owns sales. That's it.
             </p>
           </div>
         </div>

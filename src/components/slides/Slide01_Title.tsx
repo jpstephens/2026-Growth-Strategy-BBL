@@ -18,7 +18,7 @@ export default function Slide01_Title() {
             $12K → $100K Monthly Profit
           </p>
           <p className="text-2xl text-bb-slate-700 leading-relaxed mx-auto max-w-3xl">
-            A clear path to double-digit growth with role clarity, sales system discipline, and carrier development.
+            Here's how we go from $12K to $100K this year. And everyone plays a role.
           </p>
         </div>
 

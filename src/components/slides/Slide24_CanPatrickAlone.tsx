@@ -8,7 +8,7 @@ export default function Slide24_CanPatrickAlone() {
         {/* Hero Title */}
         <div className="text-center mb-lg">
           <h1 className="font-display text-display font-bold text-bb-navy-900 mb-md">
-            Can Patrick Alone Hit $100K Monthly Profit?
+            Can One Person Hit $100K Monthly Profit?
           </h1>
           <div className="w-24 h-1.5 bg-gradient-to-r from-bb-electric-500 to-bb-sunset-500 mx-auto rounded-full mb-lg" />
           <p className="text-xl text-bb-slate-700 max-w-2xl mx-auto">
@@ -25,16 +25,16 @@ export default function Slide24_CanPatrickAlone() {
               <div className="flex items-start justify-between mb-2xl">
                 <div>
                   <div className="inline-block px-lg py-sm bg-bb-burgundy-500 rounded-full text-white font-bold text-sm mb-md">
-                    ❌ MISSES GOAL
+                    One Person Alone
                   </div>
                   <h2 className="font-display text-h1 font-bold text-white">
-                    Scenario 1: Patrick Alone
+                    Patrick Alone: Tops Out at $69K/month
                   </h2>
                 </div>
               </div>
 
               <p className="text-lg text-bb-slate-300 mb-2xl leading-relaxed">
-                Even with the three structural changes, Patrick has limits. One person can only make so many calls, close so many deals, and manage so many accounts.
+                Even with perfect execution, one person has limits.
               </p>
 
               <div className="grid grid-cols-2 gap-lg mb-2xl">
@@ -47,7 +47,7 @@ export default function Slide24_CanPatrickAlone() {
               <div className="h-px bg-bb-slate-700 mb-2xl" />
 
               <p className="text-lg font-bold text-bb-burgundy-300">
-                Missing by $31K/month
+                Short by $31K/month
               </p>
             </div>
           </div>
@@ -59,16 +59,16 @@ export default function Slide24_CanPatrickAlone() {
               <div className="flex items-start justify-between mb-2xl">
                 <div>
                   <div className="inline-block px-lg py-sm bg-bb-emerald-500 rounded-full text-white font-bold text-sm mb-md">
-                    ✅ EXCEEDS GOAL
+                    The Right Path
                   </div>
                   <h2 className="font-display text-h1 font-bold text-white">
-                    Scenario 2: With Strategic Hires
+                    Patrick + Two More Reps: $102K/month
                   </h2>
                 </div>
               </div>
 
               <p className="text-lg text-bb-slate-300 mb-2xl leading-relaxed">
-                We hire Rep #2 when Patrick proves the system works (4+ customers/month for 2 consecutive months). Then Rep #3 if needed. Ops coordinator supports volume.
+                Three people doing what Patrick does = we hit the goal.
               </p>
 
               <div className="grid grid-cols-2 gap-lg mb-2xl">
@@ -90,7 +90,7 @@ export default function Slide24_CanPatrickAlone() {
         {/* Key Insight */}
         <div className="bg-gradient-to-r from-bb-electric-500/10 to-bb-sunset-500/10 rounded-2xl p-2xl shadow-lg border-2 border-bb-electric-400/30">
           <p className="text-lg text-bb-slate-100 leading-relaxed">
-            <span className="font-bold text-white">Key Insight:</span> The system Patrick builds in Q1 is repeatable. Once we prove it works, we scale it by adding salespeople. We don't hire based on projection—we hire based on proven results.
+            <span className="font-bold text-white">Bottom Line:</span> We need to hire. But we hire only after Patrick proves the system works.
           </p>
         </div>
       </div>
