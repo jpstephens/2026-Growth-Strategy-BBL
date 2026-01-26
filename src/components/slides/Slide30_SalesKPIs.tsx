@@ -1,155 +1,81 @@
 import Slide from '../layout/Slide'
-import MetricCardEnhanced from '../content/MetricCardEnhanced'
 import { salesKPIs } from '../../data/kpis'
 
 export default function Slide30_SalesKPIs() {
-  // Secondary KPIs
-  const secondaryKPIs = salesKPIs.filter(k =>
-    k.metric === 'Conversations' || k.metric === 'Qualified Prospects' || k.metric === 'Quote-to-Close Rate'
-  )
-  // Pipeline KPIs
-  const pipelineKPIs = salesKPIs.filter(k =>
-    k.metric === 'Pipeline Value' || k.metric === 'Email Reply Rate'
-  )
-
   return (
     <Slide variant="gradient">
-      <div className="w-full max-w-7xl space-y-2xl">
+      <div className="w-full max-w-6xl space-y-md">
         {/* Title */}
         <div className="text-center">
-          <h1 className="font-display text-display font-bold text-bb-charcoal-800 mb-md">
+          <h1 className="font-display text-display font-bold text-bb-charcoal-800 mb-sm">
             Sales KPIs
           </h1>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-bb-steel-500 to-bb-amber-500 mx-auto rounded-full mb-md" />
-          <p className="text-xl text-bb-slate-600">
+          <div className="w-24 h-1.5 bg-gradient-to-r from-bb-steel-500 to-bb-amber-500 mx-auto rounded-full mb-sm" />
+          <p className="text-base text-bb-charcoal-600">
             Tracked daily. Reviewed weekly. Essential to execution.
           </p>
         </div>
 
-        {/* Primary KPIs (Hero Cards) */}
-        <div className="grid grid-cols-2 gap-2xl">
-          <MetricCardEnhanced
-            label="Dials"
-            value="200/week"
-            size="lg"
-            color="electric"
-            owner="Patrick/Chris"
-            frequency="Daily"
-            icon={<span>P</span>}
-          />
-          <MetricCardEnhanced
-            label="New Customers"
-            value="4-6/month"
-            size="lg"
-            color="emerald"
-            owner="Chris"
-            frequency="Monthly"
-            icon={<span>+</span>}
-          />
-        </div>
-
-        {/* Secondary KPIs */}
-        <div>
-          <h3 className="text-sm font-semibold text-bb-slate-600 uppercase tracking-wide mb-lg">Activity Metrics</h3>
-          <div className="grid grid-cols-3 gap-lg">
-            {secondaryKPIs.map((kpi, idx) => (
-              <MetricCardEnhanced
-                key={idx}
-                label={kpi.metric}
-                value={kpi.target}
-                size="sm"
-                color={idx === 0 ? 'electric' : idx === 1 ? 'sunset' : 'navy'}
-                owner={kpi.owner}
-                frequency={kpi.frequency}
-              />
-            ))}
+        {/* Primary KPIs - Compact */}
+        <div className="grid grid-cols-2 gap-lg">
+          <div className="bg-gradient-to-br from-bb-amber-50 to-white rounded-xl border-2 border-bb-amber-300 p-md shadow-sm">
+            <p className="text-xs font-semibold text-bb-amber-600 uppercase tracking-wide mb-xs">Primary Metric</p>
+            <p className="text-3xl font-display font-black text-bb-amber-600">200/week</p>
+            <p className="text-base font-bold text-bb-charcoal-800">Dials</p>
+            <p className="text-xs text-bb-charcoal-500 mt-xs">Owner: Patrick/Chris | Daily tracking</p>
+          </div>
+          <div className="bg-gradient-to-br from-bb-forest-50 to-white rounded-xl border-2 border-bb-forest-300 p-md shadow-sm">
+            <p className="text-xs font-semibold text-bb-forest-600 uppercase tracking-wide mb-xs">Primary Metric</p>
+            <p className="text-3xl font-display font-black text-bb-forest-600">4-5/month</p>
+            <p className="text-base font-bold text-bb-charcoal-800">New Customers</p>
+            <p className="text-xs text-bb-charcoal-500 mt-xs">Owner: Chris | Monthly review</p>
           </div>
         </div>
 
-        {/* Pipeline KPIs */}
-        <div>
-          <h3 className="text-sm font-semibold text-bb-slate-600 uppercase tracking-wide mb-lg">Pipeline Metrics</h3>
-          <div className="grid grid-cols-2 gap-lg">
-            {pipelineKPIs.map((kpi, idx) => (
-              <MetricCardEnhanced
-                key={idx}
-                label={kpi.metric}
-                value={kpi.target}
-                size="sm"
-                color={idx === 0 ? 'emerald' : 'sunset'}
-                owner={kpi.owner}
-                frequency={kpi.frequency}
-              />
+        {/* Secondary KPIs - Grid */}
+        <div className="bg-white rounded-xl border-2 border-bb-slate-200 p-md shadow-sm">
+          <h3 className="text-sm font-bold text-bb-charcoal-800 mb-sm">Activity & Pipeline Metrics</h3>
+          <div className="grid grid-cols-5 gap-md">
+            {salesKPIs.slice(0, 5).map((kpi, idx) => (
+              <div key={idx} className="text-center p-sm bg-bb-slate-50 rounded-lg">
+                <p className="text-lg font-bold text-bb-steel-600">{kpi.target}</p>
+                <p className="text-xs text-bb-charcoal-700 font-semibold">{kpi.metric}</p>
+                <p className="text-xs text-bb-charcoal-500">{kpi.frequency}</p>
+              </div>
             ))}
           </div>
         </div>
 
         {/* Tracking Infrastructure */}
-        <div className="bg-gradient-to-r from-bb-steel-50 to-white rounded-2xl p-xl border-2 border-bb-steel-300 shadow-md">
-          <h4 className="text-lg font-bold text-bb-charcoal-800 mb-lg">Tracking Infrastructure</h4>
-          <div className="grid grid-cols-4 gap-lg">
-            <div className="bg-white rounded-xl p-lg border border-bb-slate-200">
-              <p className="text-xs font-semibold text-bb-slate-600 uppercase mb-xs">Daily</p>
-              <p className="text-sm text-bb-slate-700">Dials logged in HubSpot</p>
+        <div className="bg-gradient-to-r from-bb-steel-50 to-white rounded-xl p-md border-2 border-bb-steel-300 shadow-sm">
+          <h4 className="text-sm font-bold text-bb-charcoal-800 mb-sm">Tracking Infrastructure</h4>
+          <div className="grid grid-cols-4 gap-md">
+            <div className="bg-white rounded-lg p-sm border border-bb-slate-200 text-center">
+              <p className="text-xs font-semibold text-bb-slate-600">Daily</p>
+              <p className="text-xs text-bb-charcoal-600">Dials in HubSpot</p>
             </div>
-            <div className="bg-white rounded-xl p-lg border border-bb-slate-200">
-              <p className="text-xs font-semibold text-bb-slate-600 uppercase mb-xs">Per Call</p>
-              <p className="text-sm text-bb-slate-700">Conversations tracked with notes</p>
+            <div className="bg-white rounded-lg p-sm border border-bb-slate-200 text-center">
+              <p className="text-xs font-semibold text-bb-slate-600">Per Call</p>
+              <p className="text-xs text-bb-charcoal-600">Conversations tracked</p>
             </div>
-            <div className="bg-white rounded-xl p-lg border border-bb-slate-200">
-              <p className="text-xs font-semibold text-bb-slate-600 uppercase mb-xs">By Stage</p>
-              <p className="text-sm text-bb-slate-700">Deals tracked in HubSpot</p>
+            <div className="bg-white rounded-lg p-sm border border-bb-slate-200 text-center">
+              <p className="text-xs font-semibold text-bb-slate-600">By Stage</p>
+              <p className="text-xs text-bb-charcoal-600">Deals in HubSpot</p>
             </div>
-            <div className="bg-white rounded-xl p-lg border border-bb-slate-200">
-              <p className="text-xs font-semibold text-bb-slate-600 uppercase mb-xs">Email</p>
-              <p className="text-sm text-bb-slate-700">Instantly.ai dashboard</p>
+            <div className="bg-white rounded-lg p-sm border border-bb-slate-200 text-center">
+              <p className="text-xs font-semibold text-bb-slate-600">Email</p>
+              <p className="text-xs text-bb-charcoal-600">Instantly.ai dashboard</p>
             </div>
           </div>
-          <p className="text-sm text-bb-slate-600 mt-lg italic">
-            Weekly review with Chris. Monthly dashboard to full team.
-          </p>
         </div>
 
-        {/* Expandable Full Table */}
-        <details className="group">
-          <summary className="cursor-pointer text-bb-steel-600 font-semibold hover:text-bb-steel-700 flex items-center gap-sm">
-            <span className="group-open:rotate-90 transition-transform">&#9654;</span>
-            View Complete KPI Reference Table
-          </summary>
-          <div className="mt-lg overflow-x-auto rounded-xl border border-bb-slate-200">
-            <table className="w-full text-sm">
-              <thead className="bg-gradient-to-r from-bb-steel-500 to-bb-steel-600 text-white">
-                <tr>
-                  <th className="px-lg py-md text-left font-bold">Metric</th>
-                  <th className="px-lg py-md text-center font-bold">Target</th>
-                  <th className="px-lg py-md text-center font-bold">Frequency</th>
-                  <th className="px-lg py-md text-left font-bold">Measurement</th>
-                  <th className="px-lg py-md text-left font-bold">Owner</th>
-                </tr>
-              </thead>
-              <tbody>
-                {salesKPIs.map((kpi, idx) => (
-                  <tr
-                    key={idx}
-                    className={`border-t transition-colors ${
-                      idx % 2 === 0 ? 'bg-white hover:bg-bb-steel-50' : 'bg-bb-slate-50 hover:bg-bb-steel-50'
-                    }`}
-                  >
-                    <td className="px-lg py-md font-semibold text-bb-charcoal-800">{kpi.metric}</td>
-                    <td className="px-lg py-md text-center">
-                      <span className="bg-bb-steel-100 text-bb-steel-700 px-md py-xs rounded-full font-semibold text-xs">
-                        {kpi.target}
-                      </span>
-                    </td>
-                    <td className="px-lg py-md text-center text-bb-slate-700">{kpi.frequency}</td>
-                    <td className="px-lg py-md text-bb-slate-700">{kpi.how}</td>
-                    <td className="px-lg py-md text-bb-slate-700">{kpi.owner}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </details>
+        {/* Bottom Line */}
+        <div className="bg-gradient-to-br from-bb-forest-600 to-bb-forest-700 rounded-xl p-md shadow-lg">
+          <p className="text-base text-center text-white">
+            <span className="font-bold text-bb-amber-200">Weekly review with Chris.</span>
+            {' '}Monthly dashboard to full team. Numbers don't lie—we track everything.
+          </p>
+        </div>
       </div>
     </Slide>
   )

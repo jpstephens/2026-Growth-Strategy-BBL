@@ -1,157 +1,133 @@
 import Slide from '../layout/Slide'
-import MetricCardEnhanced from '../content/MetricCardEnhanced'
 import { operationsKPIs } from '../../data/kpis'
 
 export default function Slide31_OperationsKPIs() {
-  // Group KPIs by category
-  const serviceQuality = operationsKPIs.filter(k =>
-    k.metric === 'On-Time Pickup' || k.metric === 'On-Time Delivery' || k.metric === 'Issue Resolution Time'
-  )
-  const efficiency = operationsKPIs.filter(k =>
-    k.metric === 'Margin per Load' || k.metric === 'Direct Carrier %'
-  )
-  const reliability = operationsKPIs.filter(k =>
-    k.metric === 'Repeat Carrier Rate' || k.metric === 'Customer Complaints'
-  )
-
   return (
     <Slide variant="gradient">
-      <div className="w-full max-w-7xl space-y-2xl">
+      <div className="w-full max-w-6xl space-y-md">
         {/* Title */}
         <div className="text-center">
-          <h2 className="font-display text-display font-bold text-bb-charcoal-800 mb-md">Operations KPIs</h2>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-bb-amber-500 to-bb-forest-500 mx-auto rounded-full mb-md" />
-          <p className="text-xl text-bb-slate-600">Load execution. Carrier network. Quality assurance.</p>
+          <h2 className="font-display text-display font-bold text-bb-charcoal-800 mb-sm">Operations KPIs</h2>
+          <div className="w-24 h-1.5 bg-gradient-to-r from-bb-amber-500 to-bb-forest-500 mx-auto rounded-full mb-sm" />
+          <p className="text-base text-bb-charcoal-600">Load execution. Carrier network. Quality assurance.</p>
         </div>
 
-        {/* Service Quality KPIs */}
-        <div>
-          <h3 className="text-sm font-semibold text-bb-forest-600 uppercase tracking-wide mb-lg flex items-center gap-sm">
-            <div className="w-3 h-3 bg-bb-forest-500 rounded-full"></div>
-            Service Quality
-          </h3>
-          <div className="grid grid-cols-3 gap-lg">
-            {serviceQuality.map((kpi, idx) => (
-              <MetricCardEnhanced
-                key={idx}
-                label={kpi.metric}
-                value={kpi.target}
-                size="sm"
-                color="emerald"
-                owner={kpi.owner}
-                frequency={kpi.frequency}
-              />
-            ))}
+        {/* KPI Grid - Compact 2 rows */}
+        <div className="grid grid-cols-3 gap-md">
+          {/* Service Quality */}
+          <div className="bg-gradient-to-br from-bb-forest-50 to-white rounded-xl border-2 border-bb-forest-300 p-md">
+            <div className="flex items-center gap-sm mb-sm">
+              <div className="w-3 h-3 bg-bb-forest-500 rounded-full"></div>
+              <h3 className="text-sm font-bold text-bb-forest-700">Service Quality</h3>
+            </div>
+            <div className="space-y-sm">
+              <div className="flex justify-between items-center">
+                <span className="text-xs text-bb-charcoal-600">On-Time Pickup</span>
+                <span className="text-sm font-bold text-bb-forest-600">&gt;95%</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-xs text-bb-charcoal-600">On-Time Delivery</span>
+                <span className="text-sm font-bold text-bb-forest-600">&gt;95%</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-xs text-bb-charcoal-600">Issue Resolution</span>
+                <span className="text-sm font-bold text-bb-forest-600">&lt;2hrs</span>
+              </div>
+            </div>
           </div>
-        </div>
 
-        {/* Efficiency KPIs */}
-        <div>
-          <h3 className="text-sm font-semibold text-bb-steel-600 uppercase tracking-wide mb-lg flex items-center gap-sm">
-            <div className="w-3 h-3 bg-bb-steel-500 rounded-full"></div>
-            Efficiency
-          </h3>
-          <div className="grid grid-cols-2 gap-lg">
-            {efficiency.map((kpi, idx) => (
-              <MetricCardEnhanced
-                key={idx}
-                label={kpi.metric}
-                value={kpi.target}
-                size="md"
-                color="electric"
-                owner={kpi.owner}
-                frequency={kpi.frequency}
-              />
-            ))}
+          {/* Efficiency */}
+          <div className="bg-gradient-to-br from-bb-steel-50 to-white rounded-xl border-2 border-bb-steel-300 p-md">
+            <div className="flex items-center gap-sm mb-sm">
+              <div className="w-3 h-3 bg-bb-steel-500 rounded-full"></div>
+              <h3 className="text-sm font-bold text-bb-steel-700">Efficiency</h3>
+            </div>
+            <div className="space-y-sm">
+              <div className="flex justify-between items-center">
+                <span className="text-xs text-bb-charcoal-600">Margin/Load</span>
+                <span className="text-sm font-bold text-bb-steel-600">$200+</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-xs text-bb-charcoal-600">Direct Carrier %</span>
+                <span className="text-sm font-bold text-bb-steel-600">&gt;35%</span>
+              </div>
+            </div>
           </div>
-        </div>
 
-        {/* Reliability KPIs */}
-        <div>
-          <h3 className="text-sm font-semibold text-bb-amber-600 uppercase tracking-wide mb-lg flex items-center gap-sm">
-            <div className="w-3 h-3 bg-bb-amber-500 rounded-full"></div>
-            Reliability & Network
-          </h3>
-          <div className="grid grid-cols-2 gap-lg">
-            {reliability.map((kpi, idx) => (
-              <MetricCardEnhanced
-                key={idx}
-                label={kpi.metric}
-                value={kpi.target}
-                size="sm"
-                color="sunset"
-                owner={kpi.owner}
-                frequency={kpi.frequency}
-              />
-            ))}
+          {/* Reliability */}
+          <div className="bg-gradient-to-br from-bb-amber-50 to-white rounded-xl border-2 border-bb-amber-300 p-md">
+            <div className="flex items-center gap-sm mb-sm">
+              <div className="w-3 h-3 bg-bb-amber-500 rounded-full"></div>
+              <h3 className="text-sm font-bold text-bb-amber-700">Reliability</h3>
+            </div>
+            <div className="space-y-sm">
+              <div className="flex justify-between items-center">
+                <span className="text-xs text-bb-charcoal-600">Repeat Carrier Rate</span>
+                <span className="text-sm font-bold text-bb-amber-600">Track</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-xs text-bb-charcoal-600">Customer Complaints</span>
+                <span className="text-sm font-bold text-bb-amber-600">&lt;2%</span>
+              </div>
+            </div>
           </div>
         </div>
 
         {/* Tracking Infrastructure */}
-        <div className="bg-gradient-to-r from-bb-amber-50 to-bb-forest-50 rounded-2xl p-xl border-2 border-bb-amber-300 shadow-md">
-          <h4 className="text-lg font-bold text-bb-charcoal-800 mb-lg">Tracking Infrastructure</h4>
-          <div className="grid grid-cols-5 gap-md">
-            <div className="bg-white rounded-xl p-md border border-bb-slate-200 text-center">
-              <p className="text-xs font-semibold text-bb-slate-600 uppercase mb-xs">Pickups</p>
-              <p className="text-sm text-bb-slate-700">Alvys + Trucker Tools</p>
+        <div className="bg-white rounded-xl border-2 border-bb-slate-200 p-md shadow-sm">
+          <h4 className="text-sm font-bold text-bb-charcoal-800 mb-sm">Tracking Infrastructure</h4>
+          <div className="grid grid-cols-5 gap-sm">
+            <div className="bg-bb-slate-50 rounded-lg p-sm text-center">
+              <p className="text-xs font-semibold text-bb-charcoal-700">Pickups</p>
+              <p className="text-xs text-bb-charcoal-500">Alvys + Trucker Tools</p>
             </div>
-            <div className="bg-white rounded-xl p-md border border-bb-slate-200 text-center">
-              <p className="text-xs font-semibold text-bb-slate-600 uppercase mb-xs">Deliveries</p>
-              <p className="text-sm text-bb-slate-700">Alvys + Trucker Tools</p>
+            <div className="bg-bb-slate-50 rounded-lg p-sm text-center">
+              <p className="text-xs font-semibold text-bb-charcoal-700">Deliveries</p>
+              <p className="text-xs text-bb-charcoal-500">Alvys + Trucker Tools</p>
             </div>
-            <div className="bg-white rounded-xl p-md border border-bb-slate-200 text-center">
-              <p className="text-xs font-semibold text-bb-slate-600 uppercase mb-xs">Margin</p>
-              <p className="text-sm text-bb-slate-700">Calculated weekly</p>
+            <div className="bg-bb-slate-50 rounded-lg p-sm text-center">
+              <p className="text-xs font-semibold text-bb-charcoal-700">Margin</p>
+              <p className="text-xs text-bb-charcoal-500">Weekly calc</p>
             </div>
-            <div className="bg-white rounded-xl p-md border border-bb-slate-200 text-center">
-              <p className="text-xs font-semibold text-bb-slate-600 uppercase mb-xs">Carriers</p>
-              <p className="text-sm text-bb-slate-700">Tagged per load</p>
+            <div className="bg-bb-slate-50 rounded-lg p-sm text-center">
+              <p className="text-xs font-semibold text-bb-charcoal-700">Carriers</p>
+              <p className="text-xs text-bb-charcoal-500">Tagged per load</p>
             </div>
-            <div className="bg-white rounded-xl p-md border border-bb-slate-200 text-center">
-              <p className="text-xs font-semibold text-bb-slate-600 uppercase mb-xs">Complaints</p>
-              <p className="text-sm text-bb-slate-700">Log maintained</p>
+            <div className="bg-bb-slate-50 rounded-lg p-sm text-center">
+              <p className="text-xs font-semibold text-bb-charcoal-700">Complaints</p>
+              <p className="text-xs text-bb-charcoal-500">Log maintained</p>
             </div>
           </div>
         </div>
 
-        {/* Expandable Full Table */}
-        <details className="group">
-          <summary className="cursor-pointer text-bb-steel-600 font-semibold hover:text-bb-steel-700 flex items-center gap-sm">
-            <span className="group-open:rotate-90 transition-transform">&#9654;</span>
-            View Complete KPI Reference Table
-          </summary>
-          <div className="mt-lg overflow-x-auto rounded-xl border border-bb-slate-200">
-            <table className="w-full text-sm">
-              <thead className="bg-gradient-to-r from-bb-amber-500 to-bb-forest-500 text-white">
-                <tr>
-                  <th className="px-lg py-md text-left font-bold">Metric</th>
-                  <th className="px-lg py-md text-center font-bold">Target</th>
-                  <th className="px-lg py-md text-center font-bold">Frequency</th>
-                  <th className="px-lg py-md text-left font-bold">Measurement</th>
-                  <th className="px-lg py-md text-left font-bold">Owner</th>
+        {/* Full KPI Table - Compact */}
+        <div className="bg-white rounded-xl border-2 border-bb-slate-200 p-md shadow-sm overflow-hidden">
+          <h4 className="text-sm font-bold text-bb-charcoal-800 mb-sm">Complete KPI Reference</h4>
+          <table className="w-full text-xs">
+            <thead className="bg-bb-forest-600 text-white">
+              <tr>
+                <th className="px-sm py-xs text-left font-semibold">Metric</th>
+                <th className="px-sm py-xs text-center font-semibold">Target</th>
+                <th className="px-sm py-xs text-center font-semibold">Frequency</th>
+                <th className="px-sm py-xs text-left font-semibold">Owner</th>
+              </tr>
+            </thead>
+            <tbody>
+              {operationsKPIs.map((kpi, idx) => (
+                <tr key={idx} className={idx % 2 === 0 ? 'bg-white' : 'bg-bb-slate-50'}>
+                  <td className="px-sm py-xs font-semibold text-bb-charcoal-700">{kpi.metric}</td>
+                  <td className="px-sm py-xs text-center">
+                    <span className="bg-bb-forest-100 text-bb-forest-700 px-xs py-0.5 rounded text-xs font-semibold">
+                      {kpi.target}
+                    </span>
+                  </td>
+                  <td className="px-sm py-xs text-center text-bb-charcoal-600">{kpi.frequency}</td>
+                  <td className="px-sm py-xs text-bb-charcoal-600">{kpi.owner}</td>
                 </tr>
-              </thead>
-              <tbody>
-                {operationsKPIs.map((kpi, idx) => (
-                  <tr
-                    key={idx}
-                    className={`border-t transition-colors ${idx % 2 === 0 ? 'bg-white hover:bg-bb-amber-50' : 'bg-bb-slate-50 hover:bg-bb-amber-50'}`}
-                  >
-                    <td className="px-lg py-md font-semibold text-bb-charcoal-800">{kpi.metric}</td>
-                    <td className="px-lg py-md text-center">
-                      <span className="bg-bb-forest-100 text-bb-forest-700 px-md py-xs rounded-full font-semibold text-xs">
-                        {kpi.target}
-                      </span>
-                    </td>
-                    <td className="px-lg py-md text-center text-bb-slate-700">{kpi.frequency}</td>
-                    <td className="px-lg py-md text-bb-slate-700">{kpi.how}</td>
-                    <td className="px-lg py-md text-bb-slate-700">{kpi.owner}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </details>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </Slide>
   )
