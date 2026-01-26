@@ -83,37 +83,35 @@ export default function Slide16_FinancialProjection_Scenario2() {
           </div>
         </div>
 
-        {/* Compact Monthly Table */}
+        {/* Compact Monthly Table - All 12 months visible */}
         <div className="bg-white rounded-xl border-2 border-bb-slate-200 shadow-sm overflow-hidden">
-          <div className="bg-bb-steel-600 px-md py-xs">
+          <div className="bg-bb-steel-600 px-sm py-0.5">
             <h4 className="text-xs font-bold text-white">Monthly Projection</h4>
           </div>
-          <div className="overflow-x-auto">
-            <table className="w-full text-xs">
-              <thead className="bg-bb-slate-100 sticky top-0">
-                <tr>
-                  <th className="px-sm py-xs text-left text-bb-charcoal-700">Month</th>
-                  <th className="px-sm py-xs text-center text-bb-charcoal-700">New</th>
-                  <th className="px-sm py-xs text-center text-bb-charcoal-700">Active</th>
-                  <th className="px-sm py-xs text-center text-bb-charcoal-700">Loads</th>
-                  <th className="px-sm py-xs text-center text-bb-charcoal-700">Gross</th>
-                  <th className="px-sm py-xs text-center text-bb-charcoal-700">Net Profit</th>
+          <table className="w-full text-xs">
+            <thead className="bg-bb-slate-100">
+              <tr>
+                <th className="px-xs py-0.5 text-left text-bb-charcoal-700">Month</th>
+                <th className="px-xs py-0.5 text-center text-bb-charcoal-700">New</th>
+                <th className="px-xs py-0.5 text-center text-bb-charcoal-700">Active</th>
+                <th className="px-xs py-0.5 text-center text-bb-charcoal-700">Loads</th>
+                <th className="px-xs py-0.5 text-center text-bb-charcoal-700">Gross</th>
+                <th className="px-xs py-0.5 text-center text-bb-charcoal-700">Net Profit</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-bb-slate-100">
+              {scenario2.map((row, idx) => (
+                <tr key={idx} className={idx % 2 === 0 ? 'bg-white' : 'bg-bb-slate-50'}>
+                  <td className="px-xs py-0.5 font-semibold text-bb-charcoal-800">{row.month}</td>
+                  <td className="px-xs py-0.5 text-center text-bb-charcoal-600">{row.newCustomers}</td>
+                  <td className="px-xs py-0.5 text-center text-bb-charcoal-600">{row.totalActive}</td>
+                  <td className="px-xs py-0.5 text-center text-bb-charcoal-600">{row.estLoads}</td>
+                  <td className="px-xs py-0.5 text-center text-bb-steel-600">${(row.grossMargin / 1000).toFixed(0)}K</td>
+                  <td className="px-xs py-0.5 text-center font-semibold text-bb-forest-600">${(row.estNetProfit / 1000).toFixed(0)}K</td>
                 </tr>
-              </thead>
-              <tbody className="divide-y divide-bb-slate-100">
-                {scenario2.map((row, idx) => (
-                  <tr key={idx} className={idx % 2 === 0 ? 'bg-white' : 'bg-bb-slate-50'}>
-                    <td className="px-sm py-xs font-semibold text-bb-charcoal-800">{row.month}</td>
-                    <td className="px-sm py-xs text-center text-bb-charcoal-600">{row.newCustomers}</td>
-                    <td className="px-sm py-xs text-center text-bb-charcoal-600">{row.totalActive}</td>
-                    <td className="px-sm py-xs text-center text-bb-charcoal-600">{row.estLoads}</td>
-                    <td className="px-sm py-xs text-center text-bb-steel-600">${(row.grossMargin / 1000).toFixed(0)}K</td>
-                    <td className="px-sm py-xs text-center font-semibold text-bb-forest-600">${(row.estNetProfit / 1000).toFixed(0)}K</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+              ))}
+            </tbody>
+          </table>
         </div>
 
         {/* Bottom Insight */}
