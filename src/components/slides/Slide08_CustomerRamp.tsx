@@ -17,7 +17,10 @@ export default function Slide08_CustomerRamp() {
             How One Customer Grows in Value
           </h2>
           <div className="w-24 h-1.5 bg-gradient-to-r from-bb-steel-500 to-bb-amber-500 mx-auto rounded-full mb-sm" />
-          <p className="text-base text-bb-charcoal-600">A single customer's margin contribution over their first year</p>
+          <p className="text-base text-bb-charcoal-600 mb-xs">A single customer's margin contribution over their first year</p>
+          <p className="text-sm text-bb-amber-700 font-semibold">
+            This ramp-up curve is built into all our projections. No customer goes from 0 to 60 overnight.
+          </p>
         </motion.div>
 
         {/* Explanation of the math */}
@@ -115,8 +118,9 @@ export default function Slide08_CustomerRamp() {
           <div className="bg-gradient-to-br from-bb-forest-50 to-white rounded-xl border-2 border-bb-forest-300 p-md">
             <h4 className="text-sm font-bold text-bb-forest-700 mb-xs">Why This Matters</h4>
             <p className="text-sm text-bb-charcoal-700">
-              Each customer compounds in value. A customer acquired in January contributes ~$37K in margin by year-end.
-              <span className="font-bold"> Front-load acquisition = maximum 2026 value.</span>
+              Each customer compounds in value. This requires good execution and clear division of labor—
+              Patrick focuses on acquisition while David ensures seamless service that builds trust.
+              <span className="font-bold"> That's how we properly scale each account.</span>
             </p>
           </div>
           <div className="bg-gradient-to-br from-bb-steel-50 to-white rounded-xl border-2 border-bb-steel-300 p-md">

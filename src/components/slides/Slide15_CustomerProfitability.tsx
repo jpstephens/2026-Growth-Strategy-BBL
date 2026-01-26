@@ -124,10 +124,12 @@ export default function Slide15_CustomerProfitability() {
         </motion.div>
 
         {/* Key Insight */}
-        <motion.div variants={itemVariants} className="bg-gradient-to-br from-bb-charcoal-700 to-bb-charcoal-800 rounded-xl p-5 shadow-lg text-white">
-          <p className="text-base text-center">
+        <motion.div variants={itemVariants} className="bg-gradient-to-br from-bb-forest-600 to-bb-forest-700 rounded-xl p-5 shadow-lg">
+          <p className="text-base text-center text-white">
             <span className="font-bold">Target Profile:</span> $200+/load margin, 10+ loads/month, predictable lanes.
-            <span className="text-bb-amber-300"> Our top 6 customers prove this model works—now we scale it.</span>
+          </p>
+          <p className="text-lg text-center text-bb-amber-200 font-bold mt-sm">
+            Our top 6 customers prove this model works—now we scale it.
           </p>
         </motion.div>
       </div>

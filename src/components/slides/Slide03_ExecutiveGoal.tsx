@@ -8,7 +8,7 @@ const itemVariants = {
 }
 
 const goalData = [
-  { label: 'Jan 2026', value: 12, color: '#6b7785' },
+  { label: 'Jan 2026', value: 17.8, color: '#6b7785' },
   { label: 'Dec 2026', value: 100, color: '#438f74' },
 ]
 
@@ -26,21 +26,25 @@ export default function Slide03_ExecutiveGoal() {
           {/* Left: Key Metrics */}
           <motion.div variants={itemVariants} className="space-y-md">
             <div className="grid grid-cols-2 gap-md">
-              <div className="bg-white rounded-xl border-2 border-bb-slate-200 p-lg shadow-sm text-center">
+              <div className="bg-white rounded-xl border-2 border-bb-slate-200 p-lg shadow-sm">
                 <p className="text-3xl font-display font-black text-bb-charcoal-800">65-70</p>
-                <p className="text-sm text-bb-charcoal-600">Customers</p>
+                <p className="text-sm font-semibold text-bb-charcoal-700">Customers</p>
+                <p className="text-xs text-bb-charcoal-500 mt-xs">Diversification reduces risk. No single customer controls our future.</p>
               </div>
-              <div className="bg-white rounded-xl border-2 border-bb-slate-200 p-lg shadow-sm text-center">
+              <div className="bg-white rounded-xl border-2 border-bb-slate-200 p-lg shadow-sm">
                 <p className="text-3xl font-display font-black text-bb-steel-600">481</p>
-                <p className="text-sm text-bb-charcoal-600">Monthly Loads</p>
+                <p className="text-sm font-semibold text-bb-charcoal-700">Monthly Loads</p>
+                <p className="text-xs text-bb-charcoal-500 mt-xs">~7 loads/customer avg. Volume creates leverage with carriers.</p>
               </div>
-              <div className="bg-white rounded-xl border-2 border-bb-slate-200 p-lg shadow-sm text-center">
+              <div className="bg-white rounded-xl border-2 border-bb-slate-200 p-lg shadow-sm">
                 <p className="text-3xl font-display font-black text-bb-amber-600">$100K</p>
-                <p className="text-sm text-bb-charcoal-600">Gross Margin</p>
+                <p className="text-sm font-semibold text-bb-charcoal-700">Gross Margin</p>
+                <p className="text-xs text-bb-charcoal-500 mt-xs">At $200+/load avg. Proven unit economics at scale.</p>
               </div>
-              <div className="bg-white rounded-xl border-2 border-bb-slate-200 p-lg shadow-sm text-center">
+              <div className="bg-white rounded-xl border-2 border-bb-slate-200 p-lg shadow-sm">
                 <p className="text-3xl font-display font-black text-bb-forest-600">$80K+</p>
-                <p className="text-sm text-bb-charcoal-600">Net Profit</p>
+                <p className="text-sm font-semibold text-bb-charcoal-700">Net Profit</p>
+                <p className="text-xs text-bb-charcoal-500 mt-xs">After team costs. Sustainable growth funds future hires.</p>
               </div>
             </div>
 

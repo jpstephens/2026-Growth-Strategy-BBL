@@ -94,11 +94,13 @@ export default function Slide16_ThreeSolutionChanges() {
         </motion.div>
 
         {/* Impact Summary */}
-        <motion.div variants={itemVariants} className="bg-gradient-to-br from-bb-charcoal-700 to-bb-charcoal-800 rounded-xl p-lg shadow-lg text-white">
-          <p className="text-base text-center leading-relaxed">
-            <span className="font-bold text-bb-amber-300">The Result:</span>
+        <motion.div variants={itemVariants} className="bg-gradient-to-br from-bb-forest-600 to-bb-forest-700 rounded-xl p-lg shadow-lg">
+          <p className="text-base text-center leading-relaxed text-white mb-sm">
+            <span className="font-bold text-bb-amber-200">The Result:</span>
             {' '}These three changes move Patrick from ~1 customer/month to 4-5 customers/month.
-            <span className="text-bb-steel-300"> That's the whole game.</span>
+          </p>
+          <p className="text-lg text-center font-bold text-white">
+            That's the whole game.
           </p>
         </motion.div>
       </div>
