@@ -6,41 +6,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800;900&display=swap');
 
 @layer base {
-  :root {
-    /* Responsive spacing scale using viewport units */
-    --space-xs: clamp(4px, 0.5vw, 8px);
-    --space-sm: clamp(6px, 0.8vw, 12px);
-    --space-md: clamp(8px, 1vw, 16px);
-    --space-lg: clamp(12px, 1.5vw, 24px);
-    --space-xl: clamp(16px, 2vw, 32px);
-    --space-2xl: clamp(24px, 3vw, 48px);
-    --space-3xl: clamp(32px, 4vw, 64px);
-  }
-
   html {
     overflow: hidden;
     height: 100%;
-    font-size: clamp(12px, 1vw + 8px, 16px);
   }
 
   body {
-    @apply bg-bb-slate-50 text-bb-slate-700 font-sans overflow-hidden h-screen;
+    @apply bg-bb-slate-50 text-bb-charcoal-700 font-sans overflow-hidden h-screen;
+    font-size: 16px;
   }
 
   h1 {
-    @apply text-h1 text-bb-navy-900 font-bold;
+    @apply text-h1 text-bb-charcoal-800 font-bold;
   }
 
   h2 {
-    @apply text-h2 text-bb-navy-900 font-bold;
+    @apply text-h2 text-bb-charcoal-800 font-bold;
   }
 
   h3 {
-    @apply text-h3 text-bb-navy-900 font-bold;
+    @apply text-h3 text-bb-charcoal-800 font-semibold;
   }
 
   p {
-    @apply text-base text-bb-slate-700;
+    @apply text-base text-bb-charcoal-600;
   }
 
   button {
@@ -69,19 +58,19 @@
   }
 
   .badge-primary {
-    @apply badge bg-bb-navy-100 text-bb-navy-900;
+    @apply badge bg-bb-charcoal-100 text-bb-charcoal-800;
   }
 
   .badge-success {
-    @apply badge bg-bb-emerald-100 text-bb-emerald-700;
+    @apply badge bg-bb-forest-100 text-bb-forest-700;
   }
 
   .badge-warning {
-    @apply badge bg-bb-sunset-100 text-bb-sunset-700;
+    @apply badge bg-bb-amber-100 text-bb-amber-700;
   }
 
   .badge-critical {
-    @apply badge bg-bb-burgundy-100 text-bb-burgundy-700;
+    @apply badge bg-bb-crimson-100 text-bb-crimson-700;
   }
 
   /* Section styling */
@@ -91,25 +80,12 @@
 
   /* Focus ring utilities */
   .focus-ring {
-    @apply focus:outline-none focus:ring-2 focus:ring-bb-electric-500 focus:ring-offset-2 rounded;
+    @apply focus:outline-none focus:ring-2 focus:ring-bb-steel-500 focus:ring-offset-2 rounded;
   }
 
   /* Accessibility link */
   .skip-link {
-    @apply absolute left-0 top-0 -translate-x-full focus:translate-x-0 bg-bb-navy-900 text-white px-lg py-sm z-50 transition-transform;
-  }
-
-  /* Text utilities */
-  .text-hero {
-    @apply font-display font-black text-bb-navy-900;
-    font-size: 72px;
-    line-height: 1;
-  }
-
-  .text-display-alt {
-    @apply font-display font-bold text-bb-navy-900;
-    font-size: 56px;
-    line-height: 1.1;
+    @apply absolute left-0 top-0 -translate-x-full focus:translate-x-0 bg-bb-charcoal-800 text-white px-lg py-sm z-50 transition-transform;
   }
 
   /* Divider */
@@ -118,36 +94,11 @@
   }
 
   .divider-accent {
-    @apply h-1.5 rounded-full bg-gradient-to-r from-bb-electric-500 to-bb-sunset-500;
+    @apply h-1.5 rounded-full bg-gradient-to-r from-bb-steel-500 to-bb-amber-500;
   }
 }
 
-/* Smooth animations */
-@supports (animation-timeline: view()) {
-  @keyframes fade-in-up {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes slide-in {
-    from {
-      opacity: 0;
-      transform: translateX(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-}
-
-/* Presentation mode - allow scrolling for smaller screens */
+/* Presentation mode */
 #root {
   width: 100%;
   height: 100%;
@@ -156,60 +107,6 @@
 
 main {
   overflow: hidden;
-}
-
-/* Responsive grid utilities - auto-stack on smaller screens */
-@media (max-width: 1024px) {
-  .grid-cols-3,
-  .grid-cols-4 {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  }
-}
-
-@media (max-width: 768px) {
-  .grid-cols-2,
-  .grid-cols-3,
-  .grid-cols-4 {
-    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
-  }
-}
-
-/* Scale ALL spacing with viewport height for presentation mode */
-.space-y-xl > * + * {
-  margin-top: clamp(12px, 1.5vh, 24px) !important;
-}
-.space-y-lg > * + * {
-  margin-top: clamp(8px, 1vh, 16px) !important;
-}
-.space-y-md > * + * {
-  margin-top: clamp(6px, 0.75vh, 12px) !important;
-}
-.space-y-sm > * + * {
-  margin-top: clamp(4px, 0.5vh, 8px) !important;
-}
-.gap-xl {
-  gap: clamp(12px, 1.5vh, 24px) !important;
-}
-.gap-lg {
-  gap: clamp(8px, 1vh, 16px) !important;
-}
-.gap-md {
-  gap: clamp(6px, 0.75vh, 12px) !important;
-}
-.p-xl {
-  padding: clamp(12px, 1.5vh, 24px) !important;
-}
-.p-lg {
-  padding: clamp(8px, 1vh, 16px) !important;
-}
-.p-md {
-  padding: clamp(6px, 0.75vh, 12px) !important;
-}
-.mb-lg {
-  margin-bottom: clamp(8px, 1vh, 16px) !important;
-}
-.mb-md {
-  margin-bottom: clamp(6px, 0.75vh, 12px) !important;
 }
 
 /* Respect user's motion preferences for accessibility */

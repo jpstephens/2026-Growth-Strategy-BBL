@@ -14,8 +14,8 @@ const containerVariants: Variants = {
     opacity: 1,
     transition: {
       when: 'beforeChildren',
-      staggerChildren: 0.05,
-      delayChildren: 0.05,
+      staggerChildren: 0.04,
+      delayChildren: 0.02,
     },
   },
 }
@@ -24,13 +24,13 @@ const containerVariants: Variants = {
 const itemVariants: Variants = {
   hidden: {
     opacity: 0,
-    y: 15,
+    y: 12,
   },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.4,
+      duration: 0.35,
       ease: 'easeOut' as const,
     },
   },
@@ -48,14 +48,15 @@ export default function Slide({ children, className = '', variant = 'default' }:
       className={`
         slide-container
         w-full h-screen
-        flex flex-col justify-center items-center
+        flex items-center justify-center
         ${backgroundVariants[variant]}
         overflow-hidden
+        px-8 py-6
         ${className}
       `}
     >
       <motion.div
-        className="slide-content w-full max-w-[96vw] max-h-[96vh] flex flex-col justify-center items-center"
+        className="slide-content w-full h-full max-w-[1400px] flex flex-col justify-center"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
