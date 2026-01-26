@@ -20,7 +20,7 @@ export default function Slide36_EscalationPaths() {
 
         <motion.div variants={itemVariants} className="overflow-x-auto rounded-xl border border-bb-slate-200">
           <table className="w-full text-sm">
-            <thead className="bg-bb-charcoal-800 text-white">
+            <thead className="bg-bb-forest-600 text-white">
               <tr>
                 <th className="px-md py-sm text-left font-semibold">Issue Type</th>
                 <th className="px-md py-sm text-left font-semibold">First Response</th>
