@@ -61,6 +61,7 @@ import Slide19_Accountability from './components/slides/Slide19_Accountability'
 // Slide36_EscalationPaths removed - combined with Slide19_Accountability
 import Slide24_CanPatrickAlone from './components/slides/Slide24_CanPatrickAlone'
 import Slide16_FinancialProjection_Scenario2 from './components/slides/Slide16_FinancialProjection_Scenario2'
+import Slide_HiringTriggers from './components/slides/Slide_HiringTriggers'
 
 // ==========================================
 // ACT 6: MEASUREMENT & ROADMAP (Slides 36-44)
@@ -139,6 +140,7 @@ const slides = [
   // Slide36_EscalationPaths removed - combined into Slide19
   Slide24_CanPatrickAlone,
   Slide16_FinancialProjection_Scenario2,
+  Slide_HiringTriggers,
 
   // ==========================================
   // ACT 6: MEASUREMENT & ROADMAP (5 slides)
