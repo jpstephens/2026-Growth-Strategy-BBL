@@ -41,7 +41,7 @@ import Slide26_ProtectedCalling from './components/slides/Slide26_ProtectedCalli
 import Slide24_SalesActivityTargets from './components/slides/Slide24_SalesActivityTargets'
 import Slide25_ConversionFunnel from './components/slides/Slide25_ConversionFunnel'
 import Slide11_SalesSystem from './components/slides/Slide11_SalesSystem'
-import Slide27_CallFramework from './components/slides/Slide27_CallFramework'
+// Slide27_CallFramework removed - handle offline with Pat/Chris
 import Slide33_HandoffProtocol from './components/slides/Slide33_HandoffProtocol'
 
 // ==========================================
@@ -122,7 +122,7 @@ const slides = [
   Slide24_SalesActivityTargets,
   Slide25_ConversionFunnel,
   Slide11_SalesSystem,
-  Slide27_CallFramework,
+  // Slide27_CallFramework removed - handle offline with Pat/Chris
   Slide33_HandoffProtocol,
 
   // ==========================================
