@@ -121,9 +121,9 @@ export default function Slide35_CarrierTiers() {
         </motion.div>
 
         {/* Bottom Line */}
-        <motion.div variants={itemVariants} className="bg-gradient-to-br from-bb-charcoal-700 to-bb-charcoal-800 rounded-xl p-4 shadow-lg text-white">
-          <p className="text-sm text-center">
-            <span className="font-bold text-bb-forest-300">Good carriers are rare.</span>
+        <motion.div variants={itemVariants} className="bg-gradient-to-br from-bb-forest-600 to-bb-forest-700 rounded-xl p-md shadow-lg">
+          <p className="text-base text-center text-white">
+            <span className="font-bold text-bb-amber-200">Good carriers are rare.</span>
             {' '}Find them, develop them, keep them. That's how we deliver consistently and grow profitably.
           </p>
         </motion.div>

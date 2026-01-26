@@ -135,11 +135,11 @@ export default function Slide42_Commitment() {
         </motion.div>
 
         {/* Final Call */}
-        <motion.div variants={itemVariants} className="bg-gradient-to-br from-bb-charcoal-700 to-bb-charcoal-800 rounded-xl p-xl shadow-lg border-2 border-bb-charcoal-600 text-white text-center">
-          <p className="text-base leading-relaxed mb-md">
+        <motion.div variants={itemVariants} className="bg-gradient-to-br from-bb-forest-600 to-bb-forest-700 rounded-xl p-xl shadow-lg border-2 border-bb-forest-500 text-center">
+          <p className="text-base leading-relaxed mb-md text-white">
             We know we're asking a lot. We also know you've been giving a lot for 2 years.
           </p>
-          <p className="text-lg font-bold">
+          <p className="text-lg font-bold text-bb-amber-200">
             What questions do you have? What do you need to say yes?
           </p>
         </motion.div>

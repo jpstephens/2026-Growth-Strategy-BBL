@@ -131,11 +131,11 @@ export default function Slide11_SalesSystem() {
         </motion.div>
 
         {/* The Key Insight */}
-        <motion.div variants={itemVariants} className="bg-gradient-to-br from-bb-charcoal-700 to-bb-charcoal-800 rounded-xl p-md shadow-lg text-white">
-          <p className="text-sm text-center">
-            <span className="font-bold text-bb-amber-300">The Compound Effect:</span>
+        <motion.div variants={itemVariants} className="bg-gradient-to-br from-bb-forest-600 to-bb-forest-700 rounded-xl p-md shadow-lg">
+          <p className="text-base text-center text-white">
+            <span className="font-bold text-bb-amber-200">The Compound Effect:</span>
             {' '}Each month of consistent activity adds 4-5 customers. Each customer grows in value.
-            <span className="text-bb-forest-300"> By December, 65-70 customers at $4K+/month each = $100K+ profit.</span>
+            <span className="text-bb-amber-200"> By December, 65-70 customers at $4K+/month each = $100K+ profit.</span>
           </p>
         </motion.div>
       </div>

@@ -113,19 +113,19 @@ export default function Slide26_ProtectedCalling() {
         </div>
 
         {/* Why This Matters */}
-        <motion.div variants={itemVariants} className="bg-gradient-to-br from-bb-charcoal-700 to-bb-charcoal-800 rounded-xl p-4 shadow-lg text-white">
-          <div className="grid grid-cols-3 gap-4 text-center">
+        <motion.div variants={itemVariants} className="bg-gradient-to-br from-bb-forest-600 to-bb-forest-700 rounded-xl p-md shadow-lg">
+          <div className="grid grid-cols-3 gap-md text-center">
             <div>
-              <p className="text-xl font-bold text-bb-amber-300">{totalProtectedHours}hrs</p>
-              <p className="text-xs text-bb-slate-300">Protected daily</p>
+              <p className="text-xl font-bold text-bb-amber-200">{totalProtectedHours}hrs</p>
+              <p className="text-xs text-bb-forest-100">Protected daily</p>
             </div>
             <div>
               <p className="text-xl font-bold text-white">{totalDials}+ dials</p>
-              <p className="text-xs text-bb-slate-300">Minimum daily</p>
+              <p className="text-xs text-bb-forest-100">Minimum daily</p>
             </div>
             <div>
-              <p className="text-xl font-bold text-bb-forest-300">200+/week</p>
-              <p className="text-xs text-bb-slate-300">Weekly target</p>
+              <p className="text-xl font-bold text-bb-amber-200">200+/week</p>
+              <p className="text-xs text-bb-forest-100">Weekly target</p>
             </div>
           </div>
         </motion.div>

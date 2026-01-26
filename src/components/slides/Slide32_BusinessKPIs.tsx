@@ -98,20 +98,20 @@ export default function Slide32_BusinessKPIs() {
         </div>
 
         {/* Why These Metrics Matter */}
-        <div className="bg-gradient-to-r from-bb-charcoal-900 to-bb-charcoal-800 rounded-2xl p-xl shadow-lg">
+        <div className="bg-gradient-to-r from-bb-forest-600 to-bb-forest-700 rounded-2xl p-xl shadow-lg">
           <h4 className="text-lg font-bold text-white mb-lg">Why These Metrics Matter</h4>
           <div className="grid grid-cols-3 gap-xl">
             <div>
-              <p className="text-sm font-semibold text-bb-forest-400 mb-xs">Gross Margin</p>
-              <p className="text-sm text-bb-slate-300">The core health metric. Growing margin = growing business value.</p>
+              <p className="text-sm font-semibold text-bb-amber-200 mb-xs">Gross Margin</p>
+              <p className="text-sm text-bb-forest-100">The core health metric. Growing margin = growing business value.</p>
             </div>
             <div>
-              <p className="text-sm font-semibold text-bb-steel-400 mb-xs">Active Customers</p>
-              <p className="text-sm text-bb-slate-300">The foundation. More customers = more predictable revenue streams.</p>
+              <p className="text-sm font-semibold text-bb-amber-200 mb-xs">Active Customers</p>
+              <p className="text-sm text-bb-forest-100">The foundation. More customers = more predictable revenue streams.</p>
             </div>
             <div>
-              <p className="text-sm font-semibold text-bb-amber-400 mb-xs">Churn Rate</p>
-              <p className="text-sm text-bb-slate-300">Below 15% means we're retaining customers and building loyalty.</p>
+              <p className="text-sm font-semibold text-bb-amber-200 mb-xs">Churn Rate</p>
+              <p className="text-sm text-bb-forest-100">Below 15% means we're retaining customers and building loyalty.</p>
             </div>
           </div>
         </div>

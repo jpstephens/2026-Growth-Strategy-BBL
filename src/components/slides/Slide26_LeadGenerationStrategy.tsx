@@ -134,11 +134,11 @@ export default function Slide26_LeadGenerationStrategy() {
         </motion.div>
 
         {/* Bottom Line */}
-        <motion.div variants={itemVariants} className="bg-gradient-to-br from-bb-charcoal-700 to-bb-charcoal-800 rounded-xl p-md shadow-lg text-white">
-          <p className="text-sm text-center">
-            <span className="font-bold text-bb-amber-300">The System:</span>
-            {' '}25,000 contacts → 625 replies → 200 conversations → <span className="text-bb-forest-300 font-bold">40-60 new customers/year</span>
-            <span className="text-white/80 ml-sm">(4-5 per month)</span>
+        <motion.div variants={itemVariants} className="bg-gradient-to-br from-bb-forest-600 to-bb-forest-700 rounded-xl p-md shadow-lg">
+          <p className="text-base text-center text-white">
+            <span className="font-bold text-bb-amber-200">The System:</span>
+            {' '}25,000 contacts → 625 replies → 200 conversations → <span className="text-bb-amber-200 font-bold">40-60 new customers/year</span>
+            <span className="text-bb-forest-100 ml-sm">(4-5 per month)</span>
           </p>
         </motion.div>
       </div>

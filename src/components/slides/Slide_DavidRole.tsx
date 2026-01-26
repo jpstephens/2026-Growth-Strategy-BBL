@@ -1,24 +1,16 @@
 import { motion } from 'framer-motion'
 import Slide from '../layout/Slide'
 import { davidGrowthPath } from '../../data/teamStructure'
-import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Cell } from 'recharts'
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 }
 
-// Performance targets with industry benchmarks
-const performanceTargets = [
-  { metric: 'On-Time Delivery', target: 95, color: '#438f74' },
-  { metric: 'Customer Satisfaction', target: 90, color: '#4f85a6' },
-  { metric: 'Carrier Retention', target: 80, color: '#d6973a' },
-]
-
 export default function Slide_DavidRole() {
   return (
     <Slide variant="gradient">
-      <div className="w-full max-w-6xl h-full flex flex-col mx-auto">
+      <div className="w-full max-w-6xl mx-auto">
         {/* Title */}
         <motion.div variants={itemVariants} className="text-center mb-lg">
           <h1 className="font-display text-display font-bold text-bb-charcoal-800 mb-sm">
@@ -30,15 +22,15 @@ export default function Slide_DavidRole() {
           </p>
         </motion.div>
 
-        {/* Main Content - 3 Column Layout */}
-        <div className="grid grid-cols-3 gap-lg flex-1">
-          {/* Column 1: What David Owns */}
-          <motion.div variants={itemVariants} className="bg-white rounded-xl border-2 border-bb-steel-300 p-lg shadow-sm flex flex-col">
+        {/* Top Row: Ownership */}
+        <div className="grid grid-cols-2 gap-lg mb-lg">
+          {/* What David Owns */}
+          <motion.div variants={itemVariants} className="bg-white rounded-xl border-2 border-bb-steel-300 p-lg shadow-sm">
             <div className="flex items-center gap-md mb-md">
               <div className="w-10 h-10 rounded-lg bg-bb-steel-500 flex items-center justify-center text-white text-lg font-bold">✓</div>
               <h3 className="text-lg font-bold text-bb-charcoal-800">David Owns</h3>
             </div>
-            <ul className="space-y-md flex-1">
+            <ul className="space-y-sm">
               {davidGrowthPath.whatHeOwns.map((item, idx) => (
                 <li key={idx} className="flex items-start gap-sm">
                   <span className="text-bb-steel-600 font-bold">→</span>
@@ -48,13 +40,13 @@ export default function Slide_DavidRole() {
             </ul>
           </motion.div>
 
-          {/* Column 2: What Patrick Handles */}
-          <motion.div variants={itemVariants} className="bg-white rounded-xl border-2 border-bb-slate-200 p-lg shadow-sm flex flex-col">
+          {/* What Patrick Handles */}
+          <motion.div variants={itemVariants} className="bg-white rounded-xl border-2 border-bb-slate-200 p-lg shadow-sm">
             <div className="flex items-center gap-md mb-md">
               <div className="w-10 h-10 rounded-lg bg-bb-slate-400 flex items-center justify-center text-white text-lg font-bold">✗</div>
-              <h3 className="text-lg font-bold text-bb-charcoal-600">Patrick Handles</h3>
+              <h3 className="text-lg font-bold text-bb-charcoal-600">Patrick Handles (Not David)</h3>
             </div>
-            <ul className="space-y-md flex-1">
+            <ul className="space-y-sm">
               {davidGrowthPath.whatHeDoesNot.map((item, idx) => (
                 <li key={idx} className="flex items-start gap-sm">
                   <span className="text-bb-slate-400 font-bold">×</span>
@@ -62,46 +54,50 @@ export default function Slide_DavidRole() {
                 </li>
               ))}
             </ul>
-            <div className="mt-md pt-md border-t border-bb-slate-200">
-              <p className="text-sm text-bb-charcoal-500 italic">Clear boundary = focused operations</p>
+          </motion.div>
+        </div>
+
+        {/* Bottom Row: Metrics */}
+        <div className="grid grid-cols-3 gap-lg">
+          {/* Performance Targets */}
+          <motion.div variants={itemVariants} className="bg-white rounded-xl border-2 border-bb-slate-200 p-lg shadow-sm">
+            <h3 className="text-base font-bold text-bb-charcoal-800 mb-sm">Performance Targets</h3>
+            <div className="space-y-sm">
+              <div className="flex justify-between items-center">
+                <span className="text-sm text-bb-charcoal-600">On-Time Delivery</span>
+                <span className="text-lg font-bold text-bb-forest-600">95%</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-sm text-bb-charcoal-600">Customer Satisfaction</span>
+                <span className="text-lg font-bold text-bb-steel-600">90%</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-sm text-bb-charcoal-600">Carrier Retention</span>
+                <span className="text-lg font-bold text-bb-amber-600">80%</span>
+              </div>
             </div>
+            <p className="text-sm text-bb-charcoal-500 mt-md pt-md border-t border-bb-slate-200 text-center">
+              Industry avg: 70-85%
+            </p>
           </motion.div>
 
-          {/* Column 3: Metrics & Targets */}
-          <div className="flex flex-col gap-lg">
-            {/* Performance Targets Chart */}
-            <motion.div variants={itemVariants} className="bg-white rounded-xl border-2 border-bb-slate-200 p-lg shadow-sm flex-1">
-              <h3 className="text-lg font-bold text-bb-charcoal-800 mb-md">Performance Targets</h3>
-              <div className="h-24">
-                <ResponsiveContainer width="100%" height="100%">
-                  <BarChart data={performanceTargets} layout="vertical" margin={{ top: 0, right: 20, left: 100, bottom: 0 }}>
-                    <XAxis type="number" domain={[0, 100]} tick={{ fontSize: 11, fill: '#6b7785' }} axisLine={false} tickLine={false} tickFormatter={(v) => `${v}%`} />
-                    <YAxis type="category" dataKey="metric" tick={{ fontSize: 12, fill: '#2d3748' }} axisLine={false} tickLine={false} width={95} />
-                    <Bar dataKey="target" radius={[0, 4, 4, 0]} isAnimationActive={true} animationDuration={800}>
-                      {performanceTargets.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={entry.color} />
-                      ))}
-                    </Bar>
-                  </BarChart>
-                </ResponsiveContainer>
-              </div>
-              <p className="text-sm text-bb-charcoal-500 mt-sm text-center">Industry average: 70-85%</p>
-            </motion.div>
+          {/* Domain Ownership */}
+          <motion.div variants={itemVariants} className="bg-gradient-to-br from-bb-steel-50 to-white rounded-xl border-2 border-bb-steel-300 p-lg shadow-sm">
+            <h3 className="text-base font-bold text-bb-charcoal-800 mb-sm">David's Domain</h3>
+            <p className="text-3xl font-display font-black text-bb-steel-600 mb-sm">{davidGrowthPath.domain}</p>
+            <p className="text-sm text-bb-charcoal-600">You set the priorities. You own the process.</p>
+            <p className="text-xs text-bb-steel-700 mt-md font-semibold">Full ownership, full accountability</p>
+          </motion.div>
 
-            {/* Domain Ownership */}
-            <motion.div variants={itemVariants} className="bg-gradient-to-br from-bb-steel-50 to-white rounded-xl border-2 border-bb-steel-300 p-lg shadow-sm">
-              <h3 className="text-base font-bold text-bb-charcoal-800 mb-xs">David's Domain</h3>
-              <p className="text-2xl font-display font-black text-bb-steel-600">{davidGrowthPath.domain}</p>
-              <p className="text-sm text-bb-charcoal-600 mt-xs">You set the priorities. You own the process.</p>
-            </motion.div>
-
-            {/* Capacity Trigger */}
-            <motion.div variants={itemVariants} className="bg-gradient-to-br from-bb-forest-50 to-white rounded-xl border-2 border-bb-forest-300 p-lg shadow-sm">
-              <h3 className="text-base font-bold text-bb-charcoal-800 mb-xs">Ops Coordinator Trigger</h3>
-              <p className="text-3xl font-display font-black text-bb-forest-600">120+ Loads/Month</p>
-              <p className="text-sm text-bb-charcoal-600 mt-xs">6 loads/day max · Help arrives before burnout</p>
-            </motion.div>
-          </div>
+          {/* Capacity Trigger */}
+          <motion.div variants={itemVariants} className="bg-gradient-to-br from-bb-forest-50 to-white rounded-xl border-2 border-bb-forest-300 p-lg shadow-sm">
+            <h3 className="text-base font-bold text-bb-charcoal-800 mb-sm">Ops Coordinator Trigger</h3>
+            <p className="text-3xl font-display font-black text-bb-forest-600 mb-sm">120+ Loads/Mo</p>
+            <div className="text-sm text-bb-charcoal-600 space-y-xs">
+              <p>6 loads/day max capacity</p>
+              <p>Help arrives before burnout</p>
+            </div>
+          </motion.div>
         </div>
       </div>
     </Slide>

@@ -101,23 +101,23 @@ export default function Slide33_HandoffProtocol() {
             </div>
 
             {/* Why This Matters */}
-            <div className="bg-gradient-to-br from-bb-charcoal-700 to-bb-charcoal-800 rounded-xl p-md text-white">
+            <div className="bg-gradient-to-br from-bb-forest-600 to-bb-forest-700 rounded-xl p-md">
               <h3 className="text-sm font-bold text-white mb-sm">Why This Works</h3>
-              <ul className="text-xs space-y-xs">
+              <ul className="text-xs text-white space-y-xs">
                 <li className="flex items-start gap-sm">
-                  <span className="text-bb-forest-300">1.</span>
+                  <span className="text-bb-amber-200">1.</span>
                   <span>Customer has ONE contact for ops (David)</span>
                 </li>
                 <li className="flex items-start gap-sm">
-                  <span className="text-bb-forest-300">2.</span>
+                  <span className="text-bb-amber-200">2.</span>
                   <span>Patrick stays focused on NEW business</span>
                 </li>
                 <li className="flex items-start gap-sm">
-                  <span className="text-bb-forest-300">3.</span>
+                  <span className="text-bb-amber-200">3.</span>
                   <span>David can move fast without waiting on Patrick</span>
                 </li>
                 <li className="flex items-start gap-sm">
-                  <span className="text-bb-forest-300">4.</span>
+                  <span className="text-bb-amber-200">4.</span>
                   <span>No dropped balls during handoff</span>
                 </li>
               </ul>

@@ -77,12 +77,12 @@ export default function Slide_QuestionsYouHave() {
         </div>
 
         {/* Discussion Prompt */}
-        <motion.div variants={itemVariants} className="bg-gradient-to-br from-bb-amber-500 to-bb-amber-600 rounded-2xl p-xl shadow-lg border-2 border-bb-amber-400 text-white text-center">
-          <h3 className="text-xl font-bold mb-sm">What Else Do You Need to Know?</h3>
-          <p className="text-sm text-white/90 max-w-2xl mx-auto leading-relaxed">
-            This plan only works if you believe in it. What concerns haven't we addressed? What would make you feel more confident?
+        <motion.div variants={itemVariants} className="bg-gradient-to-br from-bb-forest-600 to-bb-forest-700 rounded-2xl p-xl shadow-lg border-2 border-bb-forest-500 text-center">
+          <h3 className="text-xl font-bold mb-sm text-white">What Else Do You Need to Know?</h3>
+          <p className="text-base text-bb-forest-100 max-w-2xl mx-auto leading-relaxed">
+            This plan works best when we're all aligned. What concerns haven't we addressed? What would help you feel more confident?
           </p>
-          <p className="text-xs text-white/70 italic mt-md">
+          <p className="text-sm text-bb-amber-200 font-semibold mt-md">
             This is a conversation, not a presentation. Your input shapes the final version.
           </p>
         </motion.div>

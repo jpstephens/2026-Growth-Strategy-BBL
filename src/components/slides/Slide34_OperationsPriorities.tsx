@@ -122,11 +122,11 @@ export default function Slide34_OperationsPriorities() {
         </motion.div>
 
         {/* Bottom Line */}
-        <motion.div variants={itemVariants} className="bg-gradient-to-br from-bb-charcoal-700 to-bb-charcoal-800 rounded-xl p-md shadow-lg text-white">
-          <p className="text-sm text-center">
-            <span className="font-bold text-bb-amber-300">The Rule:</span>
+        <motion.div variants={itemVariants} className="bg-gradient-to-br from-bb-forest-600 to-bb-forest-700 rounded-xl p-md shadow-lg">
+          <p className="text-base text-center text-white">
+            <span className="font-bold text-bb-amber-200">The Rule:</span>
             {' '}When in doubt, ask: "Is a load in trouble?" If yes, handle it. If no, check tomorrow's pickups.
-            <span className="text-bb-forest-300 font-semibold"> Simple decisions = less stress.</span>
+            <span className="text-bb-amber-200 font-semibold"> Simple decisions = less stress.</span>
           </p>
         </motion.div>
       </div>

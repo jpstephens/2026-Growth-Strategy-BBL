@@ -130,10 +130,10 @@ export default function Slide25_ConversionFunnel() {
         </motion.div>
 
         {/* Bottom Line */}
-        <motion.div variants={itemVariants} className="bg-gradient-to-br from-bb-charcoal-700 to-bb-charcoal-800 rounded-xl p-md shadow-lg text-white">
-          <p className="text-sm text-center">
-            <span className="font-bold text-bb-amber-300">The Law of the Funnel:</span>
-            {' '}More in the top = more out the bottom. <span className="text-bb-forest-300">Stop feeding the funnel, growth stops.</span>
+        <motion.div variants={itemVariants} className="bg-gradient-to-br from-bb-forest-600 to-bb-forest-700 rounded-xl p-md shadow-lg">
+          <p className="text-base text-center text-white">
+            <span className="font-bold text-bb-amber-200">The Law of the Funnel:</span>
+            {' '}More in the top = more out the bottom. <span className="text-bb-amber-200">Stop feeding the funnel, growth stops.</span>
           </p>
         </motion.div>
       </div>
