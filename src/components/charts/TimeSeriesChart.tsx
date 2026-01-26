@@ -70,13 +70,22 @@ export default function TimeSeriesChart({
     return null
   }
 
+  // Generate accessible description
+  const minValue = Math.min(...data.map(d => d[dataKey] as number))
+  const maxValue = Math.max(...data.map(d => d[dataKey] as number))
+  const accessibleDescription = `Time series chart${title ? ` showing ${title}` : ''}. Data ranges from ${minValue.toLocaleString()} to ${maxValue.toLocaleString()} across ${data.length} data points.${targetLine ? ` Target line at ${targetLine.toLocaleString()}.` : ''}`
+
   return (
     <div className="w-full space-y-lg">
       {title && (
         <h3 className="text-xl font-semibold text-bb-navy-900">{title}</h3>
       )}
 
-      <div className="bg-white rounded-2xl border border-bb-slate-200 p-lg shadow-md">
+      <div
+        className="bg-white rounded-2xl border border-bb-slate-200 p-lg shadow-md"
+        role="img"
+        aria-label={accessibleDescription}
+      >
         <svg width="0" height="0">
           <defs>
             <linearGradient id={gradientId} x1="0" y1="0" x2="0" y2="1">

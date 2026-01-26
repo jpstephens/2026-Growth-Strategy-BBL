@@ -55,13 +55,22 @@ export default function ComparisonChart({
     return null
   }
 
+  // Generate accessible description
+  const total1 = data.reduce((sum, d) => sum + d.value1, 0)
+  const total2 = data.reduce((sum, d) => sum + d.value2, 0)
+  const accessibleDescription = `Comparison bar chart showing ${scenario1Label} (total: $${total1.toLocaleString()}) vs ${scenario2Label} (total: $${total2.toLocaleString()}) across ${data.length} metrics. Delta: +$${(total2 - total1).toLocaleString()}.`
+
   return (
     <div className="w-full space-y-lg">
       {title && (
         <h3 className="text-xl font-semibold text-bb-navy-900">{title}</h3>
       )}
 
-      <div className="bg-white rounded-2xl border border-bb-slate-200 p-lg shadow-md">
+      <div
+        className="bg-white rounded-2xl border border-bb-slate-200 p-lg shadow-md"
+        role="img"
+        aria-label={accessibleDescription}
+      >
         <ResponsiveContainer width="100%" height={height}>
           <BarChart
             data={data}

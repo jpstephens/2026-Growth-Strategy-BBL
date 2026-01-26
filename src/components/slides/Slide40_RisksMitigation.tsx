@@ -142,6 +142,8 @@ export default function Slide40_RisksMitigation() {
                               onClick={() => setExpandedRisk(expandedRisk === risk.id ? null : risk.id)}
                               className={`w-8 h-8 ${colors.bg} rounded-full flex items-center justify-center text-white text-xs font-bold shadow-md hover:scale-110 transition-transform cursor-pointer`}
                               title={risk.title}
+                              aria-label={`Risk ${risk.id}: ${risk.title}. Severity ${severity} of 25. Click to view details.`}
+                              aria-expanded={expandedRisk === risk.id}
                             >
                               {risk.id}
                             </button>

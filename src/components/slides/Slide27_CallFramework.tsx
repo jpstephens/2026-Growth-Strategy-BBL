@@ -136,6 +136,11 @@ export default function Slide27_CallFramework() {
         <div className="space-y-sm">
           {/* Opening Stage Card */}
           <div
+            role="button"
+            tabIndex={0}
+            aria-expanded={expandedStage === 'opening'}
+            aria-controls="opening-content"
+            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setExpandedStage(expandedStage === 'opening' ? null : 'opening'); }}}
             className={`rounded-xl border-2 transition-all overflow-hidden ${
               expandedStage === 'opening'
                 ? 'border-bb-electric-400 bg-gradient-to-r from-bb-electric-50 to-white shadow-lg'
@@ -160,7 +165,7 @@ export default function Slide27_CallFramework() {
             </div>
 
             {expandedStage === 'opening' && (
-              <div className="px-md pb-md border-t border-bb-electric-100">
+              <div id="opening-content" className="px-md pb-md border-t border-bb-electric-100">
                 {/* Script */}
                 <div className="bg-white rounded-lg p-md mt-md border-l-4 border-bb-electric-500 shadow-sm">
                   <p className="text-xs font-semibold text-bb-electric-600 mb-xs">SCRIPT</p>
@@ -185,6 +190,11 @@ export default function Slide27_CallFramework() {
 
           {/* Hook Stage Card */}
           <div
+            role="button"
+            tabIndex={0}
+            aria-expanded={expandedStage === 'hook'}
+            aria-controls="hook-content"
+            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setExpandedStage(expandedStage === 'hook' ? null : 'hook'); }}}
             className={`rounded-xl border-2 transition-all overflow-hidden ${
               expandedStage === 'hook'
                 ? 'border-bb-sunset-400 bg-gradient-to-r from-bb-sunset-50 to-white shadow-lg'
@@ -209,7 +219,7 @@ export default function Slide27_CallFramework() {
             </div>
 
             {expandedStage === 'hook' && (
-              <div className="px-md pb-md border-t border-bb-sunset-100">
+              <div id="hook-content" className="px-md pb-md border-t border-bb-sunset-100">
                 {/* Script */}
                 <div className="bg-white rounded-lg p-md mt-md border-l-4 border-bb-sunset-500 shadow-sm">
                   <p className="text-xs font-semibold text-bb-sunset-600 mb-xs">SCRIPT</p>
@@ -234,6 +244,11 @@ export default function Slide27_CallFramework() {
 
           {/* Qualifying Stage Card */}
           <div
+            role="button"
+            tabIndex={0}
+            aria-expanded={expandedStage === 'qualifying'}
+            aria-controls="qualifying-content"
+            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setExpandedStage(expandedStage === 'qualifying' ? null : 'qualifying'); }}}
             className={`rounded-xl border-2 transition-all overflow-hidden ${
               expandedStage === 'qualifying'
                 ? 'border-bb-emerald-400 bg-gradient-to-r from-bb-emerald-50 to-white shadow-lg'
@@ -258,7 +273,7 @@ export default function Slide27_CallFramework() {
             </div>
 
             {expandedStage === 'qualifying' && (
-              <div className="px-md pb-md border-t border-bb-emerald-100">
+              <div id="qualifying-content" className="px-md pb-md border-t border-bb-emerald-100">
                 {/* Questions */}
                 <div className="mt-md space-y-xs">
                   <p className="text-xs font-semibold text-bb-emerald-600 mb-sm">QUALIFYING QUESTIONS</p>

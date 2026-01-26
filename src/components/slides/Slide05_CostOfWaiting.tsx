@@ -121,8 +121,8 @@ export default function Slide05_CostOfWaiting() {
 
         {/* Expandable Details */}
         <details className="group">
-          <summary className="cursor-pointer text-bb-electric-600 font-semibold hover:text-bb-electric-700 flex items-center gap-sm">
-            <span className="group-open:rotate-90 transition-transform">&#9654;</span>
+          <summary className="cursor-pointer text-bb-electric-600 font-semibold hover:text-bb-electric-700 flex items-center gap-sm" aria-label="Expand to view detailed comparison data table">
+            <span className="group-open:rotate-90 transition-transform" aria-hidden="true">&#9654;</span>
             View Detailed Comparison Data
           </summary>
           <div className="mt-lg overflow-x-auto rounded-xl border border-bb-slate-200">

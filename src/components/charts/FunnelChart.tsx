@@ -32,13 +32,20 @@ export default function FunnelChart({
   const maxValue = Math.max(...stages.map((s) => s.value))
   const maxWidth = 100
 
+  // Generate accessible description
+  const accessibleDescription = `Funnel chart showing ${stages.length} stages: ${stages.map(s => `${s.label} (${s.value.toLocaleString()})`).join(', ')}. Overall conversion rate: ${((stages[stages.length - 1].value / stages[0].value) * 100).toFixed(1)}%.`
+
   return (
     <div className="w-full space-y-lg">
       {title && (
         <h3 className="text-xl font-semibold text-bb-navy-900">{title}</h3>
       )}
 
-      <div className="bg-white rounded-2xl border border-bb-slate-200 p-lg shadow-md">
+      <div
+        className="bg-white rounded-2xl border border-bb-slate-200 p-lg shadow-md"
+        role="img"
+        aria-label={accessibleDescription}
+      >
         <div
           style={{ height: `${height}px` }}
           className="flex flex-col justify-around items-center"

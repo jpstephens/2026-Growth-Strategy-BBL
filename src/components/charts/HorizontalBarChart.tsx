@@ -69,13 +69,25 @@ export default function HorizontalBarChart({
     return defaultColors[index % defaultColors.length]
   }
 
+  // Generate accessible description
+  const formatValue = (val: number) => {
+    if (format === 'currency') return `$${val.toLocaleString()}`
+    if (format === 'percent') return `${val}%`
+    return val.toLocaleString()
+  }
+  const accessibleDescription = `Horizontal bar chart${title ? ` showing ${title}` : ''} with ${data.length} items: ${data.map(d => `${d.name} (${formatValue(d.value)})`).join(', ')}.`
+
   return (
     <div className="w-full space-y-lg">
       {title && (
         <h3 className="text-xl font-semibold text-bb-navy-900">{title}</h3>
       )}
 
-      <div className="bg-white rounded-2xl border border-bb-slate-200 p-lg shadow-md">
+      <div
+        className="bg-white rounded-2xl border border-bb-slate-200 p-lg shadow-md"
+        role="img"
+        aria-label={accessibleDescription}
+      >
         <ResponsiveContainer width="100%" height={height}>
           <BarChart
             data={data}

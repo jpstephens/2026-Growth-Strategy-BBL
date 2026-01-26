@@ -74,7 +74,7 @@ export default function Slide25_ConversionFunnel() {
         {/* Why These Numbers Work */}
         <div className="bg-gradient-to-r from-bb-emerald-50 to-bb-electric-50 rounded-2xl p-xl border-2 border-bb-emerald-300 shadow-md">
           <div className="flex items-start gap-lg">
-            <div className="bg-bb-emerald-500 text-white w-12 h-12 rounded-lg flex items-center justify-center text-xl shrink-0">
+            <div className="bg-bb-emerald-500 text-white w-12 h-12 rounded-lg flex items-center justify-center text-xl shrink-0" aria-hidden="true">
               ?
             </div>
             <div className="flex-1">

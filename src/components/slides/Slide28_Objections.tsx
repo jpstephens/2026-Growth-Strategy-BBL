@@ -76,10 +76,14 @@ export default function Slide28_Objections() {
         </div>
 
         {/* Tab Navigation */}
-        <div className="flex gap-sm mb-lg">
+        <div className="flex gap-sm mb-lg" role="tablist" aria-label="Objection categories">
           {objectionCategories.map((cat, idx) => (
             <button
               key={cat.id}
+              role="tab"
+              aria-selected={activeTab === idx}
+              aria-controls={`objection-panel-${cat.id}`}
+              id={`objection-tab-${cat.id}`}
               onClick={() => { setActiveTab(idx); setShowAdvanced(false); }}
               className={`flex-1 p-md rounded-xl border-2 transition-all ${
                 activeTab === idx
@@ -88,7 +92,7 @@ export default function Slide28_Objections() {
               }`}
             >
               <div className="text-center">
-                <span className="text-2xl mb-xs block">{cat.icon}</span>
+                <span className="text-2xl mb-xs block" aria-hidden="true">{cat.icon}</span>
                 <p className={`font-bold text-sm ${activeTab === idx ? cat.textColor : 'text-bb-navy-900'}`}>{cat.label}</p>
                 <p className={`text-xs mt-xs ${activeTab === idx ? cat.textColor : 'text-bb-slate-500'}`}>
                   Close: {cat.closeRate}
@@ -99,11 +103,16 @@ export default function Slide28_Objections() {
         </div>
 
         {/* Active Objection Detail */}
-        <div className={`rounded-xl border-2 ${currentCategory.borderColor} bg-gradient-to-r ${currentCategory.bgGradient} shadow-lg overflow-hidden`}>
+        <div
+          role="tabpanel"
+          id={`objection-panel-${currentCategory.id}`}
+          aria-labelledby={`objection-tab-${currentCategory.id}`}
+          className={`rounded-xl border-2 ${currentCategory.borderColor} bg-gradient-to-r ${currentCategory.bgGradient} shadow-lg overflow-hidden`}
+        >
           {/* Objection Quote */}
           <div className="p-lg border-b border-bb-slate-200/50">
             <div className="flex items-start gap-md">
-              <div className={`w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center text-2xl shrink-0`}>
+              <div className={`w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center text-2xl shrink-0`} aria-hidden="true">
                 {currentCategory.icon}
               </div>
               <div className="flex-1">
@@ -116,7 +125,7 @@ export default function Slide28_Objections() {
           {/* What They're Really Saying */}
           <div className="p-md bg-white/50 border-b border-bb-slate-200/50">
             <div className="flex items-start gap-md">
-              <div className="w-8 h-8 rounded-lg bg-bb-slate-100 flex items-center justify-center text-sm shrink-0">🧠</div>
+              <div className="w-8 h-8 rounded-lg bg-bb-slate-100 flex items-center justify-center text-sm shrink-0" aria-hidden="true">🧠</div>
               <div>
                 <p className="text-xs font-semibold text-bb-slate-600 uppercase tracking-wide mb-xs">What They're Really Saying</p>
                 <p className="text-sm text-bb-navy-900">{currentCategory.whatTheyMean}</p>
@@ -135,7 +144,7 @@ export default function Slide28_Objections() {
           {/* Why It Works */}
           <div className="p-md bg-bb-slate-50 border-t border-bb-slate-200">
             <div className="flex items-start gap-md">
-              <div className="w-8 h-8 rounded-lg bg-bb-electric-100 flex items-center justify-center text-sm shrink-0">💡</div>
+              <div className="w-8 h-8 rounded-lg bg-bb-electric-100 flex items-center justify-center text-sm shrink-0" aria-hidden="true">💡</div>
               <div>
                 <p className="text-xs font-semibold text-bb-electric-600 uppercase tracking-wide mb-xs">Why It Works</p>
                 <p className="text-sm text-bb-slate-700">{currentCategory.whyItWorks}</p>
@@ -209,7 +218,7 @@ export default function Slide28_Objections() {
         {/* Key Principle */}
         <div className="mt-md bg-gradient-to-r from-bb-electric-50 to-bb-electric-100/50 border-l-6 border-bb-electric-500 rounded-lg p-md shadow-sm">
           <div className="flex items-start gap-md">
-            <div className="w-10 h-10 bg-bb-electric-500 rounded-lg flex items-center justify-center text-white text-xl shrink-0">💡</div>
+            <div className="w-10 h-10 bg-bb-electric-500 rounded-lg flex items-center justify-center text-white text-xl shrink-0" aria-hidden="true">💡</div>
             <div>
               <h4 className="text-bb-electric-700 font-semibold text-sm mb-xs">Key Principle</h4>
               <p className="text-sm text-bb-slate-700 leading-relaxed">

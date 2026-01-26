@@ -147,8 +147,11 @@ export default function Slide46_WhatMustBeTrue() {
         </div>
 
         {/* Category Filter Tabs */}
-        <div className="flex gap-sm mb-md">
+        <div className="flex gap-sm mb-md" role="tablist" aria-label="Filter assumptions by category">
           <button
+            role="tab"
+            aria-selected={activeCategory === null}
+            aria-controls="assumptions-panel"
             onClick={() => setActiveCategory(null)}
             className={`px-md py-sm rounded-lg text-sm font-semibold transition-all ${
               activeCategory === null
@@ -163,6 +166,9 @@ export default function Slide46_WhatMustBeTrue() {
             return (
               <button
                 key={cat.id}
+                role="tab"
+                aria-selected={activeCategory === cat.id}
+                aria-controls="assumptions-panel"
                 onClick={() => setActiveCategory(activeCategory === cat.id ? null : cat.id)}
                 className={`px-md py-sm rounded-lg text-sm font-semibold transition-all flex items-center gap-xs ${
                   activeCategory === cat.id
@@ -173,7 +179,7 @@ export default function Slide46_WhatMustBeTrue() {
                   backgroundColor: cat.id === 'Market' ? '#0284c7' : cat.id === 'Operations' ? '#10b981' : '#f97316'
                 } : {}}
               >
-                <span>{cat.icon}</span>
+                <span aria-hidden="true">{cat.icon}</span>
                 {cat.id} ({count})
               </button>
             )
@@ -181,7 +187,12 @@ export default function Slide46_WhatMustBeTrue() {
         </div>
 
         {/* Assumption Checklist */}
-        <div className="bg-white rounded-xl border-2 border-bb-slate-200 shadow-md overflow-hidden">
+        <div
+          role="tabpanel"
+          id="assumptions-panel"
+          aria-label="Filtered assumptions list"
+          className="bg-white rounded-xl border-2 border-bb-slate-200 shadow-md overflow-hidden"
+        >
           <div className="divide-y divide-bb-slate-100">
             {filteredAssumptions.map((assumption) => {
               const status = statusConfig[assumption.status as keyof typeof statusConfig]
