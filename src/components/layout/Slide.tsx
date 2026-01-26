@@ -45,15 +45,19 @@ export default function Slide({ children, className = '', variant = 'default' }:
 
   return (
     <div className={`
-      w-full min-h-screen
-      flex flex-col justify-start items-center
-      px-[2vw] py-[2vh] sm:px-[3vw] sm:py-[3vh] lg:px-[4vw] lg:py-[4vh]
+      w-full h-screen
+      flex flex-col justify-center items-center
+      px-[3vw] py-[2vh]
       ${backgroundVariants[variant]}
-      overflow-y-auto overflow-x-hidden
+      overflow-hidden
       ${className}
     `}>
       <motion.div
-        className="w-full max-w-[95vw] lg:max-w-[90vw] xl:max-w-7xl mx-auto flex-1 flex flex-col justify-center"
+        className="w-full max-w-[94vw] max-h-[94vh] mx-auto flex flex-col justify-center"
+        style={{
+          // Scale content to fit viewport if needed
+          fontSize: 'clamp(10px, 1.1vh + 0.5vw, 16px)'
+        }}
         variants={containerVariants}
         initial="hidden"
         animate="visible"
