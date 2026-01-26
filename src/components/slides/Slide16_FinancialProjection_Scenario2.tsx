@@ -33,7 +33,7 @@ export default function Slide16_FinancialProjection_Scenario2() {
       <div className="w-full max-w-7xl space-y-2xl">
         {/* Title */}
         <div className="text-center">
-          <h2 className="text-5xl font-display font-bold text-bb-charcoal-800 mb-md">Financial Projections: Aggressive</h2>
+          <h2 className="text-display font-display font-bold text-bb-charcoal-800 mb-md">Financial Projections: Aggressive</h2>
           <div className="w-24 h-1.5 bg-gradient-to-r from-bb-steel-500 to-bb-forest-500 mx-auto rounded-full mb-md" />
           <p className="text-xl text-bb-slate-700">With planned hires: Rep #2 (May), Rep #3 (Aug), Ops support (June-Aug)</p>
         </div>

@@ -49,7 +49,7 @@ export default function Slide41_SuccessCriteria() {
   return (
     <Slide variant="gradient">
       <div className="w-full max-w-5xl">
-        <h2 className="text-5xl font-bold text-bb-charcoal-900 mb-sm text-center font-display">Clear Wins We Can Track</h2>
+        <h2 className="text-display font-bold text-bb-charcoal-900 mb-sm text-center font-display">Clear Wins We Can Track</h2>
         <div className="w-24 h-1.5 bg-gradient-to-r from-bb-amber-500 to-bb-steel-500 mx-auto mb-lg"></div>
         <p className="text-xl text-bb-slate-700 text-center mb-2xl">Concrete milestones. No ambiguity.</p>
 

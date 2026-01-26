@@ -68,7 +68,7 @@ export default function Slide40_RisksMitigation() {
       <div className="w-full max-w-6xl">
         {/* Header */}
         <div className="text-center mb-lg">
-          <h1 className="font-display text-5xl font-bold text-bb-charcoal-900 mb-md">
+          <h1 className="font-display text-display font-bold text-bb-charcoal-900 mb-md">
             Risk Assessment & Mitigation
           </h1>
           <div className="w-24 h-1.5 bg-gradient-to-r from-bb-charcoal-500 to-bb-forest-500 mx-auto rounded-full mb-sm" />

@@ -112,7 +112,7 @@ export default function Slide46_WhatMustBeTrue() {
       <div className="w-full max-w-6xl">
         {/* Header */}
         <div className="text-center mb-lg">
-          <h2 className="text-5xl font-bold text-bb-charcoal-900 mb-md font-display">Assumptions & Dependencies</h2>
+          <h2 className="text-display font-bold text-bb-charcoal-900 mb-md font-display">Assumptions & Dependencies</h2>
           <div className="w-24 h-1.5 bg-gradient-to-r from-bb-steel-500 to-bb-amber-500 mx-auto mb-sm"></div>
           <p className="text-lg text-bb-slate-600">The core assumptions behind this plan</p>
         </div>

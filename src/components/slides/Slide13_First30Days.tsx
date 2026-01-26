@@ -5,7 +5,7 @@ export default function Slide13_First30Days() {
     <Slide variant="gradient">
       <div className="w-full max-w-6xl">
         <div className="text-center mb-lg">
-          <h2 className="text-5xl font-display font-bold text-bb-charcoal-900 mb-sm">First 30 Days</h2>
+          <h2 className="text-display font-display font-bold text-bb-charcoal-900 mb-sm">First 30 Days</h2>
           <div className="w-24 h-1.5 bg-gradient-to-r from-bb-amber-500 to-bb-steel-500 mx-auto rounded-full mb-lg" />
         </div>
         <p className="text-2xl text-bb-slate-600 mb-2xl text-center">Week-by-week action plan</p>
