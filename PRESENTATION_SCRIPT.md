@@ -8,8 +8,8 @@
 
 ---
 
-## SLIDE 1: Title
-**BlackBridge Logistics 2026 Growth Strategy**
+## SLIDE 1: Scaling What Works
+**Title Slide**
 
 **Say this:**
 "Thank you both for being here. What I'm about to share is a comprehensive plan for how we reach $100,000 in monthly profit by December 2026. But before we talk about where we're going, I want to acknowledge where we are and what you've both built."
@@ -18,8 +18,8 @@
 
 ---
 
-## SLIDE 2: Recognition
-**What You've Built**
+## SLIDE 2: What You've Built Together
+**Recognition**
 
 **Say this:**
 "Patrick, David - let's be clear about something. You've built a real business here. Nine active customers who trust us. Profitable loads every week. A foundation that works.
@@ -31,8 +31,8 @@ This isn't a meeting about what's wrong. This is a meeting about how we take wha
 
 ---
 
-## SLIDE 3: Executive Thesis
-**The Core Argument**
+## SLIDE 3: You've Already Proven This Works
+**Executive Thesis**
 
 **Say this:**
 "Here's the core thesis of this entire plan: We have a working model. The loads are profitable. The customers are happy. The constraint isn't talent - it's structure.
@@ -45,8 +45,8 @@ We've been asking Patrick to do two jobs that require completely different minds
 
 ---
 
-## SLIDE 4: Current State Metrics
-**Where We Are Today**
+## SLIDE 4: The Foundation: Proven Unit Economics
+**Current State Metrics**
 
 **Say this:**
 "Let's look at our baseline numbers. 9 active customers. 71 loads per month. About $15,000 in monthly profit.
@@ -60,8 +60,8 @@ These are good numbers for where we are. The question is: how do we get from $15
 
 ---
 
-## SLIDE 5: Current Customers
-**Customer Concentration Risk**
+## SLIDE 5: January 2026 Snapshot
+**Customer Concentration**
 
 **Say this:**
 "Here's something we need to address head-on. Clearway and Frontier together represent 44% of our revenue. That's concentration risk.
@@ -79,7 +79,7 @@ I want to be clear: we're not going to fire these customers. They're great custo
 
 ---
 
-## SLIDE 6: What We Got Wrong
+## SLIDE 6: How We Got Here
 **Leadership Takes Responsibility**
 
 **Say this:**
@@ -96,8 +96,8 @@ That was our mistake. Not Patrick's. We created an impossible situation and then
 
 ---
 
-## SLIDE 7: The Problem
-**Why Growth Stalled**
+## SLIDE 7: Two Jobs, One Person
+**The Problem**
 
 **Say this:**
 "Here's what that looked like in practice. Patrick would start calling prospects at 9am. By 9:30, there's a delivery issue. By 10, a customer needs a quote. By 11, a carrier problem.
@@ -110,8 +110,8 @@ The result? Maybe 10 actual prospecting calls in a day instead of 40. Reactive m
 
 ---
 
-## SLIDE 8: Why Sales & Ops Are Incompatible
-**Different Mindsets Required**
+## SLIDE 8: Specialization Drives Productivity
+**Why Sales & Ops Are Incompatible**
 
 **Say this:**
 "Here's why this matters so much. Sales and operations require completely different mindsets.
@@ -126,8 +126,8 @@ When you try to do both, operations always wins because it's urgent. Sales gets 
 
 ---
 
-## SLIDE 9: The Math of Divided Attention
-**Opportunity Cost**
+## SLIDE 9: The Growth Trajectory
+**The Math of Divided Attention**
 
 **Say this:**
 "Let me show you the math of why this matters. Every hour Patrick spends on operations is an hour not spent building pipeline.
@@ -163,7 +163,7 @@ This requires 65-70 active customers doing 4+ loads per month each, at $200+ mar
 
 ---
 
-## SLIDE 11: Patrick's Role
+## SLIDE 11: Patrick's Role & Targets
 **100% Sales Focus**
 
 **Say this:**
@@ -187,7 +187,7 @@ Your target is 200+ dials per week, which should yield 4-5 new customers per mon
 
 ---
 
-## SLIDE 12: David's Role
+## SLIDE 12: David's Role & Targets
 **100% Operations Focus**
 
 **Say this:**
@@ -210,8 +210,8 @@ Your targets are 95%+ on-time delivery, issue resolution in under 2 hours, and b
 
 ---
 
-## SLIDE 13: Customer Ramp Model
-**How Customers Grow Over Time**
+## SLIDE 13: How One Customer Grows in Value
+**Customer Ramp Model**
 
 **Say this:**
 "Here's something critical to understand. Customers don't arrive at full volume. They ramp up over time as trust builds.
@@ -228,8 +228,8 @@ This is why early acquisition matters so much. A customer acquired in January co
 
 ---
 
-## SLIDE 14: Customer Profitability
-**The Value of Retention**
+## SLIDE 14: Top Customer Profiles
+**Customer Profitability**
 
 **Say this:**
 "A customer we acquire in January and retain all year generates approximately $38,000 in margin. That's one customer.
@@ -249,7 +249,7 @@ If we acquire but don't retain, we're running on a treadmill. Acquire AND retain
 
 ---
 
-## SLIDE 15: Three Key Changes
+## SLIDE 15: Three Changes That Change Everything
 **The Solution Structure**
 
 **Say this:**
@@ -263,8 +263,8 @@ Third: Clear handoff. Patrick owns the customer through first successful load. T
 
 ---
 
-## SLIDE 16: Team Structure
-**Reporting Lines**
+## SLIDE 16: Who Does What
+**Team Structure**
 
 **Say this:**
 "The reporting structure is simple and clear. Patrick reports to Chris for all sales matters. David reports to Vin for all operations matters.
@@ -273,7 +273,7 @@ This means if there's a sales question, Chris handles it. If there's an ops ques
 
 ---
 
-## SLIDE 17: Protected Calling Time
+## SLIDE 17: Patrick's Protected Schedule
 **8am-12pm Daily**
 
 **Say this:**
@@ -290,8 +290,8 @@ If something is truly on fire during this time, it goes to Vin. Not Patrick. Lea
 
 ---
 
-## SLIDE 18: Sales Funnel Math
-**The Conversion Formula**
+## SLIDE 18: The Sales Funnel Math
+**Conversion Formula**
 
 **Say this:**
 "Here's the math that makes this work. 200 dials per week. That's 40 per day during protected calling time.
@@ -312,8 +312,8 @@ So: 200 dials → 35 conversations → 9 qualified → 4-5 customers. Every week
 
 ---
 
-## SLIDE 19: Sales System
-**Tools and Tracking**
+## SLIDE 19: The Compound Effect
+**Sales System & Tools**
 
 **Say this:**
 "Everything gets tracked. HubSpot for pipeline and deals. Instantly.ai for email sequences. ZoomInfo for prospect data.
@@ -322,8 +322,8 @@ We're building a custom dashboard that pulls from all these APIs in real-time. N
 
 ---
 
-## SLIDE 20: Handoff Protocol
-**How Customers Transfer from Patrick to David**
+## SLIDE 20: Sales → Operations Handoff
+**How Customers Transfer**
 
 **Say this:**
 "The handoff is critical. Here's exactly how it works.
@@ -347,8 +347,8 @@ Clean handoff. No ambiguity. Customer knows who to call."
 
 ---
 
-## SLIDE 21: Leadership Commitments
-**What Leaders Owe Patrick and David**
+## SLIDE 21: What Leadership Provides
+**Leadership Commitments**
 
 **Say this:**
 "This isn't just about Patrick and David executing. Leadership has commitments too.
@@ -363,7 +363,7 @@ These are our commitments. Hold us to them."
 
 ---
 
-## SLIDE 22: Lead Generation Strategy
+## SLIDE 22: Lead Generation: Cold Email + Warm Calls
 **Where Prospects Come From**
 
 **Say this:**
@@ -387,18 +387,43 @@ These industries value reliability over rock-bottom pricing. They'll pay for goo
 
 ---
 
-## SLIDES 24-27: Industry Details
-**NAICS Deep Dives**
+## SLIDE 24: Building Products (25%)
+**Industry Deep Dive**
 
-**Say this (summary for all four):**
-"Each of these slides breaks down the specific types of companies within each vertical. The NAICS codes, typical freight patterns, why they need us, and what margin to expect.
+**Say this:**
+"Building Products: Heavy freight, regional distribution, consistent lanes. These are companies shipping lumber, roofing, drywall, windows - bulky items going to construction sites and distributors.
 
-Building Products: Heavy, regional, $200+ margin.
-Metal Fabrication: High-value, JIT critical, $250+ margin.
-Plastics & Packaging: Lightweight, high volume, $200+ margin.
-Automotive JIT: Premium rates because timing is everything, $300+ margin.
+They need reliability because construction schedules are tight. Late deliveries mean crews standing around. Target margin: $200+."
 
-Patrick, these slides are your targeting guide. When you're prospecting, these are the companies to prioritize."
+---
+
+## SLIDE 25: Metal Fabrication (30%)
+**Industry Deep Dive**
+
+**Say this:**
+"Metal Fabrication: High-value components, often JIT critical. Think precision parts, structural steel, custom metalwork going to manufacturing plants.
+
+These customers pay premium rates because their production lines depend on timely delivery. Target margin: $250+."
+
+---
+
+## SLIDE 26: Industrial Equipment (25%)
+**Industry Deep Dive**
+
+**Say this:**
+"Industrial Equipment: Machinery, tooling, manufacturing components. Often heavy, often oversized, often time-sensitive.
+
+These shippers value expertise in handling specialized freight. Target margin: $200+."
+
+---
+
+## SLIDE 27: Automotive JIT (20%)
+**Industry Deep Dive**
+
+**Say this:**
+"Automotive JIT: The highest-stakes freight. Parts need to arrive at exact times or production lines stop. Late delivery can cost customers millions.
+
+They pay premium rates because timing is everything. Target margin: $300+. This is our highest-value vertical."
 
 ---
 
@@ -446,7 +471,7 @@ The principle: One person owns each outcome. No finger-pointing. Fast decisions.
 
 ---
 
-## SLIDE 31: Can Patrick Do This Alone?
+## SLIDE 31: Can One Person Hit $100K Monthly Profit?
 **Why the Team Structure Matters**
 
 **Say this:**
@@ -488,7 +513,7 @@ Every hire is justified by performance. We invest in what's working."
 
 ---
 
-# ACT 6: MEASUREMENT (Slides 34-38)
+# ACT 6: MEASUREMENT & ROADMAP (Slides 34-38)
 **Goal: Clarity on what we track and why**
 
 ---
@@ -537,7 +562,7 @@ These roll up from sales and ops metrics. If the activity is right, these outcom
 
 ---
 
-## SLIDE 37: Roadmap
+## SLIDE 37: 2026 Roadmap
 **Quarterly Milestones**
 
 **Say this:**
@@ -569,7 +594,7 @@ Each stage has clear criteria. No deals sitting in limbo."
 
 ---
 
-# ACT 7: MUTUAL COMMITMENT (Slides 39-42)
+# ACT 7: MUTUAL COMMITMENT (Slides 39-43)
 **Goal: Shared ownership of the outcome**
 
 ---
@@ -590,7 +615,7 @@ We're not waiting to see if this works. We're executing immediately and measurin
 
 ---
 
-## SLIDE 40: Assumptions
+## SLIDE 40: Assumptions & Dependencies
 **What Must Be True**
 
 **Say this:**
@@ -606,7 +631,7 @@ These assumptions are testable. We'll know within 60 days if they hold. If they 
 
 ---
 
-## SLIDE 41: Risks & Mitigation
+## SLIDE 41: Risk Assessment & Mitigation
 **What Could Go Wrong**
 
 **Say this:**
@@ -642,7 +667,7 @@ We track obsessively. If we're off by more than 10%, we diagnose and fix it that
 
 ---
 
-## SLIDE 43: The Commitment
+## SLIDE 43: Mutual Commitments
 **Final Slide**
 
 **Say this:**
@@ -665,6 +690,53 @@ This plan works if we all execute our roles. I believe we can do this. Let's mak
 ---
 
 # QUICK REFERENCE
+
+## Slide Index
+| # | Title |
+|---|-------|
+| 1 | Scaling What Works |
+| 2 | What You've Built Together |
+| 3 | You've Already Proven This Works |
+| 4 | The Foundation: Proven Unit Economics |
+| 5 | January 2026 Snapshot |
+| 6 | How We Got Here |
+| 7 | Two Jobs, One Person |
+| 8 | Specialization Drives Productivity |
+| 9 | The Growth Trajectory |
+| 10 | The Goal |
+| 11 | Patrick's Role & Targets |
+| 12 | David's Role & Targets |
+| 13 | How One Customer Grows in Value |
+| 14 | Top Customer Profiles |
+| 15 | Three Changes That Change Everything |
+| 16 | Who Does What |
+| 17 | Patrick's Protected Schedule |
+| 18 | The Sales Funnel Math |
+| 19 | The Compound Effect |
+| 20 | Sales → Operations Handoff |
+| 21 | What Leadership Provides |
+| 22 | Lead Generation: Cold Email + Warm Calls |
+| 23 | Target Verticals |
+| 24 | Building Products (25%) |
+| 25 | Metal Fabrication (30%) |
+| 26 | Industrial Equipment (25%) |
+| 27 | Automotive JIT (20%) |
+| 28 | David's Priority Framework |
+| 29 | Carrier Tier System |
+| 30 | Accountability & Escalation |
+| 31 | Can One Person Hit $100K Monthly Profit? |
+| 32 | Financial Projections |
+| 33 | Hiring Triggers |
+| 34 | Sales KPIs |
+| 35 | Operations KPIs |
+| 36 | Business KPIs |
+| 37 | 2026 Roadmap |
+| 38 | Pipeline Stages |
+| 39 | First 30 Days |
+| 40 | Assumptions & Dependencies |
+| 41 | Risk Assessment & Mitigation |
+| 42 | Success Milestones |
+| 43 | Mutual Commitments |
 
 ## Key Numbers
 | Metric | Target |
