@@ -64,7 +64,7 @@ export default function Slide_TargetVerticalsIntro() {
             const colors = colorMap[vertical.color]
             return (
               <div key={idx} className={`${colors.bg} rounded-xl border-2 ${colors.border} p-md shadow-sm`}>
-                <div className={`${colors.badge} text-white text-xl font-bold rounded-lg w-12 h-12 flex items-center justify-center mb-sm`}>
+                <div className={`${colors.badge} text-white text-lg font-bold rounded-lg w-14 h-14 flex items-center justify-center mb-sm`}>
                   {vertical.percentage}
                 </div>
                 <h3 className={`text-base font-bold ${colors.text} mb-xs`}>{vertical.name}</h3>
