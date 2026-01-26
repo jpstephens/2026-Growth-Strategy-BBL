@@ -3,6 +3,7 @@ interface CalloutProps {
   title?: string
   children: React.ReactNode
   size?: 'sm' | 'md' | 'lg'
+  className?: string
 }
 
 const styles = {
@@ -32,7 +33,7 @@ const styles = {
   },
 }
 
-export default function Callout({ variant, title, children, size = 'md' }: CalloutProps) {
+export default function Callout({ variant, title, children, size = 'md', className = '' }: CalloutProps) {
   const style = styles[variant]
 
   const sizeMap = {
@@ -48,7 +49,7 @@ export default function Callout({ variant, title, children, size = 'md' }: Callo
   }
 
   return (
-    <div className={`${style.container} rounded-lg ${sizeMap[size]} shadow-md`}>
+    <div className={`${style.container} rounded-lg ${sizeMap[size]} shadow-md ${className}`}>
       <div className="flex items-start gap-lg">
         <div className={`${style.iconBg} ${iconSizeMap[size]} rounded-lg flex items-center justify-center text-white shrink-0 shadow-sm`}>
           {style.icon}
