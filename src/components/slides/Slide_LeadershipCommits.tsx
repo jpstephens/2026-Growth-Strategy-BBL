@@ -16,7 +16,7 @@ export default function Slide_LeadershipCommits() {
           <h1 className="font-display text-display font-bold text-white mb-md">
             What Leadership Commits To
           </h1>
-          <div className="w-32 h-1.5 bg-gradient-to-r from-bb-sunset-500 via-bb-electric-400 to-bb-emerald-400 mx-auto rounded-full mb-lg" />
+          <div className="w-32 h-1 bg-bb-amber-500 mx-auto rounded-full mb-lg" />
           <p className="text-xl text-bb-slate-300 max-w-3xl mx-auto leading-relaxed">
             You're not the only ones with commitments. <span className="text-white font-semibold">Here's what we owe you.</span>
           </p>
@@ -26,9 +26,9 @@ export default function Slide_LeadershipCommits() {
         <div className="grid grid-cols-3 gap-xl">
           {leadershipCommitments.map((leader, idx) => {
             const colors = [
-              { bg: 'from-bb-electric-500 to-bb-electric-600', accent: 'bb-electric' },
-              { bg: 'from-bb-emerald-500 to-bb-emerald-600', accent: 'bb-emerald' },
-              { bg: 'from-bb-sunset-500 to-bb-sunset-600', accent: 'bb-sunset' },
+              { bg: 'bg-bb-charcoal-700', border: 'border-bb-charcoal-600' },
+              { bg: 'bg-bb-steel-700', border: 'border-bb-steel-600' },
+              { bg: 'bg-bb-charcoal-700', border: 'border-bb-charcoal-600' },
             ]
             const color = colors[idx % colors.length]
 
@@ -36,28 +36,28 @@ export default function Slide_LeadershipCommits() {
               <motion.div
                 key={leader.leader}
                 variants={itemVariants}
-                className={`bg-gradient-to-br ${color.bg} rounded-2xl p-xl shadow-2xl text-white`}
+                className={`${color.bg} rounded-xl p-xl border ${color.border} text-white`}
               >
                 <div className="flex items-center gap-md mb-lg">
-                  <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center text-2xl font-bold">
+                  <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-2xl font-bold">
                     {leader.leader.charAt(0)}
                   </div>
                   <div>
                     <h3 className="text-xl font-bold">{leader.leader}</h3>
-                    <p className="text-sm text-white/80">{leader.role}</p>
+                    <p className="text-sm text-bb-slate-400">{leader.role}</p>
                   </div>
                 </div>
                 <ul className="space-y-md mb-lg">
                   {leader.commitments.map((commitment, cidx) => (
                     <li key={cidx} className="flex items-start gap-sm">
-                      <span className="text-white/80 mt-1">•</span>
-                      <span className="text-sm leading-relaxed">{commitment}</span>
+                      <span className="text-bb-forest-400 mt-1">•</span>
+                      <span className="text-sm text-bb-slate-200 leading-relaxed">{commitment}</span>
                     </li>
                   ))}
                 </ul>
-                <div className="pt-lg border-t border-white/20">
-                  <p className="text-xs text-white/60">Measured by:</p>
-                  <p className="text-sm font-semibold">{leader.measurement}</p>
+                <div className="pt-lg border-t border-white/10">
+                  <p className="text-xs text-bb-slate-500">Measured by:</p>
+                  <p className="text-sm font-semibold text-bb-slate-300">{leader.measurement}</p>
                 </div>
               </motion.div>
             )
@@ -65,24 +65,24 @@ export default function Slide_LeadershipCommits() {
         </div>
 
         {/* The Big Promise */}
-        <motion.div variants={itemVariants} className="bg-white/10 backdrop-blur-sm rounded-2xl p-2xl border border-white/20">
+        <motion.div variants={itemVariants} className="bg-white/5 rounded-xl p-2xl border border-white/10">
           <div className="text-center space-y-lg">
             <h3 className="text-2xl font-bold text-white">Our Core Promise</h3>
             <div className="grid grid-cols-3 gap-xl">
-              <div className="p-lg bg-white/10 rounded-xl">
+              <div className="p-lg bg-white/5 rounded-xl border border-white/10">
                 <p className="text-3xl mb-sm">🛡</p>
                 <p className="font-bold text-white mb-xs">Protected Time</p>
-                <p className="text-sm text-bb-slate-300">We will NOT pull Patrick into ops during protected time for ANY reason</p>
+                <p className="text-sm text-bb-slate-400">We will NOT pull Patrick into ops during protected time for ANY reason</p>
               </div>
-              <div className="p-lg bg-white/10 rounded-xl">
+              <div className="p-lg bg-white/5 rounded-xl border border-white/10">
                 <p className="text-3xl mb-sm">🚨</p>
                 <p className="font-bold text-white mb-xs">Proactive Support</p>
-                <p className="text-sm text-bb-slate-300">We hire ops help BEFORE David hits 120 loads, not after he's drowning</p>
+                <p className="text-sm text-bb-slate-400">We hire ops help BEFORE David hits 120 loads, not after he's drowning</p>
               </div>
-              <div className="p-lg bg-white/10 rounded-xl">
+              <div className="p-lg bg-white/5 rounded-xl border border-white/10">
                 <p className="text-3xl mb-sm">🔄</p>
                 <p className="font-bold text-white mb-xs">We Adapt</p>
-                <p className="text-sm text-bb-slate-300">If the data says we're wrong, we pivot together—no blame, just adjustment</p>
+                <p className="text-sm text-bb-slate-400">If the data says we're wrong, we pivot together—no blame, just adjustment</p>
               </div>
             </div>
           </div>
@@ -90,7 +90,7 @@ export default function Slide_LeadershipCommits() {
 
         {/* Accountability Statement */}
         <motion.div variants={itemVariants} className="text-center">
-          <p className="text-lg text-bb-slate-300 italic">
+          <p className="text-lg text-bb-slate-400 italic">
             "We're not asking you to bet on us. We're asking you to let us earn your trust with action."
           </p>
         </motion.div>

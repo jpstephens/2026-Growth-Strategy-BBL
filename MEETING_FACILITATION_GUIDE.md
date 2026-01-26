@@ -71,7 +71,7 @@ Let's begin."
 **Key Messages:**
 - WE got the structure wrong
 - Patrick was set up to fail
-- David was made invisible
+- Roles blurred together, preventing focus
 - The problem is structural, not personal
 
 **Facilitator Notes:**

@@ -38,22 +38,22 @@ const itemVariants: Variants = {
 
 export default function Slide({ children, className = '', variant = 'default' }: SlideProps) {
   const backgroundVariants = {
-    default: 'bg-gradient-to-br from-bb-slate-50 via-white to-bb-slate-100',
-    dark: 'bg-gradient-to-br from-bb-navy-900 via-bb-navy-800 to-bb-slate-900',
-    gradient: 'bg-gradient-to-br from-bb-electric-50 via-white to-bb-sunset-50',
+    default: 'bg-white',
+    dark: 'bg-bb-charcoal-800',
+    gradient: 'bg-gradient-to-br from-bb-slate-50 to-white',
   }
 
   return (
     <div className={`
       w-full min-h-screen
       flex flex-col justify-start items-center
-      px-lg py-lg
+      px-[2vw] py-[2vh] sm:px-[3vw] sm:py-[3vh] lg:px-[4vw] lg:py-[4vh]
       ${backgroundVariants[variant]}
       overflow-y-auto overflow-x-hidden
       ${className}
     `}>
       <motion.div
-        className="w-full max-w-7xl mx-auto flex-1 flex flex-col justify-center"
+        className="w-full max-w-[95vw] lg:max-w-[90vw] xl:max-w-7xl mx-auto flex-1 flex flex-col justify-center"
         variants={containerVariants}
         initial="hidden"
         animate="visible"

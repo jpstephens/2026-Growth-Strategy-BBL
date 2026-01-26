@@ -6,9 +6,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800;900&display=swap');
 
 @layer base {
+  :root {
+    /* Responsive spacing scale using viewport units */
+    --space-xs: clamp(4px, 0.5vw, 8px);
+    --space-sm: clamp(6px, 0.8vw, 12px);
+    --space-md: clamp(8px, 1vw, 16px);
+    --space-lg: clamp(12px, 1.5vw, 24px);
+    --space-xl: clamp(16px, 2vw, 32px);
+    --space-2xl: clamp(24px, 3vw, 48px);
+    --space-3xl: clamp(32px, 4vw, 64px);
+  }
+
   html {
     overflow: hidden;
     height: 100%;
+    font-size: clamp(12px, 1vw + 8px, 16px);
   }
 
   body {
@@ -135,7 +147,7 @@
   }
 }
 
-/* Presentation mode - no scrolling */
+/* Presentation mode - allow scrolling for smaller screens */
 #root {
   width: 100%;
   height: 100%;
@@ -144,6 +156,38 @@
 
 main {
   overflow: hidden;
+}
+
+/* Responsive grid utilities - auto-stack on smaller screens */
+@media (max-width: 1024px) {
+  .grid-cols-3,
+  .grid-cols-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-cols-2,
+  .grid-cols-3,
+  .grid-cols-4 {
+    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+  }
+}
+
+/* Scale spacing with viewport */
+@media (max-width: 1024px) {
+  .gap-xl {
+    gap: clamp(16px, 2vw, 32px) !important;
+  }
+  .gap-lg {
+    gap: clamp(12px, 1.5vw, 24px) !important;
+  }
+  .space-y-2xl > * + * {
+    margin-top: clamp(24px, 3vw, 48px) !important;
+  }
+  .p-xl, .p-2xl {
+    padding: clamp(16px, 2vw, 32px) !important;
+  }
 }
 
 /* Respect user's motion preferences for accessibility */

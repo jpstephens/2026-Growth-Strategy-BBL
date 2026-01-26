@@ -29,7 +29,7 @@ Here's where we need to own our mistakes:
 
 **We asked Patrick to do the impossible.** Running sales AND operations isn't a stretch goal — it's structurally impossible. When a carrier issue hits, operations wins. Always. That's physics, not failure.
 
-**We made David invisible.** Every conversation was about sales, but sales means nothing without operations. David's been carrying load execution without the recognition he deserves.
+**We let roles blur together.** Patrick and David have been co-working on projects—which sounds collaborative but prevented either from fully owning their domain. When everyone shares everything, no one can truly focus.
 
 **We measured results without fixing the structure.** We tracked numbers but didn't solve the root cause. We asked for more output without giving you the structure to produce it.
 

@@ -15,17 +15,17 @@ export default function Slide_WhatWeGotWrong() {
           <h1 className="font-display text-display font-bold text-white mb-md">
             Here's What We Got Wrong
           </h1>
-          <div className="w-32 h-1.5 bg-gradient-to-r from-bb-burgundy-500 to-bb-sunset-500 mx-auto rounded-full mb-lg" />
+          <div className="w-32 h-1 bg-bb-crimson-500 mx-auto rounded-full mb-lg" />
           <p className="text-xl text-bb-slate-300 max-w-3xl mx-auto leading-relaxed">
             Before we talk about the future, we need to own the past.
           </p>
         </motion.div>
 
         {/* The Confession */}
-        <motion.div variants={itemVariants} className="bg-white/10 backdrop-blur-sm rounded-2xl p-2xl border border-white/20">
+        <motion.div variants={itemVariants} className="bg-white/5 rounded-xl p-2xl border border-white/10">
           <div className="space-y-xl">
             <div className="flex items-start gap-lg">
-              <div className="w-12 h-12 rounded-full bg-bb-burgundy-500/30 border-2 border-bb-burgundy-400 flex items-center justify-center text-xl shrink-0">
+              <div className="w-12 h-12 rounded-full bg-bb-crimson-500/20 border border-bb-crimson-500/50 flex items-center justify-center text-xl text-white shrink-0">
                 1
               </div>
               <div>
@@ -37,19 +37,19 @@ export default function Slide_WhatWeGotWrong() {
             </div>
 
             <div className="flex items-start gap-lg">
-              <div className="w-12 h-12 rounded-full bg-bb-burgundy-500/30 border-2 border-bb-burgundy-400 flex items-center justify-center text-xl shrink-0">
+              <div className="w-12 h-12 rounded-full bg-bb-crimson-500/20 border border-bb-crimson-500/50 flex items-center justify-center text-xl text-white shrink-0">
                 2
               </div>
               <div>
-                <h3 className="text-xl font-bold text-white mb-sm">We made David invisible</h3>
+                <h3 className="text-xl font-bold text-white mb-sm">We let roles blur together</h3>
                 <p className="text-bb-slate-300 leading-relaxed">
-                  Every conversation was about sales, but sales means nothing without operations. David's been carrying the load execution without the recognition or support he deserves.
+                  Patrick and David have been co-working on everything—which sounds collaborative but prevents either from fully owning their domain. When everyone shares everything, no one can truly focus.
                 </p>
               </div>
             </div>
 
             <div className="flex items-start gap-lg">
-              <div className="w-12 h-12 rounded-full bg-bb-burgundy-500/30 border-2 border-bb-burgundy-400 flex items-center justify-center text-xl shrink-0">
+              <div className="w-12 h-12 rounded-full bg-bb-crimson-500/20 border border-bb-crimson-500/50 flex items-center justify-center text-xl text-white shrink-0">
                 3
               </div>
               <div>
@@ -64,27 +64,27 @@ export default function Slide_WhatWeGotWrong() {
 
         {/* The Math */}
         <motion.div variants={itemVariants} className="grid grid-cols-2 gap-xl">
-          <div className="bg-gradient-to-br from-bb-burgundy-500/30 to-bb-burgundy-600/20 rounded-2xl p-xl border border-bb-burgundy-400/50">
-            <h3 className="text-lg font-bold text-bb-burgundy-300 mb-lg">The Impossible Math</h3>
+          <div className="bg-bb-crimson-900/30 rounded-xl p-xl border border-bb-crimson-700/30">
+            <h3 className="text-lg font-bold text-bb-crimson-300 mb-lg">The Impossible Math</h3>
             <div className="space-y-md text-white">
               <div className="flex justify-between">
-                <span>Calls needed for growth:</span>
+                <span className="text-bb-slate-300">Calls needed for growth:</span>
                 <span className="font-bold">200/week</span>
               </div>
               <div className="flex justify-between">
-                <span>Hours for 200 calls:</span>
+                <span className="text-bb-slate-300">Hours for 200 calls:</span>
                 <span className="font-bold">20+ hours</span>
               </div>
               <div className="flex justify-between">
-                <span>Hours for ops work:</span>
+                <span className="text-bb-slate-300">Hours for ops work:</span>
                 <span className="font-bold">20+ hours</span>
               </div>
               <div className="h-px bg-white/20 my-md" />
-              <div className="flex justify-between text-bb-burgundy-300">
+              <div className="flex justify-between text-bb-crimson-300">
                 <span>Total needed:</span>
                 <span className="font-bold">40+ hours</span>
               </div>
-              <div className="flex justify-between text-bb-burgundy-300">
+              <div className="flex justify-between text-bb-crimson-300">
                 <span>Hours available:</span>
                 <span className="font-bold">40 hours</span>
               </div>
@@ -94,28 +94,28 @@ export default function Slide_WhatWeGotWrong() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-br from-bb-emerald-500/30 to-bb-emerald-600/20 rounded-2xl p-xl border border-bb-emerald-400/50">
-            <h3 className="text-lg font-bold text-bb-emerald-300 mb-lg">What Changes</h3>
+          <div className="bg-bb-forest-900/30 rounded-xl p-xl border border-bb-forest-700/30">
+            <h3 className="text-lg font-bold text-bb-forest-300 mb-lg">What Changes</h3>
             <div className="space-y-md text-white">
               <div className="flex items-start gap-sm">
-                <span className="text-bb-emerald-400 mt-1">✓</span>
-                <span>Patrick gets 100% sales focus</span>
+                <span className="text-bb-forest-400 mt-1">✓</span>
+                <span className="text-bb-slate-200">Patrick gets 100% sales focus</span>
               </div>
               <div className="flex items-start gap-sm">
-                <span className="text-bb-emerald-400 mt-1">✓</span>
-                <span>David owns all operations</span>
+                <span className="text-bb-forest-400 mt-1">✓</span>
+                <span className="text-bb-slate-200">David owns all operations</span>
               </div>
               <div className="flex items-start gap-sm">
-                <span className="text-bb-emerald-400 mt-1">✓</span>
-                <span>Clear handoff protocol</span>
+                <span className="text-bb-forest-400 mt-1">✓</span>
+                <span className="text-bb-slate-200">Clear handoff protocol</span>
               </div>
               <div className="flex items-start gap-sm">
-                <span className="text-bb-emerald-400 mt-1">✓</span>
-                <span>Protected time, enforced by leadership</span>
+                <span className="text-bb-forest-400 mt-1">✓</span>
+                <span className="text-bb-slate-200">Protected time, enforced by leadership</span>
               </div>
               <div className="flex items-start gap-sm">
-                <span className="text-bb-emerald-400 mt-1">✓</span>
-                <span>Support before burnout, not after</span>
+                <span className="text-bb-forest-400 mt-1">✓</span>
+                <span className="text-bb-slate-200">Support before burnout, not after</span>
               </div>
             </div>
             <p className="text-sm text-bb-slate-400 mt-lg italic">

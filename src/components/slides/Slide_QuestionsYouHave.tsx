@@ -12,56 +12,44 @@ const questions = [
     forWhom: 'Patrick',
     answer: "We coach and adjust. Maybe it's call quality over quantity. Maybe it's better targeting. We figure it out together—not blame.",
     icon: '📞',
-    color: 'electric',
+    color: 'charcoal',
   },
   {
     question: "What if operations gets overwhelmed?",
     forWhom: 'David',
     answer: "David escalates to Vin immediately. Patrick stays protected. We've built escalation paths so crises don't derail the plan.",
     icon: '🚨',
-    color: 'emerald',
+    color: 'steel',
   },
   {
     question: "What if the market shifts?",
     forWhom: 'Everyone',
     answer: "We watch the data weekly. If conversion rates drop or customer quality changes, we pivot the approach—but we don't abandon the structure.",
     icon: '📊',
-    color: 'sunset',
+    color: 'charcoal',
   },
   {
     question: "What if we miss the numbers?",
     forWhom: 'Everyone',
     answer: "We diagnose why, not who. Is it activity? Conversion? Market? We fix the root cause. Missing 4 customers by hitting 3 is progress, not failure.",
     icon: '📉',
-    color: 'navy',
+    color: 'steel',
   },
 ]
 
 export default function Slide_QuestionsYouHave() {
   const colorMap = {
-    electric: {
-      bg: 'from-bb-electric-50 to-white',
-      border: 'border-bb-electric-300',
-      icon: 'bg-bb-electric-500',
-      text: 'text-bb-electric-700',
+    charcoal: {
+      bg: 'bg-white',
+      border: 'border-bb-slate-200',
+      icon: 'bg-bb-charcoal-800',
+      text: 'text-bb-charcoal-800',
     },
-    emerald: {
-      bg: 'from-bb-emerald-50 to-white',
-      border: 'border-bb-emerald-300',
-      icon: 'bg-bb-emerald-500',
-      text: 'text-bb-emerald-700',
-    },
-    sunset: {
-      bg: 'from-bb-sunset-50 to-white',
-      border: 'border-bb-sunset-300',
-      icon: 'bg-bb-sunset-500',
-      text: 'text-bb-sunset-700',
-    },
-    navy: {
-      bg: 'from-bb-navy-50 to-white',
-      border: 'border-bb-navy-300',
-      icon: 'bg-bb-navy-500',
-      text: 'text-bb-navy-700',
+    steel: {
+      bg: 'bg-white',
+      border: 'border-bb-slate-200',
+      icon: 'bg-bb-steel-600',
+      text: 'text-bb-steel-700',
     },
   }
 
@@ -70,12 +58,12 @@ export default function Slide_QuestionsYouHave() {
       <div className="w-full max-w-6xl space-y-2xl">
         {/* Hero Title */}
         <motion.div variants={itemVariants} className="text-center mb-lg">
-          <h1 className="font-display text-display font-bold text-bb-navy-900 mb-md">
+          <h1 className="font-display text-display font-bold text-bb-charcoal-800 mb-md">
             Questions We Know You Have
           </h1>
-          <div className="w-32 h-1.5 bg-gradient-to-r from-bb-electric-500 via-bb-emerald-400 to-bb-sunset-500 mx-auto rounded-full mb-lg" />
+          <div className="w-32 h-1 bg-bb-charcoal-800 mx-auto rounded-full mb-lg" />
           <p className="text-xl text-bb-slate-600 max-w-3xl mx-auto leading-relaxed">
-            Let's address the concerns directly. <span className="font-semibold">These are fair questions.</span>
+            Let's address the concerns directly. <span className="font-semibold text-bb-charcoal-800">These are fair questions.</span>
           </p>
         </motion.div>
 
@@ -88,10 +76,10 @@ export default function Slide_QuestionsYouHave() {
               <motion.div
                 key={idx}
                 variants={itemVariants}
-                className={`bg-gradient-to-br ${colors.bg} rounded-2xl border-2 ${colors.border} p-xl shadow-lg`}
+                className={`${colors.bg} rounded-xl border ${colors.border} p-xl shadow-sm`}
               >
                 <div className="flex items-start gap-lg mb-lg">
-                  <div className={`w-12 h-12 rounded-xl ${colors.icon} flex items-center justify-center text-white text-xl shadow-lg shrink-0`}>
+                  <div className={`w-12 h-12 rounded-xl ${colors.icon} flex items-center justify-center text-white text-xl shadow-sm shrink-0`}>
                     {q.icon}
                   </div>
                   <div>
@@ -104,7 +92,7 @@ export default function Slide_QuestionsYouHave() {
                   </div>
                 </div>
                 <div className="pl-16">
-                  <p className="text-bb-slate-700 leading-relaxed">
+                  <p className="text-bb-slate-600 leading-relaxed">
                     {q.answer}
                   </p>
                 </div>
@@ -114,9 +102,9 @@ export default function Slide_QuestionsYouHave() {
         </div>
 
         {/* Discussion Prompt */}
-        <motion.div variants={itemVariants} className="bg-gradient-to-br from-bb-navy-700 to-bb-navy-800 rounded-2xl p-2xl shadow-2xl text-white text-center">
+        <motion.div variants={itemVariants} className="bg-bb-charcoal-800 rounded-xl p-2xl text-white text-center">
           <div className="flex items-center justify-center gap-md mb-lg">
-            <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center text-2xl">
+            <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-2xl">
               💬
             </div>
           </div>
@@ -124,8 +112,8 @@ export default function Slide_QuestionsYouHave() {
           <p className="text-lg text-bb-slate-300 max-w-2xl mx-auto leading-relaxed">
             This plan only works if you believe in it. What concerns haven't we addressed? What would make you feel more confident?
           </p>
-          <div className="h-px bg-white/20 my-lg" />
-          <p className="text-sm text-bb-slate-400 italic">
+          <div className="h-px bg-white/10 my-lg" />
+          <p className="text-sm text-bb-slate-500 italic">
             This is a conversation, not a presentation. Your input shapes the final version.
           </p>
         </motion.div>
