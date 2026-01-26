@@ -13,11 +13,11 @@ export default function Slide02_ExecutiveThesis() {
       <div className="w-full max-w-6xl space-y-2xl">
         {/* Hero Title */}
         <motion.div variants={itemVariants} className="text-center mb-lg">
-          <h1 className="font-display text-display font-bold text-bb-navy-900 mb-md">
+          <h1 className="font-display text-display font-bold text-bb-charcoal-800 mb-md">
             You've Already Proven This Works
           </h1>
-          <div className="w-32 h-1.5 bg-gradient-to-r from-bb-electric-500 via-bb-electric-400 to-bb-sunset-400 mx-auto rounded-full mb-lg" />
-          <p className="text-xl text-bb-slate-600 max-w-3xl mx-auto leading-relaxed">
+          <div className="w-32 h-1.5 bg-gradient-to-r from-bb-steel-500 via-bb-steel-400 to-bb-amber-400 mx-auto rounded-full mb-md" />
+          <p className="text-lg text-bb-charcoal-600 max-w-3xl mx-auto leading-relaxed">
             Patrick and David built a real business. Now let's scale what they created.
           </p>
         </motion.div>
@@ -26,78 +26,73 @@ export default function Slide02_ExecutiveThesis() {
         <motion.div variants={itemVariants}>
           <Callout variant="success" title="What Patrick & David Built" size="lg">
             <p className="text-lg leading-relaxed">
-              <span className="font-bold">774 loads. $160K in gross margin. $200+ profit per load.</span> This isn't a theory—it's proven execution. Patrick brought in the customers. David delivered the loads. Together, they built the foundation for everything we're about to do.
+              <span className="font-bold">774 loads. $160K in gross margin. $200+ profit per load.</span>
+              {' '}Patrick brought in the customers. David delivered the loads.
+              Together, they built the foundation for everything we're about to do.
             </p>
           </Callout>
         </motion.div>
 
         {/* What We Know Works - Card Grid */}
-        <motion.div variants={itemVariants} className="bg-white rounded-2xl border-2 border-bb-navy-200 p-2xl shadow-xl">
-          <h2 className="text-h2 font-display font-bold text-bb-navy-900 mb-xl">
+        <motion.div variants={itemVariants} className="bg-white rounded-2xl border-2 border-bb-slate-200 p-xl shadow-lg">
+          <h2 className="text-h2 font-display font-bold text-bb-charcoal-800 mb-lg">
             What They Proved Works
           </h2>
-          <div className="grid grid-cols-3 gap-xl">
+          <div className="grid grid-cols-3 gap-lg">
             {/* Item 1 */}
-            <div className="flex items-start gap-lg">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-bb-electric-500 to-bb-electric-600 flex items-center justify-center text-white text-2xl font-bold shadow-lg shrink-0">
+            <div className="flex items-start gap-md">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-bb-forest-500 to-bb-forest-600 flex items-center justify-center text-white text-lg font-bold shadow-sm shrink-0">
                 ✓
               </div>
               <div>
-                <p className="font-semibold text-bb-navy-900 mb-xs text-lg">Profitable Unit Economics</p>
-                <p className="text-sm text-bb-slate-600">$200+ margin per load—Patrick sells profitable business</p>
+                <p className="font-semibold text-bb-charcoal-800 mb-xs text-base">Profitable Unit Economics</p>
+                <p className="text-sm text-bb-charcoal-600">$200+ margin per load—profitable business</p>
               </div>
             </div>
             {/* Item 2 */}
-            <div className="flex items-start gap-lg">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-bb-electric-500 to-bb-electric-600 flex items-center justify-center text-white text-2xl font-bold shadow-lg shrink-0">
+            <div className="flex items-start gap-md">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-bb-forest-500 to-bb-forest-600 flex items-center justify-center text-white text-lg font-bold shadow-sm shrink-0">
                 ✓
               </div>
               <div>
-                <p className="font-semibold text-bb-navy-900 mb-xs text-lg">Repeatable Sales Process</p>
-                <p className="text-sm text-bb-slate-600">Patrick converts prospects to customers when he can focus</p>
+                <p className="font-semibold text-bb-charcoal-800 mb-xs text-base">Repeatable Sales Process</p>
+                <p className="text-sm text-bb-charcoal-600">Patrick converts when he can focus</p>
               </div>
             </div>
             {/* Item 3 */}
-            <div className="flex items-start gap-lg">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-bb-electric-500 to-bb-electric-600 flex items-center justify-center text-white text-2xl font-bold shadow-lg shrink-0">
+            <div className="flex items-start gap-md">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-bb-forest-500 to-bb-forest-600 flex items-center justify-center text-white text-lg font-bold shadow-sm shrink-0">
                 ✓
               </div>
               <div>
-                <p className="font-semibold text-bb-navy-900 mb-xs text-lg">Reliable Operations</p>
-                <p className="text-sm text-bb-slate-600">David executes loads and manages carriers consistently</p>
+                <p className="font-semibold text-bb-charcoal-800 mb-xs text-base">Reliable Operations</p>
+                <p className="text-sm text-bb-charcoal-600">David executes loads consistently</p>
               </div>
             </div>
           </div>
         </motion.div>
 
-        {/* The Gap */}
-        <motion.div variants={itemVariants} className="bg-gradient-to-br from-bb-sunset-500 to-bb-sunset-600 rounded-2xl p-2xl shadow-2xl border-2 border-bb-sunset-400">
-          <div className="space-y-lg text-white">
-            <div>
-              <div className="inline-block px-lg py-sm bg-white/20 backdrop-blur-sm rounded-full text-white font-bold text-sm mb-md">
-                THE GAP
-              </div>
-              <p className="text-lg leading-relaxed">
-                We have customers ready to buy. We have operations that work. <span className="font-bold">The problem isn't the people—it's the structure.</span>
-              </p>
+        {/* The Gap & Solution */}
+        <motion.div variants={itemVariants} className="grid grid-cols-2 gap-lg">
+          <div className="bg-white rounded-xl p-lg border-2 border-bb-slate-200 shadow-sm">
+            <div className="inline-block px-md py-xs bg-bb-slate-100 rounded-full text-bb-charcoal-700 font-bold text-xs mb-md">
+              THE GAP
             </div>
-            <div className="h-px bg-white/20" />
-            <div>
-              <div className="inline-block px-lg py-sm bg-bb-emerald-500 rounded-full text-white font-bold text-sm mb-md">
-                THE SOLUTION
-              </div>
-              <p className="text-lg font-semibold">
-                Fix the structural constraint. Let Patrick sell. Let David run ops. Watch the numbers follow.
-              </p>
-            </div>
+            <p className="text-base text-bb-charcoal-700 leading-relaxed">
+              We have customers ready to buy. We have operations that work.
+              <span className="font-bold text-bb-charcoal-800"> The problem isn't the people—it's the structure.</span>
+            </p>
           </div>
-        </motion.div>
-
-        {/* Recognition Footer */}
-        <motion.div variants={itemVariants} className="text-center">
-          <p className="text-lg text-bb-slate-600 italic">
-            "You've created something real. Now let's scale it."
-          </p>
+          <div className="bg-gradient-to-br from-bb-forest-50 to-white rounded-xl p-lg border-2 border-bb-forest-300 shadow-sm">
+            <div className="inline-block px-md py-xs bg-bb-forest-100 rounded-full text-bb-forest-700 font-bold text-xs mb-md">
+              THE SOLUTION
+            </div>
+            <p className="text-base text-bb-charcoal-700 leading-relaxed">
+              Fix the structural constraint.
+              <span className="font-bold text-bb-forest-700"> Let Patrick sell. Let David run ops.</span>
+              Watch the numbers follow.
+            </p>
+          </div>
         </motion.div>
       </div>
     </Slide>

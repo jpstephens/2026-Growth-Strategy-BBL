@@ -1,137 +1,155 @@
 import { motion } from 'framer-motion'
 import Slide from '../layout/Slide'
+import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts'
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 }
 
+const timeData = [
+  { name: 'Operations', value: 60, color: '#4f85a6' },
+  { name: 'Sales', value: 25, color: '#d6973a' },
+  { name: 'Admin', value: 15, color: '#adb5bd' },
+]
+
 export default function Slide_WhatWeGotWrong() {
   return (
-    <Slide variant="dark">
-      <div className="w-full max-w-6xl space-y-2xl">
+    <Slide variant="gradient">
+      <div className="w-full max-w-6xl space-y-xl">
         {/* Hero Title */}
-        <motion.div variants={itemVariants} className="text-center mb-lg">
-          <h1 className="font-display text-display font-bold text-white mb-md">
-            Here's What We Got Wrong
-          </h1>
-          <div className="w-32 h-1 bg-bb-crimson-500 mx-auto rounded-full mb-lg" />
-          <p className="text-xl text-bb-slate-300 max-w-3xl mx-auto leading-relaxed">
-            Before we talk about the future, we need to own the past.
-          </p>
-        </motion.div>
-
-        {/* The Confession */}
-        <motion.div variants={itemVariants} className="bg-white/5 rounded-xl p-2xl border border-white/10">
-          <div className="space-y-xl">
-            <div className="flex items-start gap-lg">
-              <div className="w-12 h-12 rounded-full bg-bb-crimson-500/20 border border-bb-crimson-500/50 flex items-center justify-center text-xl text-white shrink-0">
-                1
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-white mb-sm">We asked Patrick to do the impossible</h3>
-                <p className="text-bb-slate-300 leading-relaxed">
-                  No one can be in two places at once. Asking Patrick to run sales AND handle operations wasn't a stretch—it was structurally impossible. That's on us, not him.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-lg">
-              <div className="w-12 h-12 rounded-full bg-bb-crimson-500/20 border border-bb-crimson-500/50 flex items-center justify-center text-xl text-white shrink-0">
-                2
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-white mb-sm">We let roles blur together</h3>
-                <p className="text-bb-slate-300 leading-relaxed">
-                  Patrick and David have been co-working on everything—which sounds collaborative but prevents either from fully owning their domain. When everyone shares everything, no one can truly focus.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-lg">
-              <div className="w-12 h-12 rounded-full bg-bb-crimson-500/20 border border-bb-crimson-500/50 flex items-center justify-center text-xl text-white shrink-0">
-                3
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-white mb-sm">We measured results without fixing the structure</h3>
-                <p className="text-bb-slate-300 leading-relaxed">
-                  We tracked numbers but didn't solve the root cause. We asked for more output without giving you the structure to produce it. That's backwards.
-                </p>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* The Math */}
-        <motion.div variants={itemVariants} className="grid grid-cols-2 gap-xl">
-          <div className="bg-bb-crimson-900/30 rounded-xl p-xl border border-bb-crimson-700/30">
-            <h3 className="text-lg font-bold text-bb-crimson-300 mb-lg">The Impossible Math</h3>
-            <div className="space-y-md text-white">
-              <div className="flex justify-between">
-                <span className="text-bb-slate-300">Calls needed for growth:</span>
-                <span className="font-bold">200/week</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-bb-slate-300">Hours for 200 calls:</span>
-                <span className="font-bold">20+ hours</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-bb-slate-300">Hours for ops work:</span>
-                <span className="font-bold">20+ hours</span>
-              </div>
-              <div className="h-px bg-white/20 my-md" />
-              <div className="flex justify-between text-bb-crimson-300">
-                <span>Total needed:</span>
-                <span className="font-bold">40+ hours</span>
-              </div>
-              <div className="flex justify-between text-bb-crimson-300">
-                <span>Hours available:</span>
-                <span className="font-bold">40 hours</span>
-              </div>
-            </div>
-            <p className="text-sm text-bb-slate-400 mt-lg italic">
-              The math never worked. Patrick was set up to fail.
-            </p>
-          </div>
-
-          <div className="bg-bb-forest-900/30 rounded-xl p-xl border border-bb-forest-700/30">
-            <h3 className="text-lg font-bold text-bb-forest-300 mb-lg">What Changes</h3>
-            <div className="space-y-md text-white">
-              <div className="flex items-start gap-sm">
-                <span className="text-bb-forest-400 mt-1">✓</span>
-                <span className="text-bb-slate-200">Patrick gets 100% sales focus</span>
-              </div>
-              <div className="flex items-start gap-sm">
-                <span className="text-bb-forest-400 mt-1">✓</span>
-                <span className="text-bb-slate-200">David owns all operations</span>
-              </div>
-              <div className="flex items-start gap-sm">
-                <span className="text-bb-forest-400 mt-1">✓</span>
-                <span className="text-bb-slate-200">Clear handoff protocol</span>
-              </div>
-              <div className="flex items-start gap-sm">
-                <span className="text-bb-forest-400 mt-1">✓</span>
-                <span className="text-bb-slate-200">Protected time, enforced by leadership</span>
-              </div>
-              <div className="flex items-start gap-sm">
-                <span className="text-bb-forest-400 mt-1">✓</span>
-                <span className="text-bb-slate-200">Support before burnout, not after</span>
-              </div>
-            </div>
-            <p className="text-sm text-bb-slate-400 mt-lg italic">
-              We fix the structure. You show us what you can do.
-            </p>
-          </div>
-        </motion.div>
-
-        {/* Transition Statement */}
         <motion.div variants={itemVariants} className="text-center">
-          <p className="text-2xl font-bold text-white mb-md">
-            That changes now.
+          <h1 className="font-display text-display font-bold text-bb-charcoal-800 mb-md">
+            How We Got Here
+          </h1>
+          <div className="w-32 h-1 bg-bb-amber-500 mx-auto rounded-full mb-md" />
+          <p className="text-lg text-bb-charcoal-600 max-w-3xl mx-auto leading-relaxed">
+            As we grew organically, roles naturally blurred. That's normal for a startup—
+            but now we need structure to scale.
           </p>
-          <p className="text-lg text-bb-slate-300">
-            We can't undo the past two years, but we can build a structure that actually works.
-          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-2 gap-xl">
+          {/* Left: What Happened */}
+          <motion.div variants={itemVariants} className="bg-white rounded-xl p-xl border-2 border-bb-slate-200 shadow-sm">
+            <h3 className="text-lg font-bold text-bb-charcoal-800 mb-lg">What Happened</h3>
+            <div className="space-y-md">
+              <div className="flex items-start gap-md">
+                <div className="w-8 h-8 rounded-full bg-bb-slate-100 border border-bb-slate-300 flex items-center justify-center text-sm font-bold text-bb-charcoal-700 shrink-0">
+                  1
+                </div>
+                <div>
+                  <p className="font-semibold text-bb-charcoal-800 mb-xs">Roles blurred naturally</p>
+                  <p className="text-sm text-bb-charcoal-600">
+                    Patrick and David co-worked on everything—
+                    great for flexibility, but it prevented focus.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-md">
+                <div className="w-8 h-8 rounded-full bg-bb-slate-100 border border-bb-slate-300 flex items-center justify-center text-sm font-bold text-bb-charcoal-700 shrink-0">
+                  2
+                </div>
+                <div>
+                  <p className="font-semibold text-bb-charcoal-800 mb-xs">Ops always won the day</p>
+                  <p className="text-sm text-bb-charcoal-600">
+                    When a load needs coverage NOW and a prospect call can wait,
+                    the urgent wins over the important.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-md">
+                <div className="w-8 h-8 rounded-full bg-bb-slate-100 border border-bb-slate-300 flex items-center justify-center text-sm font-bold text-bb-charcoal-700 shrink-0">
+                  3
+                </div>
+                <div>
+                  <p className="font-semibold text-bb-charcoal-800 mb-xs">No protected sales time</p>
+                  <p className="text-sm text-bb-charcoal-600">
+                    Without boundaries, consistent prospecting was impossible.
+                    Sales calls happened in stolen moments.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Right: Time Allocation Chart */}
+          <motion.div variants={itemVariants} className="bg-white rounded-xl p-xl border-2 border-bb-slate-200 shadow-sm">
+            <h3 className="text-lg font-bold text-bb-charcoal-800 mb-md">
+              Where Time Actually Goes
+            </h3>
+            <div className="flex items-center gap-lg">
+              <div className="w-40 h-40">
+                <ResponsiveContainer width="100%" height="100%">
+                  <PieChart>
+                    <Pie
+                      data={timeData}
+                      cx="50%"
+                      cy="50%"
+                      innerRadius={35}
+                      outerRadius={65}
+                      dataKey="value"
+                      isAnimationActive={true}
+                      animationDuration={800}
+                    >
+                      {timeData.map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill={entry.color} />
+                      ))}
+                    </Pie>
+                  </PieChart>
+                </ResponsiveContainer>
+              </div>
+              <div className="flex-1 space-y-sm">
+                {timeData.map((item) => (
+                  <div key={item.name} className="flex items-center gap-sm">
+                    <div
+                      className="w-3 h-3 rounded-full"
+                      style={{ backgroundColor: item.color }}
+                    />
+                    <span className="text-sm text-bb-charcoal-700 flex-1">{item.name}</span>
+                    <span className="text-sm font-bold text-bb-charcoal-800">{item.value}%</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <p className="text-sm text-bb-charcoal-500 mt-md pt-md border-t border-bb-slate-200">
+              Sales needs 50%+ of time for real growth.
+              Currently getting ~25%.
+            </p>
+          </motion.div>
+        </div>
+
+        {/* What Changes */}
+        <motion.div variants={itemVariants} className="bg-gradient-to-br from-bb-forest-50 to-white rounded-xl p-xl border-2 border-bb-forest-300">
+          <h3 className="text-lg font-bold text-bb-forest-700 mb-md">What Changes Now</h3>
+          <div className="grid grid-cols-3 gap-lg">
+            <div className="flex items-start gap-sm">
+              <span className="text-bb-forest-600 font-bold">✓</span>
+              <span className="text-sm text-bb-charcoal-700">Patrick gets 100% sales focus</span>
+            </div>
+            <div className="flex items-start gap-sm">
+              <span className="text-bb-forest-600 font-bold">✓</span>
+              <span className="text-sm text-bb-charcoal-700">David owns all operations</span>
+            </div>
+            <div className="flex items-start gap-sm">
+              <span className="text-bb-forest-600 font-bold">✓</span>
+              <span className="text-sm text-bb-charcoal-700">Clear handoff protocol</span>
+            </div>
+            <div className="flex items-start gap-sm">
+              <span className="text-bb-forest-600 font-bold">✓</span>
+              <span className="text-sm text-bb-charcoal-700">Protected calling time</span>
+            </div>
+            <div className="flex items-start gap-sm">
+              <span className="text-bb-forest-600 font-bold">✓</span>
+              <span className="text-sm text-bb-charcoal-700">Support before burnout</span>
+            </div>
+            <div className="flex items-start gap-sm">
+              <span className="text-bb-forest-600 font-bold">✓</span>
+              <span className="text-sm text-bb-charcoal-700">Leadership enforces boundaries</span>
+            </div>
+          </div>
         </motion.div>
       </div>
     </Slide>

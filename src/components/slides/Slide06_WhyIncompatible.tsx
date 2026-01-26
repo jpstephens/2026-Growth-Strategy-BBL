@@ -1,85 +1,108 @@
+import { motion } from 'framer-motion'
 import Slide from '../layout/Slide'
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+}
 
 export default function Slide06_WhyIncompatible() {
   return (
     <Slide variant="gradient">
-      <div className="w-full max-w-6xl space-y-3xl">
+      <div className="w-full max-w-6xl space-y-xl">
         {/* Hero Title */}
-        <div className="text-center mb-lg">
-          <h1 className="font-display text-display font-bold text-bb-navy-900 mb-md">
-            You Can't Be Great at Both
+        <motion.div variants={itemVariants} className="text-center">
+          <h1 className="font-display text-display font-bold text-bb-charcoal-800 mb-md">
+            Specialization Drives Productivity
           </h1>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-bb-burgundy-500 to-bb-electric-500 mx-auto rounded-full mb-lg" />
-          <p className="text-xl text-bb-slate-600 max-w-2xl mx-auto">
-            Operations and sales need different people. Here's why.
+          <div className="w-24 h-1.5 bg-gradient-to-r from-bb-steel-500 to-bb-amber-500 mx-auto rounded-full mb-md" />
+          <p className="text-lg text-bb-charcoal-600 max-w-2xl mx-auto">
+            Sales and operations require different mindsets.
+            Separating them lets each person excel.
           </p>
-        </div>
+        </motion.div>
 
         {/* Two Column Comparison */}
-        <div className="grid grid-cols-2 gap-2xl">
+        <div className="grid grid-cols-2 gap-xl">
           {/* Operations Side */}
-          <div className="relative group">
-            <div className="absolute inset-0 bg-gradient-to-br from-bb-burgundy-500 to-bb-burgundy-600 rounded-2xl blur-sm opacity-40 group-hover:opacity-60 transition-opacity" />
-            <div className="relative bg-gradient-to-br from-bb-burgundy-500 to-bb-burgundy-600 rounded-2xl p-2xl shadow-2xl border-2 border-bb-burgundy-400">
-              <div className="flex items-center gap-lg mb-xl">
-                <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
-                  <span className="text-4xl">🔥</span>
-                </div>
-                <h2 className="font-display text-h2 font-bold text-white">Operations</h2>
+          <motion.div variants={itemVariants} className="bg-white rounded-2xl p-xl shadow-sm border-2 border-bb-steel-300">
+            <div className="flex items-center gap-md mb-lg">
+              <div className="w-12 h-12 bg-bb-steel-100 rounded-xl flex items-center justify-center">
+                <span className="text-2xl">🚚</span>
               </div>
+              <h2 className="font-display text-h2 font-bold text-bb-steel-700">Operations Mode</h2>
+            </div>
 
-              <div className="space-y-lg text-white">
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-lg border border-white/20">
-                  <p className="font-semibold mb-sm text-lg">When Things Go Wrong</p>
-                  <p className="text-sm text-bb-burgundy-50 leading-relaxed">When urgent things happen (loads, carrier issues), they have to jump. They stop selling.</p>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-lg border border-white/20">
-                  <p className="font-semibold mb-sm text-lg">The Reality</p>
-                  <p className="text-sm text-bb-burgundy-50 leading-relaxed">Crises are predictable. The ringing phone and the email will always be there.</p>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-lg border border-white/20">
-                  <p className="font-semibold mb-sm text-lg">The Cost</p>
-                  <p className="text-sm text-bb-burgundy-50 leading-relaxed">Sales momentum dies. Prospect calls don't get made. Pipeline dries up.</p>
-                </div>
+            <div className="space-y-md">
+              <div className="bg-bb-slate-50 rounded-xl p-lg border border-bb-slate-200">
+                <p className="font-semibold text-bb-charcoal-800 mb-xs">Reactive by Nature</p>
+                <p className="text-sm text-bb-charcoal-600 leading-relaxed">
+                  Carrier issues, customer updates, load tracking—
+                  these need immediate response.
+                </p>
+              </div>
+              <div className="bg-bb-slate-50 rounded-xl p-lg border border-bb-slate-200">
+                <p className="font-semibold text-bb-charcoal-800 mb-xs">Short Attention Cycles</p>
+                <p className="text-sm text-bb-charcoal-600 leading-relaxed">
+                  Success means handling many small tasks quickly.
+                  Context switching is the job.
+                </p>
+              </div>
+              <div className="bg-bb-slate-50 rounded-xl p-lg border border-bb-slate-200">
+                <p className="font-semibold text-bb-charcoal-800 mb-xs">Urgent Wins</p>
+                <p className="text-sm text-bb-charcoal-600 leading-relaxed">
+                  When a load needs coverage NOW, everything else stops.
+                  That's appropriate for ops.
+                </p>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Sales Side */}
-          <div className="relative group">
-            <div className="absolute inset-0 bg-gradient-to-br from-bb-emerald-500 to-bb-emerald-600 rounded-2xl blur-sm opacity-40 group-hover:opacity-60 transition-opacity" />
-            <div className="relative bg-gradient-to-br from-bb-emerald-500 to-bb-emerald-600 rounded-2xl p-2xl shadow-2xl border-2 border-bb-emerald-400">
-              <div className="flex items-center gap-lg mb-xl">
-                <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
-                  <span className="text-4xl">📈</span>
-                </div>
-                <h2 className="font-display text-h2 font-bold text-white">Sales</h2>
+          <motion.div variants={itemVariants} className="bg-white rounded-2xl p-xl shadow-sm border-2 border-bb-amber-300">
+            <div className="flex items-center gap-md mb-lg">
+              <div className="w-12 h-12 bg-bb-amber-100 rounded-xl flex items-center justify-center">
+                <span className="text-2xl">📞</span>
               </div>
+              <h2 className="font-display text-h2 font-bold text-bb-amber-700">Sales Mode</h2>
+            </div>
 
-              <div className="space-y-lg text-white">
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-lg border border-white/20">
-                  <p className="font-semibold mb-sm text-lg">What They Need</p>
-                  <p className="text-sm text-bb-emerald-50 leading-relaxed">Hours of focus to build relationships and call prospects.</p>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-lg border border-white/20">
-                  <p className="font-semibold mb-sm text-lg">What Kills It</p>
-                  <p className="text-sm text-bb-emerald-50 leading-relaxed">Interruptions. Context switching destroys momentum.</p>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-lg border border-white/20">
-                  <p className="font-semibold mb-sm text-lg">The Result</p>
-                  <p className="text-sm text-bb-emerald-50 leading-relaxed">No consistent outreach. Deals don't close. Growth stalls.</p>
-                </div>
+            <div className="space-y-md">
+              <div className="bg-bb-slate-50 rounded-xl p-lg border border-bb-slate-200">
+                <p className="font-semibold text-bb-charcoal-800 mb-xs">Proactive by Nature</p>
+                <p className="text-sm text-bb-charcoal-600 leading-relaxed">
+                  Outreach, follow-ups, relationship building—
+                  these require initiating, not responding.
+                </p>
+              </div>
+              <div className="bg-bb-slate-50 rounded-xl p-lg border border-bb-slate-200">
+                <p className="font-semibold text-bb-charcoal-800 mb-xs">Deep Focus Blocks</p>
+                <p className="text-sm text-bb-charcoal-600 leading-relaxed">
+                  200 calls/week needs 4-hour uninterrupted blocks.
+                  Every interruption resets momentum.
+                </p>
+              </div>
+              <div className="bg-bb-slate-50 rounded-xl p-lg border border-bb-slate-200">
+                <p className="font-semibold text-bb-charcoal-800 mb-xs">Important Wins</p>
+                <p className="text-sm text-bb-charcoal-600 leading-relaxed">
+                  Prospecting feels less urgent than ops fires,
+                  but it's what drives growth.
+                </p>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* Bottom explanation */}
-        <div className="bg-white rounded-2xl p-2xl shadow-lg border-2 border-bb-slate-200">
-          <p className="text-lg text-bb-slate-700 leading-relaxed">
-            <span className="font-bold text-bb-navy-900">The Bottom Line:</span> You can't be great at both. Pick one. Right now, we're trying to do both with one person. That's the problem.
+        <motion.div variants={itemVariants} className="bg-gradient-to-br from-bb-forest-50 to-white rounded-xl p-xl border-2 border-bb-forest-300">
+          <p className="text-base text-bb-charcoal-700 leading-relaxed">
+            <span className="font-bold text-bb-forest-700">The Opportunity:</span>
+            {' '}With clear boundaries, Patrick can make 200+ calls/week.
+            David can own ops without distraction.
+            Both become more productive—not because they work harder,
+            but because the structure supports focus.
           </p>
-        </div>
+        </motion.div>
       </div>
     </Slide>
   )

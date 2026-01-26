@@ -1,31 +1,70 @@
+import { motion } from 'framer-motion'
 import Slide from '../layout/Slide'
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+}
 
 export default function Slide01_Title() {
   return (
     <Slide variant="gradient">
-      <div className="text-center max-w-5xl space-y-3xl">
-        {/* Hero Title */}
-        <div>
-          <h1 className="font-display text-hero font-black text-bb-navy-900 mb-xl">
-            Growth Strategy 2026
-          </h1>
-          <div className="w-48 h-2 bg-gradient-to-r from-bb-electric-500 via-bb-sunset-500 to-bb-emerald-500 mx-auto rounded-full mb-2xl" />
-        </div>
+      <div className="w-full max-w-6xl">
+        <div className="grid grid-cols-2 gap-2xl items-center">
+          {/* Left: Title & Message */}
+          <motion.div variants={itemVariants} className="space-y-xl">
+            <div>
+              <p className="text-lg font-semibold text-bb-steel-600 mb-sm tracking-wide uppercase">
+                BlackBridge Logistics
+              </p>
+              <h1 className="font-display text-hero font-black text-bb-charcoal-800 leading-tight">
+                Scaling What
+                <br />
+                <span className="text-bb-steel-600">You Built</span>
+              </h1>
+            </div>
 
-        {/* Subtitle */}
-        <div className="space-y-xl">
-          <p className="font-display text-display font-bold text-bb-electric-600 mb-lg">
-            $12K → $100K Monthly Profit
-          </p>
-          <p className="text-2xl text-bb-slate-700 leading-relaxed mx-auto max-w-3xl">
-            Here's how we go from $12K to $100K this year. And everyone plays a role.
-          </p>
-        </div>
+            <div className="w-24 h-1.5 bg-gradient-to-r from-bb-amber-500 to-bb-amber-600 rounded-full" />
 
-        {/* Footer */}
-        <div className="pt-2xl border-t border-bb-slate-300">
-          <p className="text-xl font-bold text-bb-navy-900 mb-xs">BlackBridge Logistics</p>
-          <p className="text-lg text-bb-slate-600">January 2026</p>
+            <p className="text-xl text-bb-charcoal-700 leading-relaxed max-w-lg">
+              A roadmap for growing from $12K to $100K in monthly profit—
+              built on the foundation Patrick and David created.
+            </p>
+
+            <p className="text-base text-bb-slate-500">January 2026</p>
+          </motion.div>
+
+          {/* Right: Visual Summary */}
+          <motion.div variants={itemVariants} className="bg-white rounded-2xl border-2 border-bb-slate-200 p-xl shadow-lg">
+            <div className="space-y-lg">
+              <div className="text-center p-lg bg-bb-slate-50 rounded-xl border border-bb-slate-200">
+                <p className="text-sm text-bb-slate-600 mb-xs">Current Monthly Profit</p>
+                <p className="text-4xl font-display font-black text-bb-charcoal-800">$12K</p>
+              </div>
+
+              <div className="flex justify-center">
+                <div className="w-12 h-12 rounded-full bg-bb-amber-100 border-2 border-bb-amber-300 flex items-center justify-center">
+                  <span className="text-bb-amber-600 text-xl font-bold">↓</span>
+                </div>
+              </div>
+
+              <div className="text-center p-lg bg-gradient-to-br from-bb-forest-50 to-white rounded-xl border-2 border-bb-forest-300">
+                <p className="text-sm text-bb-forest-600 mb-xs">December 2026 Target</p>
+                <p className="text-4xl font-display font-black text-bb-forest-600">$100K</p>
+              </div>
+
+              <div className="grid grid-cols-2 gap-md pt-md border-t border-bb-slate-200">
+                <div className="text-center">
+                  <p className="text-2xl font-bold text-bb-charcoal-800">65-70</p>
+                  <p className="text-xs text-bb-slate-500">Customers</p>
+                </div>
+                <div className="text-center">
+                  <p className="text-2xl font-bold text-bb-charcoal-800">481</p>
+                  <p className="text-xs text-bb-slate-500">Loads/Month</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </Slide>
