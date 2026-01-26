@@ -69,10 +69,7 @@ import Slide30_SalesKPIs from './components/slides/Slide30_SalesKPIs'
 import Slide31_OperationsKPIs from './components/slides/Slide31_OperationsKPIs'
 import Slide32_BusinessKPIs from './components/slides/Slide32_BusinessKPIs'
 import Slide12_Roadmap from './components/slides/Slide12_Roadmap'
-import Slide20_RoadmapPhase1 from './components/slides/Slide20_RoadmapPhase1'
-import Slide21_RoadmapPhase2 from './components/slides/Slide21_RoadmapPhase2'
-import Slide22_RoadmapPhase3 from './components/slides/Slide22_RoadmapPhase3'
-import Slide23_RoadmapPhase4 from './components/slides/Slide23_RoadmapPhase4'
+// Roadmap phase detail slides removed (repetitive)
 import Slide37_PipelineStages from './components/slides/Slide37_PipelineStages'
 
 // ==========================================
@@ -142,16 +139,13 @@ const slides = [
   Slide16_FinancialProjection_Scenario2,
 
   // ==========================================
-  // ACT 6: MEASUREMENT & ROADMAP (9 slides)
+  // ACT 6: MEASUREMENT & ROADMAP (5 slides)
   // ==========================================
   Slide30_SalesKPIs,
   Slide31_OperationsKPIs,
   Slide32_BusinessKPIs,
   Slide12_Roadmap,
-  Slide20_RoadmapPhase1,
-  Slide21_RoadmapPhase2,
-  Slide22_RoadmapPhase3,
-  Slide23_RoadmapPhase4,
+  // Roadmap phase detail slides removed (repetitive)
   Slide37_PipelineStages,
 
   // ==========================================
