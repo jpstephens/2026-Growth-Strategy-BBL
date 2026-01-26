@@ -57,7 +57,7 @@ export default function Slide_Recognition() {
               </div>
               <div>
                 <h3 className="text-lg font-bold text-bb-amber-700">Patrick's Wins</h3>
-                <p className="text-xs text-bb-charcoal-600">Sales</p>
+                <p className="text-xs text-bb-charcoal-600">Sales · Examples</p>
               </div>
             </div>
             <ul className="space-y-sm">
@@ -84,7 +84,7 @@ export default function Slide_Recognition() {
               </div>
               <div>
                 <h3 className="text-lg font-bold text-bb-steel-700">David's Wins</h3>
-                <p className="text-xs text-bb-charcoal-600">Operations</p>
+                <p className="text-xs text-bb-charcoal-600">Operations · Examples</p>
               </div>
             </div>
             <ul className="space-y-sm">

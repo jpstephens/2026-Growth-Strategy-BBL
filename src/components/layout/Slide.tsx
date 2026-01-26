@@ -51,12 +51,12 @@ export default function Slide({ children, className = '', variant = 'default' }:
         flex items-center justify-center
         ${backgroundVariants[variant]}
         overflow-hidden
-        px-8 py-6
+        px-16 py-8
         ${className}
       `}
     >
       <motion.div
-        className="slide-content w-full h-full max-w-[1400px] flex flex-col justify-center"
+        className="slide-content w-full h-full max-w-[1400px] max-h-[calc(100vh-64px)] flex flex-col"
         variants={containerVariants}
         initial="hidden"
         animate="visible"

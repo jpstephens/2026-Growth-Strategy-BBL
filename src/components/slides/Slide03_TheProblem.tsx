@@ -16,9 +16,11 @@ export default function Slide03_TheProblem() {
             Two Jobs, One Person
           </h1>
           <div className="w-24 h-1.5 bg-gradient-to-r from-bb-amber-500 to-bb-steel-500 mx-auto rounded-full mb-md" />
-          <p className="text-lg text-bb-charcoal-600 max-w-3xl mx-auto">
+          <p className="text-lg text-bb-charcoal-600 max-w-3xl mx-auto mb-md">
             As roles blurred, both sales and ops competed for the same hours.
-            <span className="font-semibold text-bb-charcoal-800"> The structure—not the effort—was the constraint.</span>
+          </p>
+          <p className="text-xl font-semibold text-bb-charcoal-800 max-w-3xl mx-auto">
+            The structure—not the effort—was the constraint.
           </p>
         </motion.div>
 
