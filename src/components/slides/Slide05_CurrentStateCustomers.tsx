@@ -125,9 +125,11 @@ export default function Slide05_CurrentStateCustomers() {
         </div>
 
         <motion.div variants={itemVariants} className="bg-white rounded-xl p-lg border-2 border-bb-slate-200 shadow-sm text-center">
-          <p className="text-base text-bb-charcoal-700">
+          <p className="text-base text-bb-charcoal-700 mb-sm">
             <span className="font-bold">Baseline established.</span>
             {' '}7 active customers generating $17.8K margin in January.
+          </p>
+          <p className="text-lg font-bold text-bb-forest-600">
             The model works—now we scale it.
           </p>
         </motion.div>

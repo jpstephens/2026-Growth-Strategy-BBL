@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import Slide from '../layout/Slide'
-import { overallPerformance, topCustomers } from '../../data/currentState'
+import { overallPerformance } from '../../data/currentState'
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -63,7 +63,7 @@ export default function Slide_Recognition() {
             <ul className="space-y-sm">
               <li className="flex items-start gap-sm">
                 <span className="text-bb-forest-600 font-bold">✓</span>
-                <span className="text-sm text-bb-charcoal-700">Brought in {topCustomers.length}+ customers from scratch</span>
+                <span className="text-sm text-bb-charcoal-700">Built a reliable customer base with repeatable freight</span>
               </li>
               <li className="flex items-start gap-sm">
                 <span className="text-bb-forest-600 font-bold">✓</span>

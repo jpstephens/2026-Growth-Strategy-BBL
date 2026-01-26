@@ -78,9 +78,11 @@ export default function Slide02_ExecutiveThesis() {
             <div className="inline-block px-md py-xs bg-bb-slate-100 rounded-full text-bb-charcoal-700 font-bold text-xs mb-md">
               THE GAP
             </div>
-            <p className="text-base text-bb-charcoal-700 leading-relaxed">
+            <p className="text-base text-bb-charcoal-700 leading-relaxed mb-sm">
               We have customers ready to buy. We have operations that work.
-              <span className="font-bold text-bb-charcoal-800"> The problem isn't the people—it's the structure.</span>
+            </p>
+            <p className="text-lg font-bold text-bb-charcoal-800">
+              The problem isn't the people—it's the structure.
             </p>
           </div>
           <div className="bg-gradient-to-br from-bb-forest-50 to-white rounded-xl p-lg border-2 border-bb-forest-300 shadow-sm">

@@ -1,17 +1,10 @@
 import { motion } from 'framer-motion'
 import Slide from '../layout/Slide'
-import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts'
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 }
-
-const timeData = [
-  { name: 'Operations', value: 60, color: '#4f85a6' },
-  { name: 'Sales', value: 25, color: '#d6973a' },
-  { name: 'Admin', value: 15, color: '#adb5bd' },
-]
 
 export default function Slide_WhatWeGotWrong() {
   return (
@@ -75,49 +68,34 @@ export default function Slide_WhatWeGotWrong() {
             </div>
           </motion.div>
 
-          {/* Right: Time Allocation Chart */}
+          {/* Right: The Reality */}
           <motion.div variants={itemVariants} className="bg-white rounded-xl p-xl border-2 border-bb-slate-200 shadow-sm">
-            <h3 className="text-lg font-bold text-bb-charcoal-800 mb-md">
-              Where Time Actually Goes
-            </h3>
-            <div className="flex items-center gap-lg">
-              <div className="w-40 h-40">
-                <ResponsiveContainer width="100%" height="100%">
-                  <PieChart>
-                    <Pie
-                      data={timeData}
-                      cx="50%"
-                      cy="50%"
-                      innerRadius={35}
-                      outerRadius={65}
-                      dataKey="value"
-                      isAnimationActive={true}
-                      animationDuration={800}
-                    >
-                      {timeData.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={entry.color} />
-                      ))}
-                    </Pie>
-                  </PieChart>
-                </ResponsiveContainer>
+            <h3 className="text-lg font-bold text-bb-charcoal-800 mb-lg">The Reality</h3>
+            <div className="space-y-lg">
+              <div className="bg-bb-amber-50 border-2 border-bb-amber-200 rounded-lg p-md">
+                <p className="font-semibold text-bb-amber-700 mb-xs">Sales Gets Squeezed</p>
+                <p className="text-sm text-bb-charcoal-600">
+                  When ops issues arise, prospecting stops. Every interrupt breaks momentum
+                  and resets the focus cycle.
+                </p>
               </div>
-              <div className="flex-1 space-y-sm">
-                {timeData.map((item) => (
-                  <div key={item.name} className="flex items-center gap-sm">
-                    <div
-                      className="w-3 h-3 rounded-full"
-                      style={{ backgroundColor: item.color }}
-                    />
-                    <span className="text-sm text-bb-charcoal-700 flex-1">{item.name}</span>
-                    <span className="text-sm font-bold text-bb-charcoal-800">{item.value}%</span>
-                  </div>
-                ))}
+
+              <div className="bg-bb-steel-50 border-2 border-bb-steel-200 rounded-lg p-md">
+                <p className="font-semibold text-bb-steel-700 mb-xs">Both Roles Suffer</p>
+                <p className="text-sm text-bb-charcoal-600">
+                  Neither sales nor ops gets full attention. Quality drops in both
+                  because context-switching is expensive.
+                </p>
+              </div>
+
+              <div className="bg-bb-slate-50 border-2 border-bb-slate-200 rounded-lg p-md">
+                <p className="font-semibold text-bb-charcoal-700 mb-xs">Growth Stalls</p>
+                <p className="text-sm text-bb-charcoal-600">
+                  Without consistent prospecting, new customer acquisition is sporadic.
+                  You can't grow what you can't focus on.
+                </p>
               </div>
             </div>
-            <p className="text-sm text-bb-charcoal-500 mt-md pt-md border-t border-bb-slate-200">
-              Sales needs 50%+ of time for real growth.
-              Currently getting ~25%.
-            </p>
           </motion.div>
         </div>
 
