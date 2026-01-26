@@ -88,7 +88,7 @@ export default function Slide16_FinancialProjection_Scenario2() {
           <div className="bg-bb-steel-600 px-md py-xs">
             <h4 className="text-xs font-bold text-white">Monthly Projection</h4>
           </div>
-          <div className="overflow-x-auto max-h-36">
+          <div className="overflow-x-auto">
             <table className="w-full text-xs">
               <thead className="bg-bb-slate-100 sticky top-0">
                 <tr>

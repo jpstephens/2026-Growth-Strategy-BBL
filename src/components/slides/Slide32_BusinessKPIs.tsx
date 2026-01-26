@@ -75,25 +75,31 @@ export default function Slide32_BusinessKPIs() {
             </div>
           </div>
 
-          {/* Tracking */}
-          <div className="bg-white rounded-xl border-2 border-bb-slate-200 p-md shadow-sm">
-            <h3 className="text-sm font-bold text-bb-charcoal-800 mb-sm">Tracking Infrastructure</h3>
+          {/* Custom Dashboard */}
+          <div className="bg-gradient-to-r from-bb-charcoal-50 to-white rounded-xl border-2 border-bb-charcoal-300 p-md shadow-sm">
+            <div className="flex items-center gap-sm mb-sm">
+              <div className="w-8 h-8 bg-bb-charcoal-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">API</div>
+              <div>
+                <h3 className="text-sm font-bold text-bb-charcoal-800">Custom Live Dashboard</h3>
+                <p className="text-xs text-bb-charcoal-500">All business KPIs in one place</p>
+              </div>
+            </div>
             <div className="grid grid-cols-4 gap-xs">
-              <div className="bg-bb-slate-50 rounded-lg p-xs text-center">
-                <p className="text-xs font-semibold text-bb-charcoal-700">P&L</p>
-                <p className="text-xs text-bb-charcoal-500">Monthly</p>
+              <div className="bg-white rounded-lg p-xs text-center border border-bb-charcoal-200">
+                <p className="text-xs font-bold text-bb-charcoal-700">P&L</p>
+                <p className="text-xs text-bb-charcoal-500">Auto-calculated</p>
               </div>
-              <div className="bg-bb-slate-50 rounded-lg p-xs text-center">
-                <p className="text-xs font-semibold text-bb-charcoal-700">Concentration</p>
-                <p className="text-xs text-bb-charcoal-500">Monthly</p>
+              <div className="bg-white rounded-lg p-xs text-center border border-bb-charcoal-200">
+                <p className="text-xs font-bold text-bb-charcoal-700">Concentration</p>
+                <p className="text-xs text-bb-charcoal-500">Live % view</p>
               </div>
-              <div className="bg-bb-slate-50 rounded-lg p-xs text-center">
-                <p className="text-xs font-semibold text-bb-charcoal-700">Churn</p>
-                <p className="text-xs text-bb-charcoal-500">Quarterly</p>
+              <div className="bg-white rounded-lg p-xs text-center border border-bb-charcoal-200">
+                <p className="text-xs font-bold text-bb-charcoal-700">Churn</p>
+                <p className="text-xs text-bb-charcoal-500">Rolling calc</p>
               </div>
-              <div className="bg-bb-slate-50 rounded-lg p-xs text-center">
-                <p className="text-xs font-semibold text-bb-charcoal-700">Dashboard</p>
-                <p className="text-xs text-bb-charcoal-500">All-hands</p>
+              <div className="bg-white rounded-lg p-xs text-center border border-bb-charcoal-200">
+                <p className="text-xs font-bold text-bb-charcoal-700">All-Hands</p>
+                <p className="text-xs text-bb-charcoal-500">Shared view</p>
               </div>
             </div>
           </div>

@@ -62,7 +62,15 @@ export default function Slide34_OperationsPriorities() {
                 <ul className="text-xs text-bb-charcoal-600 space-y-xs">
                   <li>• Confidence you're working on the right thing</li>
                   <li>• Faster decisions without second-guessing</li>
-                  <li>• Time for proactive work (carrier development)</li>
+                  <li>• Time for carrier network development</li>
+                </ul>
+              </div>
+              <div className="p-sm bg-bb-steel-50 rounded-lg border border-bb-steel-200 mt-sm">
+                <p className="text-xs font-semibold text-bb-steel-700 mb-xs">Carrier Network Growth:</p>
+                <ul className="text-xs text-bb-charcoal-600 space-y-xs">
+                  <li>• Vet 2-3 new carriers per week during Priority 3 time</li>
+                  <li>• Build relationships with reliable small fleets</li>
+                  <li>• Goal: 50+ carriers, 10+ Preferred tier by year-end</li>
                 </ul>
               </div>
             </div>

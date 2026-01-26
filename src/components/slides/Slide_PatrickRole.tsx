@@ -84,8 +84,9 @@ export default function Slide_PatrickRole() {
           {/* Protected Time */}
           <motion.div variants={itemVariants} className="bg-gradient-to-br from-bb-amber-50 to-white rounded-xl border-2 border-bb-amber-300 p-lg shadow-sm">
             <h3 className="text-base font-bold text-bb-charcoal-800 mb-sm">Protected Calling</h3>
-            <p className="text-3xl font-display font-black text-bb-amber-600 mb-sm">{patrickGrowthPath.protectedTime}</p>
-            <p className="text-sm text-bb-charcoal-600">No meetings. No ops issues. No interruptions.</p>
+            <p className="text-3xl font-display font-black text-bb-amber-600">8am-12pm Daily</p>
+            <p className="text-sm font-semibold text-bb-amber-700 mb-sm">(No Interruptions)</p>
+            <p className="text-sm text-bb-charcoal-600">No meetings. No ops issues.</p>
             <p className="text-xs text-bb-amber-700 mt-md font-semibold">Leadership enforces this boundary</p>
           </motion.div>
 

@@ -73,29 +73,35 @@ export default function Slide31_OperationsKPIs() {
           </div>
         </div>
 
-        {/* Tracking Infrastructure */}
-        <div className="bg-white rounded-xl border-2 border-bb-slate-200 p-md shadow-sm">
-          <h4 className="text-sm font-bold text-bb-charcoal-800 mb-sm">Tracking Infrastructure</h4>
+        {/* Custom Dashboard - API Integration */}
+        <div className="bg-gradient-to-r from-bb-forest-50 to-white rounded-xl border-2 border-bb-forest-300 p-md shadow-sm">
+          <div className="flex items-center gap-sm mb-sm">
+            <div className="w-8 h-8 bg-bb-forest-500 rounded-lg flex items-center justify-center text-white text-sm font-bold">API</div>
+            <div>
+              <h4 className="text-sm font-bold text-bb-charcoal-800">Custom Live Dashboard</h4>
+              <p className="text-xs text-bb-charcoal-500">Real-time ops data via API integration</p>
+            </div>
+          </div>
           <div className="grid grid-cols-5 gap-sm">
-            <div className="bg-bb-slate-50 rounded-lg p-sm text-center">
-              <p className="text-xs font-semibold text-bb-charcoal-700">Pickups</p>
-              <p className="text-xs text-bb-charcoal-500">Alvys + Trucker Tools</p>
+            <div className="bg-white rounded-lg p-sm text-center border border-bb-forest-200">
+              <p className="text-xs font-bold text-bb-forest-600">Alvys API</p>
+              <p className="text-xs text-bb-charcoal-600">Load status</p>
             </div>
-            <div className="bg-bb-slate-50 rounded-lg p-sm text-center">
-              <p className="text-xs font-semibold text-bb-charcoal-700">Deliveries</p>
-              <p className="text-xs text-bb-charcoal-500">Alvys + Trucker Tools</p>
+            <div className="bg-white rounded-lg p-sm text-center border border-bb-forest-200">
+              <p className="text-xs font-bold text-bb-forest-600">Trucker Tools</p>
+              <p className="text-xs text-bb-charcoal-600">GPS tracking</p>
             </div>
-            <div className="bg-bb-slate-50 rounded-lg p-sm text-center">
-              <p className="text-xs font-semibold text-bb-charcoal-700">Margin</p>
-              <p className="text-xs text-bb-charcoal-500">Weekly calc</p>
+            <div className="bg-white rounded-lg p-sm text-center border border-bb-forest-200">
+              <p className="text-xs font-bold text-bb-forest-600">Auto-Calc</p>
+              <p className="text-xs text-bb-charcoal-600">Live margins</p>
             </div>
-            <div className="bg-bb-slate-50 rounded-lg p-sm text-center">
-              <p className="text-xs font-semibold text-bb-charcoal-700">Carriers</p>
-              <p className="text-xs text-bb-charcoal-500">Tagged per load</p>
+            <div className="bg-white rounded-lg p-sm text-center border border-bb-forest-200">
+              <p className="text-xs font-bold text-bb-forest-600">Carrier Tags</p>
+              <p className="text-xs text-bb-charcoal-600">Performance</p>
             </div>
-            <div className="bg-bb-slate-50 rounded-lg p-sm text-center">
-              <p className="text-xs font-semibold text-bb-charcoal-700">Complaints</p>
-              <p className="text-xs text-bb-charcoal-500">Log maintained</p>
+            <div className="bg-white rounded-lg p-sm text-center border border-bb-forest-200">
+              <p className="text-xs font-bold text-bb-forest-600">Issue Log</p>
+              <p className="text-xs text-bb-charcoal-600">Auto-tracked</p>
             </div>
           </div>
         </div>

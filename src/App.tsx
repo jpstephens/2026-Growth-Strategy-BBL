@@ -39,7 +39,7 @@ import Slide16_ThreeSolutionChanges from './components/slides/Slide16_ThreeSolut
 import Slide09_TeamStructure from './components/slides/Slide09_TeamStructure'
 import Slide26_ProtectedCalling from './components/slides/Slide26_ProtectedCalling'
 import Slide24_SalesActivityTargets from './components/slides/Slide24_SalesActivityTargets'
-import Slide25_ConversionFunnel from './components/slides/Slide25_ConversionFunnel'
+// Slide25_ConversionFunnel removed - combined with Slide24_SalesActivityTargets
 import Slide11_SalesSystem from './components/slides/Slide11_SalesSystem'
 // Slide27_CallFramework removed - handle offline with Pat/Chris
 import Slide33_HandoffProtocol from './components/slides/Slide33_HandoffProtocol'
@@ -58,7 +58,7 @@ import Slide14_NAICSAutomotiveJIT from './components/slides/Slide14_NAICSAutomot
 import Slide34_OperationsPriorities from './components/slides/Slide34_OperationsPriorities'
 import Slide35_CarrierTiers from './components/slides/Slide35_CarrierTiers'
 import Slide19_Accountability from './components/slides/Slide19_Accountability'
-import Slide36_EscalationPaths from './components/slides/Slide36_EscalationPaths'
+// Slide36_EscalationPaths removed - combined with Slide19_Accountability
 import Slide24_CanPatrickAlone from './components/slides/Slide24_CanPatrickAlone'
 import Slide16_FinancialProjection_Scenario2 from './components/slides/Slide16_FinancialProjection_Scenario2'
 
@@ -118,7 +118,7 @@ const slides = [
   Slide09_TeamStructure,
   Slide26_ProtectedCalling,
   Slide24_SalesActivityTargets,
-  Slide25_ConversionFunnel,
+  // Slide25_ConversionFunnel removed - combined into Slide24
   Slide11_SalesSystem,
   // Slide27_CallFramework removed - handle offline with Pat/Chris
   Slide33_HandoffProtocol,
@@ -136,7 +136,7 @@ const slides = [
   Slide34_OperationsPriorities,
   Slide35_CarrierTiers,
   Slide19_Accountability,
-  Slide36_EscalationPaths,
+  // Slide36_EscalationPaths removed - combined into Slide19
   Slide24_CanPatrickAlone,
   Slide16_FinancialProjection_Scenario2,
 
