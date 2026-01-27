@@ -1,6 +1,36 @@
 import { NextResponse } from 'next/server';
 import { searchLoads, searchTrips, searchTripsByLoadNumbers, getLoadsThisMonth, calculateTotalMargin, calculateAverageMargin } from '@/lib/alvys';
 
+// Direct API call to test different endpoints
+async function testAlvysEndpoint(endpoint: string, body?: object) {
+  const token = process.env.ALVYS_ACCESS_TOKEN_CACHE;
+  const companyCode = process.env.ALVYS_COMPANY_CODE;
+
+  // Get fresh token
+  const authResponse = await fetch(`https://integrations.alvys.com/api/authentication/${companyCode}/token`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      client_id: process.env.ALVYS_CLIENT_ID,
+      client_secret: process.env.ALVYS_CLIENT_SECRET,
+      grant_type: 'client_credentials',
+    }),
+  });
+  const authData = await authResponse.json();
+
+  const response = await fetch(`https://api.alvys.com/api/p/v1.0${endpoint}`, {
+    method: body ? 'POST' : 'GET',
+    headers: {
+      'Authorization': `Bearer ${authData.access_token}`,
+      'CompanyCode': companyCode || '',
+      'Content-Type': 'application/json',
+    },
+    body: body ? JSON.stringify(body) : undefined,
+  });
+
+  return response.json();
+}
+
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
@@ -58,6 +88,28 @@ export async function GET() {
     // Get complete raw first load to see ALL fields
     const rawFirstLoad = loads.length > 0 ? loads[0] : null;
 
+    // Try to get a single load by ID to see if it has more data
+    let singleLoadById = null;
+    let tripsForLoad = null;
+    if (loads.length > 0) {
+      try {
+        // Try GET /loads?id={id}
+        singleLoadById = await testAlvysEndpoint(`/loads?id=${loads[0].Id}`);
+      } catch (e) {
+        singleLoadById = { error: String(e) };
+      }
+
+      try {
+        // Try searching trips by this load number
+        tripsForLoad = await testAlvysEndpoint('/trips/search', {
+          LoadNumbers: [loads[0].LoadNumber],
+          PageSize: 10,
+        });
+      } catch (e) {
+        tripsForLoad = { error: String(e) };
+      }
+    }
+
     return NextResponse.json({
       success: true,
       data: {
@@ -81,6 +133,11 @@ export async function GET() {
           avgMarginPerLoad: avgMargin,
         },
         dateRange: { start: startDate.toISOString(), end: endDate.toISOString() },
+        // Test results for debugging
+        apiTests: {
+          singleLoadById,
+          tripsForLoad,
+        },
       },
     });
   } catch (error) {
