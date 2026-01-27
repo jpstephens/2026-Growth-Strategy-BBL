@@ -55,12 +55,16 @@ export async function GET() {
     const calculatedMargin = calculateTotalMargin(loads, trips);
     const avgMargin = calculateAverageMargin(loads, trips);
 
+    // Get complete raw first load to see ALL fields
+    const rawFirstLoad = loads.length > 0 ? loads[0] : null;
+
     return NextResponse.json({
       success: true,
       data: {
         loads: {
           total: loads.length,
           byStatus: loadsByStatus,
+          rawFirstLoad, // Complete raw load data
         },
         trips: {
           total: trips.length,
