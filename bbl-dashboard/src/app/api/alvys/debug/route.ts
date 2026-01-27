@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { searchLoads, searchTrips, getLoadsThisMonth, calculateTotalMargin, calculateAverageMargin } from '@/lib/alvys';
+import { searchLoads, searchTrips, searchTripsByLoadNumbers, getLoadsThisMonth, calculateTotalMargin, calculateAverageMargin } from '@/lib/alvys';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -8,11 +8,18 @@ export async function GET() {
   try {
     const { startDate, endDate } = getLoadsThisMonth();
 
-    // Fetch both loads and trips
-    const [loads, trips] = await Promise.all([
-      searchLoads(startDate, endDate),
+    // Fetch loads first
+    const loads = await searchLoads(startDate, endDate);
+
+    // Try both trip search methods to see which works
+    const loadNumbers = loads.map(l => l.LoadNumber);
+    const [tripsByDate, tripsByLoadNumbers] = await Promise.all([
       searchTrips(startDate, endDate),
+      searchTripsByLoadNumbers(loadNumbers),
     ]);
+
+    // Use whichever method returned results
+    const trips = tripsByLoadNumbers.length > 0 ? tripsByLoadNumbers : tripsByDate;
 
     // Group loads by status
     const loadsByStatus: Record<string, number> = {};
@@ -57,6 +64,8 @@ export async function GET() {
         },
         trips: {
           total: trips.length,
+          byDateRange: tripsByDate.length,
+          byLoadNumbers: tripsByLoadNumbers.length,
           byStatus: tripsByStatus,
           withCarrier: tripsWithCarrier.length,
           sampleTrips,

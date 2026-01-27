@@ -96,6 +96,36 @@ async function searchLoadsByStatus(status: string): Promise<AlvysLoad[]> {
   return response.Items || [];
 }
 
+// Search trips by load numbers - trips contain carrier assignment and cost data
+export async function searchTripsByLoadNumbers(loadNumbers: string[]): Promise<AlvysTrip[]> {
+  if (loadNumbers.length === 0) return [];
+
+  try {
+    // Alvys has a limit on array size, so batch if needed
+    const batchSize = 100;
+    const allTrips: AlvysTrip[] = [];
+
+    for (let i = 0; i < loadNumbers.length; i += batchSize) {
+      const batch = loadNumbers.slice(i, i + batchSize);
+      const response = await alvysFetch<AlvysTripSearchResponse>('/trips/search', {
+        method: 'POST',
+        body: JSON.stringify({
+          PageSize: 500,
+          LoadNumbers: batch,
+        }),
+      });
+      allTrips.push(...(response.Items || []));
+    }
+
+    return allTrips;
+  } catch (error) {
+    // If trips endpoint fails, return empty array
+    // This allows the dashboard to still work using load data
+    console.error('Failed to fetch trips:', error);
+    return [];
+  }
+}
+
 // Search trips by date range - trips contain carrier assignment and cost data
 export async function searchTrips(startDate: Date, endDate: Date): Promise<AlvysTrip[]> {
   try {
