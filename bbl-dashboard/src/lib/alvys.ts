@@ -97,10 +97,11 @@ export async function searchLoads(startDate: Date, endDate: Date): Promise<Alvys
     }),
   });
 
-  // Filter by date range client-side if needed
+  // Filter by date range client-side using pickup scheduled date
   const loads = response.data || [];
   return loads.filter(load => {
-    const loadDate = new Date(load.pickup?.scheduledDate || load.createdAt);
+    if (!load.pickup?.scheduledDate) return false;
+    const loadDate = new Date(load.pickup.scheduledDate);
     return loadDate >= startDate && loadDate <= endDate;
   });
 }
