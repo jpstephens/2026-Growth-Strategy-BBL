@@ -79,6 +79,7 @@ export interface HubSpotCall {
     hs_call_duration: string;
     hs_timestamp: string;
     hs_call_body?: string;
+    hubspot_owner_id?: string;
   };
 }
 
@@ -90,7 +91,15 @@ export interface HubSpotDeal {
     closedate: string;
     pipeline: string;
     dealname?: string;
+    hubspot_owner_id?: string;
   };
+}
+
+export interface HubSpotOwner {
+  id: string;
+  email: string;
+  firstName: string;
+  lastName: string;
 }
 
 export interface HubSpotPipeline {

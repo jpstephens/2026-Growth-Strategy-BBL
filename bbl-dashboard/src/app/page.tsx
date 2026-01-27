@@ -1,13 +1,19 @@
 'use client';
 
 import { useQuery } from '@tanstack/react-query';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { SalesSection } from '@/components/SalesSection';
 import { OpsSection } from '@/components/OpsSection';
 import { BusinessSection } from '@/components/BusinessSection';
 import { DashboardData } from '@/types/metrics';
 
 type ViewRole = 'all' | 'sales' | 'ops' | 'business';
+
+interface SalesRep {
+  id: string;
+  name: string;
+  email: string;
+}
 
 interface DashboardResponse {
   success: boolean;
@@ -21,20 +27,35 @@ interface DashboardResponse {
   mock?: boolean;
 }
 
-async function fetchDashboardData(): Promise<DashboardResponse> {
-  const response = await fetch('/api/dashboard');
+async function fetchDashboardData(ownerId?: string): Promise<DashboardResponse> {
+  const url = ownerId ? `/api/dashboard?ownerId=${ownerId}` : '/api/dashboard';
+  const response = await fetch(url);
   if (!response.ok) {
     throw new Error('Failed to fetch dashboard data');
   }
   return response.json();
 }
 
+async function fetchSalesReps(): Promise<SalesRep[]> {
+  const response = await fetch('/api/hubspot/owners');
+  if (!response.ok) return [];
+  const data = await response.json();
+  return data.success ? data.data : [];
+}
+
 export default function Dashboard() {
   const [viewRole, setViewRole] = useState<ViewRole>('all');
+  const [selectedRep, setSelectedRep] = useState<string>('');
+  const [salesReps, setSalesReps] = useState<SalesRep[]>([]);
+
+  // Fetch sales reps on mount
+  useEffect(() => {
+    fetchSalesReps().then(setSalesReps);
+  }, []);
 
   const { data, isLoading, error, refetch, dataUpdatedAt } = useQuery({
-    queryKey: ['dashboard'],
-    queryFn: fetchDashboardData,
+    queryKey: ['dashboard', selectedRep],
+    queryFn: () => fetchDashboardData(selectedRep || undefined),
     refetchInterval: 60 * 1000, // Refetch every minute
   });
 
@@ -56,6 +77,21 @@ export default function Dashboard() {
               <p className="text-sm text-bb-slate-300">BlackBridge Logistics</p>
             </div>
             <div className="flex items-center gap-4">
+              {/* Sales Rep Filter */}
+              {salesReps.length > 0 && (
+                <select
+                  value={selectedRep}
+                  onChange={(e) => setSelectedRep(e.target.value)}
+                  className="px-3 py-1.5 bg-bb-charcoal-700 text-white rounded-md text-sm font-medium border border-bb-charcoal-600 focus:outline-none focus:ring-2 focus:ring-bb-steel-500"
+                >
+                  <option value="">All Reps</option>
+                  {salesReps.map((rep) => (
+                    <option key={rep.id} value={rep.id}>
+                      {rep.name}
+                    </option>
+                  ))}
+                </select>
+              )}
               {/* Last Updated */}
               <div className="text-sm text-bb-slate-300">
                 {dataUpdatedAt ? (

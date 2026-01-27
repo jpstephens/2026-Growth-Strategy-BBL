@@ -1,33 +1,44 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import {
   searchCallsByDateRange,
   calculateDials,
   calculateConversations,
   getStartOfWeek,
+  getStartOfDay,
 } from '@/lib/hubspot';
 import { TARGETS } from '@/types/metrics';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
-export async function GET() {
+export async function GET(request: NextRequest) {
   try {
-    const startOfWeek = getStartOfWeek();
-    const calls = await searchCallsByDateRange(startOfWeek);
+    const searchParams = request.nextUrl.searchParams;
+    const ownerId = searchParams.get('ownerId') || undefined;
 
-    const dials = calculateDials(calls);
-    const conversations = calculateConversations(calls);
+    const startOfWeek = getStartOfWeek();
+    const startOfDay = getStartOfDay();
+
+    // Get calls for the week and today
+    const callsThisWeek = await searchCallsByDateRange(startOfWeek, undefined, ownerId);
+    const callsToday = await searchCallsByDateRange(startOfDay, undefined, ownerId);
+
+    const dialsThisWeek = calculateDials(callsThisWeek);
+    const dialsToday = calculateDials(callsToday);
+    const conversationsThisWeek = calculateConversations(callsThisWeek);
 
     return NextResponse.json({
       success: true,
       data: {
-        dialsThisWeek: dials,
+        dialsToday,
+        dialsDailyTarget: TARGETS.dialsPerDay,
+        dialsThisWeek,
         dialsTarget: TARGETS.dialsPerWeek,
-        dialsProgress: (dials / TARGETS.dialsPerWeek) * 100,
-        conversationsThisWeek: conversations,
+        dialsProgress: (dialsThisWeek / TARGETS.dialsPerWeek) * 100,
+        conversationsThisWeek,
         conversationsTarget: TARGETS.conversationsPerWeek,
-        conversationsProgress: (conversations / TARGETS.conversationsPerWeek) * 100,
-        totalCallsThisWeek: calls.length,
+        conversationsProgress: (conversationsThisWeek / TARGETS.conversationsPerWeek) * 100,
+        totalCallsThisWeek: callsThisWeek.length,
         lastUpdated: new Date().toISOString(),
       },
     });

@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import {
   getAllDeals,
   getBBLPipeline,
@@ -11,10 +11,13 @@ import { PipelineStage, PIPELINE_STAGES, TARGETS } from '@/types/metrics';
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
-export async function GET() {
+export async function GET(request: NextRequest) {
   try {
+    const searchParams = request.nextUrl.searchParams;
+    const ownerId = searchParams.get('ownerId') || undefined;
+
     const [allDeals, pipeline] = await Promise.all([
-      getAllDeals(),
+      getAllDeals(ownerId),
       getBBLPipeline(),
     ]);
 

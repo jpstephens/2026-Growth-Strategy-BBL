@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import {
   searchCallsByDateRange,
   calculateDials,
@@ -41,14 +41,14 @@ function useMockData(): boolean {
          (!process.env.HUBSPOT_ACCESS_TOKEN && !process.env.ALVYS_CLIENT_ID);
 }
 
-async function fetchSalesMetrics(): Promise<SalesMetrics> {
+async function fetchSalesMetrics(ownerId?: string): Promise<SalesMetrics> {
   // HubSpot data
   const startOfDay = getStartOfDay();
   const startOfWeek = getStartOfWeek();
   const [callsToday, callsThisWeek, allDeals, pipeline] = await Promise.all([
-    searchCallsByDateRange(startOfDay),
-    searchCallsByDateRange(startOfWeek),
-    getAllDeals(),
+    searchCallsByDateRange(startOfDay, undefined, ownerId),
+    searchCallsByDateRange(startOfWeek, undefined, ownerId),
+    getAllDeals(ownerId),
     getBBLPipeline(),
   ]);
 
@@ -194,7 +194,10 @@ async function fetchBusinessMetrics(): Promise<BusinessMetrics> {
   };
 }
 
-export async function GET() {
+export async function GET(request: NextRequest) {
+  const searchParams = request.nextUrl.searchParams;
+  const ownerId = searchParams.get('ownerId') || undefined;
+
   // Return mock data if enabled or no API credentials configured
   if (useMockData()) {
     const mockData = getRandomizedMockData();
@@ -217,7 +220,7 @@ export async function GET() {
 
   // Fetch all metrics, capturing errors for each
   try {
-    sales = await fetchSalesMetrics();
+    sales = await fetchSalesMetrics(ownerId);
   } catch (error) {
     errors.push(`Sales: ${error instanceof Error ? error.message : 'Unknown error'}`);
   }

@@ -1,4 +1,4 @@
-import { HubSpotCall, HubSpotDeal, HubSpotPipeline } from '@/types/metrics';
+import { HubSpotCall, HubSpotDeal, HubSpotPipeline, HubSpotOwner } from '@/types/metrics';
 
 const HUBSPOT_API_BASE = 'https://api.hubapi.com';
 
@@ -28,11 +28,17 @@ async function hubspotFetch<T>(endpoint: string, options: RequestInit = {}): Pro
   return response.json();
 }
 
+// Get all HubSpot owners (sales reps)
+export async function getOwners(): Promise<HubSpotOwner[]> {
+  const response = await hubspotFetch<{ results: HubSpotOwner[] }>('/crm/v3/owners');
+  return response.results;
+}
+
 // Get all calls with pagination
 export async function getCalls(after?: string): Promise<{ results: HubSpotCall[]; paging?: { next?: { after: string } } }> {
   const params = new URLSearchParams({
     limit: '100',
-    properties: 'hs_call_status,hs_call_duration,hs_timestamp,hs_call_body',
+    properties: 'hs_call_status,hs_call_duration,hs_timestamp,hs_call_body,hubspot_owner_id',
   });
   if (after) {
     params.set('after', after);
@@ -41,9 +47,9 @@ export async function getCalls(after?: string): Promise<{ results: HubSpotCall[]
   return hubspotFetch(`/crm/v3/objects/calls?${params}`);
 }
 
-// Search calls by date range (for weekly count)
-export async function searchCallsByDateRange(startDate: Date, endDate?: Date): Promise<HubSpotCall[]> {
-  const filters = [
+// Search calls by date range (for weekly count), optionally filtered by owner
+export async function searchCallsByDateRange(startDate: Date, endDate?: Date, ownerId?: string): Promise<HubSpotCall[]> {
+  const filters: Array<{ propertyName: string; operator: string; value: string }> = [
     {
       propertyName: 'hs_timestamp',
       operator: 'GTE',
@@ -59,11 +65,19 @@ export async function searchCallsByDateRange(startDate: Date, endDate?: Date): P
     });
   }
 
+  if (ownerId) {
+    filters.push({
+      propertyName: 'hubspot_owner_id',
+      operator: 'EQ',
+      value: ownerId,
+    });
+  }
+
   const response = await hubspotFetch<{ results: HubSpotCall[]; total: number }>('/crm/v3/objects/calls/search', {
     method: 'POST',
     body: JSON.stringify({
       filterGroups: [{ filters }],
-      properties: ['hs_call_status', 'hs_call_duration', 'hs_call_body', 'hs_timestamp'],
+      properties: ['hs_call_status', 'hs_call_duration', 'hs_call_body', 'hs_timestamp', 'hubspot_owner_id'],
       limit: 100,
     }),
   });
@@ -75,7 +89,7 @@ export async function searchCallsByDateRange(startDate: Date, endDate?: Date): P
 export async function getDeals(after?: string): Promise<{ results: HubSpotDeal[]; paging?: { next?: { after: string } } }> {
   const params = new URLSearchParams({
     limit: '100',
-    properties: 'dealstage,amount,closedate,pipeline,dealname',
+    properties: 'dealstage,amount,closedate,pipeline,dealname,hubspot_owner_id',
   });
   if (after) {
     params.set('after', after);
@@ -84,8 +98,28 @@ export async function getDeals(after?: string): Promise<{ results: HubSpotDeal[]
   return hubspotFetch(`/crm/v3/objects/deals?${params}`);
 }
 
-// Get all deals (handles pagination)
-export async function getAllDeals(): Promise<HubSpotDeal[]> {
+// Get all deals (handles pagination), optionally filtered by owner
+export async function getAllDeals(ownerId?: string): Promise<HubSpotDeal[]> {
+  if (ownerId) {
+    // Use search API to filter by owner
+    const response = await hubspotFetch<{ results: HubSpotDeal[]; total: number }>('/crm/v3/objects/deals/search', {
+      method: 'POST',
+      body: JSON.stringify({
+        filterGroups: [{
+          filters: [{
+            propertyName: 'hubspot_owner_id',
+            operator: 'EQ',
+            value: ownerId,
+          }],
+        }],
+        properties: ['dealstage', 'amount', 'closedate', 'pipeline', 'dealname', 'hubspot_owner_id'],
+        limit: 100,
+      }),
+    });
+    return response.results;
+  }
+
+  // No filter - get all deals with pagination
   const allDeals: HubSpotDeal[] = [];
   let after: string | undefined;
 
