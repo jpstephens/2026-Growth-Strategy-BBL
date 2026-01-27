@@ -110,8 +110,9 @@ async function searchTripsByStatus(status: string): Promise<AlvysTrip[]> {
 
 // Search trips by date range
 export async function searchTrips(startDate: Date, endDate: Date): Promise<AlvysTrip[]> {
-  // Search for active trip statuses
-  const statuses = ['Covered', 'Dispatched', 'Delivered', 'InTransit'];
+  // Search for trip statuses that have carrier assignments
+  // Valid statuses: Open,Reserved,Covered,Dispatched,In Transit,Delivered,Invoiced,Completed,Quoted,Released,TONU,Cancelled,Queued,Financed,Paid,In Review
+  const statuses = ['Covered', 'Dispatched', 'In Transit', 'Delivered', 'Completed'];
   const tripPromises = statuses.map(status => searchTripsByStatus(status));
   const tripArrays = await Promise.all(tripPromises);
 
