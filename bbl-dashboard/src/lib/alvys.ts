@@ -86,11 +86,16 @@ async function alvysFetch<T>(endpoint: string, options: RequestInit = {}): Promi
 
 // Search loads by date range
 export async function searchLoads(startDate: Date, endDate: Date): Promise<AlvysLoad[]> {
+  // Alvys API requires PageSize and at least one search parameter
+  // Using UpdatedBy date range to filter loads
   const response = await alvysFetch<{ data: AlvysLoad[] }>('/loads/search', {
     method: 'POST',
     body: JSON.stringify({
-      startDate: startDate.toISOString().split('T')[0],
-      endDate: endDate.toISOString().split('T')[0],
+      PageSize: 1000,
+      UpdatedBy: {
+        From: startDate.toISOString(),
+        To: endDate.toISOString(),
+      },
     }),
   });
 
@@ -105,7 +110,11 @@ export async function getCustomers(): Promise<AlvysCustomer[]> {
 
 // Search customers
 export async function searchCustomers(query?: string): Promise<AlvysCustomer[]> {
-  const body = query ? { searchTerm: query } : {};
+  // Alvys API requires PageSize for search endpoints
+  const body = {
+    PageSize: 500,
+    ...(query ? { searchTerm: query } : {}),
+  };
   const response = await alvysFetch<{ data: AlvysCustomer[] }>('/customers/search', {
     method: 'POST',
     body: JSON.stringify(body),
