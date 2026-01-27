@@ -100,8 +100,8 @@ async function searchLoadsByStatus(status: string): Promise<AlvysLoad[]> {
 export async function searchTripsByLoadNumbers(loadNumbers: string[]): Promise<AlvysTrip[]> {
   if (loadNumbers.length === 0) return [];
 
-  // Alvys has a limit on array size, so batch if needed
-  const batchSize = 100;
+  // Alvys API limit: max 50 load numbers per request
+  const batchSize = 50;
   const allTrips: AlvysTrip[] = [];
 
   for (let i = 0; i < loadNumbers.length; i += batchSize) {
