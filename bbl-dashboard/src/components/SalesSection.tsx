@@ -1,10 +1,21 @@
 'use client';
 
-import { SalesMetrics } from '@/types/metrics';
+import { SalesMetrics, PipelineStage } from '@/types/metrics';
 import { KPICard } from './charts/KPICard';
 import { FunnelChart } from './charts/FunnelChart';
 import { GaugeChart } from './charts/GaugeChart';
 import { StatCard } from './charts/StatCard';
+
+// Default empty pipeline stages
+const DEFAULT_PIPELINE_STAGES: PipelineStage[] = [
+  { stageId: '1', stage: 'New Lead', count: 0, value: 0, maxDays: 2 },
+  { stageId: '2', stage: 'Contacted', count: 0, value: 0, maxDays: 14 },
+  { stageId: '3', stage: 'Engaged', count: 0, value: 0, maxDays: 7 },
+  { stageId: '4', stage: 'Qualified', count: 0, value: 0, maxDays: 7 },
+  { stageId: '5', stage: 'Quote Sent', count: 0, value: 0, maxDays: 14 },
+  { stageId: '6', stage: 'Negotiating', count: 0, value: 0, maxDays: 14 },
+  { stageId: '7', stage: 'First Load Booked', count: 0, value: 0, maxDays: 7 },
+];
 
 interface SalesSectionProps {
   data: SalesMetrics | null;
@@ -95,9 +106,9 @@ export function SalesSection({ data, loading, error }: SalesSectionProps) {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-stretch">
         {/* Pipeline Funnel - Takes 2 columns */}
         <div className="lg:col-span-2 flex">
-          {data.pipelineByStage.length > 0 && (
-            <FunnelChart stages={data.pipelineByStage} />
-          )}
+          <FunnelChart
+            stages={data.pipelineByStage.length > 0 ? data.pipelineByStage : DEFAULT_PIPELINE_STAGES}
+          />
         </div>
 
         {/* Email Stats */}
