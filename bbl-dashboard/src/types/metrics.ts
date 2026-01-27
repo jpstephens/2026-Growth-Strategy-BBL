@@ -127,41 +127,48 @@ export interface InstantlyOverview {
   total_bounces: number;
 }
 
-// Alvys Types
+// Alvys Types - matches actual API response
 export interface AlvysLoad {
-  id: string;
-  loadNumber: string;
-  status: string;
-  customer: {
-    id: string;
-    name: string;
+  Id: string;
+  LoadNumber: string;
+  Status: string;
+  CustomerId: string;
+  CustomerName: string;
+  CustomerRate?: {
+    Amount: number;
+    Currency: number;
   };
-  carrier?: {
-    id: string;
-    name: string;
-    isDirect: boolean;
+  Linehaul?: {
+    Amount: number;
+    Currency: number;
   };
-  pickup: {
-    scheduledDate: string;
-    actualDate?: string;
-  };
-  delivery: {
-    scheduledDate: string;
-    actualDate?: string;
-  };
-  financials: {
-    customerRate: number;
-    carrierRate: number;
-    margin: number;
-  };
+  ScheduledPickupAt?: string;
+  ScheduledDeliveryAt?: string;
+  Stops?: Array<{
+    StopType: string;
+    Status: string;
+    StopWindow?: {
+      Begin: string;
+      End: string;
+    };
+  }>;
+  CarrierId?: string;
+  CarrierName?: string;
+  CreatedAt?: string;
+  UpdatedAt?: string;
+}
+
+export interface AlvysSearchResponse {
+  Page: number;
+  PageSize: number;
+  Total: number;
+  Items: AlvysLoad[];
 }
 
 export interface AlvysCustomer {
-  id: string;
-  name: string;
-  status: string;
-  totalLoads: number;
-  totalRevenue: number;
+  Id: string;
+  Name: string;
+  Status?: string;
 }
 
 // Pipeline Stage Configuration (from plan)
