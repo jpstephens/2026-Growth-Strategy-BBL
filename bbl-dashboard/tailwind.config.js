@@ -1,0 +1,131 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  theme: {
+    extend: {
+      colors: {
+        // Primary Brand - Charcoal (from BlackBridge website #32373c)
+        'bb-charcoal': {
+          50: '#f6f7f8',
+          100: '#ebedef',
+          200: '#d4d8dc',
+          300: '#b5bcc2',
+          400: '#8f99a3',
+          500: '#6b7785',
+          600: '#545f6b',
+          700: '#454d57',
+          800: '#32373c',  // Primary brand color
+          900: '#282c30',
+          950: '#1a1d20',
+        },
+        // Accent - Steel Blue (professional, subtle)
+        'bb-steel': {
+          50: '#f4f7fa',
+          100: '#e8eff5',
+          200: '#cddde9',
+          300: '#a3c2d6',
+          400: '#72a1be',
+          500: '#4f85a6',
+          600: '#3d6b8b',
+          700: '#335771',
+          800: '#2d4a5f',
+          900: '#293f50',
+          950: '#1b2935',
+        },
+        // Success - Forest Green (professional, muted)
+        'bb-forest': {
+          50: '#f3f9f6',
+          100: '#e0f0e9',
+          200: '#c2e0d4',
+          300: '#96c9b6',
+          400: '#64ab91',
+          500: '#438f74',
+          600: '#32725c',
+          700: '#2a5c4b',
+          800: '#254a3e',
+          900: '#203d34',
+          950: '#10221d',
+        },
+        // Warning - Amber (readable, not garish)
+        'bb-amber': {
+          50: '#fdfaf3',
+          100: '#faf2e0',
+          200: '#f4e2bd',
+          300: '#ebcc8f',
+          400: '#e0af5c',
+          500: '#d6973a',
+          600: '#c47d2e',
+          700: '#a36228',
+          800: '#844e27',
+          900: '#6c4123',
+          950: '#3a2010',
+        },
+        // Critical - Deep Red (serious but not alarming)
+        'bb-crimson': {
+          50: '#fdf4f4',
+          100: '#fce7e7',
+          200: '#f9d2d3',
+          300: '#f4afb1',
+          400: '#ec8184',
+          500: '#df555a',
+          600: '#cb3a40',
+          700: '#aa2d32',
+          800: '#8d282c',
+          900: '#76272a',
+          950: '#401012',
+        },
+        // Neutral - Slate Gray
+        'bb-slate': {
+          50: '#f8f9fa',
+          100: '#f1f3f5',
+          200: '#e9ecef',
+          300: '#dee2e6',
+          400: '#ced4da',
+          500: '#adb5bd',
+          600: '#868e96',
+          700: '#495057',
+          800: '#343a40',
+          900: '#212529',
+          950: '#0d0f10',
+        },
+        // Pure neutrals
+        'bb-white': '#ffffff',
+        'bb-black': '#000000',
+      },
+      fontFamily: {
+        'display': ['Bricolage Grotesque', 'Inter', 'system-ui', 'sans-serif'],
+        'sans': ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+        'mono': ['JetBrains Mono', 'monospace'],
+      },
+      fontSize: {
+        'hero': ['42px', { lineHeight: '1.1', fontWeight: '800' }],
+        'display': ['32px', { lineHeight: '1.15', fontWeight: '700' }],
+        'h1': ['28px', { lineHeight: '1.2', fontWeight: '700' }],
+        'h2': ['24px', { lineHeight: '1.25', fontWeight: '600' }],
+        'h3': ['20px', { lineHeight: '1.3', fontWeight: '600' }],
+        'lg': ['18px', { lineHeight: '1.4', fontWeight: '500' }],
+        'base': ['16px', { lineHeight: '1.5', fontWeight: '400' }],
+        'sm': ['14px', { lineHeight: '1.45', fontWeight: '400' }],
+        'xs': ['13px', { lineHeight: '1.4', fontWeight: '400' }],
+        'caption': ['12px', { lineHeight: '1.4', fontWeight: '500' }],
+      },
+      borderRadius: {
+        'sm': '4px',
+        'md': '8px',
+        'lg': '12px',
+        'xl': '16px',
+      },
+      boxShadow: {
+        'sm': '0 2px 4px rgba(0, 0, 0, 0.05)',
+        'DEFAULT': '0 4px 12px rgba(0, 0, 0, 0.08)',
+        'md': '0 8px 24px rgba(0, 0, 0, 0.10)',
+        'lg': '0 16px 48px rgba(0, 0, 0, 0.12)',
+      },
+    },
+  },
+  plugins: [],
+}
