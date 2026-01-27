@@ -86,15 +86,14 @@ async function alvysFetch<T>(endpoint: string, options: RequestInit = {}): Promi
 
 // Search loads by date range
 export async function searchLoads(startDate: Date, endDate: Date): Promise<AlvysLoad[]> {
-  // Alvys API requires a "request" wrapper with PageSize and search parameters
-  const response = await alvysFetch<{ data: AlvysLoad[] }>('/loads/search', {
+  // Alvys API - try with query parameters
+  const params = new URLSearchParams({
+    PageSize: '1000',
+    Status: 'Delivered,InTransit,Dispatched,Available,Covered',
+  });
+
+  const response = await alvysFetch<{ data: AlvysLoad[] }>(`/loads/search?${params.toString()}`, {
     method: 'POST',
-    body: JSON.stringify({
-      request: {
-        PageSize: 1000,
-        Status: ['Delivered', 'InTransit', 'Dispatched', 'Available', 'Covered'],
-      },
-    }),
   });
 
   // Filter by date range client-side using pickup scheduled date
@@ -114,15 +113,12 @@ export async function getCustomers(): Promise<AlvysCustomer[]> {
 
 // Search customers
 export async function searchCustomers(query?: string): Promise<AlvysCustomer[]> {
-  // Alvys API requires a "request" wrapper with PageSize
-  const response = await alvysFetch<{ data: AlvysCustomer[] }>('/customers/search', {
+  // Alvys API - use query parameters
+  const params = new URLSearchParams({ PageSize: '500' });
+  if (query) params.set('SearchTerm', query);
+
+  const response = await alvysFetch<{ data: AlvysCustomer[] }>(`/customers/search?${params.toString()}`, {
     method: 'POST',
-    body: JSON.stringify({
-      request: {
-        PageSize: 500,
-        ...(query ? { SearchTerm: query } : {}),
-      },
-    }),
   });
   return response.data || [];
 }
