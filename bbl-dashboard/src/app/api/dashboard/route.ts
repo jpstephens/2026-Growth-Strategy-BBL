@@ -20,7 +20,7 @@ import {
 } from '@/lib/instantly';
 import {
   searchLoads,
-  searchTrips,
+  searchTripsByLoadNumbers,
   calculateOnTimePickup,
   calculateOnTimeDelivery,
   calculateAverageMargin,
@@ -156,13 +156,15 @@ async function fetchSalesMetrics(ownerId?: string): Promise<SalesMetrics> {
 async function fetchOpsMetrics(): Promise<OpsMetrics> {
   const { startDate, endDate } = getLoadsThisMonth();
 
-  // Fetch Alvys loads, trips, and HubSpot carrier metrics in parallel
-  // Trips contain carrier assignment and carrier cost data
-  const [loads, trips, carrierMetrics] = await Promise.all([
+  // First fetch loads
+  const [loads, carrierMetrics] = await Promise.all([
     searchLoads(startDate, endDate),
-    searchTrips(startDate, endDate),
     getCarrierMetrics(),
   ]);
+
+  // Then fetch trips by load numbers - this is how carrier cost data is retrieved
+  const loadNumbers = loads.map(l => l.LoadNumber);
+  const trips = await searchTripsByLoadNumbers(loadNumbers);
 
   // Use trips for carrier-related metrics (carrier data is on trips, not loads)
   const repeatCarrierMetrics = calculateRepeatCarrierMetrics(trips);
@@ -189,11 +191,12 @@ async function fetchOpsMetrics(): Promise<OpsMetrics> {
 async function fetchBusinessMetrics(): Promise<BusinessMetrics> {
   const { startDate, endDate } = getLoadsThisMonth();
 
-  // Fetch loads and trips in parallel - trips have carrier cost for margin calculation
-  const [loads, trips] = await Promise.all([
-    searchLoads(startDate, endDate),
-    searchTrips(startDate, endDate),
-  ]);
+  // First fetch loads
+  const loads = await searchLoads(startDate, endDate);
+
+  // Then fetch trips by load numbers - this is how carrier cost data is retrieved
+  const loadNumbers = loads.map(l => l.LoadNumber);
+  const trips = await searchTripsByLoadNumbers(loadNumbers);
 
   const concentration = getCustomerConcentration(loads);
   const totalMargin = calculateTotalMargin(loads, trips);
