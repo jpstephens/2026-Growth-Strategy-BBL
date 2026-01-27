@@ -96,38 +96,26 @@ async function searchLoadsByStatus(status: string): Promise<AlvysLoad[]> {
   return response.Items || [];
 }
 
-// Search trips by status - trips contain carrier assignment and cost data
-async function searchTripsByStatus(status: string): Promise<AlvysTrip[]> {
-  const response = await alvysFetch<AlvysTripSearchResponse>('/trips/search', {
-    method: 'POST',
-    body: JSON.stringify({
-      PageSize: 500,
-      Status: [status],
-    }),
-  });
-  return response.Items || [];
-}
-
-// Search trips by date range
+// Search trips by date range - trips contain carrier assignment and cost data
 export async function searchTrips(startDate: Date, endDate: Date): Promise<AlvysTrip[]> {
-  // Search for trip statuses that have carrier assignments
-  // Valid statuses: Open,Reserved,Covered,Dispatched,In Transit,Delivered,Invoiced,Completed,Quoted,Released,TONU,Cancelled,Queued,Financed,Paid,In Review
-  const statuses = ['Covered', 'Dispatched', 'In Transit', 'Delivered', 'Completed'];
-  const tripPromises = statuses.map(status => searchTripsByStatus(status));
-  const tripArrays = await Promise.all(tripPromises);
-
-  // Combine all trips and dedupe by Id
-  const allTrips = tripArrays.flat();
-  const uniqueTrips = Array.from(
-    new Map(allTrips.map(trip => [trip.Id, trip])).values()
-  );
-
-  // Filter by date range using pickup date
-  return uniqueTrips.filter(trip => {
-    if (!trip.PickupDate) return false;
-    const tripDate = new Date(trip.PickupDate);
-    return tripDate >= startDate && tripDate <= endDate;
-  });
+  try {
+    const response = await alvysFetch<AlvysTripSearchResponse>('/trips/search', {
+      method: 'POST',
+      body: JSON.stringify({
+        PageSize: 500,
+        PickupDateRange: {
+          Start: startDate.toISOString(),
+          End: endDate.toISOString(),
+        },
+      }),
+    });
+    return response.Items || [];
+  } catch (error) {
+    // If trips endpoint fails, return empty array
+    // This allows the dashboard to still work using load data
+    console.error('Failed to fetch trips:', error);
+    return [];
+  }
 }
 
 // Search loads by date range
