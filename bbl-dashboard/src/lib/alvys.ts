@@ -91,6 +91,8 @@ async function searchLoadsByStatus(status: string): Promise<AlvysLoad[]> {
     body: JSON.stringify({
       PageSize: 500,
       Status: [status],
+      // Request carrier/assignment data to be included
+      Include: ['Carriers', 'Assignments', 'CarrierRate'],
     }),
   });
   return response.Items || [];

@@ -37,6 +37,10 @@ export async function GET() {
       allKeys: Object.keys(load),
     }));
 
+    // Get raw first load to see all available fields
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const rawFirstLoad = loads.length > 0 ? (loads[0] as any) : null;
+
     // Return sample loads with different rates
     const sampleDifferentRates = withDifferentRates.slice(0, 5).map(load => ({
       LoadNumber: load.LoadNumber,
@@ -59,6 +63,7 @@ export async function GET() {
         loadsWithDifferentRates: withDifferentRates.length,
         sampleWithCarrier,
         sampleDifferentRates,
+        rawFirstLoad,
         calculations: {
           totalCustomerRate,
           totalLinehaul,
