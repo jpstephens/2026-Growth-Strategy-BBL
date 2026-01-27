@@ -9,9 +9,23 @@ export async function GET() {
     const { startDate, endDate } = getLoadsThisMonth();
     const loads = await searchLoads(startDate, endDate);
 
-    // Return first 3 loads with full data to inspect structure
-    const sampleLoads = loads.slice(0, 3).map(load => ({
-      Id: load.Id,
+    // Group loads by status
+    const byStatus: Record<string, number> = {};
+    const withCarrier: typeof loads = [];
+    const withDifferentRates: typeof loads = [];
+
+    for (const load of loads) {
+      byStatus[load.Status] = (byStatus[load.Status] || 0) + 1;
+      if (load.CarrierId || load.CarrierName) {
+        withCarrier.push(load);
+      }
+      if (load.CustomerRate?.Amount !== load.Linehaul?.Amount) {
+        withDifferentRates.push(load);
+      }
+    }
+
+    // Return sample loads with carrier data
+    const sampleWithCarrier = withCarrier.slice(0, 5).map(load => ({
       LoadNumber: load.LoadNumber,
       Status: load.Status,
       CustomerName: load.CustomerName,
@@ -19,12 +33,20 @@ export async function GET() {
       Linehaul: load.Linehaul,
       CarrierId: load.CarrierId,
       CarrierName: load.CarrierName,
-      ScheduledPickupAt: load.ScheduledPickupAt,
-      // Include all keys to see what's available
+      margin: (load.CustomerRate?.Amount || 0) - (load.Linehaul?.Amount || 0),
       allKeys: Object.keys(load),
     }));
 
-    // Calculate what we're getting
+    // Return sample loads with different rates
+    const sampleDifferentRates = withDifferentRates.slice(0, 5).map(load => ({
+      LoadNumber: load.LoadNumber,
+      Status: load.Status,
+      CustomerRate: load.CustomerRate,
+      Linehaul: load.Linehaul,
+      margin: (load.CustomerRate?.Amount || 0) - (load.Linehaul?.Amount || 0),
+    }));
+
+    // Calculate totals
     const totalCustomerRate = loads.reduce((sum, load) => sum + (load.CustomerRate?.Amount || 0), 0);
     const totalLinehaul = loads.reduce((sum, load) => sum + (load.Linehaul?.Amount || 0), 0);
 
@@ -32,7 +54,11 @@ export async function GET() {
       success: true,
       data: {
         totalLoads: loads.length,
-        sampleLoads,
+        byStatus,
+        loadsWithCarrier: withCarrier.length,
+        loadsWithDifferentRates: withDifferentRates.length,
+        sampleWithCarrier,
+        sampleDifferentRates,
         calculations: {
           totalCustomerRate,
           totalLinehaul,
