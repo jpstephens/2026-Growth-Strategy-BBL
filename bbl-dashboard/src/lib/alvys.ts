@@ -1,6 +1,7 @@
 import { AlvysLoad, AlvysCustomer } from '@/types/metrics';
 
-const ALVYS_AUTH_URL = 'https://auth.alvys.com/oauth/token';
+// Auth URL includes company code - constructed dynamically
+const ALVYS_AUTH_BASE = 'https://integrations.alvys.com/api/authentication';
 const ALVYS_API_BASE = 'https://api.alvys.com/api/p/v1.0';
 
 interface TokenResponse {
@@ -32,9 +33,12 @@ async function getAccessToken(): Promise<string> {
     return cachedToken;
   }
 
-  const { clientId, clientSecret } = getCredentials();
+  const { clientId, clientSecret, companyCode } = getCredentials();
 
-  const response = await fetch(ALVYS_AUTH_URL, {
+  // Auth URL format: https://integrations.alvys.com/api/authentication/{companyCode}/token
+  const authUrl = `${ALVYS_AUTH_BASE}/${companyCode}/token`;
+
+  const response = await fetch(authUrl, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -42,7 +46,6 @@ async function getAccessToken(): Promise<string> {
     body: JSON.stringify({
       client_id: clientId,
       client_secret: clientSecret,
-      audience: 'https://api.alvys.com/public/',
       grant_type: 'client_credentials',
     }),
   });
