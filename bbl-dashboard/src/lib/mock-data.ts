@@ -41,6 +41,10 @@ export const mockOpsMetrics: OpsMetrics = {
   repeatCarrierRate: 28.5,
   totalCarriersUsed: 35,
   repeatCarriers: 10,
+  // Carrier tracking
+  newCarriersThisMonth: 4,
+  carriersInPipeline: 7,
+  activeCarrierCount: 23,
   lastUpdated: new Date(),
 };
 
@@ -87,6 +91,8 @@ export function getRandomizedMockData() {
       onTimeDelivery: randomize(mockOpsMetrics.onTimeDelivery, 2),
       avgMarginPerLoad: randomize(mockOpsMetrics.avgMarginPerLoad, 15),
       repeatCarrierRate: randomize(mockOpsMetrics.repeatCarrierRate, 3),
+      newCarriersThisMonth: Math.round(randomize(mockOpsMetrics.newCarriersThisMonth, 1)),
+      carriersInPipeline: Math.round(randomize(mockOpsMetrics.carriersInPipeline, 2)),
       lastUpdated: new Date(),
     },
     business: {

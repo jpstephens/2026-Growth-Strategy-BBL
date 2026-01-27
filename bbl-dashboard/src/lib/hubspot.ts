@@ -1,4 +1,4 @@
-import { HubSpotCall, HubSpotDeal, HubSpotPipeline, HubSpotOwner } from '@/types/metrics';
+import { HubSpotCall, HubSpotDeal, HubSpotPipeline, HubSpotOwner, HubSpotCompany } from '@/types/metrics';
 
 const HUBSPOT_API_BASE = 'https://api.hubapi.com';
 
@@ -267,4 +267,164 @@ export function calculateQuoteToCloseRate(deals: HubSpotDeal[], pipeline: HubSpo
 
   if (dealsAtOrPastQuote.length === 0) return 0;
   return (wonDeals.length / dealsAtOrPastQuote.length) * 100;
+}
+
+// ============================================
+// Carrier Company Functions
+// ============================================
+
+// Search for carrier companies added this month
+export async function searchCarrierCompaniesThisMonth(): Promise<HubSpotCompany[]> {
+  const startOfMonth = getStartOfMonth();
+
+  const response = await hubspotFetch<{ results: HubSpotCompany[]; total: number }>('/crm/v3/objects/companies/search', {
+    method: 'POST',
+    body: JSON.stringify({
+      filterGroups: [{
+        filters: [
+          {
+            propertyName: 'company_type',
+            operator: 'EQ',
+            value: 'Carrier',
+          },
+          {
+            propertyName: 'createdate',
+            operator: 'GTE',
+            value: startOfMonth.getTime().toString(),
+          },
+        ],
+      }],
+      properties: ['name', 'company_type', 'date_added', 'createdate', 'mc_number', 'dot_number', 'equipment_types', 'is_direct_carrier', 'carrier_rating', 'hubspot_owner_id'],
+      limit: 100,
+    }),
+  });
+
+  return response.results;
+}
+
+// Get all carrier companies (Company Type = Carrier)
+export async function getAllCarrierCompanies(): Promise<HubSpotCompany[]> {
+  const response = await hubspotFetch<{ results: HubSpotCompany[]; total: number }>('/crm/v3/objects/companies/search', {
+    method: 'POST',
+    body: JSON.stringify({
+      filterGroups: [{
+        filters: [
+          {
+            propertyName: 'company_type',
+            operator: 'EQ',
+            value: 'Carrier',
+          },
+        ],
+      }],
+      properties: ['name', 'company_type', 'date_added', 'createdate', 'mc_number', 'dot_number', 'equipment_types', 'is_direct_carrier', 'carrier_rating', 'hubspot_owner_id'],
+      limit: 100,
+    }),
+  });
+
+  return response.results;
+}
+
+// Get the Carrier Onboarding Pipeline
+export async function getCarrierOnboardingPipeline(): Promise<HubSpotPipeline | null> {
+  const pipelines = await getPipelines();
+  return pipelines.find(p => p.label === 'Carrier Onboarding') || null;
+}
+
+// Get deals in the Carrier Onboarding pipeline (carriers in onboarding process)
+export async function getCarrierPipelineDeals(): Promise<HubSpotDeal[]> {
+  const pipeline = await getCarrierOnboardingPipeline();
+  if (!pipeline) return [];
+
+  const response = await hubspotFetch<{ results: HubSpotDeal[]; total: number }>('/crm/v3/objects/deals/search', {
+    method: 'POST',
+    body: JSON.stringify({
+      filterGroups: [{
+        filters: [
+          {
+            propertyName: 'pipeline',
+            operator: 'EQ',
+            value: pipeline.id,
+          },
+        ],
+      }],
+      properties: ['dealstage', 'amount', 'closedate', 'pipeline', 'dealname', 'hubspot_owner_id'],
+      limit: 100,
+    }),
+  });
+
+  return response.results;
+}
+
+// Get count of active carriers (those in "Active" stage of Carrier Onboarding pipeline)
+export async function getActiveCarrierCount(): Promise<number> {
+  const pipeline = await getCarrierOnboardingPipeline();
+  if (!pipeline) return 0;
+
+  const activeStage = pipeline.stages.find(s => s.label.toLowerCase() === 'active');
+  if (!activeStage) return 0;
+
+  const response = await hubspotFetch<{ results: HubSpotDeal[]; total: number }>('/crm/v3/objects/deals/search', {
+    method: 'POST',
+    body: JSON.stringify({
+      filterGroups: [{
+        filters: [
+          {
+            propertyName: 'pipeline',
+            operator: 'EQ',
+            value: pipeline.id,
+          },
+          {
+            propertyName: 'dealstage',
+            operator: 'EQ',
+            value: activeStage.id,
+          },
+        ],
+      }],
+      properties: ['dealstage', 'dealname'],
+      limit: 100,
+    }),
+  });
+
+  return response.total;
+}
+
+// Get carrier metrics for dashboard
+export async function getCarrierMetrics(): Promise<{
+  newCarriersThisMonth: number;
+  carriersInPipeline: number;
+  activeCarrierCount: number;
+}> {
+  try {
+    const [newCarriers, pipelineDeals, activeCount] = await Promise.all([
+      searchCarrierCompaniesThisMonth(),
+      getCarrierPipelineDeals(),
+      getActiveCarrierCount(),
+    ]);
+
+    // Count open deals (not in "Active" or "Inactive" stages) as "in pipeline"
+    const pipeline = await getCarrierOnboardingPipeline();
+    let carriersInPipeline = 0;
+
+    if (pipeline) {
+      const closedStages = pipeline.stages
+        .filter(s => s.label.toLowerCase() === 'active' || s.label.toLowerCase() === 'inactive')
+        .map(s => s.id);
+
+      carriersInPipeline = pipelineDeals.filter(d => !closedStages.includes(d.properties.dealstage)).length;
+    }
+
+    return {
+      newCarriersThisMonth: newCarriers.length,
+      carriersInPipeline,
+      activeCarrierCount: activeCount,
+    };
+  } catch (error) {
+    // Return zeros if carrier tracking isn't set up yet in HubSpot
+    console.warn('Carrier metrics not available:', error);
+    return {
+      newCarriersThisMonth: 0,
+      carriersInPipeline: 0,
+      activeCarrierCount: 0,
+    };
+  }
 }

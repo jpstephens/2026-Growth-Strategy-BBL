@@ -28,7 +28,7 @@ export interface PipelineStage {
   maxDays: number | null;
 }
 
-// Operations Metrics (from Alvys)
+// Operations Metrics (from Alvys + HubSpot)
 export interface OpsMetrics {
   onTimePickup: number; // percentage
   onTimeDelivery: number; // percentage
@@ -39,6 +39,10 @@ export interface OpsMetrics {
   repeatCarrierRate: number;
   totalCarriersUsed: number;
   repeatCarriers: number;
+  // Carrier tracking (from HubSpot)
+  newCarriersThisMonth: number;
+  carriersInPipeline: number;
+  activeCarrierCount: number;
   lastUpdated: Date;
 }
 
@@ -100,6 +104,22 @@ export interface HubSpotOwner {
   email: string;
   firstName: string;
   lastName: string;
+}
+
+export interface HubSpotCompany {
+  id: string;
+  properties: {
+    name: string;
+    company_type?: string;
+    date_added?: string;
+    createdate?: string;
+    mc_number?: string;
+    dot_number?: string;
+    equipment_types?: string;
+    is_direct_carrier?: string;
+    carrier_rating?: string;
+    hubspot_owner_id?: string;
+  };
 }
 
 export interface HubSpotPipeline {
@@ -211,4 +231,5 @@ export const TARGETS = {
   directCarrierQ2: 35, // >35% Q2
   directCarrierQ4: 50, // >50% Q4
   avgLoadsPerCustomer: 15, // 15-20, using lower bound
+  newCarriersPerMonth: 5, // Target for carrier recruiting
 } as const;

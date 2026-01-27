@@ -11,6 +11,7 @@ import {
   searchDealsClosedInRange,
   getStartOfMonth,
   getEndOfMonth,
+  getCarrierMetrics,
 } from '@/lib/hubspot';
 import {
   getCampaigns,
@@ -153,7 +154,12 @@ async function fetchSalesMetrics(ownerId?: string): Promise<SalesMetrics> {
 
 async function fetchOpsMetrics(): Promise<OpsMetrics> {
   const { startDate, endDate } = getLoadsThisMonth();
-  const loads = await searchLoads(startDate, endDate);
+
+  // Fetch Alvys loads and HubSpot carrier metrics in parallel
+  const [loads, carrierMetrics] = await Promise.all([
+    searchLoads(startDate, endDate),
+    getCarrierMetrics(),
+  ]);
 
   const repeatCarrierMetrics = calculateRepeatCarrierMetrics(loads);
 
@@ -167,6 +173,10 @@ async function fetchOpsMetrics(): Promise<OpsMetrics> {
     repeatCarrierRate: Math.round(repeatCarrierMetrics.repeatRate * 10) / 10,
     totalCarriersUsed: repeatCarrierMetrics.totalCarriers,
     repeatCarriers: repeatCarrierMetrics.repeatCarriers,
+    // Carrier tracking from HubSpot
+    newCarriersThisMonth: carrierMetrics.newCarriersThisMonth,
+    carriersInPipeline: carrierMetrics.carriersInPipeline,
+    activeCarrierCount: carrierMetrics.activeCarrierCount,
     lastUpdated: new Date(),
   };
 }

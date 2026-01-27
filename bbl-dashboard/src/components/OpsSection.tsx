@@ -163,6 +163,30 @@ export function OpsSection({ data, loading, error }: OpsSectionProps) {
           subtitle="Avg pickup + delivery"
         />
       </div>
+
+      {/* Carrier Tracking Stats */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <KPICard
+          label="New Carriers (MTD)"
+          value={data.newCarriersThisMonth}
+          target={TARGETS.newCarriersPerMonth}
+          format="number"
+        />
+        <StatCard
+          label="Carriers in Pipeline"
+          value={data.carriersInPipeline}
+          format="number"
+          status={data.carriersInPipeline > 0 ? 'neutral' : 'warning'}
+          subtitle="Being onboarded"
+        />
+        <StatCard
+          label="Active Carriers"
+          value={data.activeCarrierCount}
+          format="number"
+          status="success"
+          subtitle="Ready to book loads"
+        />
+      </div>
     </div>
   );
 }
