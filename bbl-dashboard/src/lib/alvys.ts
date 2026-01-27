@@ -1,4 +1,4 @@
-import { AlvysLoad, AlvysCustomer, AlvysSearchResponse } from '@/types/metrics';
+import { AlvysLoad, AlvysCustomer, AlvysSearchResponse, AlvysTrip, AlvysTripSearchResponse } from '@/types/metrics';
 
 // Auth URL includes company code - constructed dynamically
 const ALVYS_AUTH_BASE = 'https://integrations.alvys.com/api/authentication';
@@ -91,11 +91,42 @@ async function searchLoadsByStatus(status: string): Promise<AlvysLoad[]> {
     body: JSON.stringify({
       PageSize: 500,
       Status: [status],
-      // Request carrier/assignment data to be included
-      Include: ['Carriers', 'Assignments', 'CarrierRate'],
     }),
   });
   return response.Items || [];
+}
+
+// Search trips by status - trips contain carrier assignment and cost data
+async function searchTripsByStatus(status: string): Promise<AlvysTrip[]> {
+  const response = await alvysFetch<AlvysTripSearchResponse>('/trips/search', {
+    method: 'POST',
+    body: JSON.stringify({
+      PageSize: 500,
+      Status: [status],
+    }),
+  });
+  return response.Items || [];
+}
+
+// Search trips by date range
+export async function searchTrips(startDate: Date, endDate: Date): Promise<AlvysTrip[]> {
+  // Search for active trip statuses
+  const statuses = ['Covered', 'Dispatched', 'Delivered', 'InTransit'];
+  const tripPromises = statuses.map(status => searchTripsByStatus(status));
+  const tripArrays = await Promise.all(tripPromises);
+
+  // Combine all trips and dedupe by Id
+  const allTrips = tripArrays.flat();
+  const uniqueTrips = Array.from(
+    new Map(allTrips.map(trip => [trip.Id, trip])).values()
+  );
+
+  // Filter by date range using pickup date
+  return uniqueTrips.filter(trip => {
+    if (!trip.PickupDate) return false;
+    const tripDate = new Date(trip.PickupDate);
+    return tripDate >= startDate && tripDate <= endDate;
+  });
 }
 
 // Search loads by date range
@@ -154,24 +185,51 @@ export function calculateOnTimeDelivery(loads: AlvysLoad[]): number {
   return 92; // Placeholder - would calculate from actual stop times
 }
 
-// Calculate average margin per load
-export function calculateAverageMargin(loads: AlvysLoad[]): number {
+// Calculate average margin per load using loads and trips
+// Loads have CustomerRate (revenue), Trips have Carrier.Linehaul (cost)
+export function calculateAverageMargin(loads: AlvysLoad[], trips?: AlvysTrip[]): number {
   if (loads.length === 0) return 0;
 
-  // Margin = CustomerRate - Linehaul (simplified)
+  // Build a map of LoadNumber -> carrier cost from trips
+  const carrierCostByLoad = new Map<string, number>();
+  if (trips) {
+    for (const trip of trips) {
+      if (trip.LoadNumber && trip.Carrier?.Linehaul?.Amount) {
+        // Sum carrier costs if multiple trips per load
+        const existing = carrierCostByLoad.get(trip.LoadNumber) || 0;
+        carrierCostByLoad.set(trip.LoadNumber, existing + trip.Carrier.Linehaul.Amount);
+      }
+    }
+  }
+
+  // Calculate margin: CustomerRate - CarrierCost (from trips)
   const totalMargin = loads.reduce((sum, load) => {
     const customerRate = load.CustomerRate?.Amount || 0;
-    const carrierCost = load.Linehaul?.Amount || 0;
+    const carrierCost = carrierCostByLoad.get(load.LoadNumber) || 0;
     return sum + (customerRate - carrierCost);
   }, 0);
+
   return totalMargin / loads.length;
 }
 
-// Calculate total gross margin
-export function calculateTotalMargin(loads: AlvysLoad[]): number {
+// Calculate total gross margin using loads and trips
+export function calculateTotalMargin(loads: AlvysLoad[], trips?: AlvysTrip[]): number {
+  if (loads.length === 0) return 0;
+
+  // Build a map of LoadNumber -> carrier cost from trips
+  const carrierCostByLoad = new Map<string, number>();
+  if (trips) {
+    for (const trip of trips) {
+      if (trip.LoadNumber && trip.Carrier?.Linehaul?.Amount) {
+        const existing = carrierCostByLoad.get(trip.LoadNumber) || 0;
+        carrierCostByLoad.set(trip.LoadNumber, existing + trip.Carrier.Linehaul.Amount);
+      }
+    }
+  }
+
   return loads.reduce((sum, load) => {
     const customerRate = load.CustomerRate?.Amount || 0;
-    const carrierCost = load.Linehaul?.Amount || 0;
+    const carrierCost = carrierCostByLoad.get(load.LoadNumber) || 0;
     return sum + (customerRate - carrierCost);
   }, 0);
 }
@@ -219,18 +277,18 @@ export function getLoadsThisMonth(): { startDate: Date; endDate: Date } {
   return { startDate, endDate };
 }
 
-// Calculate repeat carrier metrics
+// Calculate repeat carrier metrics using trips (which have carrier data)
 // Repeat carrier = carrier used 2+ times in the period
-export function calculateRepeatCarrierMetrics(loads: AlvysLoad[]): {
+export function calculateRepeatCarrierMetrics(trips: AlvysTrip[]): {
   repeatRate: number;
   totalCarriers: number;
   repeatCarriers: number;
 } {
   const carrierCounts = new Map<string, number>();
 
-  for (const load of loads) {
-    if (load.CarrierId) {
-      carrierCounts.set(load.CarrierId, (carrierCounts.get(load.CarrierId) || 0) + 1);
+  for (const trip of trips) {
+    if (trip.Carrier?.Id) {
+      carrierCounts.set(trip.Carrier.Id, (carrierCounts.get(trip.Carrier.Id) || 0) + 1);
     }
   }
 

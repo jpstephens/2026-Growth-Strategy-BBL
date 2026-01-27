@@ -20,6 +20,7 @@ import {
 } from '@/lib/instantly';
 import {
   searchLoads,
+  searchTrips,
   calculateOnTimePickup,
   calculateOnTimeDelivery,
   calculateAverageMargin,
@@ -155,18 +156,22 @@ async function fetchSalesMetrics(ownerId?: string): Promise<SalesMetrics> {
 async function fetchOpsMetrics(): Promise<OpsMetrics> {
   const { startDate, endDate } = getLoadsThisMonth();
 
-  // Fetch Alvys loads and HubSpot carrier metrics in parallel
-  const [loads, carrierMetrics] = await Promise.all([
+  // Fetch Alvys loads, trips, and HubSpot carrier metrics in parallel
+  // Trips contain carrier assignment and carrier cost data
+  const [loads, trips, carrierMetrics] = await Promise.all([
     searchLoads(startDate, endDate),
+    searchTrips(startDate, endDate),
     getCarrierMetrics(),
   ]);
 
-  const repeatCarrierMetrics = calculateRepeatCarrierMetrics(loads);
+  // Use trips for carrier-related metrics (carrier data is on trips, not loads)
+  const repeatCarrierMetrics = calculateRepeatCarrierMetrics(trips);
 
   return {
     onTimePickup: Math.round(calculateOnTimePickup(loads) * 10) / 10,
     onTimeDelivery: Math.round(calculateOnTimeDelivery(loads) * 10) / 10,
-    avgMarginPerLoad: Math.round(calculateAverageMargin(loads) * 100) / 100,
+    // Pass trips to margin calculations - trips have carrier cost data
+    avgMarginPerLoad: Math.round(calculateAverageMargin(loads, trips) * 100) / 100,
     loadsThisMonth: loads.length,
     openIssues: 0, // Would need specific API for this
     directCarrierPercent: Math.round(calculateDirectCarrierPercent(loads) * 10) / 10,
@@ -183,10 +188,15 @@ async function fetchOpsMetrics(): Promise<OpsMetrics> {
 
 async function fetchBusinessMetrics(): Promise<BusinessMetrics> {
   const { startDate, endDate } = getLoadsThisMonth();
-  const loads = await searchLoads(startDate, endDate);
+
+  // Fetch loads and trips in parallel - trips have carrier cost for margin calculation
+  const [loads, trips] = await Promise.all([
+    searchLoads(startDate, endDate),
+    searchTrips(startDate, endDate),
+  ]);
 
   const concentration = getCustomerConcentration(loads);
-  const totalMargin = calculateTotalMargin(loads);
+  const totalMargin = calculateTotalMargin(loads, trips);
   const avgLoadsPerCustomer = calculateAvgLoadsPerCustomer(loads);
 
   return {

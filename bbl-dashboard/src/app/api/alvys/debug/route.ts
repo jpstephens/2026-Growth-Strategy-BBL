@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { searchLoads, getLoadsThisMonth } from '@/lib/alvys';
+import { searchLoads, searchTrips, getLoadsThisMonth, calculateTotalMargin, calculateAverageMargin } from '@/lib/alvys';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -7,67 +7,65 @@ export const revalidate = 0;
 export async function GET() {
   try {
     const { startDate, endDate } = getLoadsThisMonth();
-    const loads = await searchLoads(startDate, endDate);
+
+    // Fetch both loads and trips
+    const [loads, trips] = await Promise.all([
+      searchLoads(startDate, endDate),
+      searchTrips(startDate, endDate),
+    ]);
 
     // Group loads by status
-    const byStatus: Record<string, number> = {};
-    const withCarrier: typeof loads = [];
-    const withDifferentRates: typeof loads = [];
-
+    const loadsByStatus: Record<string, number> = {};
     for (const load of loads) {
-      byStatus[load.Status] = (byStatus[load.Status] || 0) + 1;
-      if (load.CarrierId || load.CarrierName) {
-        withCarrier.push(load);
-      }
-      if (load.CustomerRate?.Amount !== load.Linehaul?.Amount) {
-        withDifferentRates.push(load);
-      }
+      loadsByStatus[load.Status] = (loadsByStatus[load.Status] || 0) + 1;
     }
 
-    // Return sample loads with carrier data
-    const sampleWithCarrier = withCarrier.slice(0, 5).map(load => ({
-      LoadNumber: load.LoadNumber,
-      Status: load.Status,
-      CustomerName: load.CustomerName,
-      CustomerRate: load.CustomerRate,
-      Linehaul: load.Linehaul,
-      CarrierId: load.CarrierId,
-      CarrierName: load.CarrierName,
-      margin: (load.CustomerRate?.Amount || 0) - (load.Linehaul?.Amount || 0),
-      allKeys: Object.keys(load),
+    // Group trips by status
+    const tripsByStatus: Record<string, number> = {};
+    const tripsWithCarrier = trips.filter(t => t.Carrier?.Id);
+    for (const trip of trips) {
+      tripsByStatus[trip.Status] = (tripsByStatus[trip.Status] || 0) + 1;
+    }
+
+    // Sample trips with carrier data
+    const sampleTrips = tripsWithCarrier.slice(0, 5).map(trip => ({
+      TripNumber: trip.TripNumber,
+      LoadNumber: trip.LoadNumber,
+      Status: trip.Status,
+      CarrierId: trip.Carrier?.Id,
+      CarrierLinehaul: trip.Carrier?.Linehaul,
+      CarrierTotalPayable: trip.Carrier?.TotalPayable,
+      TripValue: trip.TripValue,
     }));
 
-    // Get raw first load to see all available fields
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const rawFirstLoad = loads.length > 0 ? (loads[0] as any) : null;
-
-    // Return sample loads with different rates
-    const sampleDifferentRates = withDifferentRates.slice(0, 5).map(load => ({
-      LoadNumber: load.LoadNumber,
-      Status: load.Status,
-      CustomerRate: load.CustomerRate,
-      Linehaul: load.Linehaul,
-      margin: (load.CustomerRate?.Amount || 0) - (load.Linehaul?.Amount || 0),
-    }));
-
-    // Calculate totals
+    // Calculate totals from loads (revenue)
     const totalCustomerRate = loads.reduce((sum, load) => sum + (load.CustomerRate?.Amount || 0), 0);
-    const totalLinehaul = loads.reduce((sum, load) => sum + (load.Linehaul?.Amount || 0), 0);
+
+    // Calculate totals from trips (cost)
+    const totalCarrierCost = trips.reduce((sum, trip) => sum + (trip.Carrier?.Linehaul?.Amount || 0), 0);
+
+    // Calculate margin using our function
+    const calculatedMargin = calculateTotalMargin(loads, trips);
+    const avgMargin = calculateAverageMargin(loads, trips);
 
     return NextResponse.json({
       success: true,
       data: {
-        totalLoads: loads.length,
-        byStatus,
-        loadsWithCarrier: withCarrier.length,
-        loadsWithDifferentRates: withDifferentRates.length,
-        sampleWithCarrier,
-        sampleDifferentRates,
-        rawFirstLoad,
+        loads: {
+          total: loads.length,
+          byStatus: loadsByStatus,
+        },
+        trips: {
+          total: trips.length,
+          byStatus: tripsByStatus,
+          withCarrier: tripsWithCarrier.length,
+          sampleTrips,
+        },
         calculations: {
           totalCustomerRate,
-          totalLinehaul,
-          calculatedMargin: totalCustomerRate - totalLinehaul,
+          totalCarrierCost,
+          totalMargin: calculatedMargin,
+          avgMarginPerLoad: avgMargin,
         },
         dateRange: { start: startDate.toISOString(), end: endDate.toISOString() },
       },

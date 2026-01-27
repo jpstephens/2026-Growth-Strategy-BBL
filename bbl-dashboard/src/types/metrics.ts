@@ -194,6 +194,46 @@ export interface AlvysSearchResponse {
   Items: AlvysLoad[];
 }
 
+// Alvys Trip - contains carrier assignment and carrier cost
+export interface AlvysTrip {
+  Id: string;
+  TripNumber: string;
+  LoadNumber: string;
+  Status: string;
+  TripValue?: {
+    Amount: number;
+    Currency: number;
+  };
+  Carrier?: {
+    Id: string;
+    Linehaul?: {
+      Amount: number;
+      Currency: number;
+    };
+    Accessorials?: {
+      Amount: number;
+      Currency: number;
+    };
+    TotalPayable?: {
+      Amount: number;
+      Currency: number;
+    };
+  };
+  Driver1?: {
+    Id: string;
+    Name: string;
+  };
+  PickupDate?: string;
+  DeliveryDate?: string;
+}
+
+export interface AlvysTripSearchResponse {
+  Page: number;
+  PageSize: number;
+  Total: number;
+  Items: AlvysTrip[];
+}
+
 export interface AlvysCustomer {
   Id: string;
   Name: string;
