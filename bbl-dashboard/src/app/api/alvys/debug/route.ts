@@ -41,12 +41,19 @@ export async function GET() {
     // Fetch loads first
     const loads = await searchLoads(startDate, endDate);
 
-    // Try both trip search methods to see which works
-    const loadNumbers = loads.map(l => l.LoadNumber);
-    const [tripsByDate, tripsByLoadNumbers] = await Promise.all([
-      searchTrips(startDate, endDate),
-      searchTripsByLoadNumbers(loadNumbers),
-    ]);
+    // Get load numbers for trip search
+    const loadNumbers = loads.map(l => l.LoadNumber).filter(Boolean);
+
+    // Only search trips by load numbers (date range doesn't work)
+    let tripsByLoadNumbers: Awaited<ReturnType<typeof searchTripsByLoadNumbers>> = [];
+    let tripError: string | null = null;
+    try {
+      tripsByLoadNumbers = await searchTripsByLoadNumbers(loadNumbers);
+    } catch (e) {
+      tripError = e instanceof Error ? e.message : String(e);
+    }
+
+    const tripsByDate: typeof tripsByLoadNumbers = [];
 
     // Use whichever method returned results
     const trips = tripsByLoadNumbers.length > 0 ? tripsByLoadNumbers : tripsByDate;
@@ -125,6 +132,9 @@ export async function GET() {
           byStatus: tripsByStatus,
           withCarrier: tripsWithCarrier.length,
           sampleTrips,
+          tripError,
+          loadNumbersSample: loadNumbers.slice(0, 5),
+          loadNumbersCount: loadNumbers.length,
         },
         calculations: {
           totalCustomerRate,
