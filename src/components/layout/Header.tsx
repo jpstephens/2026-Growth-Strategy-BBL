@@ -12,7 +12,7 @@ export default function Header() {
           </div>
         </div>
         <div className="text-right hidden md:block">
-          <p className="text-sm font-semibold text-bb-cyan">$12K → $100K</p>
+          <p className="text-sm font-semibold text-bb-cyan">$11K → $100K</p>
           <p className="text-xs text-bb-border">Monthly Net Profit</p>
         </div>
       </div>

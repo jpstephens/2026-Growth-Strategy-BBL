@@ -21,13 +21,13 @@ export default function Slide05_CostOfWaiting() {
           <div className="flex items-center justify-center gap-3xl">
             <div className="text-center">
               <p className="text-sm font-semibold text-bb-slate-400 uppercase tracking-wide mb-xs">Annual Profit Difference</p>
-              <p className="text-6xl font-display font-black text-bb-emerald-400">$900K</p>
+              <p className="text-6xl font-display font-black text-bb-emerald-400">$912K</p>
               <p className="text-sm text-bb-slate-400 mt-xs">left on the table without action</p>
             </div>
             <div className="h-24 w-px bg-bb-slate-600" />
             <div className="text-center">
               <p className="text-sm font-semibold text-bb-slate-400 uppercase tracking-wide mb-xs">Growth Multiple</p>
-              <p className="text-6xl font-display font-black text-bb-electric-400">7.25x</p>
+              <p className="text-6xl font-display font-black text-bb-electric-400">7.9x</p>
               <p className="text-sm text-bb-slate-400 mt-xs">profit increase potential</p>
             </div>
             <div className="h-24 w-px bg-bb-slate-600" />
@@ -56,11 +56,11 @@ export default function Slide05_CostOfWaiting() {
             <div className="space-y-lg">
               <div className="flex items-center justify-between p-lg bg-white rounded-xl border border-bb-burgundy-200">
                 <span className="text-bb-slate-700 font-medium">Monthly Profit</span>
-                <span className="text-3xl font-display font-black text-bb-burgundy-600">$12K</span>
+                <span className="text-3xl font-display font-black text-bb-burgundy-600">$11K</span>
               </div>
               <div className="flex items-center justify-between p-lg bg-white rounded-xl border border-bb-burgundy-200">
                 <span className="text-bb-slate-700 font-medium">Annual Profit</span>
-                <span className="text-3xl font-display font-black text-bb-burgundy-600">$144K</span>
+                <span className="text-3xl font-display font-black text-bb-burgundy-600">$132K</span>
               </div>
               <div className="flex items-center justify-between p-lg bg-white rounded-xl border border-bb-burgundy-200">
                 <span className="text-bb-slate-700 font-medium">Loads/Month</span>
@@ -85,14 +85,14 @@ export default function Slide05_CostOfWaiting() {
               <div className="flex items-center justify-between p-lg bg-white rounded-xl border border-bb-emerald-200">
                 <span className="text-bb-slate-700 font-medium">Monthly Profit</span>
                 <div className="flex items-center gap-md">
-                  <span className="text-xs font-semibold text-bb-emerald-600 bg-bb-emerald-100 px-sm py-xs rounded">+625%</span>
+                  <span className="text-xs font-semibold text-bb-emerald-600 bg-bb-emerald-100 px-sm py-xs rounded">+690%</span>
                   <span className="text-3xl font-display font-black text-bb-emerald-600">$87K</span>
                 </div>
               </div>
               <div className="flex items-center justify-between p-lg bg-white rounded-xl border border-bb-emerald-200">
                 <span className="text-bb-slate-700 font-medium">Annual Profit</span>
                 <div className="flex items-center gap-md">
-                  <span className="text-xs font-semibold text-bb-emerald-600 bg-bb-emerald-100 px-sm py-xs rounded">+$900K</span>
+                  <span className="text-xs font-semibold text-bb-emerald-600 bg-bb-emerald-100 px-sm py-xs rounded">+$912K</span>
                   <span className="text-3xl font-display font-black text-bb-emerald-600">$1.04M</span>
                 </div>
               </div>
@@ -110,8 +110,8 @@ export default function Slide05_CostOfWaiting() {
         {/* Visual Comparison Chart */}
         <ComparisonChart
           data={[
-            { name: 'Monthly Profit ($K)', value1: 12, value2: 87 },
-            { name: 'Annual Profit ($K)', value1: 144, value2: 1044 },
+            { name: 'Monthly Profit ($K)', value1: 11, value2: 87 },
+            { name: 'Annual Profit ($K)', value1: 132, value2: 1044 },
           ]}
           scenario1Label="Current Pace"
           scenario2Label="With Strategy"
@@ -139,17 +139,17 @@ export default function Slide05_CostOfWaiting() {
               <tbody>
                 <tr className="border-t bg-white">
                   <td className="px-lg py-md font-semibold text-bb-navy-900">Monthly Profit</td>
-                  <td className="px-lg py-md text-center text-bb-burgundy-600">$12,000</td>
+                  <td className="px-lg py-md text-center text-bb-burgundy-600">$11,000</td>
                   <td className="px-lg py-md text-center text-bb-emerald-600 font-semibold">$87,000</td>
-                  <td className="px-lg py-md text-center text-bb-emerald-600">+$75,000</td>
-                  <td className="px-lg py-md text-center text-bb-emerald-600 font-bold">+625%</td>
+                  <td className="px-lg py-md text-center text-bb-emerald-600">+$76,000</td>
+                  <td className="px-lg py-md text-center text-bb-emerald-600 font-bold">+690%</td>
                 </tr>
                 <tr className="border-t bg-bb-slate-50">
                   <td className="px-lg py-md font-semibold text-bb-navy-900">Annual Profit</td>
-                  <td className="px-lg py-md text-center text-bb-burgundy-600">$144,000</td>
+                  <td className="px-lg py-md text-center text-bb-burgundy-600">$132,000</td>
                   <td className="px-lg py-md text-center text-bb-emerald-600 font-semibold">$1,044,000</td>
-                  <td className="px-lg py-md text-center text-bb-emerald-600">+$900,000</td>
-                  <td className="px-lg py-md text-center text-bb-emerald-600 font-bold">+625%</td>
+                  <td className="px-lg py-md text-center text-bb-emerald-600">+$912,000</td>
+                  <td className="px-lg py-md text-center text-bb-emerald-600 font-bold">+690%</td>
                 </tr>
                 <tr className="border-t bg-white">
                   <td className="px-lg py-md font-semibold text-bb-navy-900">Loads/Month</td>

@@ -89,7 +89,7 @@ export default function Slide03_TheProblem() {
               <p className="text-xs text-bb-charcoal-600">New customer/month (target: 4-5)</p>
             </div>
             <div className="text-center p-sm bg-bb-slate-50 rounded-lg">
-              <p className="text-xl font-display font-black text-bb-charcoal-800 mb-xs">$12K</p>
+              <p className="text-xl font-display font-black text-bb-charcoal-800 mb-xs">$11K</p>
               <p className="text-xs text-bb-charcoal-600">Monthly profit (target: $100K)</p>
             </div>
           </div>

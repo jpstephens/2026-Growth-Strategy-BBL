@@ -63,13 +63,13 @@ export default function Slide05_CurrentStateCustomers() {
                   <span className="text-lg">📈</span>
                 </div>
                 <div>
-                  <p className="font-bold text-bb-forest-700">$238/load</p>
+                  <p className="font-bold text-bb-forest-700">${januarySnapshot.marginPerLoad}/load</p>
                   <p className="text-sm text-bb-charcoal-600">January margin</p>
                 </div>
               </div>
               <p className="text-sm text-bb-charcoal-600">
-                <span className="font-semibold text-bb-forest-700">Above our $208 average</span>—
-                pricing and customer selection are improving.
+                <span className="font-semibold text-bb-forest-700">Solid foundation</span>—
+                building on proven unit economics of $264/load average.
               </p>
             </div>
           </motion.div>
@@ -127,7 +127,7 @@ export default function Slide05_CurrentStateCustomers() {
         <motion.div variants={itemVariants} className="bg-white rounded-xl p-lg border-2 border-bb-slate-200 shadow-sm text-center">
           <p className="text-base text-bb-charcoal-700 mb-sm">
             <span className="font-bold">Baseline established.</span>
-            {' '}7 active customers generating $17.8K margin in January.
+            {' '}{januarySnapshot.activeCustomers} active customers generating ${(januarySnapshot.grossMargin / 1000).toFixed(0)}K margin in January.
           </p>
           <p className="text-lg font-bold text-bb-forest-600">
             The model works—now we scale it.

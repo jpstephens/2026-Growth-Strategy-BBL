@@ -9,7 +9,7 @@ export default function Slide02_CurrentState() {
       <div className="w-full max-w-6xl">
         <h2 className="text-5xl font-bold text-bb-navy-900 mb-sm text-center font-display">Current State</h2>
         <div className="w-24 h-1.5 bg-gradient-to-r from-bb-electric-500 to-bb-sunset-500 mx-auto mb-lg"></div>
-        <p className="text-2xl text-bb-slate-700 mb-2xl text-center">Real data from 880 loads. Solid foundation.</p>
+        <p className="text-2xl text-bb-slate-700 mb-2xl text-center">Real data from 819 loads. Solid foundation.</p>
 
         <SlideGrid columns={3} gap="lg">
           <StatCard
@@ -44,7 +44,7 @@ export default function Slide02_CurrentState() {
             size="xl"
           />
           <StatCard
-            label="Total Loads (774)"
+            label="Total Loads (819)"
             value={`$${(overallPerformance.totalGrossMargin).toLocaleString()}`}
             unit="margin"
             size="xl"

@@ -9,7 +9,7 @@ export default function ExecutiveSummary() {
       <div className="space-y-lg">
         <Callout variant="info" title="Core Thesis">
           <p>
-            BlackBridge has proven product-market fit with $160,939 in gross margin across 774 loads. The constraint is not the market or the service—it's sales capacity. Patrick is structurally prevented from selling due to operational demands. Fix that, and the path to $100K monthly profit becomes execution, not experimentation.
+            BlackBridge has proven product-market fit with $216,247 in gross margin across 819 loads. The constraint is not the market or the service—it's sales capacity. Patrick is structurally prevented from selling due to operational demands. Fix that, and the path to $100K monthly profit becomes execution, not experimentation.
           </p>
         </Callout>
 
@@ -23,10 +23,10 @@ export default function ExecutiveSummary() {
         </Card>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
-          <MetricCard label="Current Monthly Profit" value="$12,000" highlight />
+          <MetricCard label="Current Monthly Profit" value="$11,000" highlight />
           <MetricCard label="Target Monthly Profit" value="$100,000" />
-          <MetricCard label="Growth Multiple" value="8.3x" />
-          <MetricCard label="Historical Avg Margin" value="$208" />
+          <MetricCard label="Growth Multiple" value="9x" />
+          <MetricCard label="Historical Avg Margin" value="$264" />
           <MetricCard label="Required Monthly Loads" value="481" />
           <MetricCard label="Current Monthly Loads" value="71" />
         </div>
@@ -36,7 +36,7 @@ export default function ExecutiveSummary() {
           <ul className="space-y-sm text-base text-bb-dark-gray">
             <li className="flex gap-md">
               <span className="text-bb-cyan font-bold flex-shrink-0">✓</span>
-              <span><strong>Proven model:</strong> The $208 average margin has been validated across 774 real loads</span>
+              <span><strong>Proven model:</strong> The $264 average margin has been validated across 819 real loads</span>
             </li>
             <li className="flex gap-md">
               <span className="text-bb-cyan font-bold flex-shrink-0">✓</span>

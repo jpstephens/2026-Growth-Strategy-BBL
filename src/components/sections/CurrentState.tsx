@@ -15,7 +15,7 @@ export default function CurrentState() {
       </Callout>
 
       <Card title="Overall Performance">
-        <p className="text-sm text-bb-dark-gray mb-md">Metric data from 774 loads with complete margin data:</p>
+        <p className="text-sm text-bb-dark-gray mb-md">Metric data from 819 loads with complete margin data:</p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md mb-md">
           <MetricCard label="Total Gross Margin" value={`$${(overallPerformance.totalGrossMargin).toLocaleString()}`} />
           <MetricCard label="Loads Analyzed" value={overallPerformance.loadsAnalyzed} highlight />
@@ -38,8 +38,8 @@ export default function CurrentState() {
           <MetricCard label="Margin/Load" value={`$${januarySnapshot.marginPerLoad}`} />
           <MetricCard label="Active Customers" value={januarySnapshot.activeCustomers} />
         </div>
-        <Callout variant="success" title="Positive Trend">
-          January's higher margin per load ($238 vs. $208 average) suggests we're getting better at pricing or selecting loads. This is worth monitoring—can we sustain $230+ margins at scale?
+        <Callout variant="success" title="Solid Foundation">
+          January's $155 margin per load reflects the actual mix of customers this month. Our all-time average of $264/load shows the model works—now we need to scale it with more volume and better customer mix.
         </Callout>
       </Card>
 

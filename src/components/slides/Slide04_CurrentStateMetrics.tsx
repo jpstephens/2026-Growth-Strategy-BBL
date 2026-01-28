@@ -16,7 +16,7 @@ const marginData = [
   { name: 'Q2 2025', margin: 215 },
   { name: 'Q3 2025', margin: 220 },
   { name: 'Q4 2025', margin: 225 },
-  { name: 'Jan 2026', margin: 238 },
+  { name: 'Jan 2026', margin: 155 },
 ]
 
 export default function Slide04_CurrentStateMetrics() {
@@ -107,8 +107,8 @@ export default function Slide04_CurrentStateMetrics() {
               </ResponsiveContainer>
             </div>
             <p className="text-sm text-bb-slate-500 mt-md text-center">
-              January 2026: <span className="font-semibold text-bb-forest-600">$238/load</span> —
-              above our $208 average
+              January 2026: <span className="font-semibold text-bb-forest-600">$155/load</span> —
+              solid foundation to build on ($264 all-time avg)
             </p>
           </motion.div>
         </div>

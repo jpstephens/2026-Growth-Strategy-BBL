@@ -27,7 +27,7 @@ export default function Slide01_Title() {
             <div className="w-24 h-1.5 bg-gradient-to-r from-bb-amber-500 to-bb-amber-600 rounded-full" />
 
             <p className="text-xl text-bb-charcoal-700 leading-relaxed max-w-lg">
-              A roadmap for growing from $17.8K to $100K in monthly gross margin—
+              A roadmap for growing from $11K to $100K in monthly gross margin—
               built on the foundation Patrick and David created.
             </p>
 
@@ -39,7 +39,7 @@ export default function Slide01_Title() {
             <div className="space-y-md">
               <div className="text-center p-md bg-bb-slate-50 rounded-xl border border-bb-slate-200">
                 <p className="text-sm text-bb-slate-600 mb-xs">January 2026 Gross Margin</p>
-                <p className="text-4xl font-display font-black text-bb-charcoal-800">$17.8K</p>
+                <p className="text-4xl font-display font-black text-bb-charcoal-800">$11K</p>
               </div>
 
               <div className="flex justify-center">

@@ -8,7 +8,7 @@ const itemVariants = {
 }
 
 const goalData = [
-  { label: 'Jan 2026', value: 17.8, color: '#6b7785' },
+  { label: 'Jan 2026', value: 11, color: '#6b7785' },
   { label: 'Dec 2026', value: 100, color: '#438f74' },
 ]
 
@@ -85,7 +85,7 @@ export default function Slide03_ExecutiveGoal() {
               </ResponsiveContainer>
             </div>
             <p className="text-sm text-bb-charcoal-500 text-center mt-md">
-              <span className="font-semibold text-bb-forest-600">8x growth</span> in monthly profit
+              <span className="font-semibold text-bb-forest-600">9x growth</span> in monthly profit
             </p>
           </motion.div>
         </div>

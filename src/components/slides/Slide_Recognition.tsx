@@ -71,7 +71,7 @@ export default function Slide_Recognition() {
               </li>
               <li className="flex items-start gap-sm">
                 <span className="text-bb-forest-600 font-bold">✓</span>
-                <span className="text-sm text-bb-charcoal-700">Frontier Door: 75 loads, $18K+ margin</span>
+                <span className="text-sm text-bb-charcoal-700">Frontier Door: 59 loads, $11K margin</span>
               </li>
             </ul>
           </div>
@@ -90,7 +90,7 @@ export default function Slide_Recognition() {
             <ul className="space-y-sm">
               <li className="flex items-start gap-sm">
                 <span className="text-bb-forest-600 font-bold">✓</span>
-                <span className="text-sm text-bb-charcoal-700">Executed 774 loads with minimal issues</span>
+                <span className="text-sm text-bb-charcoal-700">Executed 819 loads with minimal issues</span>
               </li>
               <li className="flex items-start gap-sm">
                 <span className="text-bb-forest-600 font-bold">✓</span>
@@ -108,7 +108,7 @@ export default function Slide_Recognition() {
         <motion.div variants={itemVariants} className="bg-white rounded-2xl p-md shadow-lg border-2 border-bb-amber-300 text-center">
           <p className="text-lg leading-relaxed mb-sm text-bb-charcoal-800">
             <span className="font-bold">You built a real business.</span>
-            {' '}$160K in margin isn't luck—it's execution.
+            {' '}$216K in margin isn't luck—it's execution.
           </p>
           <p className="text-sm text-bb-charcoal-600 italic">
             Everything we're planning next is built on the foundation you created.

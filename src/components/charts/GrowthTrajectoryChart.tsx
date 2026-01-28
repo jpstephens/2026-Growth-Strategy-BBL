@@ -11,7 +11,7 @@ export default function GrowthTrajectoryChart() {
 
   return (
     <div className="w-full h-96 mt-md">
-      <h3 className="text-h3 mb-md">Growth Trajectory: $12K to $100K Monthly Profit</h3>
+      <h3 className="text-h3 mb-md">Growth Trajectory: $11K to $100K Monthly Profit</h3>
       <ResponsiveContainer width="100%" height="100%">
         <LineChart data={data} margin={{ top: 5, right: 30, left: 0, bottom: 5 }}>
           <CartesianGrid strokeDasharray="3 3" stroke="#abb8c3" />
