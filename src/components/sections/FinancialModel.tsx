@@ -13,7 +13,7 @@ export default function FinancialModel() {
         <Table
           headers={['Variable', 'Assumption', 'Source/Rationale']}
           rows={[
-            ['Average Margin per Load', '$264', 'Historical data from 819 loads'],
+            ['Average Margin per Load', '$208', 'Target margin excluding terminated accounts'],
             ['Average Loads per Customer (Month 6+)', '15-20', 'Based on existing customer patterns'],
             ['Annual Churn Rate', '15-20%', 'Industry standard for 3PL'],
             ['Sales Rep Capacity', '4-6 new customers/month', 'Assumes 200 dials/week, good list'],

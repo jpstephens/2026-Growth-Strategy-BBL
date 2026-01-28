@@ -26,7 +26,7 @@ export default function Slide02_ExecutiveThesis() {
         <motion.div variants={itemVariants}>
           <Callout variant="success" title="What Patrick & David Built" size="lg">
             <p className="text-lg leading-relaxed">
-              <span className="font-bold">819 loads. $216K in gross margin. $264 profit per load.</span>
+              <span className="font-bold">819 loads. $216K in gross margin. $208 target margin per load.</span>
               {' '}Patrick brought in the customers. David delivered the loads.
               Together, they built the foundation for everything we're about to do.
             </p>

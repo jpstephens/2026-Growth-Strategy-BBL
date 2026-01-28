@@ -69,7 +69,7 @@ export default function Slide05_CurrentStateCustomers() {
               </div>
               <p className="text-sm text-bb-charcoal-600">
                 <span className="font-semibold text-bb-forest-700">Solid foundation</span>—
-                building on proven unit economics of $264/load average.
+                building on target unit economics of $208/load.
               </p>
             </div>
           </motion.div>

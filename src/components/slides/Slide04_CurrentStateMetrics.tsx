@@ -108,7 +108,7 @@ export default function Slide04_CurrentStateMetrics() {
             </div>
             <p className="text-sm text-bb-slate-500 mt-md text-center">
               January 2026: <span className="font-semibold text-bb-forest-600">$155/load</span> —
-              solid foundation to build on ($264 all-time avg)
+              solid foundation to build on ($208 target)
             </p>
           </motion.div>
         </div>

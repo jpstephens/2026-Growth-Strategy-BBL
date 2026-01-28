@@ -26,7 +26,7 @@ export default function ExecutiveSummary() {
           <MetricCard label="Current Monthly Profit" value="$11,000" highlight />
           <MetricCard label="Target Monthly Profit" value="$100,000" />
           <MetricCard label="Growth Multiple" value="9x" />
-          <MetricCard label="Historical Avg Margin" value="$264" />
+          <MetricCard label="Target Avg Margin" value="$208" />
           <MetricCard label="Required Monthly Loads" value="481" />
           <MetricCard label="Current Monthly Loads" value="71" />
         </div>
@@ -36,7 +36,7 @@ export default function ExecutiveSummary() {
           <ul className="space-y-sm text-base text-bb-dark-gray">
             <li className="flex gap-md">
               <span className="text-bb-cyan font-bold flex-shrink-0">✓</span>
-              <span><strong>Proven model:</strong> The $264 average margin has been validated across 819 real loads</span>
+              <span><strong>Proven model:</strong> The $208 target margin is achievable based on 819 loads of historical data</span>
             </li>
             <li className="flex gap-md">
               <span className="text-bb-cyan font-bold flex-shrink-0">✓</span>

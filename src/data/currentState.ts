@@ -4,7 +4,7 @@ export const overallPerformance = {
   totalRevenue: 1128350,
   totalGrossMargin: 216247,
   loadsAnalyzed: 819,
-  avgMarginPerLoad: 264,
+  avgMarginPerLoad: 208,
   avgMarginPercentage: 19.2,
   currentMonthlyRunRate: 71,
   currentMonthlyProfit: 11007,

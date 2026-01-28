@@ -39,7 +39,7 @@ export default function CurrentState() {
           <MetricCard label="Active Customers" value={januarySnapshot.activeCustomers} />
         </div>
         <Callout variant="success" title="Solid Foundation">
-          January's $155 margin per load reflects the actual mix of customers this month. Our all-time average of $264/load shows the model works—now we need to scale it with more volume and better customer mix.
+          January's $155 margin per load reflects the current customer mix. Our target is $208/load—achievable with better customer selection and pricing discipline.
         </Callout>
       </Card>
 

@@ -32,7 +32,7 @@ You can see the goal right here: from $11K in January to $100K by December. That
 
 "Before we talk about where we're going, I want to acknowledge what you've accomplished.
 
-Look at these numbers: 819 loads delivered. $216K in gross margin. $264 profit per load. These aren't projections—this is what you actually did.
+Look at these numbers: 819 loads delivered. $216K in gross margin. And going forward, we're targeting $208 profit per load—a conservative, achievable number.
 
 Patrick—you built a reliable customer base with repeatable freight. Vibra Screw at $372 per load is the ideal customer profile. Frontier Door with 59 loads and $11K in margin shows what's possible when the relationship is right.
 
@@ -52,7 +52,7 @@ Here's the key message: You built a real business. $216K in margin isn't luck—
 
 "So what did you actually prove? Three things:
 
-First, profitable unit economics. $264 margin per load means this is a real business, not a charity.
+First, profitable unit economics. $208 target margin per load means this is a real business, not a charity.
 
 Second, a repeatable sales process. When Patrick can focus, he converts. We've seen it.
 
@@ -72,7 +72,7 @@ The solution is simple: fix the structural constraint. Let Patrick sell. Let Dav
 
 "Let me show you the data that proves this model works.
 
-819 loads analyzed from May 2024 through January 2026. $216K in gross margin. $264 average per load. 19% margin rate.
+819 loads analyzed from May 2024 through January 2026. $216K in gross margin. We're targeting $208 per load going forward. 19% margin rate.
 
 Look at this chart—our margin per load has been consistently strong. This proves the model works. These are healthy, scalable unit economics."
 
@@ -146,7 +146,7 @@ The opportunity: with clear boundaries, Patrick can make 200+ calls per week. Da
 
 "Here's the math on how we get from 9 customers to 65-70 by December.
 
-This chart shows our customer growth trajectory. We need to add about 5 new customers per month on average. At 7.2 loads per customer and $208 margin per load (targeting our proven $264 average), 68 customers delivering 481 loads per month equals $100K profit.
+This chart shows our customer growth trajectory. We need to add about 5 new customers per month on average. At 7.2 loads per customer and $208 margin per load, 68 customers delivering 481 loads per month equals $100K profit.
 
 The foundation exists. The math works. Now we need the structure to execute it."
 
