@@ -6,7 +6,7 @@ import { FunnelChart } from './charts/FunnelChart';
 import { GaugeChart } from './charts/GaugeChart';
 import { StatCard } from './charts/StatCard';
 
-// Default empty pipeline stages
+// Default pipeline stages - always show all stages
 const DEFAULT_PIPELINE_STAGES: PipelineStage[] = [
   { stageId: '1', stage: 'New Lead', count: 0, value: 0, maxDays: 2 },
   { stageId: '2', stage: 'Contacted', count: 0, value: 0, maxDays: 14 },
@@ -16,6 +16,36 @@ const DEFAULT_PIPELINE_STAGES: PipelineStage[] = [
   { stageId: '6', stage: 'Negotiating', count: 0, value: 0, maxDays: 14 },
   { stageId: '7', stage: 'First Load Booked', count: 0, value: 0, maxDays: 7 },
 ];
+
+// Merge API data with default stages so empty stages still appear
+function mergePipelineStages(apiStages: PipelineStage[]): PipelineStage[] {
+  // Create a map of API data by stage name (more reliable than stageId)
+  const apiDataByName = new Map<string, PipelineStage>();
+  apiStages.forEach(stage => {
+    // Match by partial name (e.g., "Contacted" matches "Contacted")
+    const matchingDefault = DEFAULT_PIPELINE_STAGES.find(d =>
+      stage.stage.toLowerCase().includes(d.stage.toLowerCase()) ||
+      d.stage.toLowerCase().includes(stage.stage.toLowerCase())
+    );
+    if (matchingDefault) {
+      apiDataByName.set(matchingDefault.stage, stage);
+    }
+  });
+
+  // Return all default stages, but with counts/values from API where available
+  return DEFAULT_PIPELINE_STAGES.map(defaultStage => {
+    const apiData = apiDataByName.get(defaultStage.stage);
+    if (apiData) {
+      return {
+        ...defaultStage,
+        stageId: apiData.stageId,
+        count: apiData.count,
+        value: apiData.value,
+      };
+    }
+    return defaultStage;
+  });
+}
 
 interface SalesSectionProps {
   data: SalesMetrics | null;
@@ -107,7 +137,7 @@ export function SalesSection({ data, loading, error }: SalesSectionProps) {
         {/* Pipeline Funnel - Takes 2 columns */}
         <div className="lg:col-span-2 flex">
           <FunnelChart
-            stages={data.pipelineByStage.length > 0 ? data.pipelineByStage : DEFAULT_PIPELINE_STAGES}
+            stages={mergePipelineStages(data.pipelineByStage)}
           />
         </div>
 
