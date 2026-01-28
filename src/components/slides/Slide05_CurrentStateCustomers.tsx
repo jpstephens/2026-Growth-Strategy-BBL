@@ -9,7 +9,7 @@ const itemVariants = {
 }
 
 const customerData = topCustomers.slice(0, 5).map(c => ({
-  name: c.name.length > 12 ? c.name.substring(0, 12) + '...' : c.name,
+  name: c.name,
   margin: c.avgMargin,
 }))
 
@@ -97,10 +97,10 @@ export default function Slide05_CurrentStateCustomers() {
                   <YAxis
                     type="category"
                     dataKey="name"
-                    tick={{ fontSize: 10, fill: '#6b7785' }}
+                    tick={{ fontSize: 11, fill: '#545f6b', fontWeight: 500 }}
                     axisLine={false}
                     tickLine={false}
-                    width={80}
+                    width={140}
                   />
                   <Bar
                     dataKey="margin"
