@@ -8,7 +8,7 @@ export default function Slide30_SalesKPIs() {
         {/* Title */}
         <div className="text-center">
           <h1 className="font-display text-display font-bold text-bb-charcoal-800 mb-sm">
-            Sales KPIs
+            Sales & Operations KPIs
           </h1>
           <div className="w-24 h-1.5 bg-gradient-to-r from-bb-steel-500 to-bb-amber-500 mx-auto rounded-full mb-sm" />
           <p className="text-base text-bb-charcoal-600">
@@ -16,19 +16,31 @@ export default function Slide30_SalesKPIs() {
           </p>
         </div>
 
-        {/* Primary KPIs - Compact */}
-        <div className="grid grid-cols-2 gap-lg">
-          <div className="bg-gradient-to-br from-bb-amber-50 to-white rounded-xl border-2 border-bb-amber-300 p-md shadow-sm">
-            <p className="text-xs font-semibold text-bb-amber-600 uppercase tracking-wide mb-xs">Primary Metric</p>
-            <p className="text-3xl font-display font-black text-bb-amber-600">200/week</p>
-            <p className="text-base font-bold text-bb-charcoal-800">Dials</p>
-            <p className="text-xs text-bb-charcoal-500 mt-xs">Owner: Patrick/Chris | Daily tracking</p>
+        {/* Primary KPIs - 4 columns */}
+        <div className="grid grid-cols-4 gap-md">
+          <div className="bg-gradient-to-br from-bb-amber-50 to-white rounded-xl border-2 border-bb-amber-300 p-sm shadow-sm">
+            <p className="text-xs font-semibold text-bb-amber-600 uppercase tracking-wide mb-xs">Sales</p>
+            <p className="text-2xl font-display font-black text-bb-amber-600">200/week</p>
+            <p className="text-sm font-bold text-bb-charcoal-800">Dials</p>
+            <p className="text-xs text-bb-charcoal-500 mt-xs">Patrick | Daily</p>
           </div>
-          <div className="bg-gradient-to-br from-bb-forest-50 to-white rounded-xl border-2 border-bb-forest-300 p-md shadow-sm">
-            <p className="text-xs font-semibold text-bb-forest-600 uppercase tracking-wide mb-xs">Primary Metric</p>
-            <p className="text-3xl font-display font-black text-bb-forest-600">4-5/month</p>
-            <p className="text-base font-bold text-bb-charcoal-800">New Customers</p>
-            <p className="text-xs text-bb-charcoal-500 mt-xs">Owner: Chris | Monthly review</p>
+          <div className="bg-gradient-to-br from-bb-forest-50 to-white rounded-xl border-2 border-bb-forest-300 p-sm shadow-sm">
+            <p className="text-xs font-semibold text-bb-forest-600 uppercase tracking-wide mb-xs">Sales</p>
+            <p className="text-2xl font-display font-black text-bb-forest-600">4-5/month</p>
+            <p className="text-sm font-bold text-bb-charcoal-800">New Customers</p>
+            <p className="text-xs text-bb-charcoal-500 mt-xs">Chris | Monthly</p>
+          </div>
+          <div className="bg-gradient-to-br from-bb-steel-50 to-white rounded-xl border-2 border-bb-steel-300 p-sm shadow-sm">
+            <p className="text-xs font-semibold text-bb-steel-600 uppercase tracking-wide mb-xs">Ops</p>
+            <p className="text-2xl font-display font-black text-bb-steel-600">&gt;95%</p>
+            <p className="text-sm font-bold text-bb-charcoal-800">On-Time Delivery</p>
+            <p className="text-xs text-bb-charcoal-500 mt-xs">David | Weekly</p>
+          </div>
+          <div className="bg-gradient-to-br from-bb-charcoal-50 to-white rounded-xl border-2 border-bb-charcoal-300 p-sm shadow-sm">
+            <p className="text-xs font-semibold text-bb-charcoal-600 uppercase tracking-wide mb-xs">Ops</p>
+            <p className="text-2xl font-display font-black text-bb-charcoal-700">$200+</p>
+            <p className="text-sm font-bold text-bb-charcoal-800">Margin/Load</p>
+            <p className="text-xs text-bb-charcoal-500 mt-xs">David | Per load</p>
           </div>
         </div>
 

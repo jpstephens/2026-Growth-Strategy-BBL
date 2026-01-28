@@ -13,6 +13,7 @@ const verticals = [
     color: 'bb-steel',
     description: 'High-value components, JIT critical',
     margin: '$250+/load',
+    salesTip: 'Target quality managers—they pay for reliability',
   },
   {
     name: 'Building Products',
@@ -20,13 +21,15 @@ const verticals = [
     color: 'bb-amber',
     description: 'Heavy, consistent, regional',
     margin: '$200+/load',
+    salesTip: 'Target purchasing & logistics coordinators',
   },
   {
-    name: 'Plastics & Packaging',
+    name: 'Industrial Equipment',
     percentage: '25%',
     color: 'bb-forest',
-    description: 'Lightweight, high volume',
-    margin: '$200+/load',
+    description: 'Specialized handling, less competition',
+    margin: '$250-400/load',
+    salesTip: 'Value reliability over price—long-term accounts',
   },
   {
     name: 'Automotive JIT',
@@ -34,6 +37,7 @@ const verticals = [
     color: 'bb-charcoal',
     description: 'Premium rates, time-critical',
     margin: '$300+/load',
+    salesTip: 'Start with Tier 1 & 2 suppliers near plants',
   },
 ]
 
@@ -63,13 +67,14 @@ export default function Slide_TargetVerticalsIntro() {
             }
             const colors = colorMap[vertical.color]
             return (
-              <div key={idx} className={`${colors.bg} rounded-xl border-2 ${colors.border} p-md shadow-sm`}>
-                <div className={`${colors.badge} text-white text-lg font-bold rounded-lg w-14 h-14 flex items-center justify-center mb-sm`}>
+              <div key={idx} className={`${colors.bg} rounded-xl border-2 ${colors.border} p-sm shadow-sm`}>
+                <div className={`${colors.badge} text-white text-sm font-bold rounded-lg w-12 h-12 flex items-center justify-center mb-xs`}>
                   {vertical.percentage}
                 </div>
-                <h3 className={`text-base font-bold ${colors.text} mb-xs`}>{vertical.name}</h3>
-                <p className="text-xs text-bb-charcoal-600 mb-sm">{vertical.description}</p>
-                <p className="text-sm font-bold text-bb-charcoal-800">{vertical.margin}</p>
+                <h3 className={`text-sm font-bold ${colors.text} mb-xs`}>{vertical.name}</h3>
+                <p className="text-xs text-bb-charcoal-600 mb-xs">{vertical.description}</p>
+                <p className="text-sm font-bold text-bb-charcoal-800 mb-xs">{vertical.margin}</p>
+                <p className="text-xs text-bb-charcoal-500 italic border-t border-bb-slate-200 pt-xs">{vertical.salesTip}</p>
               </div>
             )
           })}
@@ -95,10 +100,10 @@ export default function Slide_TargetVerticalsIntro() {
         </motion.div>
 
         {/* Bottom Note */}
-        <motion.div variants={itemVariants} className="bg-gradient-to-br from-bb-forest-600 to-bb-forest-700 rounded-xl p-lg shadow-lg">
+        <motion.div variants={itemVariants} className="bg-gradient-to-br from-bb-forest-600 to-bb-forest-700 rounded-xl p-md shadow-lg">
           <p className="text-base text-center text-white">
             <span className="font-bold text-bb-amber-200">Our best customers come from these verticals.</span>
-            {' '}The next slides show the specific NAICS codes we're targeting.
+            {' '}Predictable freight, healthy margins, relationship-focused buyers who value service over price.
           </p>
         </motion.div>
       </div>

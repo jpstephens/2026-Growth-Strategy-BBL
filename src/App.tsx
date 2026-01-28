@@ -15,7 +15,7 @@ import Slide05_CurrentStateCustomers from './components/slides/Slide05_CurrentSt
 // ACT 2: OWNERSHIP (Slides 6-10)
 // Goal: The SYSTEM failed them, not the other way around
 // ==========================================
-import Slide_WhatWeGotWrong from './components/slides/Slide_WhatWeGotWrong'
+// Slide_WhatWeGotWrong removed - merged into Slide03_TheProblem
 import Slide03_TheProblem from './components/slides/Slide03_TheProblem'
 import Slide06_WhyIncompatible from './components/slides/Slide06_WhyIncompatible'
 import Slide07_TheMath from './components/slides/Slide07_TheMath'
@@ -27,9 +27,9 @@ import Slide07_TheMath from './components/slides/Slide07_TheMath'
 // ==========================================
 import Slide03_ExecutiveGoal from './components/slides/Slide03_ExecutiveGoal'
 import Slide_PatrickRole from './components/slides/Slide_PatrickRole'
-import Slide_DavidRole from './components/slides/Slide_DavidRole'
+// Slide_DavidRole removed - merged into Slide_PatrickRole (now "Roles & Targets")
 import Slide08_CustomerRamp from './components/slides/Slide08_CustomerRamp'
-import Slide15_CustomerProfitability from './components/slides/Slide15_CustomerProfitability'
+// Slide15_CustomerProfitability removed - merged into Slide08_CustomerRamp
 
 // ==========================================
 // ACT 4: THE SOLUTION (Slides 16-23)
@@ -51,24 +51,25 @@ import Slide33_HandoffProtocol from './components/slides/Slide33_HandoffProtocol
 import Slide_LeadershipCommits from './components/slides/Slide_LeadershipCommits'
 import Slide26_LeadGenerationStrategy from './components/slides/Slide26_LeadGenerationStrategy'
 import Slide_TargetVerticalsIntro from './components/slides/Slide_TargetVerticalsIntro'
-import Slide11_NAICSBuildingProducts from './components/slides/Slide11_NAICSBuildingProducts'
-import Slide12_NAICSMetalFabrication from './components/slides/Slide12_NAICSMetalFabrication'
-import Slide13_NAICSPlasticsPackaging from './components/slides/Slide13_NAICSPlasticsPackaging'
-import Slide14_NAICSAutomotiveJIT from './components/slides/Slide14_NAICSAutomotiveJIT'
+// NAICS slides removed - consolidated into Slide_TargetVerticalsIntro
+// Slide11_NAICSBuildingProducts removed
+// Slide12_NAICSMetalFabrication removed
+// Slide13_NAICSPlasticsPackaging removed
+// Slide14_NAICSAutomotiveJIT removed
 import Slide34_OperationsPriorities from './components/slides/Slide34_OperationsPriorities'
 import Slide35_CarrierTiers from './components/slides/Slide35_CarrierTiers'
 import Slide19_Accountability from './components/slides/Slide19_Accountability'
 // Slide36_EscalationPaths removed - combined with Slide19_Accountability
 import Slide24_CanPatrickAlone from './components/slides/Slide24_CanPatrickAlone'
+// Slide_HiringTriggers removed - merged into Slide24_CanPatrickAlone (now "Scaling Triggers")
 import Slide16_FinancialProjection_Scenario2 from './components/slides/Slide16_FinancialProjection_Scenario2'
-import Slide_HiringTriggers from './components/slides/Slide_HiringTriggers'
 
 // ==========================================
 // ACT 6: MEASUREMENT & ROADMAP (Slides 36-44)
 // Goal: Clarity on WHAT HAPPENS WHEN
 // ==========================================
 import Slide30_SalesKPIs from './components/slides/Slide30_SalesKPIs'
-import Slide31_OperationsKPIs from './components/slides/Slide31_OperationsKPIs'
+// Slide31_OperationsKPIs removed - merged into Slide30_SalesKPIs (now "Sales & Operations KPIs")
 import Slide32_BusinessKPIs from './components/slides/Slide32_BusinessKPIs'
 import Slide12_Roadmap from './components/slides/Slide12_Roadmap'
 // Roadmap phase detail slides removed (repetitive)
@@ -79,8 +80,8 @@ import Slide37_PipelineStages from './components/slides/Slide37_PipelineStages'
 // Goal: Partnership and SHARED OWNERSHIP
 // ==========================================
 import Slide13_First30Days from './components/slides/Slide13_First30Days'
-import Slide46_WhatMustBeTrue from './components/slides/Slide46_WhatMustBeTrue'
-import Slide40_RisksMitigation from './components/slides/Slide40_RisksMitigation'
+// Slide46_WhatMustBeTrue removed (Assumptions & Dependencies) - per user request
+// Slide40_RisksMitigation removed (Risk Assessment & Mitigation) - per user request
 import Slide41_SuccessCriteria from './components/slides/Slide41_SuccessCriteria'
 // Slide_QuestionsYouHave removed - this isn't a negotiation
 import Slide42_Commitment from './components/slides/Slide42_Commitment'
@@ -96,70 +97,54 @@ const slides = [
   Slide05_CurrentStateCustomers,
 
   // ==========================================
-  // ACT 2: OWNERSHIP (4 slides)
+  // ACT 2: OWNERSHIP (3 slides) - reduced from 4
   // ==========================================
-  Slide_WhatWeGotWrong,
-  Slide03_TheProblem,
+  Slide03_TheProblem, // Now includes content from Slide_WhatWeGotWrong
   Slide06_WhyIncompatible,
   Slide07_TheMath,
 
   // ==========================================
-  // ACT 3: VISION (5 slides)
+  // ACT 3: VISION (3 slides) - reduced from 5
   // ==========================================
   Slide03_ExecutiveGoal,
-  Slide_PatrickRole,
-  Slide_DavidRole,
-  Slide08_CustomerRamp,
-  Slide15_CustomerProfitability,
+  Slide_PatrickRole, // Now "Roles & Targets" - includes David's role
+  Slide08_CustomerRamp, // Now "Customer Value" - includes profitability tiers
 
   // ==========================================
-  // ACT 4: THE SOLUTION (8 slides)
+  // ACT 4: THE SOLUTION (6 slides)
   // ==========================================
   Slide16_ThreeSolutionChanges,
   Slide09_TeamStructure,
   Slide26_ProtectedCalling,
   Slide24_SalesActivityTargets,
-  // Slide25_ConversionFunnel removed - combined into Slide24
   Slide11_SalesSystem,
-  // Slide27_CallFramework removed - handle offline with Pat/Chris
   Slide33_HandoffProtocol,
 
   // ==========================================
-  // ACT 5: THE SUPPORT SYSTEM (12 slides)
+  // ACT 5: THE SUPPORT SYSTEM (8 slides) - reduced from 12
   // ==========================================
   Slide_LeadershipCommits,
   Slide26_LeadGenerationStrategy,
-  Slide_TargetVerticalsIntro,
-  Slide11_NAICSBuildingProducts,
-  Slide12_NAICSMetalFabrication,
-  Slide13_NAICSPlasticsPackaging,
-  Slide14_NAICSAutomotiveJIT,
+  Slide_TargetVerticalsIntro, // Now includes sales tips from all NAICS slides
   Slide34_OperationsPriorities,
   Slide35_CarrierTiers,
   Slide19_Accountability,
-  // Slide36_EscalationPaths removed - combined into Slide19
-  Slide24_CanPatrickAlone,
+  Slide24_CanPatrickAlone, // Now "Scaling Triggers" - includes hiring triggers
   Slide16_FinancialProjection_Scenario2,
-  Slide_HiringTriggers,
 
   // ==========================================
-  // ACT 6: MEASUREMENT & ROADMAP (5 slides)
+  // ACT 6: MEASUREMENT & ROADMAP (4 slides) - reduced from 5
   // ==========================================
-  Slide30_SalesKPIs,
-  Slide31_OperationsKPIs,
+  Slide30_SalesKPIs, // Now "Sales & Operations KPIs" - includes ops metrics
   Slide32_BusinessKPIs,
   Slide12_Roadmap,
-  // Roadmap phase detail slides removed (repetitive)
   Slide37_PipelineStages,
 
   // ==========================================
-  // ACT 7: MUTUAL COMMITMENT (6 slides)
+  // ACT 7: MUTUAL COMMITMENT (3 slides) - reduced from 6
   // ==========================================
   Slide13_First30Days,
-  Slide46_WhatMustBeTrue,
-  Slide40_RisksMitigation,
   Slide41_SuccessCriteria,
-  // Slide_QuestionsYouHave removed - this isn't a negotiation
   Slide42_Commitment,
 ]
 
