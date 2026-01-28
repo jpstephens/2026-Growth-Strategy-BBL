@@ -88,13 +88,13 @@ export default function Slide15_CustomerProfitability() {
               <p className="text-sm text-bb-forest-600 font-semibold">IDEAL PROFILE</p>
               <p className="text-xl font-bold text-bb-charcoal-800">$300+/load</p>
               <p className="text-sm text-bb-charcoal-600 mt-1">High margin, any volume</p>
-              <p className="text-sm text-bb-forest-600 mt-1">Ex: Vibra Screw @ $416</p>
+              <p className="text-sm text-bb-forest-600 mt-1">Ex: Vibra Screw @ $372</p>
             </div>
             <div className="bg-white rounded-xl border-2 border-bb-steel-300 p-4">
               <p className="text-sm text-bb-steel-600 font-semibold">TARGET PROFILE</p>
               <p className="text-xl font-bold text-bb-charcoal-800">$200+/load</p>
               <p className="text-sm text-bb-charcoal-600 mt-1">10+ loads/month</p>
-              <p className="text-sm text-bb-steel-600 mt-1">Ex: AMP @ $240</p>
+              <p className="text-sm text-bb-steel-600 mt-1">Ex: Radiant @ $220</p>
             </div>
             <div className="bg-white rounded-xl border-2 border-bb-amber-300 p-4">
               <p className="text-sm text-bb-amber-600 font-semibold">VOLUME PLAY</p>

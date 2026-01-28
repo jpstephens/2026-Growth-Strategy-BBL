@@ -51,7 +51,7 @@ export default function Slide06_TopCustomers() {
           <div className="bg-gradient-to-br from-bb-navy-50 to-white rounded-xl p-lg border-2 border-bb-navy-300 shadow-md">
             <p className="text-xs font-semibold text-bb-slate-600 uppercase mb-xs">Template Customer</p>
             <p className="text-2xl font-display font-black text-bb-navy-600">Vibra Screw</p>
-            <p className="text-xs text-bb-slate-600 mt-xs">$416 avg margin</p>
+            <p className="text-xs text-bb-slate-600 mt-xs">$372 avg margin</p>
           </div>
         </div>
 
@@ -142,7 +142,7 @@ export default function Slide06_TopCustomers() {
                 </div>
               </div>
               <p className="mt-md text-sm text-bb-slate-600 italic">
-                Vibra Screw is the template: $416 avg margin, consistent deliveries, easy to work with. Find more like them.
+                Vibra Screw is the template: $372 avg margin, consistent deliveries, easy to work with. Find more like them.
               </p>
             </div>
           </div>

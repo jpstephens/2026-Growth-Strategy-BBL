@@ -67,7 +67,7 @@ export default function Slide_Recognition() {
               </li>
               <li className="flex items-start gap-sm">
                 <span className="text-bb-forest-600 font-bold">✓</span>
-                <span className="text-sm text-bb-charcoal-700">Vibra Screw: $416/load margin—ideal profile</span>
+                <span className="text-sm text-bb-charcoal-700">Vibra Screw: $372/load margin—ideal profile</span>
               </li>
               <li className="flex items-start gap-sm">
                 <span className="text-bb-forest-600 font-bold">✓</span>

@@ -93,7 +93,7 @@ export default function Slide08_CustomerRamp() {
                 </div>
                 <div className="text-right">
                   <p className="text-xs text-bb-charcoal-600">High margin, any volume</p>
-                  <p className="text-xs text-bb-forest-600 font-semibold">Ex: Vibra Screw @ $416</p>
+                  <p className="text-xs text-bb-forest-600 font-semibold">Ex: Vibra Screw @ $372</p>
                 </div>
               </div>
             </div>
@@ -105,7 +105,7 @@ export default function Slide08_CustomerRamp() {
                 </div>
                 <div className="text-right">
                   <p className="text-xs text-bb-charcoal-600">10+ loads/month</p>
-                  <p className="text-xs text-bb-steel-600 font-semibold">Ex: AMP @ $240</p>
+                  <p className="text-xs text-bb-steel-600 font-semibold">Ex: Radiant @ $220</p>
                 </div>
               </div>
             </div>
